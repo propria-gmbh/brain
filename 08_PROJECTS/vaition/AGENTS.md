@@ -55,6 +55,10 @@ code-path: ~/Projects/vaition/
 
 Довести licensing-first трек до первого контакта с потенциальным licensee. Держать public materials в границах claims.
 
+## Текущий спринт
+
+- **[sprint-partners-pack.md](sprint-partners-pack.md)** — core + Вадим + презентация для партнёров (окно ~1–2 рабочих дня).
+
 ## Где искать больше
 
 - [goals.md](goals.md)
