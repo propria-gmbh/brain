@@ -12,7 +12,7 @@ code-path: ~/Projects/invertomatic/
 
 ## Что это
 
-Ранняя стадия. Пока существует только `financial_model.pdf`. Описание и цель зафиксировать в `goals.md`.
+Ранняя стадия. В код-репо: `financial_model.pdf`. Юридико-налоговый трек **ОАЭ + Европа / электрооборудование** — артефакты и черновики в [`electro-uae-europe/`](electro-uae-europe/README.md) (не дублировать в `~/Projects/invertomatic/` без причины). Общие цели — `goals.md`.
 
 ## Где код
 
@@ -20,7 +20,8 @@ code-path: ~/Projects/invertomatic/
 
 ## Ключевые файлы
 
-- `financial_model.pdf` — текущий единственный артефакт
+- `~/Projects/invertomatic/financial_model.pdf` — финансовая модель (в код-репо)
+- [`electro-uae-europe/README.md`](electro-uae-europe/README.md) — UAE/DE структура, вопросы консультантам, карта файлов workstream
 
 ## Текущая цель
 
@@ -44,3 +45,4 @@ _Не определён._
 
 - [goals.md](goals.md) — стратегические цели
 - [open-questions.md](open-questions.md) — что ждёт решения
+- [electro-uae-europe/](electro-uae-europe/README.md) — brainstorming / advisor package / MOU / TEVIQA notes
