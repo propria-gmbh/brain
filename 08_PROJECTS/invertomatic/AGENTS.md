@@ -30,6 +30,16 @@ _Не зафиксирована — определить в ближайшей 
 
 _Не определён._
 
+## Cursor
+
+Чтобы при работе в **репозитории** Инвертоматика действовали **те же project rules**, что и в vault `brain/`:
+
+- в `~/Projects/invertomatic/.cursor/rules` стоит **symlink** на `~/Projects/brain/.cursor/rules`
+- открываешь в Cursor папку **`/Users/dister/Projects/invertomatic`** — правила подхватываются оттуда  
+- меняешь `.mdc` **только в brain** — оба места совпадают  
+
+Плюс по-прежнему действуют глобальные `~/.cursor/rules/`.
+
 ## Где искать больше
 
 - [goals.md](goals.md) — стратегические цели
