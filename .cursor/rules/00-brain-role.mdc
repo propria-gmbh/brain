@@ -1,0 +1,34 @@
+---
+description: Role of brain/ — command center, not dev workspace
+alwaysApply: true
+---
+
+# brain/ — командный центр, не dev workspace
+
+- **Разработка (код, тесты, деплой) — в отдельных Claude Code репо.** brain/ не содержит production-код.
+- Здесь живёт: стратегия, решения (ADR), журнал мышления, паттерны, планы, реестр внешних проектов, задачи (mirror), встречи.
+- Если пользователь пишет код — сначала спроси: «Это в brain/ (исключение — tools/) или в соответствующий проект из `08_PROJECTS/`?»
+
+# Жёсткие границы
+
+- Не пиши в `.obsidian/` кроме базового конфига.
+- Не трогай `.git/` руками.
+- Не создавай новые top-level папки вне схемы `00_META`..`99_ARCHIVE` + `_templates`, `tools`, `.cursor`, `.obsidian`.
+- Ветка `main`. Другие ветки — только по запросу.
+- Не пушь в remote автоматически. Коммит — да, push — по запросу или через Obsidian Git.
+
+# Где что лежит (быстрый lookup)
+
+| Тип контента | Путь |
+|---|---|
+| ADR | `06_DECISIONS/adr/YYYY-MM-DD-<slug>.md` |
+| Сессия мышления | `04_THINKING/sessions/YYYY-MM-DD-<slug>.md` |
+| Дневная запись | `04_THINKING/daily/YYYY-MM-DD.md` |
+| Паттерн | `04_THINKING/patterns/<slug>.md` |
+| Ментальная модель | `02_CONTEXT/mental-models/<slug>.md` |
+| Термин | `02_CONTEXT/glossary/<slug>.md` |
+| Встреча | `06_DECISIONS/meetings/YYYY-MM-DD-<slug>.md` |
+| Задача | `05_PLANS/tasks/` (mirror SingularityApp) |
+| Референс внешнего проекта | `08_PROJECTS/<name>/` |
+| Готовый артефакт | `07_OUTPUT/` |
+| Скрипт синхронизации | `tools/` |

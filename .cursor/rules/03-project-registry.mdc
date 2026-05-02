@@ -1,0 +1,30 @@
+---
+description: How to work with the 08_PROJECTS/ registry
+globs: 08_PROJECTS/**/*.md
+alwaysApply: false
+---
+
+# Реестр проектов
+
+`08_PROJECTS/<slug>/` — это **референс** на внешний Claude Code проект, а не его копия.
+
+## Обязательные файлы в каждом референсе
+
+- `AGENTS.md` — что проект делает, где живёт код, главная цель, стек, ссылки на ключевые файлы
+- `goals.md` — стратегические цели (что должно стать правдой через 3/6/12 месяцев)
+- `status.md` — текущий статус (авто-обновляется `project-status` скриптом, когда настроим)
+- `open-questions.md` — вопросы, ждущие решения
+- `adr/` — ADR специфичные для проекта (в дополнение к brain/06_DECISIONS/adr/)
+
+## Что НЕ кладём в референс
+
+- Исходный код (он в своём репозитории)
+- Секреты, ключи
+- Большие данные
+- Актуальные тикеты (они в SingularityApp → `05_PLANS/tasks/`)
+
+## Связь brain ↔ проект
+
+- Проект указывает в своём `CLAUDE.md` / `AGENTS.md`: "brain reference: `~/Projects/brain/08_PROJECTS/<slug>/`"
+- brain/AGENTS.md референса указывает: "code: `~/Projects/<actual-project-path>/`"
+- Решения двусторонние: важное — в brain ADR; проектно-специфичное — в project ADR; общесмысловое — в обоих (с cross-link).

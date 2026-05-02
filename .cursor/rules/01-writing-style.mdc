@@ -1,0 +1,35 @@
+---
+description: How to write markdown inside brain/
+globs: **/*.md
+alwaysApply: false
+---
+
+# Письмо в brain/
+
+- **Сканируемость важнее полноты.** Таблицы, списки, короткие абзацы.
+- **Frontmatter обязателен** на верхнеуровневых документах (ADR, session, pattern, mental-model, glossary entry).
+- **Заголовки как анкеры**: `## Context`, `## Decision`, `## Alternatives`, `## Consequences` в ADR — стабильные якоря.
+- **Ссылки на артефакты** — относительные пути: `[ADR-2026-05-02](../06_DECISIONS/adr/2026-05-02-brain-architecture.md)`.
+- **Obsidian-совместимость**: можно использовать `[[wikilinks]]` — Cursor их не ломает, Obsidian находит.
+- **Теги** в frontmatter как `tags: [ecom, strategy, decision]` — одно поле, массив строк.
+
+# Типовой frontmatter
+
+```yaml
+---
+title: <short human title>
+date: 2026-05-02
+type: adr | session | pattern | meeting | mental-model | glossary
+status: draft | active | superseded | archived
+tags: [ecom, strategy, ...]
+project: <slug from 08_PROJECTS/ or "brain">
+supersedes: <optional path>
+superseded-by: <optional path>
+---
+```
+
+# Запрещено
+
+- Стены прозы без структуры.
+- Копировать сюда большие куски кода из проектов — лучше линк на источник.
+- Хранить дату только в имени файла — дублируй в frontmatter для Dataview-запросов.

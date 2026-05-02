@@ -1,0 +1,14 @@
+.DS_Store
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/plugins/*/data.json.backup
+*.tmp
+*.swp
+.vscode/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.local
+tasks/sync-state.json
+tools/.cache/
