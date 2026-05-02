@@ -10,7 +10,7 @@ type: index
 |---|---|---|---|---|---|
 | [ch-marcfrancois](ch-marcfrancois/) | Marc & François | CH/DE | live | TWINT integration | 2026-05-02 |
 | [uk-oliverandalder](uk-oliverandalder/) | Oliver and Alder | UK | live | рейтинг + GMC | 2026-05-02 |
-| [us-new](us-new/) | TBD | US | planning | **active task today** | 2026-05-02 |
+| [us-new](us-new/) | TBD | US | planning | **B — hypothesis: faster $ than Mitia** ([test](us-new/hypothesis-test.md)) | 2026-05-02 |
 
 ## Легенда статусов
 
