@@ -1,0 +1,25 @@
+---
+description: Marc & François — supplier WhatsApp/email; always include Store routing id
+alwaysApply: true
+---
+
+# Marc & François — supplier comms
+
+## Routing line
+
+In **every** message to the **supplier** (WhatsApp, WeChat, email) about fulfillment, damage, or delays for this storefront, include on the first factual block:
+
+`Store: qff1md-0e`
+
+Then order reference (e.g. Shopify `#1015`), tracking if any, and the ask.
+
+## Customer vs supplier
+
+- **Customer (DE/CH):** German, Laura Steiner signature, `Freundliche Grüsse` (Swiss spelling **Grüsse**). Do not put internal store ids in customer-facing copy unless there is a defined policy.
+- **Supplier:** English (default for CN partners), firm and short; store id + order + facts + required action.
+
+## Delay / cancel / refund (supplier)
+
+When the order is **no longer to be shipped** and the customer is to be **refunded**, state that clearly: do not ask them to ship; ask for cause and confirm cancellation on their side.
+
+Example tail: `We don’t need it dispatched anymore — we’ll refund the customer. What happened on your side?`
