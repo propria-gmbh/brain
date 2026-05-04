@@ -24,6 +24,7 @@ slug: ecom
 ## Операции
 
 - [refunds-log.md](refunds-log.md) — журнал возвратов (сумма, заказ; без лишнего PII)
+- [ops-incidents-log.md](ops-incidents-log.md) — внутренние сбои / «косяки» (отгрузка без ок, расхождения и т.д.)
 
 ## Сквозные темы
 
