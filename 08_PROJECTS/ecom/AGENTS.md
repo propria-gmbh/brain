@@ -21,6 +21,10 @@ slug: ecom
 | Oliver and Alder | UK | uk-oliverandalder | [stores/uk-oliverandalder](stores/uk-oliverandalder/) |
 | _(TBD)_ | US | us-new | [stores/us-new](stores/us-new/) |
 
+## Операции
+
+- [refunds-log.md](refunds-log.md) — журнал возвратов (сумма, заказ; без лишнего PII)
+
 ## Сквозные темы
 
 - [gmc/](gmc/) — Google Merchant Center (аккаунты, фиды, ревью, appeal)
