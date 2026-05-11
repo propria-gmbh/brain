@@ -25,10 +25,21 @@ tags: [ecom, refunds, finance, shopify]
 | Ref / txn | id транзакции в PSP или примечание из Shopify |
 | Проверено | дата сверки с банком/Stripe |
 
+## Стоимость несвоевременной обработки тикетов
+
+| Период | Сумма | Валюта | Примечание |
+|--------|-------|--------|------------|
+| 2026-05 | 63.95 | CHF | #1013 withdrawal |
+| 2026-05 | 54.95 | CHF | #1009 withdrawal |
+| 2026-05 | 127.50 | CHF | CH Store delay |
+| 2026-05 | 85.90 | GBP | UK Store delay |
+
 ## Таблица
 
 | Дата | Магазин | Store id | Заказ | Валюта | Сумма | Причина | Канал | Ref / txn | Проверено |
 |------|---------|----------|-------|--------|-------|---------|-------|-----------|-----------|
+| 2026-05-11 | CH Store | qff1md-0e | #1013 | CHF | 63.95 | withdrawal (client wants refund) | Shopify | — | |
+| 2026-05-11 | CH Store | qff1md-0e | #1009 | CHF | 54.95 | withdrawal (client wants refund) | Shopify | — | |
 | 2026-05-04 | UK Store | — | #STID20261010-UK | GBP | 85.90 | delay (supplier not shipped) | Gorgias/Shopify | — | |
 | 2026-05-05 | CH Store | — | — | CHF | 127.50 | delay (no supplier response) | Shopify | — | |
 
