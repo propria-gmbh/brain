@@ -4,7 +4,7 @@ priority.py — scan all task files and rank by priority.
 
 Priority formula:
   P = C*2 + D*3 + S*2 + G*2
-  C (color): 🔴🟢=4  🔴=3  🟢=2  gray=1
+  C (color): 🟧=4  🔴=3  🟢=2  gray=1
   D (deadline urgency): overdue=6  <1wk=5  1-2wk=4  2-4wk=3  1-3mo=2  3-6mo=1  >6mo=0  none=0
   S (stakes): [$]=1  [$$]=2  [$$$]=3  [$$$$]=4  [$$$$$]=5  none=0
   G (goal match): 1 if task tag matches active goal in 05_PLANS/goals.md, else 0
@@ -13,8 +13,8 @@ Usage:
   python3 tools/priority.py              # top 30 by priority
   python3 tools/priority.py --top 20     # top 20
   python3 tools/priority.py --someday    # only active pool ([someday])
-  python3 tools/priority.py --red        # only 🔴 and 🔴🟢
-  python3 tools/priority.py --green      # only 🟢 and 🔴🟢
+  python3 tools/priority.py --red        # only 🔴 and 🟧
+  python3 tools/priority.py --green      # only 🟢 and 🟧
   python3 tools/priority.py --all        # all tasks, no limit
   python3 tools/priority.py --done --today    # completed today
   python3 tools/priority.py --done --week     # completed this week
@@ -71,8 +71,8 @@ def deadline_score(deadline_str, today):
 
 
 def color_score(line):
-    if '🔴🟢' in line or '🟢🔴' in line:
-        return 4, '🔴🟢'
+    if '🟧' in line:
+        return 4, '🟧'
     if '🔴' in line:
         return 3, '🔴  '
     if '🟢' in line:
@@ -114,7 +114,7 @@ def parse_tasks(filepath, today, active_goals=None):
                 p = c_score * 2 + d_score * 3 + s_score * 2 + g_score * 2
 
                 name = content
-                name = re.sub(r'🔴🟢|🟢🔴|🔴|🟢', '', name)
+                name = re.sub(r'🟧|🔴|🟢', '', name)
                 name = re.sub(r'\[someday\]', '', name)
                 name = re.sub(r'\(\d{4}-\d{2}-\d{2}\)', '', name)
                 name = re.sub(r'\[\$+\]', '', name)
@@ -224,9 +224,9 @@ def main():
     if args.someday:
         filtered = [t for t in filtered if t['someday']]
     if args.red:
-        filtered = [t for t in filtered if '🔴' in t['color']]
+        filtered = [t for t in filtered if t['color'] in ('🔴  ', '🟧')]
     if args.green:
-        filtered = [t for t in filtered if '🟢' in t['color']]
+        filtered = [t for t in filtered if t['color'] in ('🟢  ', '🟧')]
 
     filtered.sort(key=lambda t: (-t['p'], t['deadline'] or '9999-99-99'))
 
@@ -239,7 +239,7 @@ def main():
 
     if args.save_today:
         today_file = ROOT / '05_PLANS' / 'today.md'
-        emoji_map = {'🔴🟢': '🔴🟢', '🔴  ': '🔴', '🟢  ': '🟢', '    ': ''}
+        emoji_map = {'🟧': '🟧', '🔴  ': '🔴', '🟢  ': '🟢', '    ': ''}
         lines = [
             f'# План на {today.strftime("%Y-%m-%d")}',
             '',

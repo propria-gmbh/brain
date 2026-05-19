@@ -7,16 +7,14 @@ frequency: daily
 
 ## Утро
 
-- [ ] Тикеты поддержки (Gorgias)
-- [ ] PNL — заполнить
 - [ ] Контроль отгрузок и реальных фото
-- [ ] Check GAds performing
-- [ ] Answer AB in Slack
-
-## В течение дня
-
-- [ ] Pay invoices (3PL, Advertising Agency, others)
-- [ ] Receive Quotes for new products from 3PL
+- [ ] Оплатить инвойсы поставщикам
+- [ ] Сохранить инвойсы поставщика
+- [ ] Тикеты поддержки (Gorgias)
+- [ ] Проверить GAds
+- [ ] PNL — заполнить (еженедельно)
+- [ ] Запросить квоты на новые товары у 3PL
+- [ ] Ответить Альберту
 
 ## Вечер
 
