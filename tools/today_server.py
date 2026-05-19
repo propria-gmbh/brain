@@ -138,8 +138,8 @@ HTML = """<!DOCTYPE html>
 <nav>
   <a href="/" class="{nav_today}">Сегодня</a>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
-  <a href="/calendar" class="{nav_cal}">Календарь</a>
 </nav>
+
 {body}
 <div class="ts">обновляется каждые 5 с</div>
 <script>{js}</script>
@@ -288,6 +288,8 @@ def count_subtasks(path, line_no, indent):
 
 def render_tasks():
     b = "<h1>Задачи</h1>\n"
+    b += render_calendar_inline()
+
     for proj_name, proj_file in PROJECTS:
         sections = parse_tasks(proj_file)
         if not sections:
@@ -354,6 +356,50 @@ def delete_task(file_path, line_no, count):
 
 
 # ── CALENDAR ─────────────────────────────────────────────
+
+def render_calendar_inline():
+    if not CALENDAR_CACHE.exists():
+        return ''
+    data = json.loads(CALENDAR_CACHE.read_text(encoding="utf-8"))
+    events = data.get("events", [])
+    updated = data.get("updated", "")
+
+    stale = ""
+    try:
+        cache_dt = datetime.fromisoformat(updated)
+        age_h = (datetime.now(cache_dt.tzinfo) - cache_dt).total_seconds() / 3600
+        if age_h > 24:
+            stale = f'<span style="color:#c0392b;font-size:0.72rem;margin-left:8px">устарел {int(age_h)}ч</span>'
+    except Exception:
+        pass
+
+    today = today_str()
+    by_date = {}
+    for ev in events:
+        by_date.setdefault(ev["date"], []).append(ev)
+
+    b = f'<details data-key="calendar_inline" style="margin-bottom:20px"><summary>Календарь{stale}</summary>\n'
+    for day_str in sorted(by_date.keys()):
+        try:
+            d = datetime.strptime(day_str, "%Y-%m-%d")
+            dow = DAY_NAMES[d.weekday()]
+            mon = MONTH_NAMES[d.month - 1]
+            label = f"{dow} {d.day} {mon}"
+        except Exception:
+            label = day_str
+        is_today = day_str == today
+        header_cls = " today" if is_today else ""
+        b += f'<div class="cal-day-header{header_cls}" style="margin:10px 10px 4px">{label}</div>\n'
+        for ev in sorted(by_date[day_str], key=lambda x: x.get("start", "")):
+            t = ev.get("type", "default")
+            time_str = ev.get("start", "")
+            end_str = ev.get("end", "")
+            time_html = f"{time_str}–{end_str}" if time_str and end_str else (time_str or "весь день")
+            b += f'<div class="cal-event {t}"><span class="cal-time">{time_html}</span><span class="cal-title">{ev["summary"]}</span></div>\n'
+    b += "</details>\n"
+    return b
+
+
 
 DAY_NAMES = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
 MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
@@ -425,16 +471,13 @@ def render_calendar():
 
 # ── SERVER ───────────────────────────────────────────────
 
-TITLES = {"today": "Сегодня", "tasks": "Задачи", "calendar": "Календарь"}
-
 def make_page(body, page):
     return HTML.format(
-        title=TITLES.get(page, ""),
+        title="Сегодня" if page == "today" else "Задачи",
         refresh='<meta http-equiv="refresh" content="5">' if page == "today" else "",
         css=CSS, js=JS, body=body,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
-        nav_cal="active" if page == "calendar" else "",
     ).encode("utf-8")
 
 
@@ -446,9 +489,6 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/tasks":
             body = render_tasks()
             data = make_page(body, "tasks")
-        elif self.path == "/calendar":
-            body = render_calendar()
-            data = make_page(body, "calendar")
         else:
             self.send_error(404)
             return
