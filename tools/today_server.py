@@ -5,12 +5,13 @@ import http.server
 import json
 import re
 import webbrowser
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 PORT = 7777
 BRAIN = Path(__file__).parent.parent
 TODAY = BRAIN / "05_PLANS/today.md"
+CALENDAR_CACHE = BRAIN / "tools/calendar_cache.json"
 PROJECTS = [
     ("Здоровье", BRAIN / "08_PROJECTS/health.md"),
     ("Ecom", BRAIN / "05_PLANS/tasks/ecom.md"),
@@ -60,6 +61,18 @@ details details > summary { background: #161616; font-weight: 400; color: #888; 
 .task-chk:hover { background: #333; }
 .task-text { flex: 1; }
 .deadline { font-size: 0.75rem; color: #555; flex-shrink: 0; }
+/* calendar */
+.cal-day { margin-bottom: 20px; }
+.cal-day-header { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 6px; padding: 4px 0; border-bottom: 1px solid #1e1e1e; }
+.cal-day-header.today { color: #5b8dd9; }
+.cal-event { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: #141414; font-size: 0.88rem; }
+.cal-event:hover { background: #1a1a1a; }
+.cal-time { color: #555; font-size: 0.78rem; flex-shrink: 0; min-width: 80px; font-variant-numeric: tabular-nums; }
+.cal-title { color: #ccc; flex: 1; }
+.cal-loc { font-size: 0.75rem; color: #444; flex-shrink: 0; }
+.cal-event.travel { border-left: 3px solid #9b59b6; }
+.cal-event.recurring { opacity: 0.4; }
+.cal-stale { font-size: 0.75rem; color: #c0392b; margin-bottom: 12px; }
 .btn { flex-shrink: 0; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; cursor: pointer; border: none; background: #222; color: #666; }
 .btn:hover { background: #333; color: #999; }
 .btn.s-btn { color: #5b8dd9; }
@@ -125,6 +138,7 @@ HTML = """<!DOCTYPE html>
 <nav>
   <a href="/" class="{nav_today}">Сегодня</a>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
+  <a href="/calendar" class="{nav_cal}">Календарь</a>
 </nav>
 {body}
 <div class="ts">обновляется каждые 5 с</div>
@@ -339,15 +353,88 @@ def delete_task(file_path, line_no, count):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+# ── CALENDAR ─────────────────────────────────────────────
+
+DAY_NAMES = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
+
+
+def render_calendar():
+    b = "<h1>Календарь</h1>\n"
+    if not CALENDAR_CACHE.exists():
+        return b + '<p style="color:#555">Кэш не найден. Попроси Claude обновить calendar_cache.json.</p>'
+
+    data = json.loads(CALENDAR_CACHE.read_text(encoding="utf-8"))
+    updated = data.get("updated", "")
+    events = data.get("events", [])
+
+    # stale warning if cache older than 24h
+    try:
+        cache_dt = datetime.fromisoformat(updated)
+        age_h = (datetime.now(cache_dt.tzinfo) - cache_dt).total_seconds() / 3600
+        if age_h > 24:
+            b += f'<div class="cal-stale">Кэш устарел ({int(age_h)}ч назад) — попроси Claude обновить</div>\n'
+    except Exception:
+        pass
+
+    # group by date
+    by_date = {}
+    for ev in events:
+        by_date.setdefault(ev["date"], []).append(ev)
+
+    today = today_str()
+    for day_str in sorted(by_date.keys()):
+        try:
+            d = datetime.strptime(day_str, "%Y-%m-%d")
+            dow = DAY_NAMES[d.weekday()]
+            mon = MONTH_NAMES[d.month - 1]
+            label = f"{dow}, {d.day} {mon}"
+        except Exception:
+            label = day_str
+
+        is_today = day_str == today
+        header_cls = " today" if is_today else ""
+        b += f'<div class="cal-day"><div class="cal-day-header{header_cls}">{label}</div>\n'
+
+        for ev in sorted(by_date[day_str], key=lambda x: x.get("start", "")):
+            t = ev.get("type", "default")
+            time_str = ev.get("start", "")
+            end_str = ev.get("end", "")
+            if time_str and end_str:
+                time_html = f"{time_str}–{end_str}"
+            elif time_str:
+                time_html = time_str
+            else:
+                time_html = "весь день"
+            loc = ev.get("location", "")
+            loc_html = f'<span class="cal-loc">{loc[:40]}</span>' if loc else ""
+            b += f'<div class="cal-event {t}"><span class="cal-time">{time_html}</span><span class="cal-title">{ev["summary"]}</span>{loc_html}</div>\n'
+
+        b += "</div>\n"
+
+    if updated:
+        try:
+            cache_dt = datetime.fromisoformat(updated)
+            upd_label = cache_dt.strftime("%d.%m %H:%M")
+        except Exception:
+            upd_label = updated
+        b += f'<div class="ts" style="position:static;margin-top:20px">обновлено {upd_label}</div>\n'
+
+    return b
+
+
 # ── SERVER ───────────────────────────────────────────────
+
+TITLES = {"today": "Сегодня", "tasks": "Задачи", "calendar": "Календарь"}
 
 def make_page(body, page):
     return HTML.format(
-        title="Сегодня" if page == "today" else "Задачи",
+        title=TITLES.get(page, ""),
         refresh='<meta http-equiv="refresh" content="5">' if page == "today" else "",
         css=CSS, js=JS, body=body,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
+        nav_cal="active" if page == "calendar" else "",
     ).encode("utf-8")
 
 
@@ -359,6 +446,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/tasks":
             body = render_tasks()
             data = make_page(body, "tasks")
+        elif self.path == "/calendar":
+            body = render_calendar()
+            data = make_page(body, "calendar")
         else:
             self.send_error(404)
             return
