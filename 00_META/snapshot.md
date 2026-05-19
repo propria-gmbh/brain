@@ -68,22 +68,21 @@ Stakes: [$] — [$$$$$]. Someday = атрибут задачи (еженедел
 ADR: `06_DECISIONS/adr/2026-05-04-task-priority-framework.md`.
 Принципы: `01_RULES/planning-principles.md`.
 
-## Активные проекты
+## Портфель проектов
 
-| Проект | Путь | Статус |
-|---|---|---|
-| ecom (UK/US/DK/CH) | brain/08_PROJECTS/ecom/ | active |
-| VAYDY | ~/Projects/vaition/ | active — инфраструктурный Layer 0, IP-first |
-| KungFuBuy (новый поставщик) | brain/08_PROJECTS/ecom/supplier-kungfubuy/ | active |
-| Катамараны 2026 | brain/08_PROJECTS/sailing-catamaran-2026.md | active — забронирован |
-| listing_automation | ~/Projects/listing_automation/ | active |
-| personal-agent | ~/Projects/personal-agent/ | на паузе — решить продолжать ли |
-| invertomatic | brain/08_PROJECTS/invertomatic/ | active — не определён |
+| Роль | Проект | Путь | Статус |
+|---|---|---|---|
+| База для семьи | ecom + Митя | brain/08_PROJECTS/ecom/ | active — текущий доход |
+| База для семьи | listing_automation | ~/Projects/listing_automation/ | кодинг в рамках ecom |
+| Пассивный доход | invertomatic | brain/08_PROJECTS/invertomatic/ | active — минимум вовлечения |
+| Высокий апсайд | VAYDY / Вадим | ~/Projects/vaition/ | active — IP-first, Layer 0 |
+| Инфраструктура ecom | KungFuBuy | brain/08_PROJECTS/ecom/supplier-kungfubuy/ | active |
+| На паузе | personal-agent | ~/Projects/personal-agent/ | пауза — решить продолжать ли |
 
 ## Личный контекст
 
-Семья (жена Аня, дети, мать, сестра) — приоритет уровня 3, планируется явно.
-Парус — главный источник энергии. Активен: инструкторский сертификат, катамаранный поход (забронирован), немецкие права (уточнить экзамен).
+Семья (жена Аня, дети, мать, сестра) — приоритет #1, всё остальное ради неё.
+Парус — для души, отдыха и семьи. Источник энергии. Катамаранный поход забронирован, инструкторский сертификат активен.
 Живёт в Берлине, есть дом с садом.
 Здоровье: мигрени (рассматривает операцию), железо низкое, тестостерон. Физиотерапия активна.
 
