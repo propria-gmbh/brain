@@ -25,7 +25,9 @@ PROJECTS = [
 
 CSS = """
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 24px; max-width: 860px; margin: 0 auto; }
+body { font-family: -apple-system, sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 24px; max-width: 1100px; margin: 0 auto; }
+.two-col { display: grid; grid-template-columns: 1fr 340px; gap: 32px; align-items: start; }
+.col-left {} .col-right {}
 nav { display: flex; gap: 8px; margin-bottom: 28px; }
 nav a { padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; color: #888; background: #1a1a1a; }
 nav a.active { background: #2a2a2a; color: #fff; }
@@ -196,8 +198,8 @@ def render_today(path):
     done_n = sum(1 for i in all_items if i["done"])
     pct = int(done_n / total * 100) if total else 0
 
-    b = f"<h1>{title}</h1>\n"
-    b += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
+    left = f"<h1>{title}</h1>\n"
+    left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
     done_all = []
     for sec, items in sections:
@@ -205,19 +207,20 @@ def render_today(path):
         done_all += [i for i in items if i["done"]]
         if not todo:
             continue
-        b += f"<h2>{sec}</h2><ul>\n"
+        left += f"<h2>{sec}</h2><ul>\n"
         for item in todo:
             extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
-            b += f'<li class="item todo{extra}" data-idx="{item["idx"]}"><span class="chk">·</span><span>{item["text"]}</span></li>\n'
-        b += "</ul>\n"
+            left += f'<li class="item todo{extra}" data-idx="{item["idx"]}"><span class="chk">·</span><span>{item["text"]}</span></li>\n'
+        left += "</ul>\n"
 
     if done_all:
-        b += "<h2>Сделано</h2><ul>\n"
+        left += "<h2>Сделано</h2><ul>\n"
         for item in done_all:
-            b += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{item["text"]}</span></li>\n'
-        b += "</ul>\n"
+            left += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{item["text"]}</span></li>\n'
+        left += "</ul>\n"
 
-    return b
+    right = render_calendar_today()
+    return f'<div class="two-col"><div class="col-left">{left}</div><div class="col-right">{right}</div></div>\n'
 
 
 def toggle_today(path, idx):
@@ -356,6 +359,52 @@ def delete_task(file_path, line_no, count):
 
 
 # ── CALENDAR ─────────────────────────────────────────────
+
+def render_calendar_today():
+    if not CALENDAR_CACHE.exists():
+        return '<div style="color:#444;font-size:0.8rem">Нет данных календаря</div>'
+    data = json.loads(CALENDAR_CACHE.read_text(encoding="utf-8"))
+    events = data.get("events", [])
+    updated = data.get("updated", "")
+
+    stale = ""
+    try:
+        cache_dt = datetime.fromisoformat(updated)
+        age_h = (datetime.now(cache_dt.tzinfo) - cache_dt).total_seconds() / 3600
+        if age_h > 24:
+            stale = f'<div class="cal-stale">кэш устарел {int(age_h)}ч</div>\n'
+    except Exception:
+        pass
+
+    today = today_str()
+    by_date = {}
+    for ev in events:
+        by_date.setdefault(ev["date"], []).append(ev)
+
+    b = '<h2 style="margin-top:0">Ближайшие события</h2>\n' + stale
+    if not by_date:
+        return b + '<div style="color:#444;font-size:0.8rem">Нет событий</div>'
+
+    for day_str in sorted(by_date.keys()):
+        try:
+            d = datetime.strptime(day_str, "%Y-%m-%d")
+            dow = DAY_NAMES[d.weekday()]
+            mon = MONTH_NAMES[d.month - 1]
+            label = f"{dow} {d.day} {mon}"
+        except Exception:
+            label = day_str
+        is_today = day_str == today
+        header_cls = " today" if is_today else ""
+        b += f'<div class="cal-day-header{header_cls}">{label}</div>\n'
+        for ev in sorted(by_date[day_str], key=lambda x: x.get("start", "")):
+            t = ev.get("type", "default")
+            time_str = ev.get("start", "")
+            end_str = ev.get("end", "")
+            time_html = f"{time_str}–{end_str}" if time_str and end_str else (time_str or "весь день")
+            b += f'<div class="cal-event {t}"><span class="cal-time">{time_html}</span><span class="cal-title">{ev["summary"]}</span></div>\n'
+
+    return b
+
 
 def render_calendar_inline():
     if not CALENDAR_CACHE.exists():
