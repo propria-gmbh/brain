@@ -27,115 +27,236 @@ PROJECTS = [
 ]
 
 CSS = """
+:root {
+  --bg:#0f0f0f;--bg2:#1a1a1a;--bg3:#141414;--bg4:#222;--bg5:#1e1e1e;
+  --text:#e0e0e0;--text2:#ccc;--text3:#888;--text4:#555;--text5:#444;
+  --nav-act:#2a2a2a;--row-hov:#1c1c1c;--chk:#222;--chk-hov:#333;
+  --btn:#222;--btn-hov:#333;--btn-c:#666;--btn-hov-c:#999;--s-act:#1a2a40;--bdr:#1e1e1e;
+}
+body.light {
+  --bg:#f5f5f5;--bg2:#fff;--bg3:#fafafa;--bg4:#e0e0e0;--bg5:#ebebeb;
+  --text:#111;--text2:#333;--text3:#666;--text4:#888;--text5:#aaa;
+  --nav-act:#e0e0e0;--row-hov:#ececec;--chk:#ddd;--chk-hov:#ccc;
+  --btn:#e8e8e8;--btn-hov:#d8d8d8;--btn-c:#666;--btn-hov-c:#333;--s-act:#d0e4ff;--bdr:#ddd;
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 24px; max-width: 1100px; margin: 0 auto; }
+body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); padding: 24px; max-width: 1100px; margin: 0 auto; transition: background .2s, color .2s; }
 .two-col { display: grid; grid-template-columns: 1fr 340px; gap: 32px; align-items: start; }
-.col-left {} .col-right {}
-nav { display: flex; gap: 8px; margin-bottom: 28px; }
-nav a { padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; color: #888; background: #1a1a1a; }
-nav a.active { background: #2a2a2a; color: #fff; }
-h1 { font-size: 1.3rem; color: #fff; margin-bottom: 20px; }
-/* today */
+nav { display: flex; gap: 8px; margin-bottom: 28px; align-items: center; }
+nav a { padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .9rem; color: var(--text3); background: var(--bg2); }
+nav a.active { background: var(--nav-act); color: var(--text); }
+.theme-btn { margin-left: auto; padding: 6px 10px; border-radius: 6px; border: none; background: var(--bg2); color: var(--text3); cursor: pointer; font-size: .85rem; }
+.theme-btn:hover { background: var(--nav-act); }
+h1 { font-size: 1.3rem; color: var(--text); margin-bottom: 20px; }
 .progress { margin-bottom: 24px; }
-.bar { background: #1e1e1e; border-radius: 4px; height: 5px; margin-top: 6px; overflow: hidden; }
+.bar { background: var(--bg5); border-radius: 4px; height: 5px; margin-top: 6px; overflow: hidden; }
 .fill { background: #2ecc71; height: 100%; border-radius: 4px; }
-.pct { font-size: 0.8rem; color: #555; }
-h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin: 24px 0 8px; }
+.pct { font-size: .8rem; color: var(--text4); }
+h2 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text4); margin: 24px 0 8px; }
 ul { list-style: none; }
-li.item { padding: 7px 10px; margin: 3px 0; border-radius: 5px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+li.item { padding: 7px 10px; margin: 3px 0; border-radius: 5px; font-size: .9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; }
 li.item:hover { filter: brightness(1.15); }
-li.todo { background: #1a1a1a; color: #ccc; }
-li.done-item { background: #141414; color: #444; text-decoration: line-through; }
+li.todo { background: var(--bg2); color: var(--text2); }
+li.done-item { background: var(--bg3); color: var(--text5); text-decoration: line-through; }
 li.red { border-left: 3px solid #e74c3c; }
 li.green { border-left: 3px solid #2ecc71; }
 li.orange { border-left: 3px solid #f39c12; }
-.chk { flex-shrink: 0; width: 16px; height: 16px; border-radius: 3px; background: #252525; color: #444; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
+.chk { flex-shrink: 0; width: 16px; height: 16px; border-radius: 3px; background: var(--bg4); color: var(--text5); display: flex; align-items: center; justify-content: center; font-size: .7rem; }
 li.done-item .chk { color: #2ecc71; }
-/* tasks */
 details { margin: 6px 0; }
-details > summary { cursor: pointer; padding: 8px 10px; background: #1a1a1a; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: #bbb; list-style: none; display: flex; align-items: center; gap: 6px; }
+details > summary { cursor: pointer; padding: 8px 10px; background: var(--bg2); border-radius: 6px; font-size: .85rem; font-weight: 600; color: var(--text3); list-style: none; display: flex; align-items: center; gap: 6px; }
 details > summary::-webkit-details-marker { display: none; }
-details > summary::before { content: '▶'; font-size: 0.6rem; color: #555; transition: transform 0.15s; }
+details > summary::before { content: '▶'; font-size: .6rem; color: var(--text4); transition: transform .15s; }
 details[open] > summary::before { transform: rotate(90deg); }
-details details > summary { background: #161616; font-weight: 400; color: #888; font-size: 0.8rem; padding: 6px 10px 6px 20px; }
-.task-row { display: flex; align-items: center; gap: 6px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: #141414; font-size: 0.88rem; color: #ccc; }
-.task-row:hover { background: #1c1c1c; }
-.task-row.done-task { color: #444; text-decoration: line-through; }
-.task-row.someday { opacity: 0.5; }
-.task-chk { flex-shrink: 0; width: 15px; height: 15px; border-radius: 3px; background: #222; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #444; }
-.task-chk:hover { background: #333; }
+details details > summary { background: var(--bg3); font-weight: 400; color: var(--text3); font-size: .8rem; padding: 6px 10px 6px 20px; }
+.task-row { display: flex; align-items: center; gap: 6px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: var(--bg3); font-size: .88rem; color: var(--text2); cursor: grab; position: relative; }
+.task-row:hover { background: var(--row-hov); }
+.task-row.done-task { color: var(--text5); text-decoration: line-through; }
+.task-row.someday { opacity: .5; }
+.task-row.sortable-ghost { opacity: .25; background: var(--bg2); }
+.task-row.drop-child { border-left: 3px solid #5b8dd9; }
+.task-chk { flex-shrink: 0; width: 15px; height: 15px; border-radius: 3px; background: var(--chk); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .65rem; color: var(--text5); }
+.task-chk:hover { background: var(--chk-hov); }
 .task-text { flex: 1; }
-.deadline { font-size: 0.75rem; color: #555; flex-shrink: 0; }
-/* calendar */
+.task-text[data-file]:hover { text-decoration: underline dotted var(--text4); cursor: text; }
+.task-text[contenteditable=true] { outline: 1px solid #5b8dd9; border-radius: 3px; padding: 1px 4px; background: var(--bg2); cursor: text; text-decoration: none !important; }
+.deadline { font-size: .75rem; color: var(--text4); flex-shrink: 0; }
 .cal-day { margin-bottom: 20px; }
-.cal-day-header { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 6px; padding: 4px 0; border-bottom: 1px solid #1e1e1e; }
+.cal-day-header { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text4); margin-bottom: 6px; padding: 4px 0; border-bottom: 1px solid var(--bdr); }
 .cal-day-header.today { color: #5b8dd9; }
-.cal-event { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: #141414; font-size: 0.88rem; }
-.cal-event:hover { background: #1a1a1a; }
+.cal-event { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: var(--bg3); font-size: .88rem; }
+.cal-event:hover { background: var(--bg2); }
 .cal-event[data-summary] { cursor: pointer; }
-.cal-event.cal-done { opacity: 0.35; text-decoration: line-through; }
-.cal-time { color: #555; font-size: 0.78rem; flex-shrink: 0; min-width: 80px; font-variant-numeric: tabular-nums; }
-.cal-title { color: #ccc; flex: 1; }
-.cal-loc { font-size: 0.75rem; color: #444; flex-shrink: 0; }
+.cal-event.cal-done { opacity: .35; text-decoration: line-through; }
+.cal-time { color: var(--text4); font-size: .78rem; flex-shrink: 0; min-width: 80px; font-variant-numeric: tabular-nums; }
+.cal-title { color: var(--text2); flex: 1; }
+.cal-loc { font-size: .75rem; color: var(--text5); flex-shrink: 0; }
 .cal-event.travel { border-left: 3px solid #9b59b6; }
-.cal-event.recurring { opacity: 0.4; }
-.cal-stale { font-size: 0.75rem; color: #c0392b; margin-bottom: 12px; }
-.btn { flex-shrink: 0; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; cursor: pointer; border: none; background: #222; color: #666; }
-.btn:hover { background: #333; color: #999; }
+.cal-event.recurring { opacity: .4; }
+.cal-stale { font-size: .75rem; color: #c0392b; margin-bottom: 12px; }
+.btn { flex-shrink: 0; padding: 2px 6px; border-radius: 3px; font-size: .7rem; cursor: pointer; border: none; background: var(--btn); color: var(--btn-c); }
+.btn:hover { background: var(--btn-hov); color: var(--btn-hov-c); }
 .btn.s-btn { color: #5b8dd9; }
-.btn.s-btn.active { background: #1a2a40; color: #5b8dd9; }
+.btn.s-btn.active { background: var(--s-act); color: #5b8dd9; }
 .indent1 { padding-left: 24px; }
 .indent2 { padding-left: 40px; }
 .indent3 { padding-left: 56px; }
-.ts { font-size: 0.7rem; color: #2a2a2a; position: fixed; bottom: 12px; right: 16px; }
+.ts { font-size: .7rem; color: var(--bg5); position: fixed; bottom: 12px; right: 16px; }
 """
 
 JS = """
-// persist details open state
-document.querySelectorAll('details').forEach(d => {
-  const key = 'det:' + d.dataset.key;
+(function() {
+  var b = document.body;
+  if (localStorage.getItem('theme') === 'light') b.classList.add('light');
+  var btn = document.querySelector('.theme-btn');
+  if (btn) btn.textContent = b.classList.contains('light') ? '☀️' : '🌙';
+  window.toggleTheme = function() {
+    b.classList.toggle('light');
+    var light = b.classList.contains('light');
+    localStorage.setItem('theme', light ? 'light' : 'dark');
+    if (btn) btn.textContent = light ? '☀️' : '🌙';
+  };
+})();
+
+document.querySelectorAll('details').forEach(function(d) {
+  var key = 'det:' + d.dataset.key;
   if (localStorage.getItem(key) === '1') d.open = true;
-  d.addEventListener('toggle', () => localStorage.setItem(key, d.open ? '1' : '0'));
+  d.addEventListener('toggle', function() { localStorage.setItem(key, d.open ? '1' : '0'); });
 });
 
 function post(url, data, cb) {
   fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
-    .then(() => cb ? cb() : location.reload());
+    .then(function() { if (cb) cb(); else location.reload(); });
 }
 
-// today checkboxes
-document.querySelectorAll('li[data-idx]').forEach(li => {
-  li.addEventListener('click', () => post('/toggle', {idx: parseInt(li.dataset.idx)}));
+document.querySelectorAll('li[data-idx]').forEach(function(li) {
+  li.addEventListener('click', function() { post('/toggle', {idx: parseInt(li.dataset.idx)}); });
 });
 
-// task checkboxes
-document.querySelectorAll('.task-chk[data-file]').forEach(el => {
-  el.addEventListener('click', e => {
+document.querySelectorAll('.task-chk[data-file]').forEach(function(el) {
+  el.addEventListener('click', function(e) {
     e.stopPropagation();
     post('/toggle-task', {file: el.dataset.file, line: parseInt(el.dataset.line)});
   });
 });
 
-// someday buttons
-document.querySelectorAll('.s-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
+document.querySelectorAll('.s-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
     post('/someday', {file: btn.dataset.file, line: parseInt(btn.dataset.line)});
   });
 });
 
-// calendar event done
-document.querySelectorAll('.cal-event[data-summary]').forEach(el => {
-  el.addEventListener('click', () => {
+document.querySelectorAll('.cal-event[data-summary]').forEach(function(el) {
+  el.addEventListener('click', function() {
     post('/done-event', {summary: el.dataset.summary, date: el.dataset.date});
   });
 });
 
-// delete buttons
-document.querySelectorAll('.del-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
+document.querySelectorAll('.del-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
     if (confirm('Удалить?')) post('/delete', {file: btn.dataset.file, line: parseInt(btn.dataset.line), count: parseInt(btn.dataset.count)});
+  });
+});
+
+document.querySelectorAll('.task-text[data-file]').forEach(function(el) {
+  el.addEventListener('dblclick', function(e) {
+    e.stopPropagation();
+    if (el.contentEditable === 'true') return;
+    var orig = el.textContent;
+    el.contentEditable = 'true';
+    el.focus();
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+    function save() {
+      el.contentEditable = 'false';
+      var txt = el.textContent.trim();
+      if (txt && txt !== orig) post('/rename', {file: el.dataset.file, line: parseInt(el.dataset.line), text: txt});
+      else el.textContent = orig;
+    }
+    function cancel() { el.contentEditable = 'false'; el.textContent = orig; }
+    function cleanup() { el.removeEventListener('keydown', onKey); el.removeEventListener('blur', onBlur); }
+    function onKey(e) {
+      if (e.key === 'Enter') { e.preventDefault(); cleanup(); save(); }
+      if (e.key === 'Escape') { cleanup(); cancel(); }
+    }
+    function onBlur() { cleanup(); save(); }
+    el.addEventListener('keydown', onKey);
+    el.addEventListener('blur', onBlur);
+  });
+});
+
+window.isDragging = false;
+var _childTarget = null;
+var _lastOver = null;
+var _hoverStart = null;
+
+document.addEventListener('dragover', function(e) {
+  var row = e.target.closest ? e.target.closest('.task-row[data-file]') : null;
+  if (row !== _lastOver) {
+    _lastOver = row;
+    _hoverStart = row ? Date.now() : null;
+    if (_childTarget && _childTarget !== row) {
+      _childTarget.classList.remove('drop-child');
+      _childTarget = null;
+    }
+  }
+  if (row && _hoverStart && !row.classList.contains('sortable-ghost') && Date.now() - _hoverStart >= 500) {
+    if (_childTarget !== row) {
+      if (_childTarget) _childTarget.classList.remove('drop-child');
+      _childTarget = row;
+      row.classList.add('drop-child');
+    }
+  }
+  e.preventDefault();
+});
+
+document.querySelectorAll('.section-tasks').forEach(function(container) {
+  if (typeof Sortable === 'undefined') return;
+  Sortable.create(container, {
+    group: 'tasks',
+    animation: 100,
+    ghostClass: 'sortable-ghost',
+    onStart: function() { window.isDragging = true; },
+    onEnd: function(evt) {
+      window.isDragging = false;
+      var srcEl = evt.item;
+      var srcFile = srcEl.dataset.file;
+      var srcLine = parseInt(srcEl.dataset.line);
+      var tgtFile, tgtLine, position;
+
+      if (_childTarget) {
+        tgtFile = _childTarget.dataset.file;
+        tgtLine = parseInt(_childTarget.dataset.line);
+        position = 'child';
+        _childTarget.classList.remove('drop-child');
+        _childTarget = null;
+      } else {
+        var siblings = Array.from(evt.to.querySelectorAll(':scope > .task-row'));
+        var newIdx = siblings.indexOf(srcEl);
+        if (newIdx > 0) {
+          var prev = siblings[newIdx - 1];
+          tgtFile = prev.dataset.file;
+          tgtLine = parseInt(prev.dataset.line);
+          position = 'after';
+        } else if (siblings.length > 1) {
+          var next = siblings[1];
+          tgtFile = next.dataset.file;
+          tgtLine = parseInt(next.dataset.line);
+          position = 'before';
+        } else {
+          location.reload();
+          return;
+        }
+      }
+      _lastOver = null;
+      post('/move', {src_file: srcFile, src_line: srcLine, target_file: tgtFile, target_line: tgtLine, position: position});
+    }
   });
 });
 """
@@ -147,11 +268,13 @@ HTML = """<!DOCTYPE html>
 {refresh}
 <title>{title}</title>
 <style>{css}</style>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
 </head>
 <body>
 <nav>
   <a href="/" class="{nav_today}">Сегодня</a>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 
 {body}
@@ -316,6 +439,7 @@ def render_tasks():
                 continue
             skey = f"{key}_{sec_name.replace(' ', '_')[:20]}"
             b += f'<details data-key="{skey}"><summary>{sec_name}</summary>\n'
+            b += '<div class="section-tasks">\n'
             for item in items:
                 indent_cls = f" indent{min(item['indent'], 3)}" if item['indent'] > 0 else ""
                 done_cls = " done-task" if item["done"] else ""
@@ -326,13 +450,14 @@ def render_tasks():
                 deadline_html = f'<span class="deadline">{item["deadline"]}</span>' if item["deadline"] else ""
                 subtask_count = count_subtasks(Path(item["file"]), item["line"], item["indent"])
 
-                b += f'''<div class="task-row{indent_cls}{done_cls}{someday_cls}">
+                b += f'''<div class="task-row{indent_cls}{done_cls}{someday_cls}" data-file="{item['file']}" data-line="{item['line']}">
   <span class="task-chk" data-file="{item['file']}" data-line="{item['line']}">{chk_icon}</span>
-  <span class="task-text">{item['text']}</span>
+  <span class="task-text" data-file="{item['file']}" data-line="{item['line']}">{item['text']}</span>
   {deadline_html}
   <button class="btn s-btn{s_active}" data-file="{item['file']}" data-line="{item['line']}">{s_label}</button>
   <button class="btn del-btn" data-file="{item['file']}" data-line="{item['line']}" data-count="{subtask_count + 1}">×</button>
 </div>\n'''
+            b += '</div>\n'
             b += "</details>\n"
         b += "</details>\n"
     return b
@@ -368,6 +493,106 @@ def delete_task(file_path, line_no, count):
     lines = path.read_text(encoding="utf-8").splitlines()
     del lines[line_no:line_no + count]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def rename_task(file_path, line_no, new_text):
+    path = Path(file_path)
+    lines = path.read_text(encoding="utf-8").splitlines()
+    if line_no >= len(lines):
+        return
+    line = lines[line_no]
+    m = re.match(r'^(\s*- \[.\] (?:\d{4}-\d{2}-\d{2} )?)', line)
+    if not m:
+        return
+    prefix = m.group(1)
+    old_rest = line[len(prefix):]
+    had_someday = '[someday]' in old_rest
+    new_line = prefix + new_text
+    if had_someday and '[someday]' not in new_text:
+        new_line += ' [someday]'
+    lines[line_no] = new_line
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def move_task(src_file, src_line, target_file, target_line, position):
+    src_path = Path(src_file)
+    tgt_path = Path(target_file)
+    same_file = src_file == target_file
+
+    src_lines = src_path.read_text(encoding="utf-8").splitlines()
+    if src_line >= len(src_lines):
+        return
+
+    src_indent = len(src_lines[src_line]) - len(src_lines[src_line].lstrip())
+
+    # Extract block: task + all subtasks
+    block = [src_lines[src_line]]
+    i = src_line + 1
+    while i < len(src_lines):
+        ln = src_lines[i]
+        if not re.match(r'\s*- \[.\]', ln):
+            break
+        cur_ind = len(ln) - len(ln.lstrip())
+        if cur_ind > src_indent:
+            block.append(ln)
+            i += 1
+        else:
+            break
+
+    del src_lines[src_line:src_line + len(block)]
+
+    if same_file:
+        tgt_lines = src_lines
+        if target_line > src_line:
+            target_line -= len(block)
+    else:
+        tgt_lines = tgt_path.read_text(encoding="utf-8").splitlines()
+
+    if target_line >= len(tgt_lines):
+        insert_at = len(tgt_lines)
+        tgt_indent = 0
+    else:
+        tgt_raw = tgt_lines[target_line]
+        tgt_indent_base = len(tgt_raw) - len(tgt_raw.lstrip())
+
+        if position == 'child':
+            tgt_indent = tgt_indent_base + 2
+            insert_at = target_line + 1
+            while insert_at < len(tgt_lines):
+                ln = tgt_lines[insert_at]
+                if not re.match(r'\s*- \[.\]', ln):
+                    break
+                if len(ln) - len(ln.lstrip()) > tgt_indent_base:
+                    insert_at += 1
+                else:
+                    break
+        elif position == 'before':
+            tgt_indent = tgt_indent_base
+            insert_at = target_line
+        else:  # after
+            tgt_indent = tgt_indent_base
+            insert_at = target_line + 1
+            while insert_at < len(tgt_lines):
+                ln = tgt_lines[insert_at]
+                if not re.match(r'\s*- \[.\]', ln):
+                    break
+                if len(ln) - len(ln.lstrip()) > tgt_indent_base:
+                    insert_at += 1
+                else:
+                    break
+
+    indent_diff = tgt_indent - src_indent
+    if indent_diff != 0:
+        block = [' ' * max(0, (len(ln) - len(ln.lstrip())) + indent_diff) + ln.lstrip() for ln in block]
+
+    for j, ln in enumerate(block):
+        tgt_lines.insert(insert_at + j, ln)
+
+    if same_file:
+        src_path.write_text("\n".join(tgt_lines) + "\n", encoding="utf-8")
+    else:
+        tgt_path.write_text("\n".join(tgt_lines) + "\n", encoding="utf-8")
+        src_path.write_text("\n".join(src_lines) + "\n", encoding="utf-8")
 
 
 def done_event_summaries():
@@ -495,7 +720,6 @@ def render_calendar_inline():
     return b
 
 
-
 DAY_NAMES = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
 MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
 
@@ -509,7 +733,6 @@ def render_calendar():
     updated = data.get("updated", "")
     events = data.get("events", [])
 
-    # stale warning if cache older than 24h
     try:
         cache_dt = datetime.fromisoformat(updated)
         age_h = (datetime.now(cache_dt.tzinfo) - cache_dt).total_seconds() / 3600
@@ -518,7 +741,6 @@ def render_calendar():
     except Exception:
         pass
 
-    # group by date
     by_date = {}
     for ev in events:
         by_date.setdefault(ev["date"], []).append(ev)
@@ -569,7 +791,7 @@ def render_calendar():
 def make_page(body, page):
     return HTML.format(
         title="Сегодня" if page == "today" else "Задачи",
-        refresh='<script>setTimeout(()=>location.reload(),5000)</script>',
+        refresh='<script>setTimeout(function(){if(!window.isDragging)location.reload()},5000)</script>',
         css=CSS, js=JS, body=body,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
@@ -607,6 +829,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             delete_task(d["file"], d["line"], d["count"])
         elif self.path == "/done-event":
             add_done_event(d["summary"], d.get("date"))
+        elif self.path == "/rename":
+            rename_task(d["file"], d["line"], d["text"])
+        elif self.path == "/move":
+            move_task(d["src_file"], d["src_line"], d["target_file"], d["target_line"], d["position"])
         else:
             self.send_error(404)
             return
