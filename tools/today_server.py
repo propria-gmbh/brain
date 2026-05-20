@@ -18,8 +18,12 @@ PROJECTS = [
     ("Propria", BRAIN / "05_PLANS/tasks/propria.md"),
     ("AI", BRAIN / "05_PLANS/tasks/ai-systems.md"),
     ("Финансы", BRAIN / "05_PLANS/tasks/personal/finance.md"),
+    ("Финансы2", BRAIN / "05_PLANS/tasks/finance-personal.md"),
     ("Дом", BRAIN / "05_PLANS/tasks/personal/home.md"),
+    ("Покупки", BRAIN / "05_PLANS/tasks/personal/purchases.md"),
+    ("Медиа", BRAIN / "05_PLANS/tasks/personal/media.md"),
     ("Семья", BRAIN / "05_PLANS/tasks/personal/family.md"),
+    ("Парус", BRAIN / "05_PLANS/tasks/personal/sailing.md"),
     ("Развитие", BRAIN / "05_PLANS/tasks/personal/development.md"),
 ]
 
@@ -603,7 +607,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/delete":
             delete_task(d["file"], d["line"], d["count"])
         elif self.path == "/done-event":
-            add_done_event(d["summary"])
+            add_done_event(d["summary"], d.get("date"))
         else:
             self.send_error(404)
             return
