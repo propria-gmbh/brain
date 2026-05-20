@@ -69,6 +69,8 @@ details details > summary { background: #161616; font-weight: 400; color: #888; 
 .cal-day-header.today { color: #5b8dd9; }
 .cal-event { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: #141414; font-size: 0.88rem; }
 .cal-event:hover { background: #1a1a1a; }
+.cal-event[data-summary] { cursor: pointer; }
+.cal-event.cal-done { opacity: 0.35; text-decoration: line-through; }
 .cal-time { color: #555; font-size: 0.78rem; flex-shrink: 0; min-width: 80px; font-variant-numeric: tabular-nums; }
 .cal-title { color: #ccc; flex: 1; }
 .cal-loc { font-size: 0.75rem; color: #444; flex-shrink: 0; }
@@ -116,6 +118,13 @@ document.querySelectorAll('.s-btn').forEach(btn => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
     post('/someday', {file: btn.dataset.file, line: parseInt(btn.dataset.line)});
+  });
+});
+
+// calendar event done
+document.querySelectorAll('.cal-event[data-summary]').forEach(el => {
+  el.addEventListener('click', () => {
+    post('/done-event', {summary: el.dataset.summary, date: el.dataset.date});
   });
 });
 
@@ -358,6 +367,33 @@ def delete_task(file_path, line_no, count):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def done_event_summaries():
+    if not TODAY.exists():
+        return set()
+    done = set()
+    for line in TODAY.read_text(encoding="utf-8").splitlines():
+        m = re.match(r'\s*- \[x\] (\d{4}-\d{2}-\d{2}) (.+)', line)
+        if m:
+            done.add((m.group(1), m.group(2).strip()))
+    return done
+
+
+def add_done_event(summary, date=None):
+    entry_date = date or today_str()
+    text = TODAY.read_text(encoding="utf-8")
+    entry = f"- [x] {entry_date} {summary}"
+    if entry in text:
+        return
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if line.strip() == "## Сделано":
+            lines.insert(i + 1, entry)
+            TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            return
+    lines += ["", "## Сделано", entry]
+    TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 # ── CALENDAR ─────────────────────────────────────────────
 
 def render_calendar_today():
@@ -377,6 +413,7 @@ def render_calendar_today():
         pass
 
     today = today_str()
+    done = done_event_summaries()
     by_date = {}
     for ev in events:
         by_date.setdefault(ev["date"], []).append(ev)
@@ -401,7 +438,13 @@ def render_calendar_today():
             time_str = ev.get("start", "")
             end_str = ev.get("end", "")
             time_html = f"{time_str}–{end_str}" if time_str and end_str else (time_str or "весь день")
-            b += f'<div class="cal-event {t}"><span class="cal-time">{time_html}</span><span class="cal-title">{ev["summary"]}</span></div>\n'
+            summary = ev["summary"]
+            is_done = (day_str, summary) in done
+            done_cls = " cal-done" if is_done else ""
+            if is_today:
+                b += f'<div class="cal-event {t}{done_cls}" data-summary="{summary}" data-date="{day_str}"><span class="cal-time">{time_html}</span><span class="cal-title">{summary}</span></div>\n'
+            else:
+                b += f'<div class="cal-event {t}{done_cls}"><span class="cal-time">{time_html}</span><span class="cal-title">{summary}</span></div>\n'
 
     return b
 
@@ -523,7 +566,7 @@ def render_calendar():
 def make_page(body, page):
     return HTML.format(
         title="Сегодня" if page == "today" else "Задачи",
-        refresh='<meta http-equiv="refresh" content="5">' if page == "today" else "",
+        refresh='<script>setTimeout(()=>location.reload(),5000)</script>',
         css=CSS, js=JS, body=body,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
@@ -544,6 +587,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", len(data))
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.end_headers()
         self.wfile.write(data)
 
@@ -558,6 +602,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             toggle_someday(d["file"], d["line"])
         elif self.path == "/delete":
             delete_task(d["file"], d["line"], d["count"])
+        elif self.path == "/done-event":
+            add_done_event(d["summary"])
         else:
             self.send_error(404)
             return

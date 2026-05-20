@@ -1,16 +1,16 @@
 {
-  "updated": "2026-05-19T18:05:00+02:00",
+  "updated": "2026-05-20T11:32:00+02:00",
   "events": [
-    {"date": "2026-05-19", "start": "08:00", "end": "09:00", "summary": "✔ Wertstoffe (BSR) Abholung", "type": "recurring"},
-    {"date": "2026-05-19", "start": "11:20", "end": "11:30", "summary": "Termin - Frau Sabine Eigenwillig", "location": "Bismarckstraße 95-96, 10625 Berlin", "type": "default"},
-    {"date": "2026-05-19", "start": "11:45", "end": "13:25", "summary": "Flight to Venice (Marco Polo) (FR 401)", "location": "Berlin (Brandenburg) BER", "type": "travel"},
-    {"date": "2026-05-19", "start": "19:00", "end": "20:30", "summary": "Тренировка", "type": "default"},
-    {"date": "2026-05-20", "start": "08:00", "end": "09:00", "summary": "Hausmüll (BSR) Abholung", "type": "recurring"},
+    {"date": "2026-05-20", "start": "07:30", "end": "09:00", "summary": "Тренировка", "type": "default"},
+    {"date": "2026-05-20", "start": "08:00", "end": "09:00", "summary": "✔ Hausmüll (BSR) Abholung", "type": "recurring"},
     {"date": "2026-05-20", "start": "08:15", "end": "08:30", "summary": "Созвон с Митей", "type": "default"},
     {"date": "2026-05-20", "start": "10:00", "end": "10:15", "summary": "📋 Фолоуап MILES — все инвойсы на Propria GmbH", "type": "default"},
     {"date": "2026-05-20", "start": "10:00", "end": "13:00", "summary": "Нарисовать картины на свадьбу (дедлайн 22.05)", "type": "default"},
     {"date": "2026-05-21", "start": "08:00", "end": "09:00", "summary": "Papiertonne Abholung", "type": "recurring"},
-    {"date": "2026-05-21", "start": "16:05", "end": "17:45", "summary": "Flight to Berlin (Brandenburg) (FR 402)", "location": "Venice (Marco Polo) VCE", "type": "travel"},
+    {"date": "2026-05-21", "start": "08:15", "end": "08:30", "summary": "Созвон с Митей", "type": "default"},
+    {"date": "2026-05-21", "start": "16:05", "end": "17:45", "summary": "Flight to Berlin (Brandenburg) (FR 402)", "type": "fromGmail"},
+    {"date": "2026-05-21", "start": "17:30", "end": "19:30", "summary": "Встретить Аню и дочь в BER (рейс FR 402 из VCE)", "type": "default"},
+    {"date": "2026-05-22", "start": "13:00", "end": "14:00", "summary": "Weekly Review", "type": "default"},
     {"date": "2026-05-26", "start": "10:00", "end": "11:00", "summary": "Reinigungstag (Уборка)", "type": "default"}
   ]
 }
