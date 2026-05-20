@@ -18,7 +18,6 @@ PROJECTS = [
     ("Propria", BRAIN / "05_PLANS/tasks/propria.md"),
     ("AI", BRAIN / "05_PLANS/tasks/ai-systems.md"),
     ("Финансы", BRAIN / "05_PLANS/tasks/personal/finance.md"),
-    ("Финансы2", BRAIN / "05_PLANS/tasks/finance-personal.md"),
     ("Дом", BRAIN / "05_PLANS/tasks/personal/home.md"),
     ("Покупки", BRAIN / "05_PLANS/tasks/personal/purchases.md"),
     ("Медиа", BRAIN / "05_PLANS/tasks/personal/media.md"),
