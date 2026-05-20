@@ -13,6 +13,7 @@ updated: 2026-05-07
 
 ## Срочное
 
+- [ ] 🔴 Найти интеграцию Shopify и 1688 на GitHub
 - [x] 2026-05-11 Написать AB про Леннокса
 - [ ] 🔴 Oliver and Alder: добавить стоп-слова на странице Order Tracking (скрыть "China") [someday]
 - [x] 2026-05-11 Написать в ScamAdviser по Charlie and Ted
