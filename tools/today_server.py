@@ -10,6 +10,7 @@ from pathlib import Path
 
 PORT = 7777
 BRAIN = Path(__file__).parent.parent
+_SORTABLE_JS = (Path(__file__).parent / "sortable.min.js").read_text(encoding="utf-8")
 TODAY = BRAIN / "05_PLANS/today.md"
 CALENDAR_CACHE = BRAIN / "tools/calendar_cache.json"
 PROJECTS = [
@@ -268,7 +269,7 @@ HTML = """<!DOCTYPE html>
 {refresh}
 <title>{title}</title>
 <style>{css}</style>
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+<script>{sortable_js}</script>
 </head>
 <body>
 <nav>
@@ -378,7 +379,7 @@ def toggle_today(path, idx):
 
 def parse_tasks(path):
     if not path.exists():
-        return []
+        return [], []
     lines = path.read_text(encoding="utf-8").splitlines()
     sections, current_sec, current_items = [], None, []
 
@@ -405,11 +406,10 @@ def parse_tasks(path):
     if current_sec is not None:
         sections.append((current_sec, current_items))
 
-    return sections
+    return sections, lines
 
 
-def count_subtasks(path, line_no, indent):
-    lines = path.read_text(encoding="utf-8").splitlines()
+def count_subtasks(lines, line_no, indent):
     count = 0
     for line in lines[line_no + 1:]:
         if not re.match(r'\s*- \[.\]', line):
@@ -429,7 +429,7 @@ def render_tasks():
     b += render_calendar_inline()
 
     for proj_name, proj_file in PROJECTS:
-        sections = parse_tasks(proj_file)
+        sections, file_lines = parse_tasks(proj_file)
         if not sections:
             continue
         key = proj_name.replace(' ', '_')
@@ -448,7 +448,7 @@ def render_tasks():
                 s_active = " active" if item["someday"] else ""
                 s_label = "S" if not item["someday"] else "✕S"
                 deadline_html = f'<span class="deadline">{item["deadline"]}</span>' if item["deadline"] else ""
-                subtask_count = count_subtasks(Path(item["file"]), item["line"], item["indent"])
+                subtask_count = count_subtasks(file_lines, item["line"], item["indent"])
 
                 b += f'''<div class="task-row{indent_cls}{done_cls}{someday_cls}" data-file="{item['file']}" data-line="{item['line']}">
   <span class="task-chk" data-file="{item['file']}" data-line="{item['line']}">{chk_icon}</span>
@@ -793,6 +793,7 @@ def make_page(body, page):
         title="Сегодня" if page == "today" else "Задачи",
         refresh='<script>setTimeout(function(){if(!window.isDragging)location.reload()},5000)</script>',
         css=CSS, js=JS, body=body,
+        sortable_js=_SORTABLE_JS,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
     ).encode("utf-8")
@@ -843,9 +844,17 @@ class Handler(http.server.BaseHTTPRequestHandler):
         pass
 
 
+class ThreadingServer(http.server.ThreadingHTTPServer):
+    address_family = __import__('socket').AF_INET
+    allow_reuse_address = True
+
+    def handle_error(self, request, client_address):
+        pass
+
+
 if __name__ == "__main__":
     url = f"http://localhost:{PORT}"
     print(f"Открываю {url}  (Ctrl+C чтобы остановить)")
     webbrowser.open(url)
-    with http.server.HTTPServer(("", PORT), Handler) as srv:
+    with ThreadingServer(("127.0.0.1", PORT), Handler) as srv:
         srv.serve_forever()
