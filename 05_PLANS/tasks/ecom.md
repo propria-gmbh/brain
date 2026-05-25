@@ -52,11 +52,14 @@ updated: 2026-05-07
 
 - [ ] 🟧 Провести GMC ревью + спланировать US store (Charlie and Ted)
 
+- [ ] Разобрать созвон с Андреем и Максимом #gmc
 - [ ] 🟢 Проанализировать чеклист Андрея [someday] #gmc
-  - [ ] Сохранить чеклист Андрея в brain (md файл)
-  - [ ] Раздел Domain + Email + SP Settings — прочитать, записать вопросы
-  - [ ] Раздел Policies + Pages + Homepage + Footer — прочитать, записать вопросы
-  - [ ] Раздел Catalog + Cart + Other tasks + Double check — прочитать, записать вопросы
+  - [x] 2026-05-22 Сохранить чеклист Андрея в brain (md файл)
+  - [x] 2026-05-22 Step 1 — Store Setup
+  - [ ] Step 2 — GMC Setup
+  - [ ] Step 3 — After Approval
+  - [ ] If There Is a Misrep
+  - [ ] If There Is a Website Need Improvement
   - [ ] Раздел GMC setup (Gmail creation + GMC creation + GMC double check) — прочитать, записать вопросы
   - [ ] Раздел Post-approval (daily tasks + after approval + 3 weeks) — прочитать, записать вопросы
   - [ ] Собрать все вопросы → задать в Inner Circle
