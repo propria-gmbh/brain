@@ -7022,7 +7022,7 @@
     "type": "task",
     "project": "personal/sailing",
     "parent_id": "area-personal-sailing-инструкторство",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-05-25",
     "priority": null,
@@ -7032,7 +7032,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-27",
     "created_at": "2026-05-25",
     "order": 1.0
   },
@@ -7547,12 +7547,13 @@
     "id": "sailing-oksana-instructor-followup",
     "title": "Фолоуап Оксана — инструкторский экзамен",
     "parent_id": "area-personal-sailing-инструкторство",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-05-29",
     "context": "phone",
     "created_at": "2026-05-26",
-    "order": 1.0
+    "order": 1.0,
+    "done_at": "2026-05-27"
   },
   {
     "id": "miles-accident-followup-2",
@@ -7805,5 +7806,145 @@
     "done_at": null,
     "created_at": "2026-05-27",
     "order": null
+  },
+  {
+    "id": "personal-purchases-полукруглые-ножницы-груминг",
+    "title": "Купить полукруглые ножницы для груминга",
+    "type": "task",
+    "parent_id": "area-personal-purchases",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "personal-purchases-насадки-зубная-щетка",
+    "title": "Купить насадки для зубной щетки",
+    "type": "task",
+    "parent_id": "area-personal-purchases",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "personal-purchases-зубная-щетка-электро",
+    "title": "Купить электрическую зубную щетку",
+    "type": "task",
+    "parent_id": "area-personal-purchases",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "personal-purchases-е-карта-винного",
+    "title": "Сделать е-карту винного",
+    "type": "task",
+    "parent_id": "area-personal-purchases",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "health-выкупить-аскотоп",
+    "title": "Выкупить Аскотоп",
+    "type": "task",
+    "parent_id": "area-health",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "personal-home-выкопать-растение-крыльцо",
+    "title": "Выкопать растение у крыльца",
+    "type": "task",
+    "parent_id": "area-personal-home",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "personal-home-посадить-вьющиеся-забор",
+    "title": "Посадить вьющиеся растения у забора",
+    "type": "task",
+    "parent_id": "area-personal-home",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "sailing-iyt-медицинская-форма",
+    "title": "IYT: заполнить и отправить медицинскую форму",
+    "type": "task",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "sailing-iyt-рекомендация-vasyliev",
+    "title": "IYT: запросить рекомендацию Principal у Volodymyr Vasyliev (Sailing Academy Kyiv)",
+    "type": "task",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "status": "active",
+    "someday": true,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "area-ecom-gmc-bennet-gray",
+    "title": "Bennet and Gray",
+    "type": "area",
+    "parent_id": "area-ecom-gmc",
+    "status": "active",
+    "order": 101.0,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "task-bennet-gray-market",
+    "title": "Выбрать рынок (bennetandgray.com)",
+    "type": "task",
+    "parent_id": "area-ecom-gmc-bennet-gray",
+    "status": "open",
+    "someday": true,
+    "order": 102.0,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "task-olivefaye-market",
+    "title": "Выбрать рынок (oliverandfaye.com)",
+    "type": "task",
+    "parent_id": "area-ecom-gmc-bennet-gray",
+    "status": "open",
+    "someday": true,
+    "order": 103.0,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "task-bennet-gray-warmup",
+    "title": "Начать прогревать Google аккаунт для Bennet and Gray",
+    "type": "task",
+    "parent_id": "area-ecom-gmc-bennet-gray",
+    "status": "open",
+    "someday": true,
+    "order": 104.0,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "task-bennet-gray-build",
+    "title": "Строить магазин Bennet and Gray",
+    "type": "task",
+    "parent_id": "area-ecom-gmc-bennet-gray",
+    "status": "open",
+    "someday": true,
+    "order": 105.0,
+    "created_at": "2026-05-27"
+  },
+  {
+    "id": "task-ecom-gmc-buy-domains",
+    "title": "Купить два домена 1+ год для GMC",
+    "type": "task",
+    "parent_id": "area-ecom-gmc",
+    "status": "open",
+    "someday": true,
+    "order": 106.0,
+    "created_at": "2026-05-27"
   }
 ]

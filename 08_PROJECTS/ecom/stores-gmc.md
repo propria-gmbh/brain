@@ -1,25 +1,39 @@
 ---
-updated: 2026-05-25
+updated: 2026-05-26
+source: https://docs.google.com/spreadsheets/d/1cMBL4p2pgXZu7-dlAFFcfjUZngd7CyKqn85m3WHIheE
+note: stores-gmc.md — мастер. Google Sheet — для ручного редактирования.
 ---
 
 # Магазины и GMC — сводная таблица
 
-| Бренд | Домен | Рынок | Статус магазина | GMC | GMC статус | Действие |
-|---|---|---|---|---|---|---|
-| Marc & François | ? | CH/DE | live | ? | ? | |
-| Oliver and Alder | oliverandalder.com | UK | live | ? | проблемы (swatch) | 🗑 удалить |
-| Charlie and Ted | charlieandted.com | US | setup | ? | проблемы (ScamAdviser) | 🗑 удалить → создать новый |
-| Lymiko | lymiko.com? | US | ? | ? | ? | отменить домен 2026-11-01 |
-| DK Store | ? | DK | live | ? | ? | 🗑 закрыть магазин |
+| Бренд | Домен | Рынок | GMC Slug | Аккаунт GMC | Аккаунт GAds | Компания | GMC статус | История |
+|---|---|---|---|---|---|---|---|---|
+| Marc et Francois | marcfrancois.ch | CH | qff1md-0e (ID: 5694372236) | 3553194@gmail.com | ? | DE Propria | ✅ Approved | 04/03/26 WMI resolved → Approved |
+| Oliver and Alder | oliverandalder.com | UK | zyy7ka-em | ? | ? | DE Propria | Suspended — no more appeals | identity not verified, нельзя апеллировать |
+| Charlie & Ted | charlieandted.com | US | dca4de (удалён) | ? | ? | DE Propria | GMC удалён | 19/03/26 GMC удалён (Suspended); ScamAdviser resolved 27/05/26 → готов к новому GMC |
+| Havgaard Kobenhavn | havgaard-kobenhavn.dk | DK | ID: 5651270174 (удалён) | ilja.disterheft@gmail.com | ? | DE Propria | GMC удалён | 25/05/26 GMC удалён (Suspended/Misrepresentation) — магазин закрывается |
+| HI&UTE | ? | ? | — | hiute.hk@gmail.com | ? | — | нет GMC | аккаунт проверен 26/05/26 |
+| Redford London | redford-london.com | UK | — | ? | ? | — | CANCELLED | duplicate domain |
+
+## Свободные аккаунты (без магазина)
+
+| Аккаунт GMC | Регион регистрации | Заметки |
+|---|---|---|
+| bennetandgray.com@gmail.com | DE | кандидат для нового GMC |
+| altamont.wb@gmail.com | DE | кандидат для нового GMC |
+| horizontadventures@gmail.com | DE | кандидат для нового GMC |
+| oagen.ai@gmail.com | DE | кандидат для нового GMC |
+| disterheft2018@gmail.com | DE | кандидат для нового GMC |
+| iljadi2018@gmail.com | DE | кандидат для нового GMC |
+| disterheft.arpack@gmail.com | DE | кандидат для нового GMC |
+| store.eneral@gmail.com | ? | статус неизвестен |
+| 3457540@gmail.com | ? | статус неизвестен |
 
 ## Новые GMC (создать)
 
 | Бренд | Домен | Рынок | Статус |
 |---|---|---|---|
-| US Store (новый) | ? | US | ⏳ после удаления старого |
-
-## Заметки
-
-- Оба старых GMC (Oliver + Charlie and Ted) удалить сегодня 2026-05-25
-- Новый GMC для US Store создать после
-- ScamAdviser рейтинг Charlie and Ted: запрос на пересмотр в процессе (ждём с 2026-05-26)
+| US Store (новый) | charlieandted.com | US | ⏳ создать |
+| Bennet & Gray | bennetandgray.com | ? | ⏳ планируется |
+| Casa Giannini | casa-giannini.it | IT | ⏳ планируется (льняные изделия) |
+| Oliver and Faye | oliverandfaye.com | ? | ⏳ планируется |
