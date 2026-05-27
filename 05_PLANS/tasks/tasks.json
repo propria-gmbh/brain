@@ -7366,8 +7366,8 @@
     "title": "Поправить картину на свадьбу",
     "type": "task",
     "parent_id": "personal-family-нарисовать-2-3-картины-в-подарок-на-свадьбу-1",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": "2026-05-26",
     "priority": "red",
     "stakes": null,
@@ -7376,7 +7376,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-27",
     "created_at": "2026-05-25",
     "order": 100.0
   },
@@ -7404,7 +7404,7 @@
     "title": "Аудит магазинов и GMC",
     "type": "task",
     "parent_id": "area-ecom-gmc",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": "orange",
@@ -7414,7 +7414,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-27",
     "created_at": "2026-05-25",
     "order": 0.5
   },
@@ -7785,7 +7785,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-27",
-    "order": null
+    "order": 0.0
   },
   {
     "id": "personal-purchases-купить-ножницы",
@@ -7805,7 +7805,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-27",
-    "order": null
+    "order": 0.0
   },
   {
     "id": "personal-purchases-полукруглые-ножницы-груминг",
