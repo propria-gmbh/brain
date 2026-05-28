@@ -95,18 +95,23 @@ def infer_deadline(task, task_map):
     return None
 
 
-def deadline_score(deadline_str, today):
+def deadline_score(deadline_str, today, is_reminder=False):
     if not deadline_str:
         return 0
     try:
         d = datetime.strptime(deadline_str, '%Y-%m-%d').date()
         days = (d - today).days
-        if days < 0:    return 4   # overdue (was 6 — reduced to avoid dominating)
+        if is_reminder:
+            # Reminders only score when due today or tomorrow
+            if days <= 0:  return 5
+            if days <= 1:  return 3
+            return 0
+        if days < 0:    return 4
         if days < 7:    return 5
         if days < 14:   return 4
         if days < 28:   return 3
         if days < 90:   return 2
-        return 0                   # 3mo+ not urgent enough to score
+        return 0
     except ValueError:
         return 0
 
@@ -134,7 +139,8 @@ def stakes_score(stakes):
 def score_task(task, task_map, today):
     c = color_score(task.get('priority'))
     deadline = infer_deadline(task, task_map)
-    d = deadline_score(deadline, today)
+    is_reminder = 'reminder' in (task.get('tags') or [])
+    d = deadline_score(deadline, today, is_reminder)
     s, s_label = stakes_score(task.get('stakes'))
     goal = infer_goal(task, task_map)
     g = GOAL_SCORES.get(goal, 0)
