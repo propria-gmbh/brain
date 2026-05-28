@@ -3254,26 +3254,6 @@
     "order": 15.0
   },
   {
-    "id": "ai-systems-запустить-счетчик-заказов-проект-в-cursor-мал",
-    "title": "Запустить счётчик заказов (проект в Cursor, маленький)",
-    "type": "task",
-    "project": "ai-systems",
-    "parent_id": "area-ai-systems-уровень-2-рост",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 16.0
-  },
-  {
     "id": "ai-systems-принять-решение-о-продолжении-проекта-персона",
     "title": "Принять решение о продолжении проекта \"Персональный ассистент\"",
     "type": "task",
