@@ -35,6 +35,20 @@ GOAL_SCORES = {
     'peace': 1,
 }
 
+AREA_GOAL_MAP = {
+    'area-health': 'health',
+    'area-ecom': 'financial-min',
+    'area-propria': 'financial-min',
+    'area-personal-finance': 'financial-min',
+    'area-ai-systems': 'business',
+    'area-projects': 'business',
+    'area-personal-development': 'life',
+    'area-personal-family': 'life',
+    'area-personal-home': 'life',
+    'area-personal-sailing': 'life',
+    'area-personal-purchases': 'life',
+    'area-personal-media': 'life',
+}
 
 
 def load_tasks():
@@ -47,7 +61,38 @@ def build_task_map(data):
 
 
 def infer_goal(task, task_map):
-    return task.get('goal') or None
+    if task.get('goal'):
+        return task['goal']
+    pid = task.get('parent_id', '')
+    seen = set()
+    while pid and pid not in seen:
+        seen.add(pid)
+        for prefix, goal in AREA_GOAL_MAP.items():
+            if pid.startswith(prefix):
+                return goal
+        parent = task_map.get(pid)
+        if parent:
+            pid = parent.get('parent_id', '')
+        else:
+            break
+    return None
+
+
+def infer_deadline(task, task_map):
+    if task.get('deadline'):
+        return task['deadline']
+    pid = task.get('parent_id', '')
+    seen = set()
+    while pid and pid not in seen:
+        seen.add(pid)
+        parent = task_map.get(pid)
+        if parent:
+            if parent.get('deadline'):
+                return parent['deadline']
+            pid = parent.get('parent_id', '')
+        else:
+            break
+    return None
 
 
 def deadline_score(deadline_str, today):
@@ -88,12 +133,13 @@ def stakes_score(stakes):
 
 def score_task(task, task_map, today):
     c = color_score(task.get('priority'))
-    d = deadline_score(task.get('deadline'), today)
+    deadline = infer_deadline(task, task_map)
+    d = deadline_score(deadline, today)
     s, s_label = stakes_score(task.get('stakes'))
     goal = infer_goal(task, task_map)
     g = GOAL_SCORES.get(goal, 0)
     p = c * 2 + d * 3 + s * 2 + g * 2
-    return p, c, d, s, s_label, g, goal
+    return p, c, d, s, s_label, g, goal, deadline
 
 
 def format_area(task, task_map):
@@ -164,12 +210,12 @@ def main():
 
     scored = []
     for t in tasks:
-        p, c, d, s, s_label, g, goal = score_task(t, task_map, today)
+        p, c, d, s, s_label, g, goal, deadline = score_task(t, task_map, today)
         scored.append({
             'p': p,
             'title': t.get('title', '')[:72],
             'priority': t.get('priority'),
-            'deadline': t.get('deadline'),
+            'deadline': deadline,
             'stakes_label': s_label,
             'goal': goal,
             'area': format_area(t, task_map),
