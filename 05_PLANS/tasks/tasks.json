@@ -8003,5 +8003,28 @@
     "title": "Верифицировать домен (Casa Giannini) — чеклист Андрея",
     "status": "todo",
     "someday": true
+  },
+  {
+    "id": "personal-purchases-ремонт-airpods",
+    "type": "task",
+    "parent_id": "area-personal-purchases-нужные",
+    "title": "Записаться на ремонт наушников AirPods",
+    "status": "todo",
+    "someday": true
+  },
+  {
+    "id": "area-personal-agent-buffer",
+    "type": "area",
+    "parent_id": "area-ai-systems",
+    "title": "Telegram ↔ Claude буфер (VPS)"
+  },
+  {
+    "id": "task-agent-buffer-vps-service",
+    "type": "task",
+    "parent_id": "area-personal-agent-buffer",
+    "title": "Сделать VPS-сервис: буфер между Telegram-ботом и Claude",
+    "status": "todo",
+    "someday": false,
+    "notes": "Контекст теряется. Нужен буфер на VPS: хранить историю, накапливать если Claude не в сети, распознавать голос, отвечать голосом."
   }
 ]
