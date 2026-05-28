@@ -7956,21 +7956,51 @@
     "order": 0.0
   },
   {
-    "id": "task-ecom-bg-verify-domain",
+    "id": "task-verify-domain-charlie-ted",
     "type": "task",
-    "parent_id": "area-bennet-gray",
-    "title": "Верифицировать домен bennetandgray.com в Google",
+    "parent_id": "area-charlie-ted",
+    "title": "Верифицировать домен (Charlie & Ted) — чеклист Андрея",
     "status": "todo",
-    "someday": true,
-    "order": 0.0
+    "someday": true
   },
   {
-    "id": "task-ecom-of-verify-domain",
+    "id": "task-verify-domain-oliver-adler",
+    "type": "task",
+    "parent_id": "area-oliver-adler",
+    "title": "Верифицировать домен (Oliver and Adler) — чеклист Андрея",
+    "status": "todo",
+    "someday": true
+  },
+  {
+    "id": "task-verify-domain-marc-francois",
+    "type": "task",
+    "parent_id": "area-marc-francois",
+    "title": "Верифицировать домен (Marc et Francois) — чеклист Андрея",
+    "status": "todo",
+    "someday": true
+  },
+  {
+    "id": "task-verify-domain-bennet-gray",
+    "type": "task",
+    "parent_id": "area-bennet-gray",
+    "title": "Верифицировать домен (Bennet and Gray) — чеклист Андрея",
+    "status": "todo",
+    "someday": true
+  },
+  {
+    "id": "task-verify-domain-oliver-faye",
     "type": "task",
     "parent_id": "area-oliver-faye",
-    "title": "Верифицировать домен oliverandfaye.com в Google",
+    "title": "Верифицировать домен (Oliver and Faye) — чеклист Андрея",
     "status": "todo",
-    "someday": true,
-    "order": 0.0
+    "someday": true
+  },
+  {
+    "id": "task-verify-domain-casa-giannini",
+    "type": "task",
+    "parent_id": "area-casa-giannini",
+    "title": "Верифицировать домен (Casa Giannini) — чеклист Андрея",
+    "status": "todo",
+    "someday": true
   }
 ]
