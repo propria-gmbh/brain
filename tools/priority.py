@@ -1,56 +1,53 @@
 #!/usr/bin/env python3
 """
-priority.py — scan all task files and rank by priority.
+priority.py — rank tasks from tasks.json by priority.
 
 Priority formula:
   P = C*2 + D*3 + S*2 + G*2
-  C (color): 🟧=4  🔴=3  🟢=2  gray=1
-  D (deadline urgency): overdue=6  <1wk=5  1-2wk=4  2-4wk=3  1-3mo=2  3-6mo=1  >6mo=0  none=0
-  S (stakes): [$]=1  [$$]=2  [$$$]=3  [$$$$]=4  [$$$$$]=5  none=0
-  G (goal match): 1 if task tag matches active goal in 05_PLANS/goals.md, else 0
+  C (color/priority): orange=4  red=3  green=2  none=1
+  D (deadline urgency): <1wk=5  1-2wk=4  2-4wk=3  1-3mo=2  overdue=4  3mo+=0  none=0
+  S (stakes): 1-5 (number of $)
+  G (goal, inferred from area): health=3  financial-min=2  business=2  life/peace=1  none=0
 
 Usage:
-  python3 tools/priority.py              # top 30 by priority
-  python3 tools/priority.py --top 20     # top 20
-  python3 tools/priority.py --someday    # only active pool ([someday])
-  python3 tools/priority.py --red        # only 🔴 and 🟧
-  python3 tools/priority.py --green      # only 🟢 and 🟧
-  python3 tools/priority.py --all        # all tasks, no limit
-  python3 tools/priority.py --done --today    # completed today
-  python3 tools/priority.py --done --week     # completed this week
-  python3 tools/priority.py --done --month    # completed this month
-  python3 tools/priority.py --done --year     # completed this year
+  python3 tools/priority.py              # top 30 someday tasks
+  python3 tools/priority.py --top 20
+  python3 tools/priority.py --all        # all todo tasks (not just someday)
+  python3 tools/priority.py --done --today
+  python3 tools/priority.py --done --week
+  python3 tools/priority.py --done --month
+  python3 tools/priority.py --done --year
 """
 
-import re
+import json
 import argparse
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
+TASKS_FILE = ROOT / '05_PLANS' / 'tasks' / 'tasks.json'
 
-SKIP_DIRS = {'.git', '.obsidian', '__pycache__', '00_META', '04_THINKING', '07_KNOWLEDGE', '06_ARCHIVE'}
+GOAL_SCORES = {
+    'health': 3,
+    'financial-min': 3,
+    'business': 2,
+    'life': 1,
+    'peace': 1,
+}
 
 
-def load_active_goals():
-    goals_file = ROOT / '05_PLANS' / 'goals.md'
-    tags = set()
-    try:
-        with open(goals_file, encoding='utf-8') as f:
-            in_section = False
-            for line in f:
-                if line.strip() == '## Активные сейчас':
-                    in_section = True
-                    continue
-                if in_section and line.startswith('## '):
-                    break
-                if in_section:
-                    m = re.search(r'`(#\S+)`', line)
-                    if m:
-                        tags.add(m.group(1))
-    except Exception:
-        pass
-    return tags
+
+def load_tasks():
+    with open(TASKS_FILE, encoding='utf-8') as f:
+        return json.load(f)
+
+
+def build_task_map(data):
+    return {t['id']: t for t in data if isinstance(t, dict) and 'id' in t}
+
+
+def infer_goal(task, task_map):
+    return task.get('goal') or None
 
 
 def deadline_score(deadline_str, today):
@@ -59,129 +56,74 @@ def deadline_score(deadline_str, today):
     try:
         d = datetime.strptime(deadline_str, '%Y-%m-%d').date()
         days = (d - today).days
-        if days < 0:    return 6
+        if days < 0:    return 4   # overdue (was 6 — reduced to avoid dominating)
         if days < 7:    return 5
         if days < 14:   return 4
         if days < 28:   return 3
         if days < 90:   return 2
-        if days < 180:  return 1
-        return 0
+        return 0                   # 3mo+ not urgent enough to score
     except ValueError:
         return 0
 
 
-def color_score(line):
-    if '🟧' in line:
-        return 4, '🟧'
-    if '🔴' in line:
-        return 3, '🔴  '
-    if '🟢' in line:
-        return 2, '🟢  '
-    return 1, '    '
+def color_score(priority):
+    return {'orange': 4, 'red': 3, 'green': 2}.get(priority or '', 1)
 
 
-def stakes_score(line):
-    m = re.search(r'\[(\$+)\]', line)
-    if not m:
+def color_label(priority):
+    return {'orange': '🟧', 'red': '🔴 ', 'green': '🟢 '}.get(priority or '', '   ')
+
+
+def stakes_score(stakes):
+    if stakes is None:
         return 0, ''
-    s = len(m.group(1))
-    return min(s, 5), m.group(1)
+    if isinstance(stakes, int):
+        s = min(stakes, 5)
+        return s, '$' * s
+    if isinstance(stakes, str):
+        s = len([c for c in stakes if c == '$'])
+        return min(s, 5), '$' * min(s, 5)
+    return 0, ''
 
 
-def parse_tasks(filepath, today, active_goals=None):
-    tasks = []
-    if active_goals is None:
-        active_goals = set()
-    try:
-        with open(filepath, encoding='utf-8') as f:
-            for line in f:
-                m = re.match(r'^- \[ \] (.+)', line)
-                if not m:
-                    continue
-                content = m.group(1).strip()
-
-                deadline_m = re.search(r'\((\d{4}-\d{2}-\d{2})\)', content)
-                deadline = deadline_m.group(1) if deadline_m else None
-
-                someday = '[someday]' in content
-
-                tags = set(re.findall(r'#\S+', content))
-                g_score = 1 if tags & active_goals else 0
-
-                c_score, c_label = color_score(content)
-                d_score = deadline_score(deadline, today)
-                s_score, s_label = stakes_score(content)
-                p = c_score * 2 + d_score * 3 + s_score * 2 + g_score * 2
-
-                name = content
-                name = re.sub(r'🟧|🔴|🟢', '', name)
-                name = re.sub(r'\[someday\]', '', name)
-                name = re.sub(r'\(\d{4}-\d{2}-\d{2}\)', '', name)
-                name = re.sub(r'\[\$+\]', '', name)
-                name = re.sub(r'https?://\S+', '', name)
-                name = re.sub(r'\s+', ' ', name).strip()
-                name = name[:72]
-
-                tasks.append({
-                    'p': p,
-                    'color': c_label,
-                    'deadline': deadline,
-                    'stakes': s_label,
-                    'someday': someday,
-                    'name': name,
-                    'file': str(filepath.relative_to(ROOT)),
-                })
-    except Exception:
-        pass
-    return tasks
+def score_task(task, task_map, today):
+    c = color_score(task.get('priority'))
+    d = deadline_score(task.get('deadline'), today)
+    s, s_label = stakes_score(task.get('stakes'))
+    goal = infer_goal(task, task_map)
+    g = GOAL_SCORES.get(goal, 0)
+    p = c * 2 + d * 3 + s * 2 + g * 2
+    return p, c, d, s, s_label, g, goal
 
 
-def parse_done(filepath):
-    done = []
-    try:
-        with open(filepath, encoding='utf-8') as f:
-            for line in f:
-                m = re.match(r'^- \[x\] (\d{4}-\d{2}-\d{2}) (.+)', line)
-                if not m:
-                    continue
-                done_date = m.group(1)
-                name = m.group(2).strip()
-                name = re.sub(r'https?://\S+', '', name)
-                name = re.sub(r'\s+', ' ', name).strip()[:72]
-                done.append({
-                    'date': done_date,
-                    'name': name,
-                    'file': str(filepath.relative_to(ROOT)),
-                })
-    except Exception:
-        pass
-    return done
+def format_area(task, task_map):
+    pid = task.get('parent_id', '')
+    parent = task_map.get(pid)
+    if parent:
+        return parent.get('title', pid)[:30]
+    return pid[:30]
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Task priority viewer')
-    parser.add_argument('--top',    type=int, default=30)
-    parser.add_argument('--someday', action='store_true')
-    parser.add_argument('--red',    action='store_true')
-    parser.add_argument('--green',  action='store_true')
-    parser.add_argument('--all',    action='store_true')
-    parser.add_argument('--done',   action='store_true', help='Show completed tasks')
-    parser.add_argument('--save-today', action='store_true', help='Save someday tasks to 05_PLANS/today.md')
-    parser.add_argument('--today',  action='store_true')
-    parser.add_argument('--week',   action='store_true')
-    parser.add_argument('--month',  action='store_true')
-    parser.add_argument('--year',   action='store_true')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--top', type=int, default=30)
+    parser.add_argument('--all', action='store_true', help='All todo tasks (not just someday)')
+    parser.add_argument('--done', action='store_true')
+    parser.add_argument('--today', action='store_true')
+    parser.add_argument('--week', action='store_true')
+    parser.add_argument('--month', action='store_true')
+    parser.add_argument('--year', action='store_true')
     args = parser.parse_args()
 
+    data = load_tasks()
+    task_map = build_task_map(data)
     today = date.today()
-    active_goals = load_active_goals()
 
     if args.done:
-        all_done = []
-        for md_file in sorted(ROOT.rglob('*.md')):
-            if any(skip in md_file.parts for skip in SKIP_DIRS):
-                continue
-            all_done.extend(parse_done(md_file))
+        done_tasks = [
+            t for t in data
+            if isinstance(t, dict) and t.get('status') == 'done' and t.get('done_at')
+        ]
 
         if args.today:
             since = today.isoformat()
@@ -199,8 +141,8 @@ def main():
             since = None
             label = 'все время'
 
-        filtered = [d for d in all_done if since is None or d['date'] >= since]
-        filtered.sort(key=lambda d: d['date'], reverse=True)
+        filtered = [t for t in done_tasks if since is None or (t['done_at'] or '') >= since]
+        filtered.sort(key=lambda t: t.get('done_at', ''), reverse=True)
 
         if not filtered:
             print(f'Нет выполненных задач за: {label}')
@@ -208,61 +150,48 @@ def main():
 
         print(f"\n Выполнено — {label}  ({len(filtered)} задач)")
         print('─' * 90)
-        for d in filtered:
-            print(f" {d['date']}  {d['name']}")
-            print(f"            {d['file']}")
-            print()
+        for t in filtered:
+            print(f" {t['done_at']}  {t['title'][:70]}")
         return
 
-    all_tasks = []
-    for md_file in sorted(ROOT.rglob('*.md')):
-        if any(skip in md_file.parts for skip in SKIP_DIRS):
-            continue
-        all_tasks.extend(parse_tasks(md_file, today, active_goals))
+    tasks = [
+        t for t in data
+        if isinstance(t, dict)
+        and t.get('type') in ('task', 'subtask')
+        and t.get('status') != 'done'
+        and (args.all or t.get('someday'))
+    ]
 
-    filtered = all_tasks
-    if args.someday:
-        filtered = [t for t in filtered if t['someday']]
-    if args.red:
-        filtered = [t for t in filtered if t['color'] in ('🔴  ', '🟧')]
-    if args.green:
-        filtered = [t for t in filtered if t['color'] in ('🟢  ', '🟧')]
+    scored = []
+    for t in tasks:
+        p, c, d, s, s_label, g, goal = score_task(t, task_map, today)
+        scored.append({
+            'p': p,
+            'title': t.get('title', '')[:72],
+            'priority': t.get('priority'),
+            'deadline': t.get('deadline'),
+            'stakes_label': s_label,
+            'goal': goal,
+            'area': format_area(t, task_map),
+        })
 
-    filtered.sort(key=lambda t: (-t['p'], t['deadline'] or '9999-99-99'))
+    scored.sort(key=lambda t: (-t['p'], t['deadline'] or '9999-99-99'))
 
-    if not args.all and not args.someday and not args.save_today:
-        filtered = filtered[:args.top]
+    if not args.all:
+        scored = scored[:args.top]
 
-    if not filtered:
+    if not scored:
         print('Задачи не найдены.')
         return
 
-    if args.save_today:
-        today_file = ROOT / '05_PLANS' / 'today.md'
-        emoji_map = {'🟧': '🟧', '🔴  ': '🔴', '🟢  ': '🟢', '    ': ''}
-        lines = [
-            f'# План на {today.strftime("%Y-%m-%d")}',
-            '',
-        ]
-        for i, t in enumerate(filtered, 1):
-            dl = f' ({t["deadline"]})' if t['deadline'] else ''
-            emoji = emoji_map.get(t['color'], '').strip()
-            prefix = f'{emoji} ' if emoji else ''
-            lines.append(f'- [ ] {prefix}{t["name"]}{dl}')
-        lines += ['', '## Сделано', '']
-        today_file.write_text('\n'.join(lines), encoding='utf-8')
-        print(f'Сохранено в {today_file}')
-        return
-
-    print(f"\n {'P':>3}  {'Тип':5}  {'$':5}  {'Дедлайн':12}  {'★':1}  Задача")
-    print('─' * 95)
-    for t in filtered:
+    print(f"\n {'P':>3}  {'Тип':4}  {'$':5}  {'Дедлайн':12}  {'Цель':14}  Задача")
+    print('─' * 100)
+    for t in scored:
+        cl = color_label(t['priority'])
         dl = t['deadline'] or '—'
-        star = '★' if t['someday'] else ' '
-        st = t['stakes'] or '—'
-        print(f" {t['p']:>3}  {t['color']:5}  {st:5}  {dl:12}  {star}  {t['name']}")
-        print(f"       {'':5}  {'':5}  {'':12}     {t['file']}")
-        print()
+        st = t['stakes_label'] or '—'
+        gl = (t['goal'] or '—')[:13]
+        print(f" {t['p']:>3}  {cl}  {st:5}  {dl:12}  {gl:14}  {t['title']}")
 
 
 if __name__ == '__main__':
