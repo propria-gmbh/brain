@@ -255,9 +255,33 @@ document.querySelectorAll('.p-btn[data-id]').forEach(function(btn) {
     sel.focus();
     sel.addEventListener('change', function() {
       post('/set-parent', {id: btn.dataset.id, parent_id: sel.value || null});
+      setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 100);
     });
-    sel.addEventListener('blur', function() { sel.replaceWith(btn); });
+    sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
     sel.addEventListener('keydown', function(e) { if (e.key === 'Escape') sel.replaceWith(btn); });
+  });
+});
+
+// deadline editor
+document.querySelectorAll('.d-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var inp = document.createElement('input');
+    inp.type = 'date';
+    inp.value = btn.dataset.deadline || '';
+    inp.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;width:130px';
+    btn.replaceWith(inp);
+    inp.focus();
+    function save() {
+      post('/set-deadline', {id: btn.dataset.id, deadline: inp.value || null});
+      setTimeout(function() { location.reload(); }, 150);
+    }
+    inp.addEventListener('change', save);
+    inp.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') save();
+      if (e.key === 'Escape') inp.replaceWith(btn);
+    });
+    inp.addEventListener('blur', function() { setTimeout(function() { if (inp.parentNode) inp.replaceWith(btn); }, 200); });
   });
 });
 
@@ -631,6 +655,7 @@ def render_task_row(task, all_tasks, depth=0):
             overdue = ""
         dl_html = f'<span class="deadline{overdue}">{deadline}</span>'
 
+    dl_val = deadline or ""
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}">\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
@@ -638,6 +663,7 @@ def render_task_row(task, all_tasks, depth=0):
         f'  {dl_html}\n'
         f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
+        f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
@@ -749,6 +775,18 @@ def set_task_parent(task_id, parent_id):
                 t["parent_id"] = parent_id
             else:
                 t.pop("parent_id", None)
+            break
+    save_tasks(tasks)
+
+
+def set_task_deadline(task_id, deadline):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            if deadline:
+                t["deadline"] = deadline
+            else:
+                t["deadline"] = None
             break
     save_tasks(tasks)
 
@@ -993,6 +1031,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             set_task_type(d["id"], d["type"])
         elif self.path == "/set-parent":
             set_task_parent(d["id"], d.get("parent_id"))
+        elif self.path == "/set-deadline":
+            set_task_deadline(d["id"], d.get("deadline"))
         elif self.path == "/remove-today":
             remove_today_line(TODAY, d["idx"])
         elif self.path == "/reorder-today":
