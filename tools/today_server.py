@@ -986,7 +986,7 @@ MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "ию
 def make_page(body, page):
     return HTML.format(
         title="Сегодня" if page == "today" else "Задачи",
-        refresh='<script>setTimeout(function(){if(!window.isDragging)location.reload()},5000)</script>',
+        refresh='<script>setTimeout(function(){var inp=document.getElementById("inbox-input");if(!window.isDragging&&document.activeElement!==inp)location.reload()},5000)</script>',
         css=CSS, js=JS, body=body,
         sortable_js=_SORTABLE_JS,
         nav_today="active" if page == "today" else "",
