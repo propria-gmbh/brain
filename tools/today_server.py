@@ -61,6 +61,7 @@ h2 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color:
 ul { list-style: none; }
 li.item { padding: 7px 10px; margin: 3px 0; border-radius: 5px; font-size: .9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; }
 li.item:hover { filter: brightness(1.15); }
+li.item .item-text { flex: 1; }
 li.todo { background: var(--bg2); color: var(--text2); }
 li.done-item { background: var(--bg3); color: var(--text5); text-decoration: line-through; }
 li.red { border-left: 3px solid #e74c3c; }
@@ -77,7 +78,8 @@ details details > summary { background: var(--bg3); font-weight: 400; color: var
 .task-row { display: flex; align-items: center; gap: 6px; padding: 6px 10px; margin: 2px 0; border-radius: 5px; background: var(--bg3); font-size: .88rem; color: var(--text2); cursor: grab; position: relative; }
 .task-row:hover { background: var(--row-hov); }
 .task-row.done-task { color: var(--text5); text-decoration: line-through; }
-.task-row.someday { opacity: .5; }
+.task-row:not(.someday):not(.done-task) { opacity: .65; }
+.task-row.someday { opacity: 1; }
 .task-row.sortable-ghost { opacity: .25; background: var(--bg2); }
 .task-row.drop-child { border-left: 3px solid #5b8dd9; }
 .task-row.red { border-left: 3px solid #e74c3c; }
@@ -107,6 +109,7 @@ details details > summary { background: var(--bg3); font-weight: 400; color: var
 .btn:hover { background: var(--btn-hov); color: var(--btn-hov-c); }
 .btn.s-btn { color: #5b8dd9; }
 .btn.s-btn.active { background: var(--s-act); color: #5b8dd9; }
+.btn.type-btn { color: #888; font-size: .6rem; padding: 1px 4px; }
 li.indent1 { margin-left: 20px; }
 li.indent2 { margin-left: 40px; }
 li.indent3 { margin-left: 60px; }
@@ -114,6 +117,9 @@ li.indent3 { margin-left: 60px; }
 .indent2 { margin-left: 40px; }
 .indent3 { margin-left: 60px; }
 .ts { font-size: .7rem; color: var(--bg5); position: fixed; bottom: 12px; right: 16px; }
+.section-tasks { padding-left: 16px; }
+.area-title[contenteditable=true] { outline: 1px solid #5b8dd9; border-radius: 3px; padding: 1px 4px; background: var(--bg2); cursor: text; }
+.area-title:hover { text-decoration: underline dotted var(--text4); cursor: text; }
 """
 
 JS = """
@@ -144,6 +150,27 @@ function post(url, data, cb) {
 // today.md toggles
 document.querySelectorAll('li[data-idx]').forEach(function(li) {
   li.addEventListener('click', function() { post('/toggle', {idx: parseInt(li.dataset.idx)}); });
+});
+
+// today.md: remove item
+document.querySelectorAll('.del-today[data-idx]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (confirm('Убрать из сегодня?')) post('/remove-today', {idx: parseInt(btn.dataset.idx)});
+  });
+});
+
+// quick add to inbox
+window.addInboxTask = function() {
+  var inp = document.getElementById('inbox-input');
+  var title = (inp.value || '').trim();
+  if (!title) return;
+  inp.value = '';
+  post('/add-task', {title: title});
+};
+var inboxInp = document.getElementById('inbox-input');
+if (inboxInp) inboxInp.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') addInboxTask();
 });
 
 // tasks.json: toggle done
@@ -208,6 +235,75 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
   });
 });
 
+// parent selector
+document.querySelectorAll('.p-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var sel = document.createElement('select');
+    sel.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;max-width:200px';
+    var none = document.createElement('option');
+    none.value = '';
+    none.textContent = '— нет родителя —';
+    sel.appendChild(none);
+    (window.AREAS || []).forEach(function(a) {
+      var opt = document.createElement('option');
+      opt.value = a.id;
+      opt.textContent = a.title;
+      sel.appendChild(opt);
+    });
+    btn.replaceWith(sel);
+    sel.focus();
+    sel.addEventListener('change', function() {
+      post('/set-parent', {id: btn.dataset.id, parent_id: sel.value || null});
+    });
+    sel.addEventListener('blur', function() { sel.replaceWith(btn); });
+    sel.addEventListener('keydown', function(e) { if (e.key === 'Escape') sel.replaceWith(btn); });
+  });
+});
+
+// type toggle
+document.querySelectorAll('.type-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var cur = btn.dataset.current;
+    var next = cur === 'area' ? 'task' : 'area';
+    if (!confirm('Сменить тип с ' + cur.toUpperCase() + ' на ' + next.toUpperCase() + '?')) return;
+    post('/set-type', {id: btn.dataset.id, type: next});
+  });
+});
+
+// area rename (double-click)
+document.querySelectorAll('.area-title[data-id]').forEach(function(el) {
+  el.addEventListener('dblclick', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    if (el.contentEditable === 'true') return;
+    var orig = el.textContent;
+    el.contentEditable = 'true';
+    el.focus();
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    function save() {
+      el.contentEditable = 'false';
+      var txt = el.textContent.trim();
+      if (txt && txt !== orig) post('/rename', {id: el.dataset.id, text: txt});
+      else el.textContent = orig;
+    }
+    function cancel() { el.contentEditable = 'false'; el.textContent = orig; }
+    function cleanup() { el.removeEventListener('keydown', onKey); el.removeEventListener('blur', onBlur); }
+    function onKey(e) {
+      if (e.key === 'Enter') { e.preventDefault(); cleanup(); save(); }
+      if (e.key === 'Escape') { cleanup(); cancel(); }
+    }
+    function onBlur() { cleanup(); save(); }
+    el.addEventListener('keydown', onKey);
+    el.addEventListener('blur', onBlur);
+  });
+});
+
 // drag & drop
 window.isDragging = false;
 var _childTarget = null;
@@ -232,6 +328,43 @@ document.addEventListener('dragover', function(e) {
     }
   }
   e.preventDefault();
+});
+
+var topAreas = document.getElementById('top-areas');
+if (topAreas && typeof Sortable !== 'undefined') {
+  Sortable.create(topAreas, {
+    animation: 100,
+    ghostClass: 'sortable-ghost',
+    handle: 'summary',
+    onEnd: function(evt) {
+      var srcId = evt.item.dataset.id;
+      var siblings = Array.from(topAreas.querySelectorAll(':scope > [data-id]'));
+      var newIdx = siblings.indexOf(evt.item);
+      var tgtId, position;
+      if (newIdx > 0) {
+        tgtId = siblings[newIdx - 1].dataset.id;
+        position = 'after';
+      } else if (siblings.length > 1) {
+        tgtId = siblings[1].dataset.id;
+        position = 'before';
+      } else { return; }
+      post('/move', {src_id: srcId, target_id: tgtId, position: position});
+    }
+  });
+}
+
+document.querySelectorAll('.today-section').forEach(function(ul) {
+  if (typeof Sortable === 'undefined') return;
+  Sortable.create(ul, {
+    animation: 100,
+    ghostClass: 'sortable-ghost',
+    onEnd: function() {
+      var indices = Array.from(ul.querySelectorAll('li[data-idx]')).map(function(li) {
+        return parseInt(li.dataset.idx);
+      });
+      post('/reorder-today', {indices: indices});
+    }
+  });
 });
 
 document.querySelectorAll('.section-tasks').forEach(function(container) {
@@ -286,6 +419,10 @@ HTML = """<!DOCTYPE html>
 <nav>
   <a href="/" class="{nav_today}">Сегодня</a>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
+  <div style="display:flex;gap:6px;align-items:center;margin-left:16px;flex:1">
+    <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:320px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
+    <button onclick="addInboxTask()" style="padding:6px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem">+</button>
+  </div>
   <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 
@@ -349,18 +486,34 @@ def render_today(path):
     left = f"<h1>{title}</h1>\n"
     left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
+    def section_is_future(sec):
+        m = re.search(r'(\d{1,2})\.(\d{2})', sec)
+        if not m:
+            return False
+        try:
+            d = date(date.today().year, int(m.group(2)), int(m.group(1)))
+            return d > date.today()
+        except ValueError:
+            return False
+
     done_all = []
     for sec, items in sections:
+        if section_is_future(sec):
+            continue
         todo = [i for i in items if not i["done"]]
         done_all += [i for i in items if i["done"]]
         if not todo:
             continue
-        left += f"<h2>{sec}</h2><ul>\n"
+        sec_key = sec.replace(" ", "_")[:30]
+        items_html = ""
         for item in todo:
             extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
             indent_cls = f" indent{min(item['indent'], 3)}" if item.get("indent", 0) > 0 else ""
-            left += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"><span class="chk">·</span><span>{item["text"]}</span></li>\n'
-        left += "</ul>\n"
+            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"><span class="chk">·</span><span class="item-text">{item["text"]}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+        if sec == "Утренний чеклист":
+            left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">{sec}</summary><ul class="today-section">\n{items_html}</ul></details>\n'
+        else:
+            left += f'<h2>{sec}</h2><ul class="today-section">\n{items_html}</ul>\n'
 
     if done_all:
         left += "<h2>Сделано</h2><ul>\n"
@@ -372,6 +525,50 @@ def render_today(path):
     return f'<div class="two-col"><div class="col-left">{left}</div><div class="col-right">{right}</div></div>\n'
 
 
+def normalize_title(text):
+    text = re.sub(r'[🔴🟢🟧⏳]', '', text)
+    text = re.sub(r'\[.*?\]', '', text)
+    text = re.sub(r'\(.*?\)', '', text)
+    return re.sub(r'\s+', ' ', text).strip().lower()
+
+
+def sync_today_to_tasks(item_text, done):
+    norm = normalize_title(item_text)
+    if not norm:
+        return
+    tasks = load_tasks()
+    changed = False
+    for t in tasks:
+        if t.get("type") == "area":
+            continue
+        if normalize_title(t.get("title", "")) == norm:
+            t["status"] = "done" if done else "todo"
+            t["done_at"] = today_str() if done else None
+            changed = True
+            break
+    if changed:
+        save_tasks(tasks)
+
+
+def sync_tasks_to_today(task_title, done):
+    if not TODAY.exists():
+        return
+    norm = normalize_title(task_title)
+    lines = TODAY.read_text(encoding="utf-8").splitlines()
+    for i, line in enumerate(lines):
+        if not re.match(r'\s*- \[.\]', line):
+            continue
+        raw = re.sub(r'\s*- \[.\] (\d{4}-\d{2}-\d{2} )?', '', line).strip()
+        if normalize_title(raw) == norm:
+            if done:
+                lines[i] = re.sub(r'- \[ \] ', f'- [x] {today_str()} ', line)
+            else:
+                lines[i] = re.sub(r'- \[x\] \d{4}-\d{2}-\d{2} ', '- [ ] ', line, flags=re.I)
+                lines[i] = re.sub(r'- \[x\] ', '- [ ] ', lines[i], flags=re.I)
+            break
+    TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def toggle_today(path, idx):
     lines = path.read_text(encoding="utf-8").splitlines()
     _, _, all_items = parse_today(path)
@@ -379,19 +576,25 @@ def toggle_today(path, idx):
     if not item:
         return
     line = lines[item["line"]]
-    if item["done"]:
+    now_done = item["done"]
+    if now_done:
         line = re.sub(r'- \[x\] \d{4}-\d{2}-\d{2} ', '- [ ] ', line, flags=re.I)
         line = re.sub(r'- \[x\] ', '- [ ] ', line, flags=re.I)
     else:
         line = re.sub(r'- \[ \] ', f'- [x] {today_str()} ', line)
     lines[item["line"]] = line
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    sync_today_to_tasks(item["text"], not now_done)
 
 
 # ── TASKS JSON ───────────────────────────────────────────
 
 def load_tasks():
-    return json.loads(TASKS_FILE.read_text(encoding="utf-8"))
+    tasks = json.loads(TASKS_FILE.read_text(encoding="utf-8"))
+    for t in tasks:
+        if t.get("order") is None:
+            t["order"] = 0.0
+    return tasks
 
 
 def save_tasks(tasks):
@@ -433,6 +636,8 @@ def render_task_row(task, all_tasks, depth=0):
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
         f'  <span class="task-text" data-id="{task_id}">{title}</span>\n'
         f'  {dl_html}\n'
+        f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
+        f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
@@ -442,52 +647,76 @@ def render_task_row(task, all_tasks, depth=0):
     return html
 
 
+def render_area(area, all_nodes):
+    area_id = area["id"]
+    title = area.get("title", "")
+    children = sorted(
+        [t for t in all_nodes if t.get("parent_id") == area_id],
+        key=lambda t: t.get("order", 0),
+    )
+    if not children:
+        return (
+            f'<div class="task-row" data-id="{area_id}">\n'
+            f'  <span class="task-text">{title}'
+            f'<span style="font-size:.7rem;color:var(--text4);margin-left:6px">area</span></span>\n'
+            f'  <button class="btn del-btn" data-id="{area_id}">×</button>\n'
+            f'</div>\n'
+        )
+    b = f'<details data-key="{area_id}" data-id="{area_id}"><summary><span class="area-title" data-id="{area_id}">{title}</span><button class="btn type-btn" data-id="{area_id}" data-current="area" onclick="event.stopPropagation()">A</button></summary>\n'
+    b += '<div class="section-tasks">\n'
+    for child in children:
+        if child.get("type") == "area":
+            b += render_area(child, all_nodes)
+        else:
+            b += render_task_row(child, all_nodes)
+    b += "</div>\n</details>\n"
+    return b
+
+
+def build_area_options(areas, all_nodes, prefix=""):
+    opts = []
+    for a in sorted(areas, key=lambda t: t.get("order", 0)):
+        path = prefix + a.get("title", "")
+        opts.append({"id": a["id"], "title": path})
+        sub = [t for t in all_nodes if t.get("parent_id") == a["id"] and t.get("type") == "area"]
+        opts.extend(build_area_options(sub, all_nodes, path + " › "))
+    return opts
+
+
 def render_tasks():
     tasks = load_tasks()
     active = [t for t in tasks if t.get("status") != "done"]
-
-    # Group: project → section → top-level tasks
-    groups = {}
-    for t in active:
-        if t.get("parent_id"):
-            continue
-        proj = t.get("project", "")
-        sec = t.get("section") or ""
-        groups.setdefault(proj, {}).setdefault(sec, []).append(t)
-
-    for proj in groups:
-        for sec in groups[proj]:
-            groups[proj][sec].sort(key=lambda t: t.get("order", 0))
-
-    b = "<h1>Задачи</h1>\n"
-    for proj in sorted(groups.keys(), key=lambda p: PROJ_ORDER.index(p) if p in PROJ_ORDER else 99):
-        label = PROJ_LABELS.get(proj, proj)
-        key = proj.replace("/", "_")
-        b += f'<details data-key="{key}"><summary>{label}</summary>\n'
-        for sec, items in groups[proj].items():
-            skey = f"{key}_{sec.replace(' ', '_')[:20]}"
-            sec_label = sec or "—"
-            b += f'<details data-key="{skey}"><summary>{sec_label}</summary>\n'
-            b += '<div class="section-tasks">\n'
-            for item in items:
-                b += render_task_row(item, active)
-            b += "</div>\n</details>\n"
-        b += "</details>\n"
+    top_areas = sorted(
+        [t for t in active if t.get("type") == "area" and not t.get("parent_id")],
+        key=lambda t: t.get("order", 0),
+    )
+    areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
+    b = f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};</script>\n<div id=\"top-areas\">\n"
+    for area in top_areas:
+        b += render_area(area, active)
+    b += "</div>\n"
     return b
 
 
 def toggle_task(task_id):
     tasks = load_tasks()
+    title = ""
+    done = False
     for t in tasks:
         if t["id"] == task_id:
             if t.get("status") == "done":
                 t["status"] = "todo"
                 t["done_at"] = None
+                done = False
             else:
                 t["status"] = "done"
                 t["done_at"] = today_str()
+                done = True
+            title = t.get("title", "")
             break
     save_tasks(tasks)
+    if title:
+        sync_tasks_to_today(title, done)
 
 
 def toggle_someday(task_id):
@@ -512,12 +741,80 @@ def delete_task(task_id):
     save_tasks([t for t in tasks if t["id"] not in ids_to_delete])
 
 
+def set_task_parent(task_id, parent_id):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            if parent_id:
+                t["parent_id"] = parent_id
+            else:
+                t.pop("parent_id", None)
+            break
+    save_tasks(tasks)
+
+
+def set_task_type(task_id, new_type):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            t["type"] = new_type
+            break
+    save_tasks(tasks)
+
+
 def rename_task(task_id, new_text):
     tasks = load_tasks()
     for t in tasks:
         if t["id"] == task_id:
             t["title"] = new_text
             break
+    save_tasks(tasks)
+
+
+def reorder_today(path, ordered_indices):
+    _, _, all_items = parse_today(path)
+    lines = path.read_text(encoding="utf-8").splitlines()
+    by_idx = {item["idx"]: item for item in all_items}
+    items_in_order = [by_idx[i] for i in ordered_indices if i in by_idx]
+    if len(items_in_order) < 2:
+        return
+    original_line_nums = sorted(item["line"] for item in items_in_order)
+    # capture content before any writes to avoid overwrite-then-read bug
+    contents = [lines[item["line"]] for item in items_in_order]
+    for line_num, content in zip(original_line_nums, contents):
+        lines[line_num] = content
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def remove_today_line(path, idx):
+    _, _, all_items = parse_today(path)
+    item = next((i for i in all_items if i["idx"] == idx), None)
+    if not item:
+        return
+    lines = path.read_text(encoding="utf-8").splitlines()
+    del lines[item["line"]]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def add_task_inbox(title):
+    tasks = load_tasks()
+    if not any(t["id"] == "area-inbox" for t in tasks):
+        tasks.insert(0, {"id": "area-inbox", "title": "Inbox", "type": "area", "order": -1})
+    slug = re.sub(r'[^\w\s-]', '', title.lower())
+    slug = re.sub(r'[\s_]+', '-', slug)[:50]
+    task_id = f"inbox-{slug}"
+    existing_ids = {t["id"] for t in tasks}
+    if task_id in existing_ids:
+        import time
+        task_id = f"inbox-{slug}-{int(time.time()) % 10000}"
+    tasks.append({
+        "id": task_id,
+        "title": title,
+        "parent_id": "area-inbox",
+        "status": "todo",
+        "someday": True,
+        "created_at": today_str()
+    })
     save_tasks(tasks)
 
 
@@ -531,20 +828,13 @@ def move_task(src_id, target_id, position):
 
     if position == "child":
         src["parent_id"] = target_id
-        src["project"] = target.get("project", src["project"])
-        src["section"] = target.get("section", src["section"])
         siblings = [t for t in tasks if t.get("parent_id") == target_id]
         src["order"] = max((t.get("order", 0) for t in siblings), default=0) + 1.0
     else:
         src["parent_id"] = target.get("parent_id")
-        src["project"] = target.get("project", src["project"])
-        src["section"] = target.get("section", src["section"])
+        parent_id = target.get("parent_id")
         siblings = sorted(
-            [t for t in tasks
-             if t.get("parent_id") == target.get("parent_id")
-             and t.get("project") == target.get("project")
-             and t.get("section") == target.get("section")
-             and t["id"] != src_id],
+            [t for t in tasks if t.get("parent_id") == parent_id and t["id"] != src_id],
             key=lambda t: t.get("order", 0),
         )
         target_order = target.get("order", 0)
@@ -699,6 +989,16 @@ class Handler(http.server.BaseHTTPRequestHandler):
             add_done_event(d["summary"], d.get("date"))
         elif self.path == "/rename":
             rename_task(d["id"], d["text"])
+        elif self.path == "/set-type":
+            set_task_type(d["id"], d["type"])
+        elif self.path == "/set-parent":
+            set_task_parent(d["id"], d.get("parent_id"))
+        elif self.path == "/remove-today":
+            remove_today_line(TODAY, d["idx"])
+        elif self.path == "/reorder-today":
+            reorder_today(TODAY, d["indices"])
+        elif self.path == "/add-task":
+            add_task_inbox(d["title"])
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
         else:
