@@ -1,5 +1,11 @@
 [
   {
+    "id": "area-inbox",
+    "title": "Inbox",
+    "type": "area",
+    "order": -1
+  },
+  {
     "id": "area-health",
     "title": "Здоровье",
     "type": "area",
@@ -565,7 +571,7 @@
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -579,31 +585,11 @@
     "order": 6.0
   },
   {
-    "id": "health-врач-по-насморку",
-    "title": "Врач по насморку",
-    "type": "task",
-    "project": "health",
-    "parent_id": "area-health",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": "health",
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 7.0
-  },
-  {
     "id": "health-записаться-на-термин-по-соплям",
     "title": "Записаться на термин по соплям",
     "type": "task",
     "project": "health",
-    "parent_id": "area-health",
+    "parent_id": "health-назначить-термин-у-вольфа-запросить-направлен",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -616,7 +602,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 8.0
+    "order": 6.5
   },
   {
     "id": "health-записаться-на-прием-к-эндокринологу-httpsgcok",
@@ -685,7 +671,7 @@
     "project": "health",
     "parent_id": "health-начать-принимать-тестостерон",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -743,7 +729,7 @@
     "title": "Получить рецепт на каннабиоиды против мигрени https://telecan.de",
     "type": "task",
     "project": "health",
-    "parent_id": "area-health",
+    "parent_id": "health-найти-cbd-препараты",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -756,14 +742,14 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 13.0
+    "order": 14.0
   },
   {
     "id": "health-разобраться-с-рецептом-на-каннабиоиды-httpsww",
     "title": "Разобраться с рецептом на каннабиоиды https://www.canifyclinics.com/cannabis-auf-rezept/",
     "type": "task",
     "project": "health",
-    "parent_id": "health-получить-рецепт-на-каннабиоиды-против-мигрени",
+    "parent_id": "health-найти-cbd-препараты",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -776,7 +762,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 15.0
   },
   {
     "id": "health-изучить-cordyceps-httpswwwgooglecomsearchqcor",
@@ -843,7 +829,7 @@
     "title": "Разработать комплекс упражнений на реабилитацию спины",
     "type": "task",
     "project": "health",
-    "parent_id": "area-health",
+    "parent_id": "health-разработать-комплекс-упражнении-на-мобильност",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -856,7 +842,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 17.0
+    "order": 18.0
   },
   {
     "id": "health-сделать-распорядок-дня",
@@ -2294,32 +2280,12 @@
     "order": 4.0
   },
   {
-    "id": "propria-сдать-отчетность-propria-gmbh-q1-2026",
-    "title": "Сдать отчётность Propria GmbH Q1 2026",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
-    "someday": true,
-    "deadline": null,
-    "priority": "red",
-    "stakes": 3,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 1.0
-  },
-  {
     "id": "propria-зарегистрировать-propria-gmbh-в-transparenzre",
     "title": "Зарегистрировать Propria GmbH в Transparenzregister",
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-19",
     "priority": null,
@@ -2329,7 +2295,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 2.0
   },
@@ -2374,32 +2340,12 @@
     "order": 4.0
   },
   {
-    "id": "propria-договориться-с-порядочновым-о-сдвиге-сроков-с",
-    "title": "Договориться с Порядочновым о сдвиге сроков сдачи отчёта",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
-    "someday": true,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 5.0
-  },
-  {
     "id": "propria-ответить-алле-прислать-данные-для-начисления",
     "title": "Ответить Алле: прислать данные для начисления зарплаты май 2026 (письмо 2026-05-21)",
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": "red",
@@ -2409,7 +2355,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 6.0
   },
@@ -2420,7 +2366,7 @@
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -2659,7 +2605,7 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -2669,7 +2615,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 14.0
   },
@@ -2712,26 +2658,6 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 16.0
-  },
-  {
-    "id": "propria-transparenzregister",
-    "title": "Transparenzregister",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 17.0
   },
   {
     "id": "propria-автоматическая-обработка-выписок",
@@ -2780,7 +2706,7 @@
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "red",
     "stakes": null,
@@ -7755,7 +7681,8 @@
     "status": "active",
     "someday": true,
     "deadline": "2026-06-10",
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "health-запроектировать-health-tracking",
@@ -7764,7 +7691,8 @@
     "parent_id": "area-health",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-purchases-купить-майку",
@@ -7813,7 +7741,8 @@
     "parent_id": "area-personal-purchases",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-purchases-насадки-зубная-щетка",
@@ -7822,7 +7751,8 @@
     "parent_id": "area-personal-purchases",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-purchases-зубная-щетка-электро",
@@ -7831,7 +7761,8 @@
     "parent_id": "area-personal-purchases",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-purchases-е-карта-винного",
@@ -7840,7 +7771,8 @@
     "parent_id": "area-personal-purchases",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "health-выкупить-аскотоп",
@@ -7849,7 +7781,8 @@
     "parent_id": "area-health",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-home-выкопать-растение-крыльцо",
@@ -7858,7 +7791,8 @@
     "parent_id": "area-personal-home",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "personal-home-посадить-вьющиеся-забор",
@@ -7867,7 +7801,8 @@
     "parent_id": "area-personal-home",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "sailing-iyt-медицинская-форма",
@@ -7876,7 +7811,8 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "sailing-iyt-рекомендация-vasyliev",
@@ -7885,7 +7821,8 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "active",
     "someday": true,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "order": 0.0
   },
   {
     "id": "area-ecom-gmc-bennet-gray",
@@ -7945,5 +7882,32 @@
     "someday": true,
     "order": 106.0,
     "created_at": "2026-05-27"
+  },
+  {
+    "id": "inbox-оценить-стоимость-санкций-и-сроки-оплаты-ндс-в-дан",
+    "title": "Оценить стоимость санкций и сроки оплаты НДС в Дании и Италии",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-05-28"
+  },
+  {
+    "id": "ai-systems-дашборд-фильтр-someday",
+    "title": "Дашборд: добавить фильтр по someday",
+    "type": "task",
+    "parent_id": "area-ai-systems-уровень-2-рост",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-05-28",
+    "order": 101.0
   }
 ]
