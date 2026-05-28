@@ -8044,5 +8044,15 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-05-28"
+  },
+  {
+    "id": "ecom-почистить-inbox-3553194",
+    "type": "task",
+    "parent_id": "area-ecom-обвязка-инфраструктура",
+    "title": "Почистить inbox 3553194@gmail.com",
+    "status": "todo",
+    "someday": false,
+    "notes": "Анализ сделан 2026-05-28. Фильтры настроены (o2/nordvpn/ajet/edgar/gerchik/etc). Удалить оставшийся спам через label:Label_1014061225514128273 в Gmail. Топ шумных: security@mail.instagram.com (~13 тредов), namecheap (~14), spamzilla (~8).",
+    "order": 0.0
   }
 ]
