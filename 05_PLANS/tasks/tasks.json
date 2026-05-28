@@ -7924,5 +7924,43 @@
     "type": "area",
     "parent_id": "area-ecom",
     "order": 6.0
+  },
+  {
+    "id": "task-ecom-us-1000-products",
+    "type": "task",
+    "parent_id": "area-ecom-us-store",
+    "title": "Добавить 1000 товаров (Charlie & Ted)",
+    "status": "todo",
+    "someday": true,
+    "tags": [
+      "after-launch"
+    ],
+    "notes": "После того как GMC US заработает"
+  },
+  {
+    "id": "task-ecom-uk-new-gmc",
+    "type": "task",
+    "parent_id": "area-ecom-uk-store",
+    "title": "Создать новый GMC для UK (старый заблокирован)",
+    "status": "todo",
+    "someday": true,
+    "priority": "orange",
+    "notes": "Старый GMC Oliver заблокирован навсегда. Нужен новый аккаунт."
+  },
+  {
+    "id": "task-ecom-bg-verify-domain",
+    "type": "task",
+    "parent_id": "area-ecom-gmc-bennet-gray",
+    "title": "Верифицировать домен bennetandgray.com в Google",
+    "status": "todo",
+    "someday": true
+  },
+  {
+    "id": "task-ecom-of-verify-domain",
+    "type": "task",
+    "parent_id": "area-ecom-oliver-faye",
+    "title": "Верифицировать домен oliverandfaye.com в Google",
+    "status": "todo",
+    "someday": true
   }
 ]
