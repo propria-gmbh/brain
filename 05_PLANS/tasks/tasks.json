@@ -27,7 +27,8 @@
     "id": "area-ecom-stores",
     "type": "area",
     "parent_id": "area-ecom",
-    "title": "Магазины"
+    "title": "Магазины",
+    "order": 0.0
   },
   {
     "id": "area-propria",
@@ -4562,7 +4563,7 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": "2026-05-28",
     "priority": null,
@@ -4574,7 +4575,7 @@
     ],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 3.0
   },
@@ -7962,7 +7963,8 @@
     "parent_id": "area-charlie-ted",
     "title": "Верифицировать домен (Charlie & Ted) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-oliver-adler",
@@ -7970,7 +7972,8 @@
     "parent_id": "area-oliver-adler",
     "title": "Верифицировать домен (Oliver and Adler) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-marc-francois",
@@ -7978,7 +7981,8 @@
     "parent_id": "area-marc-francois",
     "title": "Верифицировать домен (Marc et Francois) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-bennet-gray",
@@ -7986,7 +7990,8 @@
     "parent_id": "area-bennet-gray",
     "title": "Верифицировать домен (Bennet and Gray) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-oliver-faye",
@@ -7994,7 +7999,8 @@
     "parent_id": "area-oliver-faye",
     "title": "Верифицировать домен (Oliver and Faye) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-casa-giannini",
@@ -8002,21 +8008,24 @@
     "parent_id": "area-casa-giannini",
     "title": "Верифицировать домен (Casa Giannini) — чеклист Андрея",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "personal-purchases-ремонт-airpods",
     "type": "task",
-    "parent_id": "area-personal-purchases-нужные",
+    "parent_id": "area-personal-home",
     "title": "Записаться на ремонт наушников AirPods",
     "status": "todo",
-    "someday": true
+    "someday": true,
+    "order": 0.0
   },
   {
     "id": "area-personal-agent-buffer",
     "type": "area",
     "parent_id": "area-ai-systems",
-    "title": "Telegram ↔ Claude буфер (VPS)"
+    "title": "Telegram ↔ Claude буфер (VPS)",
+    "order": 0.0
   },
   {
     "id": "task-agent-buffer-vps-service",
@@ -8025,6 +8034,15 @@
     "title": "Сделать VPS-сервис: буфер между Telegram-ботом и Claude",
     "status": "todo",
     "someday": false,
-    "notes": "Контекст теряется. Нужен буфер на VPS: хранить историю, накапливать если Claude не в сети, распознавать голос, отвечать голосом."
+    "notes": "Контекст теряется. Нужен буфер на VPS: хранить историю, накапливать если Claude не в сети, распознавать голос, отвечать голосом.",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-закрыть-кредитную-карту-сантандер-открыть-кредитну",
+    "title": "Закрыть кредитную карту Сантандер, открыть кредитную карту Шпаркассе",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-05-28"
   }
 ]
