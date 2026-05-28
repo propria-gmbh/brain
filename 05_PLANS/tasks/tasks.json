@@ -132,17 +132,8 @@
     "created_at": "2026-05-25"
   },
   {
-    "id": "area-ecom-gmc",
-    "title": "GMC",
-    "type": "area",
-    "parent_id": "area-ecom",
-    "status": "active",
-    "order": 2.0,
-    "created_at": "2026-05-25"
-  },
-  {
     "id": "area-ecom-us-store",
-    "title": "US Store",
+    "title": "Charlie & Ted (US)",
     "type": "area",
     "parent_id": "area-ecom",
     "status": "active",
@@ -151,7 +142,7 @@
   },
   {
     "id": "area-ecom-ch-store",
-    "title": "CH Store",
+    "title": "Marc et Francois (CH)",
     "type": "area",
     "parent_id": "area-ecom",
     "status": "active",
@@ -160,7 +151,7 @@
   },
   {
     "id": "area-ecom-uk-store",
-    "title": "UK Store",
+    "title": "Oliver and Adler (UK)",
     "type": "area",
     "parent_id": "area-ecom",
     "status": "active",
@@ -1012,8 +1003,8 @@
     "project": "ecom",
     "parent_id": "area-ecom-поставщик",
     "status": "todo",
-    "someday": false,
-    "deadline": null,
+    "someday": true,
+    "deadline": "2026-06-04",
     "priority": "red",
     "stakes": null,
     "context": null,
@@ -1298,7 +1289,7 @@
     "title": "Разобрать созвон с Андреем и Максимом",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-knowledge",
     "status": "todo",
     "someday": true,
     "deadline": null,
@@ -1320,7 +1311,7 @@
     "title": "Проанализировать чеклист Андрея",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-knowledge",
     "status": "todo",
     "someday": true,
     "deadline": null,
@@ -1482,7 +1473,7 @@
     "title": "Сделать новый GMC (US Store)",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-us-store",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1505,7 +1496,7 @@
     "title": "Удалить GMC Oliver (UK Store)",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-uk-store",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1527,7 +1518,7 @@
     "title": "Разработать схему отправок из Италии для GMC",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1569,7 +1560,7 @@
     "title": "Разработать итальянских дропшипперов",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-casa-giannini",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1591,7 +1582,7 @@
     "title": "Ниша — льняные изделия",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-casa-giannini",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1737,28 +1728,6 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 4.0
-  },
-  {
-    "id": "ecom-добавить-до-300-товаров-ch-store",
-    "title": "Добавить до 300 товаров (CH Store)",
-    "type": "task",
-    "project": "ecom",
-    "parent_id": "area-ecom-ch-store",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": "green",
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [
-      "ch-store"
-    ],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 1.0
   },
   {
     "id": "ecom-оценить-результаты-и-принять-решение-о-смене",
@@ -7170,7 +7139,7 @@
     "title": "Удалить GMC Charlie and Ted (charlieandted.com)",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom-us-store",
     "status": "done",
     "someday": false,
     "deadline": "2026-05-25",
@@ -7249,26 +7218,6 @@
     "order": 12.0
   },
   {
-    "id": "ecom-делегирование-домена-dk",
-    "title": "Проверить делегирование домена DK (Havgaard Kobenhavn)",
-    "type": "task",
-    "project": "ecom",
-    "parent_id": "area-ecom-gmc",
-    "status": "todo",
-    "someday": true,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": "Магазин закрывается",
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 13.0
-  },
-  {
     "id": "ecom-флоу-митиного-сервиса",
     "title": "Посмотреть флоу митиного сервиса и составить перечень замечаний",
     "type": "task",
@@ -7330,7 +7279,7 @@
     "id": "ecom-аудит-магазинов-и-gmc",
     "title": "Аудит магазинов и GMC",
     "type": "task",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom",
     "status": "done",
     "someday": true,
     "deadline": null,
@@ -7842,7 +7791,7 @@
     "id": "area-ecom-gmc-bennet-gray",
     "title": "Bennet and Gray",
     "type": "area",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom",
     "status": "active",
     "order": 101.0,
     "created_at": "2026-05-27"
@@ -7861,7 +7810,7 @@
     "id": "task-olivefaye-market",
     "title": "Выбрать рынок (oliverandfaye.com)",
     "type": "task",
-    "parent_id": "area-ecom-gmc-bennet-gray",
+    "parent_id": "area-ecom-oliver-faye",
     "status": "open",
     "someday": true,
     "order": 103.0,
@@ -7891,7 +7840,7 @@
     "id": "task-ecom-gmc-buy-domains",
     "title": "Купить два домена 1+ год для GMC",
     "type": "task",
-    "parent_id": "area-ecom-gmc",
+    "parent_id": "area-ecom",
     "status": "open",
     "someday": true,
     "order": 106.0,
@@ -7931,7 +7880,8 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-05-28"
+    "created_at": "2026-05-28",
+    "order": 0.0
   },
   {
     "id": "miles-accident-followup-3",
@@ -7953,5 +7903,26 @@
     "done_at": null,
     "created_at": "2026-05-28",
     "order": 10.0
+  },
+  {
+    "id": "area-ecom-knowledge",
+    "title": "Обучение (GMC / Андрей)",
+    "type": "area",
+    "parent_id": "area-ecom",
+    "order": 0.5
+  },
+  {
+    "id": "area-ecom-oliver-faye",
+    "title": "Oliver and Faye",
+    "type": "area",
+    "parent_id": "area-ecom",
+    "order": 5.5
+  },
+  {
+    "id": "area-ecom-casa-giannini",
+    "title": "Casa Giannini (IT)",
+    "type": "area",
+    "parent_id": "area-ecom",
+    "order": 6.0
   }
 ]
