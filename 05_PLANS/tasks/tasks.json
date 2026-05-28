@@ -8055,5 +8055,24 @@
     "someday": false,
     "notes": "Анализ сделан 2026-05-28. Фильтры настроены (o2/nordvpn/ajet/edgar/gerchik/etc). Удалить оставшийся спам через label:Label_1014061225514128273 в Gmail. Топ шумных: security@mail.instagram.com (~13 тредов), namecheap (~14), spamzilla (~8).",
     "order": 0.0
+  },
+  {
+    "id": "проверить-подписку-на-truprofit-и-отключить",
+    "title": "Проверить подписку на TruProfit и отключить",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-05-28",
+    "order": 0.0
   }
 ]
