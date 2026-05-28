@@ -7849,10 +7849,11 @@
     "title": "Купить два домена 1+ год для GMC",
     "type": "task",
     "parent_id": "area-ecom",
-    "status": "open",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "order": 106.0,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "done_at": "2026-05-28"
   },
   {
     "id": "inbox-оценить-стоимость-санкций-и-сроки-оплаты-ндс-в-дан",
