@@ -2305,8 +2305,8 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria-уровень-1-фундамент",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": "red",
     "stakes": 5,
@@ -2315,7 +2315,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 3.0
   },
@@ -4547,8 +4547,8 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": "2026-05-27",
     "priority": "red",
     "stakes": 3,
@@ -4557,7 +4557,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-28",
     "created_at": "2026-05-25",
     "order": 1.0
   },
@@ -7886,10 +7886,11 @@
   {
     "id": "inbox-оценить-стоимость-санкций-и-сроки-оплаты-ндс-в-дан",
     "title": "Оценить стоимость санкций и сроки оплаты НДС в Дании и Италии",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-05-28"
+    "created_at": "2026-05-28",
+    "order": 0.0
   },
   {
     "id": "ai-systems-дашборд-фильтр-someday",
