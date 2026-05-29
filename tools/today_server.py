@@ -214,14 +214,6 @@ if (searchInput) {
   });
 }
 
-// tasks.json: move up/down
-document.querySelectorAll('.mv-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    post('/move-order', {id: btn.dataset.id, direction: btn.dataset.dir});
-  });
-});
-
 // tasks.json: delete
 document.querySelectorAll('.del-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -709,8 +701,6 @@ def render_task_row(task, all_tasks, depth=0):
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
-        f'  <button class="btn mv-btn" data-id="{task_id}" data-dir="up" title="Вверх">▲</button>\n'
-        f'  <button class="btn mv-btn" data-id="{task_id}" data-dir="down" title="Вниз">▼</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
