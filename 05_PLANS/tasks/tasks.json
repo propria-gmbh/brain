@@ -373,15 +373,6 @@
     "created_at": "2026-05-25"
   },
   {
-    "id": "area-personal-finance-займы",
-    "title": "Займы",
-    "type": "area",
-    "parent_id": "area-personal-finance",
-    "status": "active",
-    "order": 6.0,
-    "created_at": "2026-05-25"
-  },
-  {
     "id": "area-personal-home-ordnung-цифровое-и-документы",
     "title": "Ordnung — цифровое и документы",
     "type": "area",
