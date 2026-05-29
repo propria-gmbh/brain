@@ -3701,7 +3701,7 @@
     "project": "personal/development",
     "parent_id": "personal-development-определить-цели-по-методике-дорофеева",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": "green",
     "stakes": null,
