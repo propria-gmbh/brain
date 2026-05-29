@@ -5141,7 +5141,7 @@
     "title": "Сделать договор займа с Женей Ваныкиным на €85,000",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "area-personal-finance-займы",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "deadline": null,
