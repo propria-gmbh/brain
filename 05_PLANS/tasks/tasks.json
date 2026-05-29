@@ -2687,7 +2687,7 @@
     "title": "Dubai Geschäftsreise — оформить",
     "type": "task",
     "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент-tacura",
+    "parent_id": "area-projects-tacura",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2700,7 +2700,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 4.0
+    "order": 3.0
   },
   {
     "id": "propria-сделать-отчет-по-подоходному-за-2025-год",
