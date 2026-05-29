@@ -8143,11 +8143,12 @@
     "type": "task",
     "parent_id": "area-lily",
     "title": "Верифицировать домен lilymagsboutique.com",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "done": false,
     "created_at": "2026-05-29",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-05-29"
   },
   {
     "id": "task-lily-store",
