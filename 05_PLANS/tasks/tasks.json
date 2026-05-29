@@ -7880,7 +7880,7 @@
     "parent_id": "area-charlie-ted",
     "title": "Добавить 1000 товаров (Charlie & Ted)",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "tags": [
       "after-launch"
     ],
