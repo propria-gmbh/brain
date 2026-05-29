@@ -4717,26 +4717,6 @@
     "order": 9.0
   },
   {
-    "id": "personal-finance-составить-список-списании-со-счетов",
-    "title": "Составить список списаний со счетов",
-    "type": "task",
-    "project": "personal/finance",
-    "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 9.0
-  },
-  {
     "id": "personal-finance-создать-список-повторяющихся-платежеи-для-бюд",
     "title": "Создать список повторяющихся платежей для бюджета",
     "type": "task",
