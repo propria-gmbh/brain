@@ -4681,7 +4681,7 @@
     "title": "Разработать систему бюджетирования и учёта личных активов",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -4694,7 +4694,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 7.0
+    "order": 1.0
   },
   {
     "id": "personal-finance-посчитать-текущее-состояние-долги-предоплаты",
