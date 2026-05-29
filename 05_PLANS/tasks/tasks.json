@@ -6044,7 +6044,7 @@
     "project": "personal/home",
     "parent_id": "personal-home-очистить-обеденныи-стол-от-старого-покрытия-и",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
