@@ -931,7 +931,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "marker": "🔴"
   },
   {
     "id": "ecom-oliver-and-alder-добавить-стоп-слова-на-стран",
