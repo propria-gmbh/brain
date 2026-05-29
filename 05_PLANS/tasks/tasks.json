@@ -4562,7 +4562,7 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -4572,7 +4572,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-29",
     "created_at": "2026-05-25",
     "order": 1.0
   },
