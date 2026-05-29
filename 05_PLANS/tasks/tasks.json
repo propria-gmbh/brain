@@ -4701,7 +4701,7 @@
     "title": "Посчитать текущее состояние — долги (предоплаты, ожидания), активы",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
+    "parent_id": "personal-finance-аудит-личных-активов",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -4714,7 +4714,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 8.0
+    "order": 9.0
   },
   {
     "id": "personal-finance-составить-список-списании-со-счетов",
