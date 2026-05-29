@@ -7749,11 +7749,11 @@
     "id": "personal-home-посадить-вьющиеся-забор",
     "title": "Посадить вьющиеся растения у забора",
     "type": "task",
-    "parent_id": "area-personal-home",
+    "parent_id": "personal-home-выкопать-растение-крыльцо",
     "status": "active",
     "someday": true,
     "created_at": "2026-05-27",
-    "order": 0.0
+    "order": 1.0
   },
   {
     "id": "sailing-iyt-медицинская-форма",
