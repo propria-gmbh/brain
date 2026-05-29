@@ -1087,7 +1087,7 @@
   },
   {
     "id": "ecom-проверить-все-подписки-shopify",
-    "title": "Проверить все подписки Shopify и отключить ненужные",
+    "title": "Проверить все подписки Shopify и отключить ненужные + сделать дашборд подписок",
     "type": "task",
     "parent_id": "area-ecom-финансы-подписки",
     "status": "todo",
@@ -7139,7 +7139,9 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 100.0
+    "order": 100.0,
+    "done": true,
+    "done_date": "2026-05-29"
   },
   {
     "id": "ecom-delete-gmc-charlieandted",
@@ -8099,6 +8101,25 @@
     "title": "Добавить Casa Giannini и Oliver в счётчик заказов",
     "type": "task",
     "parent_id": "area-ai-systems",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-05-29",
+    "order": 0.0
+  },
+  {
+    "id": "визуализация-субагентов-в-дашборде",
+    "title": "Визуализация субагентов в дашборде",
+    "type": "task",
+    "parent_id": "area-ai-systems-уровень-2-рост",
     "status": "todo",
     "someday": true,
     "deadline": null,
