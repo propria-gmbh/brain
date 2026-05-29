@@ -7367,8 +7367,8 @@
     "someday": false,
     "created_at": "2026-05-26",
     "order": 1.0,
-    "marker": "🟢",
-    "priority": "green"
+    "marker": "🟧",
+    "priority": "orange"
   },
   {
     "id": "sailing-oksana-instructor-followup",
