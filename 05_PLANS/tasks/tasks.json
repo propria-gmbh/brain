@@ -2663,26 +2663,6 @@
     "order": 2.0
   },
   {
-    "id": "propria-посчитать-курслост-по-такуре-2026",
-    "title": "Посчитать курслост по Такуре 2026",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент-tacura",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 2.0
-  },
-  {
     "id": "propria-разослать-зарплатные-листки",
     "title": "Разослать зарплатные листки",
     "type": "task",
