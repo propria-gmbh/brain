@@ -151,6 +151,39 @@ launchctl list | grep telegram-bot                        # статус
 
 ---
 
+## brain/tools/filter_domains.py
+
+**Что делает:** фильтрует CSV с аукциона GoDaddy под критерии GMC (длина домена, зона, стоп-слова). Выдаёт `.tsv` с отфильтрованными доменами и shortlist.
+
+**Запуск:**
+```bash
+python3 tools/filter_domains.py domains.csv
+# результат: domains_filtered.tsv, domains_shortlist.tsv
+```
+
+**Файл shortlist:** `tools/domains_shortlist.tsv` — финальный список кандидатов из сессии 2026-05-28.
+
+---
+
+## brain/tools/convert_vtt_kb.py
+
+**Что делает:** конвертирует VTT-субтитры транскриптов AB Inner Circle в markdown knowledge base. Группирует по секциям → один MD файл на секцию.
+
+**Куда кладёт:** `08_PROJECTS/ecom/ab-inner-circle/`
+
+**Запуск:**
+```bash
+python3 tools/convert_vtt_kb.py path/to/transcript.vtt
+```
+
+---
+
+## brain/tools/migrate_to_areas.py / migrate_tasks.py
+
+**Что делают:** утилиты одноразовой миграции tasks.json (переход на area-иерархию, 2026-05). Миграция завершена, скрипты не нужны.
+
+---
+
 ## Flow: обработка инвойсов
 
 ```

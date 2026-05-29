@@ -11,7 +11,7 @@ note: stores-gmc.md — мастер. Google Sheet — для ручного р�
 | Marc et Francois | marcfrancois.ch | CH | qff1md-0e (ID: 5694372236) | 3553194@gmail.com | ? | DE Propria | ✅ Approved | 04/03/26 WMI resolved → Approved |
 | Oliver and Alder | oliverandalder.com | UK | zyy7ka-em | ? | ? | DE Propria | Suspended — no more appeals | identity not verified, нельзя апеллировать |
 | Charlie & Ted | charlieandted.com | US | dca4de (удалён) | ? | ? | DE Propria | GMC удалён | 19/03/26 GMC удалён (Suspended); ScamAdviser resolved 27/05/26 → готов к новому GMC |
-| Havgaard Kobenhavn | havgaard-kobenhavn.dk | DK | ID: 5651270174 (удалён) | ilja.disterheft@gmail.com | ? | DE Propria | GMC удалён | 25/05/26 GMC удалён (Suspended/Misrepresentation) — магазин закрывается |
+| ~~Havgaard Kobenhavn~~ | ~~havgaard-kobenhavn.dk~~ | DK | удалён | ilja.disterheft@gmail.com | ? | DE Propria | 🗑 НА УДАЛЕНИЕ | магазин закрывается, верификация не нужна |
 | HI&UTE | ? | ? | — | hiute.hk@gmail.com | ? | — | нет GMC | аккаунт проверен 26/05/26 |
 | Redford London | redford-london.com | UK | — | ? | ? | — | CANCELLED | duplicate domain |
 

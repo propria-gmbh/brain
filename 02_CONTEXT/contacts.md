@@ -2,6 +2,11 @@
 
 Используется для автоподстановки локаций в calendar_cache.json и быстрого доступа к реквизитам.
 
+## Ilja Disterheft — пользователь
+
+- Адрес: Götzestr. 18A, Berlin
+- Морской опыт: 6000 морских миль (из них 3000 шкипером)
+
 ## Dr. Yury Poryadochnov — налоговый консультант (Prokurist)
 
 - Компания: HECHT, von LUXBURG Steuerberatungsgesellschaft mbH
@@ -22,6 +27,7 @@
 
 - Адрес: Bismarckstraße 45-47, 10627 Berlin
 - Тел: +49 30 610818680
+- Email: kontakt@neurologie-bewegt.de
 - Web: neurologie-bewegt.de
 - Режим: пн-ср 9:00-16:00, пт 9:00-12:00
 - Рецепт: Ascotop (против мигрени)

@@ -8,17 +8,18 @@ source: AB Inner Circle — 4.5 How to delete a Google Merchant Center
 
 ## Порядок действий
 
-**1. Business Info — заменить всё на случайные данные**
-- Открыть Business info
+**1. Business details — заменить всё на случайные данные**
+- Открыть Business Info → Business details
 - Изменить все адреса на случайные (не твои реальные данные)
 - Сохранить
 
-**2. Website — заменить на google.com**
-- В Business info → поле website: вписать `google.com`
+**2. Your online shop — заменить website на google.com**
+- Открыть Business Info → Your online shop
+- В поле website вписать `google.com`
 - Сохранить
 
-**3. Shipping and Returns — удалить всё**
-- Перейти в Shipping and returns
+**3. Delivery and returns — удалить всё**
+- Перейти в Delivery and returns
 - Удалить shipping policy
 - Удалить return policy
 
@@ -26,7 +27,11 @@ source: AB Inner Circle — 4.5 How to delete a Google Merchant Center
 - Перейти в Products → Manage product resources
 - Удалить product source (feed)
 
-**5. Закрыть аккаунт**
+**5. Google Ads — отвязать аккаунт**
+- Перейти в настройки связанных аккаунтов
+- Отвязать Google Ads
+
+**6. Закрыть аккаунт**
 - Перейти в General account options
 - Прокрутить вниз до **Close merchant center accounts**
 - Выбрать "Yes, I want to delete permanently"

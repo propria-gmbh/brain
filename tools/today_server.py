@@ -4,6 +4,7 @@
 import http.server
 import json
 import re
+import subprocess
 import webbrowser
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -623,6 +624,10 @@ def load_tasks():
 
 def save_tasks(tasks):
     TASKS_FILE.write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
+    subprocess.run(
+        ["git", "commit", "-am", "server: update tasks"],
+        cwd=BRAIN, capture_output=True
+    )
 
 
 def render_task_row(task, all_tasks, depth=0):
