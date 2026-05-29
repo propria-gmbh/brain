@@ -786,6 +786,7 @@ def toggle_task(task_id):
     tasks = load_tasks()
     title = ""
     done = False
+    cloned = None
     for t in tasks:
         if t["id"] == task_id:
             if t.get("status") == "done":
@@ -796,8 +797,23 @@ def toggle_task(task_id):
                 t["status"] = "done"
                 t["done_at"] = today_str()
                 done = True
+                recurring = t.get("recurring")
+                if recurring:
+                    import time as _time
+                    base_id = task_id + "-next"
+                    existing_ids = {x["id"] for x in tasks}
+                    new_id = base_id if base_id not in existing_ids else f"{base_id}-{int(_time.time()) % 100000}"
+                    skip_keys = {"id", "status", "done_at"}
+                    cloned = {k: v for k, v in t.items() if k not in skip_keys}
+                    cloned["id"] = new_id
+                    cloned["status"] = "todo"
+                    dl = next_deadline(recurring)
+                    if dl:
+                        cloned["deadline"] = dl
             title = t.get("title", "")
             break
+    if cloned:
+        tasks.append(cloned)
     save_tasks(tasks)
     if title:
         sync_tasks_to_today(title, done)
@@ -858,6 +874,32 @@ def set_task_type(task_id, new_type):
     save_tasks(tasks)
 
 
+def next_deadline(recurring):
+    today = date.today()
+    if recurring == "weekly":
+        return (today + timedelta(days=7)).isoformat()
+    elif recurring == "monthly":
+        m = today.month + 1
+        y = today.year + (m - 1) // 12
+        m = (m - 1) % 12 + 1
+        import calendar
+        d = min(today.day, calendar.monthrange(y, m)[1])
+        return date(y, m, d).isoformat()
+    elif recurring == "quarterly":
+        m = today.month + 3
+        y = today.year + (m - 1) // 12
+        m = (m - 1) % 12 + 1
+        import calendar
+        d = min(today.day, calendar.monthrange(y, m)[1])
+        return date(y, m, d).isoformat()
+    elif recurring == "yearly":
+        import calendar
+        y = today.year + 1
+        d = min(today.day, calendar.monthrange(y, today.month)[1])
+        return date(y, today.month, d).isoformat()
+    return None
+
+
 def set_task_marker(task_id):
     tasks = load_tasks()
     cycle = ["", "🔴", "🟢", "🟧"]
@@ -869,6 +911,18 @@ def set_task_marker(task_id):
             nxt = cycle[(idx + 1) % len(cycle)]
             t["marker"] = nxt
             t["priority"] = priority_map[nxt]
+            break
+    save_tasks(tasks)
+
+
+def set_task_recurring(task_id, recurring):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            if recurring:
+                t["recurring"] = recurring
+            else:
+                t.pop("recurring", None)
             break
     save_tasks(tasks)
 

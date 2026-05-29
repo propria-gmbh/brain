@@ -7886,7 +7886,7 @@
     "id": "проверить-подписку-на-truprofit-и-отключить",
     "title": "Проверить подписку на TruProfit и отключить",
     "type": "task",
-    "parent_id": "area-ecom",
+    "parent_id": "area-ecom-финансы-подписки",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -7899,7 +7899,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-28",
-    "order": 0.0
+    "order": 2.0
   },
   {
     "id": "удалить-магазин-helion-из-счётчика-заказов",
