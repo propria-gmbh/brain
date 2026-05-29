@@ -358,6 +358,30 @@ document.querySelectorAll('.area-title[data-id]').forEach(function(el) {
   });
 });
 
+// tasks.json: set recurring
+document.querySelectorAll('.r-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var sel = document.createElement('select');
+    sel.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px';
+    [['', 'нет'], ['weekly', 'еженедельно'], ['monthly', 'ежемесячно'], ['quarterly', 'раз в квартал'], ['yearly', 'ежегодно']].forEach(function(pair) {
+      var opt = document.createElement('option');
+      opt.value = pair[0];
+      opt.textContent = pair[1];
+      if (btn.dataset.recurring === pair[0]) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    btn.replaceWith(sel);
+    sel.focus();
+    sel.addEventListener('change', function() {
+      post('/set-recurring', {id: btn.dataset.id, recurring: sel.value || null});
+      setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 100);
+    });
+    sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
+    sel.addEventListener('keydown', function(e) { if (e.key === 'Escape') sel.replaceWith(btn); });
+  });
+});
+
 // drag & drop
 window.isDragging = false;
 var _childTarget = null;
@@ -1205,6 +1229,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             undo_tasks()
         elif self.path == "/move-order":
             move_task_order(d["id"], d["direction"])
+        elif self.path == "/set-recurring":
+            set_task_recurring(d["id"], d.get("recurring") or None)
         else:
             self.send_error(404)
             return
