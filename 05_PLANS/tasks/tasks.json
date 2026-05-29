@@ -1206,7 +1206,7 @@
   },
   {
     "id": "ecom-cancel-automatic-renewal-lymiko",
-    "title": "Cancel automatic renewal Lymiko",
+    "title": "Отменить авто-продление домена lymiko.com (Shopify Support — чат в Admin → Help → Domains)",
     "type": "task",
     "project": "ecom",
     "parent_id": "area-ecom-финансы-подписки",
@@ -1218,7 +1218,7 @@
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": null,
+    "notes": "Черновик письма готов. Тема: Cancel domain auto-renewal — lymiko.com. Домен истекает конец 2026.",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
@@ -1672,7 +1672,7 @@
   },
   {
     "id": "ecom-написать-в-поддержку-об-отказе-от-домена-lymi",
-    "title": "Написать в поддержку об отказе от домена Lymiko",
+    "title": "Отменить авто-продление домена lymiko.com (Shopify Support — чат в Admin → Help → Domains)",
     "type": "task",
     "project": "ecom",
     "parent_id": "area-charlie-ted",
@@ -1686,7 +1686,7 @@
     "tags": [
       "us-store"
     ],
-    "notes": null,
+    "notes": "Черновик письма готов. Тема: Cancel domain auto-renewal — lymiko.com. Домен истекает конец 2026.",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
