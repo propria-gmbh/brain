@@ -947,7 +947,7 @@
     "title": "Oliver and Alder: добавить стоп-слова на странице Order Tracking (скрыть \"China\")",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom",
+    "parent_id": "area-oliver-adler",
     "status": "todo",
     "someday": true,
     "deadline": null,
