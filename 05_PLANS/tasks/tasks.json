@@ -7719,7 +7719,7 @@
   {
     "id": "inbox-узнать-есть-ли-кейсы-повышения-оценки-трастпайлот",
     "title": "Узнать есть ли кейсы повышения оценки ТрастПайлот",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ecom",
     "status": "todo",
     "someday": false,
     "created_at": "2026-05-28",
