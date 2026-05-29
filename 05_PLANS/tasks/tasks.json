@@ -2667,7 +2667,7 @@
     "title": "Разослать зарплатные листки",
     "type": "task",
     "project": "propria",
-    "parent_id": "area-propria-уровень-1-фундамент-tacura",
+    "parent_id": "area-projects-tacura",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2680,7 +2680,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 3.0
+    "order": 2.5
   },
   {
     "id": "propria-dubai-geschaftsreise-оформить",
