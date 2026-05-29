@@ -7986,7 +7986,9 @@
     "status": "todo",
     "someday": false,
     "created_at": "2026-05-28",
-    "order": 1.0
+    "order": 1.0,
+    "marker": "🔴",
+    "priority": "red"
   },
   {
     "id": "ecom-почистить-inbox-3553194",
