@@ -27,7 +27,7 @@
     "id": "area-ecom-stores",
     "type": "area",
     "parent_id": "area-ecom",
-    "title": "Магазины",
+    "title": "Stores",
     "order": 0.0
   },
   {
@@ -8237,7 +8237,7 @@
   {
     "id": "area-allspice",
     "type": "area",
-    "parent_id": null,
+    "parent_id": "area-ecom-stores",
     "title": "allspicefashion.com",
     "status": "todo",
     "someday": false,
@@ -8277,7 +8277,7 @@
   {
     "id": "area-lily",
     "type": "area",
-    "parent_id": null,
+    "parent_id": "area-ecom-stores",
     "title": "lilymagsboutique.com",
     "status": "todo",
     "someday": false,
