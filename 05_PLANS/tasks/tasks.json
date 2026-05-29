@@ -7301,11 +7301,11 @@
   {
     "id": "personal-finance-аудит-личных-активов",
     "title": "Составить методику и график аудита личных активов",
-    "parent_id": "area-personal-finance",
+    "parent_id": "personal-finance-разработать-систему-бюджетирования-и-учета-ли",
     "status": "todo",
     "someday": false,
     "created_at": "2026-05-26",
-    "order": 1.0,
+    "order": 2.0,
     "marker": "🟧",
     "priority": "orange"
   },
