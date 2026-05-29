@@ -6058,26 +6058,6 @@
     "order": 4.0
   },
   {
-    "id": "personal-home-купить-лазурь-в-оби-для-стола",
-    "title": "Купить Лазурь в Оби для стола",
-    "type": "task",
-    "project": "personal/home",
-    "parent_id": "personal-home-очистить-обеденныи-стол-от-старого-покрытия-и",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 5.0
-  },
-  {
     "id": "personal-home-покрыть-ножки-ореховои-лазурью",
     "title": "Покрыть ножки ореховой лазурью",
     "type": "task",
