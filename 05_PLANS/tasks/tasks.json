@@ -7982,11 +7982,11 @@
   {
     "id": "inbox-закрыть-кредитную-карту-сантандер-открыть-кредитну",
     "title": "Закрыть кредитную карту Сантандер, открыть кредитную карту Шпаркассе",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "created_at": "2026-05-28",
-    "order": 0.0
+    "order": 1.0
   },
   {
     "id": "ecom-почистить-inbox-3553194",

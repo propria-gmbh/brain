@@ -190,6 +190,14 @@ document.querySelectorAll('.s-btn[data-id]').forEach(function(btn) {
   });
 });
 
+// tasks.json: cycle marker
+document.querySelectorAll('.m-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    post('/set-marker', {id: btn.dataset.id});
+  });
+});
+
 // calendar event done
 document.querySelectorAll('.cal-event[data-summary]').forEach(function(el) {
   el.addEventListener('click', function() {
@@ -691,6 +699,16 @@ def render_task_row(task, all_tasks, depth=0):
             overdue = ""
         dl_html = f'<span class="deadline{overdue}">{deadline}</span>'
 
+    marker = task.get("marker", "")
+    marker_label = marker if marker else "M"
+    marker_style = ""
+    if marker == "🔴":
+        marker_style = " style=\"color:#e74c3c\""
+    elif marker == "🟢":
+        marker_style = " style=\"color:#2ecc71\""
+    elif marker == "🟧":
+        marker_style = " style=\"color:#f39c12\""
+
     dl_val = deadline or ""
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}">\n'
@@ -701,6 +719,7 @@ def render_task_row(task, all_tasks, depth=0):
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
+        f'  <button class="btn m-btn" data-id="{task_id}"{marker_style}>{marker_label}</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
@@ -835,6 +854,21 @@ def set_task_type(task_id, new_type):
     for t in tasks:
         if t["id"] == task_id:
             t["type"] = new_type
+            break
+    save_tasks(tasks)
+
+
+def set_task_marker(task_id):
+    tasks = load_tasks()
+    cycle = ["", "🔴", "🟢", "🟧"]
+    priority_map = {"🔴": "red", "🟢": "green", "🟧": "orange", "": None}
+    for t in tasks:
+        if t["id"] == task_id:
+            cur = t.get("marker", "")
+            idx = cycle.index(cur) if cur in cycle else 0
+            nxt = cycle[(idx + 1) % len(cycle)]
+            t["marker"] = nxt
+            t["priority"] = priority_map[nxt]
             break
     save_tasks(tasks)
 
@@ -1103,6 +1137,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             add_task_inbox(d["title"])
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
+        elif self.path == "/set-marker":
+            set_task_marker(d["id"])
         elif self.path == "/undo":
             undo_tasks()
         elif self.path == "/move-order":
