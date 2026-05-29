@@ -4772,7 +4772,7 @@
     "title": "Аня → Генерали: отправить 3 счёта за зубы + Маша",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "personal-finance-разобрать-возмещения-генерали-прошлые-счета-п",
+    "parent_id": "area-personal-finance-генерали-зубы",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -4785,7 +4785,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 2.0
+    "order": 1.0
   },
   {
     "id": "personal-finance-написать-в-генерали-коронки-ани-откладываются",
