@@ -1,0 +1,96 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 tools/priority.py *)",
+      "Read(//Users/dister/.claude/**)",
+      "mcp__claude_ai_Gmail__get_thread",
+      "mcp__claude_ai_Google_Calendar__create_event",
+      "mcp__claude_ai_Google_Calendar__list_events",
+      "mcp__claude_ai_Google_Calendar__update_event",
+      "mcp__claude_ai_Gmail__search_threads",
+      "mcp__claude_ai_Gmail__create_draft",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:doc-14-60-sheets.googleusercontent.com)",
+      "Bash(xargs ls -t)",
+      "mcp__claude_ai_Gmail__list_labels",
+      "mcp__claude_ai_Google_Drive__read_file_content",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d['fileContent'][:3000]\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('mcpServers', {}\\), indent=2, ensure_ascii=False\\)\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('mcpServers', {}\\), indent=2\\)\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); ids=[t['id'] for t in d['threads']]; print\\(f'Найдено: {len\\(ids\\)} тредов'\\); print\\('\\\\n'.join\\(ids\\)\\)\")",
+      "mcp__claude_ai_Gmail__label_thread",
+      "mcp__claude_ai_Gmail__unlabel_thread",
+      "WebSearch",
+      "Bash(python3 /tmp/gmail_reauth.py)",
+      "WebFetch(domain:bespoyasov.ru)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); mcps = d.get\\('mcpServers', {}\\); print\\(list\\(mcps.keys\\(\\)\\)\\)\")",
+      "Bash(npx -y @modelcontextprotocol/server-google-drive --version)",
+      "Bash(npm list *)",
+      "Bash(python3 tools/today_server.py)",
+      "Bash(curl -s http://localhost:7777)",
+      "Bash(echo '\\\\nalias today=\"python3 ~/Projects/brain/tools/today_server.py\"' >> ~/.zshrc && echo \"done\")",
+      "Bash(curl -s http://localhost:7777/)",
+      "Bash(curl -s http://localhost:7777/tasks)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(mkdir -p ~/.claude/hooks)",
+      "Bash(security dump-keychain *)",
+      "Bash(security find-generic-password *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); keys=list\\(d.keys\\(\\)\\); print\\(keys\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(python3 -)",
+      "Bash(python3 -c \"import google.oauth2; print\\('google-auth ok'\\)\")",
+      "Bash(python3 -c \"from googleapiclient.discovery import build; print\\('google-api-python-client ok'\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); mcps=d.get\\('mcpServers',{}\\); [print\\(k, list\\(v.keys\\(\\)\\)\\) for k,v in mcps.items\\(\\)]\")",
+      "Bash(kill 43358)",
+      "Bash(python3 /Users/dister/Projects/brain/tools/today_server.py)",
+      "Bash(python3 -c \"import tools.today_server\")",
+      "Bash(git commit *)",
+      "Bash(kill 18680)",
+      "Bash(curl -v http://localhost:7777/)",
+      "Bash(xargs kill)",
+      "Bash(pkill -f today_server.py)",
+      "mcp__claude_ai_Gmail__unlabel_message",
+      "mcp__claude_ai_Gmail__label_message",
+      "Bash(python3 -c \"import tools.today_server; print\\('OK'\\)\")",
+      "Bash(curl -s https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js -o /Users/dister/Projects/brain/tools/sortable.min.js)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(k\\) for k in d.get\\('mcpServers', {}\\).keys\\(\\)]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(list\\(d.get\\('mcpServers', {}\\).keys\\(\\)\\), indent=2\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://gmailmcp.googleapis.com/mcp/v1\")",
+      "Read(//usr/local/bin/**)",
+      "Read(//usr/local/**)",
+      "Bash(mdfind -name claude)",
+      "Bash(claude mcp *)",
+      "Bash(pip3 install *)",
+      "Bash(brew install *)",
+      "Bash(pipx install *)",
+      "Bash(python3 -m venv /Users/dister/.venvs/whisper)",
+      "Bash(/Users/dister/.venvs/whisper/bin/pip install *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:7777/tasks)",
+      "Bash(scp /Users/dister/Projects/smiirl-sync/src/oauth.js /Users/dister/Projects/smiirl-sync/src/server.js hetzner:/opt/smiirl-sync/src/)",
+      "Bash(scp /Users/dister/Projects/smiirl-sync/public/index.html hetzner:/opt/smiirl-sync/public/)",
+      "Bash(git -C /Users/dister/Projects/brain add tools/today_server.py 05_PLANS/tasks/tasks.json)",
+      "Bash(git -C /Users/dister/Projects/brain commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "/Users/dister/.claude",
+      "/Users/dister"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/dister/Projects/brain/.claude/scripts/autocommit-today.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
