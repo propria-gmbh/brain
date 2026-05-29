@@ -5092,7 +5092,7 @@
     "title": "Выбрать какой iMac улучшить и оставить, продать остальные",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "area-personal-finance-счета-и-подписки",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "deadline": null,
