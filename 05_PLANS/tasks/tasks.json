@@ -7925,7 +7925,7 @@
       "after-launch"
     ],
     "notes": "После того как GMC US заработает",
-    "order": 0.0
+    "order": -2.0
   },
   {
     "id": "task-ecom-uk-new-gmc",
