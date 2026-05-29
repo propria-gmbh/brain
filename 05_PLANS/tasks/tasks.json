@@ -8074,5 +8074,24 @@
     "done_at": null,
     "created_at": "2026-05-28",
     "order": 0.0
+  },
+  {
+    "id": "удалить-магазин-helion-из-счётчика-заказов",
+    "title": "Удалить магазин Helion из счётчика заказов",
+    "type": "task",
+    "parent_id": "area-ai-systems",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-05-29",
+    "order": 0.0
   }
 ]
