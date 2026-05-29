@@ -1670,7 +1670,7 @@
     "project": "ecom",
     "parent_id": "area-charlie-ted",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "green",
     "stakes": null,
