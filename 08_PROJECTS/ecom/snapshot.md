@@ -33,8 +33,30 @@ updated: 2026-05-29
 
 ## Следующие шаги
 
-1. Проверить Privacy статус всех доменов и компанию в регистранте
-2. Charlie & Ted: создать новый GMC
-3. Bennet & Gray / Oliver and Faye: создать Shopify магазины, подключить домены
-4. Oliver and Alder: разобраться со ScamAdviser (52 → нужно выше 75)
-5. Casa Giannini: уточнить возраст домена, проверить Shopify auth
+1. Завершить верификацию: компания в регистранте для всех доменов (задачи в tasks.json)
+2. Уточнить у Андрея: минимальный возраст домена для GMC + на кого регистрировать GMC
+3. Oliver and Alder: разобраться со ScamAdviser 52
+4. Charlie & Ted: создать новый GMC
+5. Bennet & Gray / Oliver and Faye: создать Shopify магазины, подключить домены
+6. Casa Giannini: уточнить возраст домена, проверить Shopify auth
+7. Аудит магазинов и GMC — достать задачи из таблицы (Андрей)
+
+## История сессий
+
+| Дата | Что сделано |
+|---|---|
+| 2026-05-27 | Аудит магазинов и GMC, ScamAdviser фолоуап, google-accounts.md заполнен |
+| 2026-05-28 | Реструктуризация ecom областей в tasks.json, задачи верификации по 6 магазинам, хотлист доменов, куплены allspicefashion.com + lilymagsboutique.com |
+| 2026-05-29 | Верификация доменов: ScamAdviser/Trustpilot/Privacy/GSB/Shopify auth, создана domain-verification-results.md |
+
+## Ключевые файлы
+
+| Файл | Содержимое |
+|---|---|
+| `stores-gmc.md` | Мастер-таблица магазинов и GMC статусов |
+| `google-accounts.md` | Все Google аккаунты и привязки к магазинам |
+| `domain-verification-results.md` | Результаты верификации доменов (ежемесячно) |
+| `checklists/andrey-checklist.md` | Полный чеклист настройки магазина |
+| `checklists/domain-verification.md` | Чеклист верификации домена |
+| `domains-hotlist.md` | Хотлист доменов для GMC + купленные |
+| `gmc/` | GMC-специфичные документы |
