@@ -477,7 +477,7 @@ HTML = """<!DOCTYPE html>
     <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:320px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
     <button onclick="addInboxTask()" style="padding:6px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem">+</button>
   </div>
-  <button class="theme-btn" onclick="post('/undo',null);setTimeout(function(){{location.reload()}},300)" title="Отменить последнее действие" style="padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem;margin-left:4px">↩</button>
+  <button class="undo-btn" onclick="post('/undo',null);setTimeout(function(){{location.reload()}},300)" title="Отменить последнее действие" style="padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem;margin-left:4px">↩</button>
   <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 

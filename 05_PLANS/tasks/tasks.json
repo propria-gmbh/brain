@@ -7376,10 +7376,11 @@
     "id": "personal-finance-оплатить-детям",
     "title": "Оплатить детям 18 и 13 евро",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-05-26",
-    "order": 2.0
+    "order": 2.0,
+    "done_at": "2026-05-29"
   },
   {
     "id": "sailing-lazurka-checklist-catamaran",
