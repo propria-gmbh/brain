@@ -4679,7 +4679,7 @@
   {
     "id": "personal-finance-разработать-систему-бюджетирования-и-учета-ли",
     "title": "Система бюджетирования и учёта личных активов",
-    "type": "task",
+    "type": "area",
     "project": "personal/finance",
     "parent_id": "area-personal-finance",
     "status": "todo",
