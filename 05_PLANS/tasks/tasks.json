@@ -7943,7 +7943,7 @@
     "type": "task",
     "parent_id": "area-charlie-ted",
     "title": "Верифицировать домен (Charlie & Ted) — чеклист Андрея",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "order": 0.0,
     "done_at": "2026-05-29"
