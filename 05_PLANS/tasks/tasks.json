@@ -1182,7 +1182,7 @@
     "project": "ecom",
     "parent_id": "area-ecom-финансы-подписки",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "red",
     "stakes": 2,
