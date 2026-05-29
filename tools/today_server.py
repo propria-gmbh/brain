@@ -197,6 +197,31 @@ document.querySelectorAll('.cal-event[data-summary]').forEach(function(el) {
   });
 });
 
+// task search filter
+var searchInput = document.getElementById('task-search');
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    document.querySelectorAll('.task-row').forEach(function(row) {
+      var text = (row.querySelector('.task-text') || row).textContent.toLowerCase();
+      row.style.display = (!q || text.includes(q)) ? '' : 'none';
+    });
+    document.querySelectorAll('details').forEach(function(det) {
+      var visible = det.querySelectorAll('.task-row:not([style*="none"])').length;
+      det.style.display = (!q || visible > 0) ? '' : 'none';
+      if (q && visible > 0) det.open = true;
+    });
+  });
+}
+
+// tasks.json: move up/down
+document.querySelectorAll('.mv-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    post('/move-order', {id: btn.dataset.id, direction: btn.dataset.dir});
+  });
+});
+
 // tasks.json: delete
 document.querySelectorAll('.del-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -277,12 +302,16 @@ document.querySelectorAll('.d-btn[data-id]').forEach(function(btn) {
       post('/set-deadline', {id: btn.dataset.id, deadline: inp.value || null});
       setTimeout(function() { location.reload(); }, 150);
     }
-    inp.addEventListener('change', save);
     inp.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') save();
+      if (e.key === 'Enter') { e.preventDefault(); save(); }
       if (e.key === 'Escape') inp.replaceWith(btn);
     });
-    inp.addEventListener('blur', function() { setTimeout(function() { if (inp.parentNode) inp.replaceWith(btn); }, 200); });
+    inp.addEventListener('blur', function(e) {
+      setTimeout(function() {
+        if (document.activeElement === inp) return;
+        if (inp.parentNode) { if (inp.value) save(); else inp.replaceWith(btn); }
+      }, 300);
+    });
   });
 });
 
@@ -448,6 +477,7 @@ HTML = """<!DOCTYPE html>
     <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:320px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
     <button onclick="addInboxTask()" style="padding:6px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem">+</button>
   </div>
+  <button class="theme-btn" onclick="post('/undo',null);setTimeout(function(){{location.reload()}},300)" title="Отменить последнее действие" style="padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem;margin-left:4px">↩</button>
   <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 
@@ -622,12 +652,21 @@ def load_tasks():
     return tasks
 
 
+UNDO_FILE = BRAIN / "tools/tasks_undo.json"
+
 def save_tasks(tasks):
+    # save undo backup before writing
+    if TASKS_FILE.exists():
+        UNDO_FILE.write_text(TASKS_FILE.read_text(encoding="utf-8"), encoding="utf-8")
     TASKS_FILE.write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
     subprocess.run(
         ["git", "commit", "-am", "server: update tasks"],
         cwd=BRAIN, capture_output=True
     )
+
+def undo_tasks():
+    if UNDO_FILE.exists():
+        TASKS_FILE.write_text(UNDO_FILE.read_text(encoding="utf-8"), encoding="utf-8")
 
 
 def render_task_row(task, all_tasks, depth=0):
@@ -670,6 +709,8 @@ def render_task_row(task, all_tasks, depth=0):
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
+        f'  <button class="btn mv-btn" data-id="{task_id}" data-dir="up" title="Вверх">▲</button>\n'
+        f'  <button class="btn mv-btn" data-id="{task_id}" data-dir="down" title="Вниз">▼</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
@@ -722,7 +763,10 @@ def render_tasks():
         key=lambda t: t.get("order", 0),
     )
     areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
-    b = f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};</script>\n<div id=\"top-areas\">\n"
+    search_style = "width:100%;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr);margin-bottom:16px;display:block"
+    b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};</script>\n"
+         f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="{search_style}">\n'
+         f"<div id=\"top-areas\">\n")
     for area in top_areas:
         b += render_area(area, active)
     b += "</div>\n"
@@ -898,6 +942,29 @@ def move_task(src_id, target_id, position):
     save_tasks(tasks)
 
 
+def move_task_order(task_id, direction):
+    tasks = load_tasks()
+    by_id = {t["id"]: t for t in tasks}
+    task = by_id.get(task_id)
+    if not task:
+        return
+    parent_id = task.get("parent_id")
+    siblings = sorted(
+        [t for t in tasks if t.get("parent_id") == parent_id and t.get("status") != "done"],
+        key=lambda t: t.get("order", 0),
+    )
+    idx = next((i for i, t in enumerate(siblings) if t["id"] == task_id), None)
+    if idx is None:
+        return
+    if direction == "up" and idx > 0:
+        a, b = siblings[idx - 1], siblings[idx]
+        a["order"], b["order"] = b.get("order", 0), a.get("order", 0)
+    elif direction == "down" and idx < len(siblings) - 1:
+        a, b = siblings[idx], siblings[idx + 1]
+        a["order"], b["order"] = b.get("order", 0), a.get("order", 0)
+    save_tasks(tasks)
+
+
 # ── CALENDAR ─────────────────────────────────────────────
 
 def done_event_summaries():
@@ -1046,6 +1113,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             add_task_inbox(d["title"])
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
+        elif self.path == "/undo":
+            undo_tasks()
+        elif self.path == "/move-order":
+            move_task_order(d["id"], d["direction"])
         else:
             self.send_error(404)
             return

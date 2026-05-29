@@ -73,7 +73,8 @@
       "Bash(scp /Users/dister/Projects/smiirl-sync/src/oauth.js /Users/dister/Projects/smiirl-sync/src/server.js hetzner:/opt/smiirl-sync/src/)",
       "Bash(scp /Users/dister/Projects/smiirl-sync/public/index.html hetzner:/opt/smiirl-sync/public/)",
       "Bash(git -C /Users/dister/Projects/brain add tools/today_server.py 05_PLANS/tasks/tasks.json)",
-      "Bash(git -C /Users/dister/Projects/brain commit -m ' *)"
+      "Bash(git -C /Users/dister/Projects/brain commit -m ' *)",
+      "Bash(pkill -f \"today_server.py\")"
     ],
     "additionalDirectories": [
       "/Users/dister/.claude",
