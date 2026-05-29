@@ -709,17 +709,25 @@ def render_task_row(task, all_tasks, depth=0):
     elif marker == "🟧":
         marker_style = " style=\"color:#f39c12\""
 
+    recurring = task.get("recurring")
+    recurring_badge = ""
+    if recurring:
+        badge_letter = {"weekly": "W", "monthly": "M", "quarterly": "Q", "yearly": "Y"}.get(recurring, "R")
+        recurring_badge = f'<span style="font-size:.65rem;color:var(--text4);margin-left:4px">↻{badge_letter}</span>'
+    r_label = recurring if recurring else "R"
+
     dl_val = deadline or ""
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}">\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
-        f'  <span class="task-text" data-id="{task_id}">{title}</span>\n'
+        f'  <span class="task-text" data-id="{task_id}">{title}{recurring_badge}</span>\n'
         f'  {dl_html}\n'
         f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
         f'  <button class="btn m-btn" data-id="{task_id}"{marker_style}>{marker_label}</button>\n'
+        f'  <button class="btn r-btn" data-id="{task_id}" data-recurring="{recurring or ""}">{r_label}</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
