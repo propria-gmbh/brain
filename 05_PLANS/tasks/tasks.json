@@ -3134,7 +3134,7 @@
     "title": "Спецагент для сайта + оркестратор агент над всеми",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -3147,7 +3147,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 27.0
+    "order": 5.875
   },
   {
     "id": "ai-systems-сделать-качественные-исходники-лиц-моделеи",
