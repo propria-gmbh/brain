@@ -5935,8 +5935,8 @@
     "type": "task",
     "project": "personal/home",
     "parent_id": "personal-home-очистить-обеденныи-стол-от-старого-покрытия-и",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -5945,7 +5945,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-05-30",
     "created_at": "2026-05-25",
     "order": 4.0
   },
@@ -8171,5 +8171,93 @@
     "goal": "financial-min",
     "created": "2026-05-29",
     "order": 0.0
+  },
+  {
+    "id": "personal-home-посажен-виноград-на-стену-террасы",
+    "title": "Посажен виноград на стену террасы",
+    "type": "task",
+    "project": "personal/home",
+    "parent_id": "area-personal-home-house-физический-дом",
+    "status": "done",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [
+      "garden"
+    ],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": "2026-05-30",
+    "created_at": "2026-05-30",
+    "order": 100.0
+  },
+  {
+    "id": "personal-home-посажены-девичий-виноград-и-цветы-вьюны",
+    "title": "Посажены девичий виноград и цветы-вьюны для закрытия забора",
+    "type": "task",
+    "project": "personal/home",
+    "parent_id": "area-personal-home-house-физический-дом",
+    "status": "done",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [
+      "garden"
+    ],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": "2026-05-30",
+    "created_at": "2026-05-30",
+    "order": 101.0
+  },
+  {
+    "id": "personal-home-пересажен-хмель-с-террасы-на-перголу",
+    "title": "Пересажен хмель с террасы на перголу крыльца",
+    "type": "task",
+    "project": "personal/home",
+    "parent_id": "area-personal-home-house-физический-дом",
+    "status": "done",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [
+      "garden"
+    ],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": "2026-05-30",
+    "created_at": "2026-05-30",
+    "order": 102.0
+  },
+  {
+    "id": "personal-home-выкопан-вьюн-на-клумбе-крыльца",
+    "title": "Выкопан вьюн на клумбе у крыльца",
+    "type": "task",
+    "project": "personal/home",
+    "parent_id": "area-personal-home-house-физический-дом",
+    "status": "done",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [
+      "garden"
+    ],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": "2026-05-30",
+    "created_at": "2026-05-30",
+    "order": 103.0
   }
 ]
