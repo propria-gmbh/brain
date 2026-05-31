@@ -8075,9 +8075,10 @@
   {
     "id": "inbox-project-brain",
     "title": "Project Brain",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ai-systems",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-05-31"
+    "created_at": "2026-05-31",
+    "order": 0.0
   }
 ]

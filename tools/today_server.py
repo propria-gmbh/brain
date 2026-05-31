@@ -178,9 +178,46 @@ if (inboxInp) inboxInp.addEventListener('keydown', function(e) {
 document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
   el.addEventListener('click', function(e) {
     e.stopPropagation();
+    var row = el.closest('.task-row');
+    var isDone = row && row.classList.contains('done-task');
+    if (row) {
+      if (!isDone) {
+        row.classList.add('done-task');
+        el.textContent = '✓';
+        row.style.transition = 'opacity .15s';
+        row.style.opacity = '0.3';
+      } else {
+        row.classList.remove('done-task');
+        el.textContent = '·';
+        row.style.opacity = '';
+      }
+    }
     post('/toggle-task', {id: el.dataset.id});
   });
 });
+
+// someday filter
+(function() {
+  var btn = document.getElementById('someday-filter');
+  if (!btn) return;
+  var on = localStorage.getItem('sd-filter') === '1';
+  function apply() {
+    document.querySelectorAll('.task-row').forEach(function(r) {
+      if (!r.classList.contains('someday') && !r.classList.contains('done-task')) {
+        r.style.display = on ? 'none' : '';
+      }
+    });
+    btn.textContent = on ? 'Someday ✓' : 'Someday';
+    btn.style.background = on ? 'var(--s-act)' : '';
+    btn.style.color = on ? '#5b8dd9' : '';
+  }
+  apply();
+  btn.addEventListener('click', function() {
+    on = !on;
+    localStorage.setItem('sd-filter', on ? '1' : '0');
+    apply();
+  });
+})();
 
 // tasks.json: toggle someday
 document.querySelectorAll('.s-btn[data-id]').forEach(function(btn) {
@@ -764,7 +801,7 @@ def render_area(area, all_nodes):
     area_id = area["id"]
     title = area.get("title", "")
     children = sorted(
-        [t for t in all_nodes if t.get("parent_id") == area_id],
+        [t for t in all_nodes if t.get("parent_id") == area_id and t.get("status") != "done"],
         key=lambda t: t.get("order", 0),
     )
     if not children:
@@ -806,7 +843,10 @@ def render_tasks():
     areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
     search_style = "width:100%;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr);margin-bottom:16px;display:block"
     b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};</script>\n"
-         f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="{search_style}">\n'
+         f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">'
+         f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="flex:1;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr)">'
+         f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0">Someday</button>'
+         f'</div>\n'
          f"<div id=\"top-areas\">\n")
     for area in top_areas:
         b += render_area(area, active)
