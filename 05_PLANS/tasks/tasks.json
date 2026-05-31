@@ -211,15 +211,6 @@
     "created_at": "2026-05-25"
   },
   {
-    "id": "area-propria-уровень-1-фундамент-tacura",
-    "title": "Уровень 1 — Фундамент (Tacura)",
-    "type": "area",
-    "parent_id": "area-propria",
-    "status": "active",
-    "order": 0.0,
-    "created_at": "2026-05-25"
-  },
-  {
     "id": "area-propria-уровень-2-рост",
     "title": "Уровень 2 — Рост",
     "type": "area",
