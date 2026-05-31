@@ -3154,7 +3154,7 @@
     "title": "Сделать качественные исходники лиц моделей",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": false,
     "deadline": null,
