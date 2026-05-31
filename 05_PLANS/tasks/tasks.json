@@ -2874,7 +2874,7 @@
     "title": "Дашборд закрытия задач за день + анализ паттернов (позитивных и негативных) для работы над собой",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2887,7 +2887,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 10.0
+    "order": 7.0
   },
   {
     "id": "ai-systems-дашборд-задач-перетаскивание-задач-между-прое",
