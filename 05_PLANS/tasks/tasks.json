@@ -3094,7 +3094,7 @@
     "title": "Разработать правила для Гитхаба, чтобы AI не мог править правила и читал их на гитхабе",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -3107,7 +3107,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 23.0
+    "order": 6.5
   },
   {
     "id": "ai-systems-сделать-сервис-названия-фотографии-для-мамы-т",
