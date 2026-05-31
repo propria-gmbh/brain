@@ -3234,7 +3234,7 @@
     "title": "Автоматически перемещать исходящие письма из Downloads в Google Drive → Personal/Deutschland/Briefe/Ausgehende Briefe",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -3247,7 +3247,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 32.0
+    "order": 6.25
   },
   {
     "id": "ai-systems-посмотреть-курс-алекса-крола",
