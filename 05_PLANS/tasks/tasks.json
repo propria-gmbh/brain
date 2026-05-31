@@ -3459,28 +3459,6 @@
     "order": 8.0
   },
   {
-    "id": "ai-systems-httpsparakeettdtcom-можно-ли-установить-на-мо",
-    "title": "https://parakeettdt.com/ — можно ли установить на мобильный",
-    "type": "task",
-    "project": "ai-systems",
-    "parent_id": "area-ai-systems",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [
-      "transcribe"
-    ],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 9.0
-  },
-  {
     "id": "projects-почитать-чат-инвертоматик-и-спросить-о-дальне",
     "title": "Почитать чат Инвертоматик и спросить о дальнейших шагах",
     "type": "task",
