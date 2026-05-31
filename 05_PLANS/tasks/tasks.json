@@ -2854,7 +2854,7 @@
     "title": "Разработать плагин-оркестратор: граф связей задач между проектами + кросс-проектная память + самообучение",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2867,7 +2867,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 9.0
+    "order": 5.5
   },
   {
     "id": "ai-systems-дашборд-закрытия-задач-за-день-анализ-паттерн",
