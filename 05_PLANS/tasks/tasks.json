@@ -2814,7 +2814,7 @@
     "title": "Команда: \"скачай вложения из Метки1 в Папку1, после скачивания перемести в Метку2\" — автоматизация обработки счетов Propria",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2827,7 +2827,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 7.0
+    "order": 6.0
   },
   {
     "id": "ai-systems-сделать-telegram-бота-писать-в-telegram-claud",
