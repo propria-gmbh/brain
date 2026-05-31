@@ -731,14 +731,21 @@ def undo_tasks():
         TASKS_FILE.write_text(UNDO_FILE.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+import html as _html
+from urllib.parse import urlparse as _urlparse
+
 _URL_RE = re.compile(r'(https?://\S+)')
 
 def linkify(text):
     def replace(m):
         url = m.group(1).rstrip('.,)')
-        short = url.split('/')[2]  # domain only
-        return f'<a href="{url}" target="_blank" onclick="event.stopPropagation()" style="color:#5b8dd9;font-size:.75rem;margin-left:4px;text-decoration:none" title="{url}">↗{short}</a>'
-    return _URL_RE.sub(lambda m: replace(m), text)
+        parsed = _urlparse(url)
+        if parsed.scheme not in ('http', 'https'):
+            return _html.escape(url)
+        safe_url = _html.escape(url, quote=True)
+        safe_domain = _html.escape(parsed.hostname or '', quote=True)
+        return f'<a href="{safe_url}" target="_blank" onclick="event.stopPropagation()" style="color:#5b8dd9;font-size:.75rem;margin-left:4px;text-decoration:none" title="{safe_url}">↗{safe_domain}</a>'
+    return _URL_RE.sub(lambda m: replace(m), _html.escape(text))
 
 
 def render_task_row(task, all_tasks, depth=0):
@@ -792,7 +799,7 @@ def render_task_row(task, all_tasks, depth=0):
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}">\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
-        f'  <span class="task-text" data-id="{task_id}" data-raw="{title}">{linkify(title)}{recurring_badge}</span>\n'
+        f'  <span class="task-text" data-id="{task_id}" data-raw="{_html.escape(title, quote=True)}">{linkify(title)}{recurring_badge}</span>\n'
         f'  {dl_html}\n'
         f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
