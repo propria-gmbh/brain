@@ -2734,7 +2734,7 @@
     "title": "Надсмотрщик нарушений правил — Stop hook + Haiku пакетная проверка (нужен API ключ или детерминированные PreToolUse хуки как альтернатива)",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -2747,7 +2747,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 3.0
+    "order": 4.0
   },
   {
     "id": "ai-systems-readme-правил-где-лежат-как-исполняются-как-т",
