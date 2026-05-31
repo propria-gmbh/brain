@@ -8259,5 +8259,24 @@
     "done_at": "2026-05-30",
     "created_at": "2026-05-30",
     "order": 103.0
+  },
+  {
+    "id": "создать-агента-daily-planner-на-haiku-для-автогенерации-toda",
+    "title": "Создать агента daily-planner на Haiku для автогенерации today.md при старте сессии",
+    "type": "task",
+    "parent_id": "area-ai-systems-уровень-2-рост",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-05-31",
+    "order": 0.0
   }
 ]
