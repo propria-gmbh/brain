@@ -506,7 +506,7 @@ HTML = """<!DOCTYPE html>
 </nav>
 
 {body}
-<div class="ts">обновляется каждые 5 с</div>
+<div class="ts">live</div>
 <script>{js}</script>
 </body>
 </html>"""
@@ -1168,7 +1168,7 @@ MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "ию
 def make_page(body, page):
     return HTML.format(
         title="Сегодня" if page == "today" else "Задачи",
-        refresh='<script>setTimeout(function(){var a=document.activeElement,tag=a?a.tagName:"";if(!window.isDragging&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()},5000)</script>',
+        refresh='<script>(function(){var h=null;function poll(){fetch("/poll").then(function(r){return r.json()}).then(function(d){if(h===null){h=d.hash}else if(d.hash!==h){var a=document.activeElement,tag=a?a.tagName:"";if(!window.isDragging&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()}}).catch(function(){});setTimeout(poll,2000)}poll()})()</script>',
         css=CSS, js=JS, body=body,
         sortable_js=_SORTABLE_JS,
         nav_today="active" if page == "today" else "",
@@ -1178,7 +1178,24 @@ def make_page(body, page):
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/":
+        if self.path == "/poll":
+            import hashlib
+            mtimes = ""
+            for f in [TODAY, TASKS_FILE, CALENDAR_CACHE]:
+                try:
+                    mtimes += str(f.stat().st_mtime)
+                except Exception:
+                    pass
+            h = hashlib.md5(mtimes.encode()).hexdigest()[:12]
+            data = json.dumps({"hash": h}).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", len(data))
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            self.wfile.write(data)
+            return
+        elif self.path == "/":
             body = render_today(TODAY)
             data = make_page(body, "today")
         elif self.path == "/tasks":
