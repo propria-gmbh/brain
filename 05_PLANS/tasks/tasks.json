@@ -8071,5 +8071,13 @@
     "created_at": "2026-05-31",
     "order": 0.0,
     "type": "area"
+  },
+  {
+    "id": "inbox-project-brain",
+    "title": "Project Brain",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-05-31"
   }
 ]
