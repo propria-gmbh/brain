@@ -2438,26 +2438,6 @@
     "order": 10.0
   },
   {
-    "id": "propria-переслать-алле-счета-поставщиков",
-    "title": "Переслать Алле счёта поставщиков 💵",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 11.0
-  },
-  {
     "id": "propria-сделать-список-персональных-расходов",
     "title": "Сделать список персональных расходов со счета Prorpia",
     "type": "task",
