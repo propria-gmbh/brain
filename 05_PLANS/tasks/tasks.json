@@ -8085,9 +8085,10 @@
   {
     "id": "inbox-prj-with-mitya",
     "title": "Prj with Mitya",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ecom",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-05-31"
+    "created_at": "2026-05-31",
+    "order": 0.0
   }
 ]
