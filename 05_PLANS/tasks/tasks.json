@@ -8089,6 +8089,7 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-05-31",
-    "order": 0.0
+    "order": 0.0,
+    "type": "area"
   }
 ]
