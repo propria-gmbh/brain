@@ -7507,7 +7507,7 @@
     "type": "task",
     "parent_id": "area-ai-systems",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
