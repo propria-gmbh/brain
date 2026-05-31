@@ -1973,7 +1973,7 @@
     "title": "Принять решение о реализации customer support — идеи автоматизации",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-ecom-customer-support",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": false,
     "deadline": null,
