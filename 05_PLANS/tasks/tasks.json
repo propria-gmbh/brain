@@ -3074,7 +3074,7 @@
     "title": "Сделать шаблон правил для Клода, для GPT",
     "type": "task",
     "project": "ai-systems",
-    "parent_id": "area-ai-systems",
+    "parent_id": "inbox-project-brain",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -3087,7 +3087,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 22.0
+    "order": 5.75
   },
   {
     "id": "ai-systems-разработать-правила-для-гитхаба-чтобы-ai-не-м",
