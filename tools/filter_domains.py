@@ -5,7 +5,13 @@ filter_domains.py — фильтрует CSV с аукциона GoDaddy под 
 Критерии:
   - .com домен
   - Возраст >= MIN_AGE лет
-  - Паттерн: имя+имя (word-and-word, wordandword, word-word) или нейтральный apparel
+  - Один из паттернов (см. passes_filter):
+      1. имя+имя (name-and-name, nameandname, name-name)
+      2. нейтральный apparel-keyword
+      3. prefix+слово (by, the, house, maison, studio, shop, le, la, atelier, casa, dear, pure, true)
+      4. слово+suffix (house, boutique, wear, studio, co, muse, bloom, label, closet, mode, style)
+      5. два слова через дефис (прилагательное+прилагательное, ever-pretty стиль)
+      6. одно слово 5-10 букв — красивое, произносимое, не нишевое (финальный отбор глазами)
 
 Запуск:
   python3 tools/filter_domains.py domains.tsv
@@ -111,6 +117,17 @@ def looks_like_two_names(name: str) -> bool:
     return False
 
 
+FASHION_PREFIXES = {
+    "by", "the", "house", "maison", "studio", "shop", "le", "la",
+    "atelier", "casa", "dear", "pure", "true", "just", "hello", "meet",
+}
+
+FASHION_SUFFIXES = {
+    "house", "boutique", "wear", "studio", "co", "muse", "bloom",
+    "label", "closet", "mode", "style", "atelier", "maison",
+}
+
+
 def is_apparel(name: str) -> bool:
     return any(kw in name for kw in APPAREL_KEYWORDS)
 
@@ -119,11 +136,58 @@ def is_blocked(name: str) -> bool:
     return any(kw in name for kw in BLOCKLIST)
 
 
+def is_prefix_word(name: str) -> bool:
+    """prefix+слово: bymayberry, theboden, maisonrose и т.д."""
+    for prefix in FASHION_PREFIXES:
+        if name.startswith(prefix) and len(name) > len(prefix) + 2:
+            rest = name[len(prefix):]
+            if re.match(r'^[a-z]{3,14}$', rest):
+                return True
+    return False
+
+
+def is_word_suffix(name: str) -> bool:
+    """слово+suffix: emblemboutique, almondhouse, silkmode и т.д."""
+    for suffix in FASHION_SUFFIXES:
+        if name.endswith(suffix) and len(name) > len(suffix) + 2:
+            rest = name[:-len(suffix)]
+            if re.match(r'^[a-z]{3,14}$', rest):
+                return True
+    return False
+
+
+def is_two_hyphenated_words(name: str) -> bool:
+    """два слова через дефис: ever-pretty, silk-bloom и т.д."""
+    m = re.match(r'^([a-z]{3,12})-([a-z]{3,12})$', name)
+    if m:
+        a, b = m.group(1), m.group(2)
+        # оба слова должны иметь гласные (не аббревиатуры)
+        return bool(re.search(r'[aeiou]', a)) and bool(re.search(r'[aeiou]', b))
+    return False
+
+
+def is_single_elegant_word(name: str) -> bool:
+    """Одно слово 5-10 букв, произносимое — финальный отбор глазами."""
+    if not re.match(r'^[a-z]{5,10}$', name):
+        return False
+    # должны быть гласные (не аббревиатура)
+    if not re.search(r'[aeiou]', name):
+        return False
+    return True
+
+
 def passes_filter(name: str) -> bool:
     base = name.lower().replace(".com", "")
     if is_blocked(base):
         return False
-    return is_apparel(base) or looks_like_two_names(base)
+    return (
+        is_apparel(base)
+        or looks_like_two_names(base)
+        or is_prefix_word(base)
+        or is_word_suffix(base)
+        or is_two_hyphenated_words(base)
+        or is_single_elegant_word(base)
+    )
 
 
 def main():
@@ -165,6 +229,22 @@ def main():
             if not passes_filter(name):
                 continue
 
+            base = name.replace(".com", "")
+            if is_apparel(base):
+                reason = "apparel"
+            elif looks_like_two_names(base):
+                reason = "name+name"
+            elif is_prefix_word(base):
+                reason = "prefix+word"
+            elif is_word_suffix(base):
+                reason = "word+suffix"
+            elif is_two_hyphenated_words(base):
+                reason = "hyphen-pair"
+            elif is_single_elegant_word(base):
+                reason = "single-word*"
+            else:
+                reason = "?"
+
             results.append({
                 "domain": name,
                 "age": age,
@@ -172,7 +252,7 @@ def main():
                 "tf": row.get("Majestic TF", ""),
                 "end": row.get("Auction End Time", ""),
                 "sale": row.get("Sale Type", ""),
-                "reason": "apparel" if is_apparel(name.replace(".com", "")) else "name+name",
+                "reason": reason,
             })
 
     results.sort(key=lambda x: (-x["age"], -int(x["tf"] or 0)))
