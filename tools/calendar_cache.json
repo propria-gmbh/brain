@@ -1,13 +1,47 @@
 {
-  "updated": "2026-05-31T14:03:00+02:00",
+  "updated": "2026-06-01T09:58:00+02:00",
   "events": [
-    {"date": "2026-05-31", "start": "16:00", "end": "18:00", "summary": "Тренировка", "type": "default"},
-    {"date": "2026-06-01", "start": "10:00", "end": "10:30", "summary": "Фолоуап Инвертоматик — спросить о дальнейших шагах", "type": "default"},
-    {"date": "2026-06-02", "start": "08:00", "end": "08:00", "summary": "Wertstoffe (BSR) Abholung", "type": "default"},
-    {"date": "2026-06-03", "start": "08:00", "end": "08:00", "summary": "Hausmüll (BSR) Abholung", "type": "default"},
-    {"date": "2026-06-03", "start": "10:00", "end": "10:30", "summary": "Follow-up: Generali — Auszahlung RiesterRente", "type": "default"},
-    {"date": "2026-06-03", "start": "18:00", "end": "21:00", "summary": "Свадьба Сережи и Наташи", "location": "Ringhotel Seehof Berlin, Lietzenseeufer 11, 14057 Berlin", "type": "default"},
-    {"date": "2026-06-04", "start": "10:00", "end": "10:30", "summary": "Фолоуап Generali — ответ по IBAN и выплате RiesterRente", "type": "default"},
-    {"date": "2026-06-05", "start": "13:00", "end": "14:00", "summary": "Weekly Review", "type": "default"}
+    {
+      "summary": "Свадьба Сережи и Наташи",
+      "start": "2026-06-01",
+      "end": "2026-06-02",
+      "allDay": true
+    },
+    {
+      "summary": "Фолоуап Инвертоматик — спросить о дальнейших шагах",
+      "start": "2026-06-01T10:00:00+02:00",
+      "end": "2026-06-01T10:30:00+02:00"
+    },
+    {
+      "summary": "Wertstoffe (BSR) Abholung",
+      "start": "2026-06-02T08:00:00+02:00",
+      "end": "2026-06-02T08:00:00+02:00"
+    },
+    {
+      "summary": "Hausmüll (BSR) Abholung",
+      "start": "2026-06-03T08:00:00+02:00",
+      "end": "2026-06-03T08:00:00+02:00"
+    },
+    {
+      "summary": "Follow-up: Generali — Auszahlung RiesterRente",
+      "start": "2026-06-03T10:00:00+02:00",
+      "end": "2026-06-03T10:30:00+02:00"
+    },
+    {
+      "summary": "Свадьба Сережи и Наташи",
+      "start": "2026-06-03T18:00:00+02:00",
+      "end": "2026-06-03T21:00:00+02:00",
+      "location": "Ringhotel Seehof Berlin, Lietzenseeufer 11, 14057 Berlin, Germany"
+    },
+    {
+      "summary": "Фолоуап Generali — ответ по IBAN и выплате RiesterRente",
+      "start": "2026-06-04T10:00:00+02:00",
+      "end": "2026-06-04T10:30:00+02:00"
+    },
+    {
+      "summary": "Weekly Review",
+      "start": "2026-06-05T13:00:00+02:00",
+      "end": "2026-06-05T14:00:00+02:00"
+    }
   ]
 }
