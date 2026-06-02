@@ -6999,7 +6999,7 @@
     "parent_id": "area-personal-sailing-поход-по-лазурке",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-06-02",
+    "deadline": "2026-06-09",
     "priority": "green",
     "stakes": null,
     "context": "phone",
@@ -8143,5 +8143,20 @@
     "done_at": null,
     "created_at": "2026-06-01",
     "order": 2.0
+  },
+  {
+    "id": "ecom-listing-automation-тестирование-митя",
+    "title": "Тестирование системы Listing Automation (Митя)",
+    "type": "task",
+    "status": "todo",
+    "someday": true,
+    "parent_id": "area-ecom",
+    "goal": "financial-min",
+    "created_at": "2026-06-02",
+    "deadline": null,
+    "tags": [
+      "ai"
+    ],
+    "notes": null
   }
 ]
