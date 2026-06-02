@@ -8158,5 +8158,24 @@
       "ai"
     ],
     "notes": null
+  },
+  {
+    "id": "дашборд-обращений-к-openai-api-лимиты-стоимость",
+    "title": "Дашборд обращений к OpenAI API (лимиты, стоимость)",
+    "type": "task",
+    "parent_id": "area-ai-systems",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-02",
+    "order": 0.0
   }
 ]
