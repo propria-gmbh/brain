@@ -8130,7 +8130,7 @@
     "type": "task",
     "project": "personal",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-02",
     "priority": null,
@@ -8140,7 +8140,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-03",
     "created_at": "2026-06-01",
     "order": 2.0
   },
@@ -8148,8 +8148,8 @@
     "id": "ecom-listing-automation-тестирование-митя",
     "title": "Тестирование системы Listing Automation (Митя)",
     "type": "task",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "parent_id": "area-ecom",
     "goal": "financial-min",
     "created_at": "2026-06-02",
@@ -8157,7 +8157,8 @@
     "tags": [
       "ai"
     ],
-    "notes": null
+    "notes": null,
+    "done_at": "2026-06-02"
   },
   {
     "id": "дашборд-обращений-к-openai-api-лимиты-стоимость",
@@ -8176,6 +8177,25 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-02",
+    "order": 0.0
+  },
+  {
+    "id": "оплатить-аренду-25-х2",
+    "title": "Оплатить аренду -25% х2",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-02",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-03",
     "order": 0.0
   }
 ]
