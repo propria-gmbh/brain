@@ -8197,5 +8197,24 @@
     "done_at": null,
     "created_at": "2026-06-03",
     "order": 0.0
+  },
+  {
+    "id": "анализ-паттернов-прокрастинации-по-истории-чатов",
+    "title": "Анализ паттернов прокрастинации по истории чатов",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Хочет постфактум анализировать свои действия в чатах brain чтобы выявлять паттерны прокрастинации и поведения",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-03",
+    "order": 0.0
   }
 ]
