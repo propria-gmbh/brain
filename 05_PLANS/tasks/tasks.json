@@ -8216,5 +8216,24 @@
     "done_at": null,
     "created_at": "2026-06-03",
     "order": 0.0
+  },
+  {
+    "id": "google-ads-проверить-начисления-откуда-300",
+    "title": "Google Ads — проверить начисления, откуда €300?",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-03",
+    "order": 0.0
   }
 ]
