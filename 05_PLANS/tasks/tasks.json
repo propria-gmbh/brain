@@ -8292,5 +8292,24 @@
     "done_at": null,
     "created_at": "2026-06-03",
     "order": 0.0
+  },
+  {
+    "id": "оплатить-на-easybank-2000-и-посмотреть-остаток-долга",
+    "title": "Оплатить на Easybank €2000 и посмотреть остаток долга",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-03",
+    "order": 0.0
   }
 ]
