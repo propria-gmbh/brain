@@ -28,13 +28,13 @@ ROOT = Path(__file__).parent.parent
 TASKS_FILE = ROOT / '05_PLANS' / 'tasks' / 'tasks.json'
 
 GOAL_SCORES = {
-    # Active goals — boosted score (G=4 → G*2=8)
+    # Active goals
     'gmc': 4,
     'us-store': 4,
     'поставщик': 4,
     # Base goals
-    'health': 3,
-    'financial-min': 3,
+    'health': 4,
+    'financial-min': 4,
     'business': 2,
     'life': 1,
     'peace': 1,
