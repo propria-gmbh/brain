@@ -8708,5 +8708,24 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0
+  },
+  {
+    "id": "telegram-бот-добавить-conversation-history-последние-10-сооб",
+    "title": "Telegram бот: добавить conversation history (последние 10 сообщений в Redis)",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Хранить историю по user_id в Redis. При каждом запросе добавлять в промпт. ~10 сообщений = 2-3К токенов.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-04",
+    "order": 0.0
   }
 ]
