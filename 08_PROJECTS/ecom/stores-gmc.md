@@ -10,7 +10,7 @@ note: stores-gmc.md — мастер. Google Sheet — для ручного р�
 |---|---|---|---|---|---|---|---|---|
 | Marc et Francois | marcfrancois.ch | CH | qff1md-0e (ID: 5694372236) | 3553194@gmail.com | ? | DE Propria | ✅ Approved | 04/03/26 WMI resolved → Approved |
 | Oliver and Alder | oliverandalder.com | UK | zyy7ka-em | ? | ? | DE Propria | Suspended — no more appeals | identity not verified, нельзя апеллировать |
-| Charlie & Ted | charlieandted.com | US | dca4de (удалён) | ? | ? | DE Propria | GMC удалён | 19/03/26 GMC удалён (Suspended); ScamAdviser resolved 27/05/26 → готов к новому GMC |
+| Charlie & Ted | charlieandted.com | US | dca4de (удалён) | altamont.wb@gmail.com | ? | DE Propria | ⏳ создать | 19/03/26 GMC удалён (Suspended); ScamAdviser resolved 27/05/26 → готов к новому GMC |
 | ~~Havgaard Kobenhavn~~ | ~~havgaard-kobenhavn.dk~~ | DK | удалён | ilja.disterheft@gmail.com | ? | DE Propria | 🗑 НА УДАЛЕНИЕ | магазин закрывается, верификация не нужна |
 | HI&UTE | ? | ? | — | hiute.hk@gmail.com | ? | — | нет GMC | аккаунт проверен 26/05/26 |
 | Redford London | redford-london.com | UK | — | ? | ? | — | CANCELLED | duplicate domain |
@@ -29,11 +29,15 @@ note: stores-gmc.md — мастер. Google Sheet — для ручного р�
 | store.eneral@gmail.com | ? | статус неизвестен |
 | 3457540@gmail.com | ? | статус неизвестен |
 
+## Правило: аккаунт = домен
+
+С новых магазинов: один Gmail на один домен, имя совпадает с доменом. `altamont.wb@gmail.com` для Charlie & Ted — последнее исключение.
+
 ## Новые GMC (создать)
 
 | Бренд | Домен | Рынок | Статус |
 |---|---|---|---|
 | US Store (новый) | charlieandted.com | US | ⏳ создать |
-| Bennet & Gray | bennetandgray.com | ? | ⏳ планируется |
+| Bennet & Gray | bennetandgray.com | ? | bennetandgray.com@gmail.com | ⏳ планируется |
 | Casa Giannini | casa-giannini.it | IT | ⏳ планируется (льняные изделия) |
 | Oliver and Faye | oliverandfaye.com | ? | ⏳ планируется |

@@ -37,6 +37,18 @@ updated: 2026-05-26
 | hiute.hk@gmail.com | HI&UTE — нет GMC (проверено 26/05/26) |
 | disterheft.arpack@gmail.com | нет GMC |
 
+## Google Ads аккаунты
+
+| Customer ID | Gmail | Магазин | Статус | Месячный расход |
+|---|---|---|---|---|
+| 111-851-0856 | ? | Marc et Francois (CH) — Propria CH | активен | €151.97 |
+| 465-541-9350 | hiute.hk@gmail.com | Oliver and Alder (UK) | ⚠️ активен — магазин suspended! Баланс €14.45 | €155.01/мес |
+| 493-808-4535 | ? | Charlie & Ted (LEGACY) | баланс €0 — неактивен | €0 |
+| 823-925-3564 | disterheft.arpack@gmail.com | Charlie & Ted | баланс US$0 — неактивен | $0 |
+| 743-892-3370 | ilja.disterheft@gmail.com | Havgaard København (DK) | баланс €0 — неактивен | €0 |
+
+⚠️ 465-541-9350 — неизвестный аккаунт, списывает €155/мес. Нужно найти и закрыть если не используется.
+
 ## На удаление
 
 - ilja@iliqs.com

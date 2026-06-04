@@ -1182,7 +1182,7 @@ def render_calendar_today():
     done = done_event_summaries()
     by_date = {}
     for ev in events:
-        by_date.setdefault(ev["date"], []).append(ev)
+        by_date.setdefault(ev.get("date", ev.get("start", "")[:10]), []).append(ev)
 
     b = '<h2 style="margin-top:0">Ближайшие события</h2>\n' + stale
     if not by_date:
@@ -1203,8 +1203,15 @@ def render_calendar_today():
         b += f'<div class="cal-day-header{header_cls}">{label}</div>\n'
         for ev in sorted(by_date[day_str], key=lambda x: x.get("start", "")):
             t = ev.get("type", "default")
-            time_str = ev.get("start", "")
-            end_str = ev.get("end", "")
+            def _fmt_time(s):
+                if not s:
+                    return ""
+                try:
+                    return datetime.fromisoformat(s).strftime("%H:%M")
+                except Exception:
+                    return s[11:16] if len(s) > 15 else s
+            time_str = _fmt_time(ev.get("start", ""))
+            end_str = _fmt_time(ev.get("end", ""))
             time_html = f"{time_str}–{end_str}" if time_str and end_str else (time_str or "весь день")
             summary = ev["summary"]
             is_done = (day_str, summary) in done

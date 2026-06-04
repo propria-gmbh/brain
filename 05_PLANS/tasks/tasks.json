@@ -8158,7 +8158,8 @@
       "ai"
     ],
     "notes": null,
-    "done_at": "2026-06-02"
+    "done_at": "2026-06-02",
+    "order": 0.0
   },
   {
     "id": "дашборд-обращений-к-openai-api-лимиты-стоимость",
@@ -8222,7 +8223,7 @@
     "title": "Google Ads — проверить начисления, откуда €300?",
     "type": "task",
     "parent_id": "area-ecom",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -8232,7 +8233,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-04",
     "created_at": "2026-06-03",
     "order": 0.0
   },
