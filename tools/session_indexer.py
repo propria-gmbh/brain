@@ -146,4 +146,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        err_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "04_THINKING", "session-indexer-errors.log")
+        with open(err_path, "a") as ef:
+            ef.write(f"{datetime.now(timezone.utc).isoformat()} ERROR: {e}\n{traceback.format_exc()}\n")
+        sys.exit(1)
