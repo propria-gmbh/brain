@@ -8445,24 +8445,5 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0
-  },
-  {
-    "id": "создать-индекс-артефактов-и-выходных-файлов-07_output-чтобы-",
-    "title": "Создать индекс артефактов и выходных файлов (07_OUTPUT/) — чтобы Claude находил результаты прошлых сессий",
-    "type": "task",
-    "parent_id": "area-ai-systems",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-04",
-    "order": 0.0
   }
 ]
