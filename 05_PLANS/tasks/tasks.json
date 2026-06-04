@@ -8368,5 +8368,24 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0
+  },
+  {
+    "id": "остановить-google-ads-кампании-oliver-and-alder-465-541-9350",
+    "title": "Остановить Google Ads кампании Oliver and Alder (465-541-9350) — магазин suspended, €155/мес списывается впустую",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-04",
+    "order": 0.0
   }
 ]
