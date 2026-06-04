@@ -8686,5 +8686,24 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0
+  },
+  {
+    "id": "узнать-как-матчатся-данные-юрлица-в-gmc-и-продавца-в-shopify",
+    "title": "Узнать как матчатся данные юрлица в GMC и продавца в Shopify (Propria GmbH vs store)",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-04",
+    "order": 0.0
   }
 ]
