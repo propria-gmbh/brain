@@ -126,7 +126,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import sys; open('/tmp/stop_hook_test.json','w').write(sys.stdin.read())\""
+            "command": "python3 /Users/dister/Projects/brain/tools/session_indexer.py"
           }
         ]
       }
