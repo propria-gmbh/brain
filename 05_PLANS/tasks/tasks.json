@@ -7267,10 +7267,11 @@
     "title": "Купить полукруглые ножницы для груминга",
     "type": "task",
     "parent_id": "area-personal-purchases",
-    "status": "active",
+    "status": "done",
     "someday": false,
     "created_at": "2026-05-27",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-05"
   },
   {
     "id": "personal-purchases-насадки-зубная-щетка",

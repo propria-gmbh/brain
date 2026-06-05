@@ -6093,26 +6093,6 @@
     "order": 4.0
   },
   {
-    "id": "personal-purchases-купить-футболку-для-тренировок-laufshirt-kurz",
-    "title": "Купить футболку для тренировок Laufshirt kurzarm Herren nahtlos https://www.decathlon.de/p/laufshirt-kurzarm-herren-nahtlos-run-500-komfort-schwarz/_/R-p-340992?mc=8861685",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 5.0
-  },
-  {
     "id": "personal-purchases-купить-шампунь-для-обуви",
     "title": "Купить шампунь для обуви",
     "type": "task",
