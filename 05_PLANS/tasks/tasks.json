@@ -8767,5 +8767,11 @@
     "done_at": null,
     "created_at": "2026-06-05",
     "order": 0.0
+  },
+  {
+    "id": "area-safe-min",
+    "title": "Безопасный минимум",
+    "type": "area",
+    "order": 0.5
   }
 ]
