@@ -426,7 +426,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "done": "2026-06-05"
   },
   {
     "id": "health-записаться-на-прием-к-кожнику-по-новообразова",
@@ -2158,26 +2159,6 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 4.0
-  },
-  {
-    "id": "propria-зарегистрировать-propria-gmbh-в-transparenzre",
-    "title": "Зарегистрировать Propria GmbH в Transparenzregister",
-    "type": "task",
-    "project": "propria",
-    "parent_id": "area-propria",
-    "status": "done",
-    "someday": false,
-    "deadline": "2026-06-19",
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": "2026-05-28",
-    "created_at": "2026-05-25",
-    "order": 2.0
   },
   {
     "id": "propria-обсудить-с-порядочновым-задержка-ндс-дания-ит",
@@ -4078,7 +4059,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "done": "2026-06-05"
   },
   {
     "id": "personal-family-наити-подходящии-холст-для-картины",
@@ -4218,7 +4200,8 @@
     "waiting_for": null,
     "done_at": "2026-05-28",
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "done": "2026-06-05"
   },
   {
     "id": "personal-finance-сделать-отчет-по-подоходному-за-2025-год",
@@ -4260,16 +4243,17 @@
     "waiting_for": null,
     "done_at": "2026-05-28",
     "created_at": "2026-05-25",
-    "order": 3.0
+    "order": 3.0,
+    "done": "2026-06-05"
   },
   {
     "id": "personal-finance-miles-фолоуап-по-ущербу-0705-ждать-ответа-све",
     "title": "MILES — фолоуап по ущербу 07.05 : ждать ответа Свена, получить документацию по предыдущему повреждению, решить оспаривать ли списание €1050",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "area-personal-finance",
+    "parent_id": "area-propria",
     "status": "done",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-05-26",
     "priority": null,
     "stakes": 3,
@@ -4329,7 +4313,7 @@
     "project": "personal/finance",
     "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-05-31",
     "priority": null,
     "stakes": null,
@@ -4620,7 +4604,8 @@
     "waiting_for": null,
     "done_at": "2026-05-26",
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "done": "2026-06-05"
   },
   {
     "id": "personal-finance-оплатить-штраф-30-за-аню",
@@ -6421,7 +6406,8 @@
     "waiting_for": null,
     "done_at": "2026-05-27",
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 1.0,
+    "done": "2026-06-05"
   },
   {
     "id": "personal-sailing-немецкие-яхтенные-права-уточнить-дату-экзамен",
@@ -6648,7 +6634,8 @@
     "waiting_for": null,
     "done_at": "2026-05-25",
     "created_at": "2026-05-25",
-    "order": 1.5
+    "order": 1.5,
+    "done": "2026-06-05"
   },
   {
     "id": "sailing-salimzhan-lazurka",
@@ -6668,7 +6655,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 10.0
+    "order": 10.0,
+    "done": "2026-06-05"
   },
   {
     "id": "sailing-dortman-lazurka",
@@ -6688,7 +6676,8 @@
     "waiting_for": null,
     "done_at": "2026-05-26",
     "created_at": "2026-05-25",
-    "order": 11.0
+    "order": 11.0,
+    "done": "2026-06-05"
   },
   {
     "id": "health-найти-cbd-препараты",
@@ -6747,7 +6736,8 @@
     "waiting_for": null,
     "done_at": "2026-05-27",
     "created_at": "2026-05-25",
-    "order": 100.0
+    "order": 100.0,
+    "done": "2026-06-05"
   },
   {
     "id": "ai-systems-научить-claude-скачивать-инвойсы",
@@ -6926,7 +6916,8 @@
     "context": "phone",
     "created_at": "2026-05-26",
     "order": 1.0,
-    "done_at": "2026-05-27"
+    "done_at": "2026-05-27",
+    "done": "2026-06-05"
   },
   {
     "id": "miles-accident-followup-2",
@@ -6941,7 +6932,8 @@
     "tags": [
       "reminder"
     ],
-    "done_at": "2026-05-28"
+    "done_at": "2026-05-28",
+    "done": "2026-06-05"
   },
   {
     "id": "miles-invoices-followup-3",
@@ -6955,7 +6947,8 @@
     "order": 2.0,
     "tags": [
       "reminder"
-    ]
+    ],
+    "done": "2026-06-05"
   },
   {
     "id": "personal-finance-оплатить-детям",
@@ -7096,7 +7089,7 @@
     "project": "personal",
     "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
     "status": "done",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-05-31",
     "priority": null,
     "stakes": null,
@@ -7401,7 +7394,8 @@
     "waiting_for": "MILES",
     "done_at": null,
     "created_at": "2026-05-28",
-    "order": 10.0
+    "order": 10.0,
+    "done": "2026-06-05"
   },
   {
     "id": "area-ecom-knowledge",
@@ -7976,7 +7970,8 @@
     "waiting_for": null,
     "done_at": "2026-06-03",
     "created_at": "2026-06-01",
-    "order": 2.0
+    "order": 2.0,
+    "done": "2026-06-05"
   },
   {
     "id": "ecom-listing-automation-тестирование-митя",
@@ -8031,7 +8026,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-03",
-    "order": 0.0
+    "order": 0.0,
+    "done": "2026-06-05"
   },
   {
     "id": "анализ-паттернов-прокрастинации-по-истории-чатов",
@@ -8116,7 +8112,7 @@
     "type": "task",
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-06-05",
     "priority": null,
     "stakes": null,
@@ -8192,7 +8188,7 @@
     "type": "task",
     "parent_id": "area-ecom",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-06-06",
     "priority": null,
     "stakes": null,
@@ -8290,7 +8286,8 @@
     "created_at": "2026-06-04",
     "order": 0.0,
     "deadline": "2026-06-04",
-    "done_at": "2026-06-05"
+    "done_at": "2026-06-05",
+    "done": "2026-06-05"
   },
   {
     "id": "узнать-адрес-склада-нового-поставщика-kungfubuy-для-shipping",
@@ -8566,7 +8563,7 @@
     "type": "task",
     "parent_id": "area-personal-sailing",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-06-05",
     "priority": null,
     "stakes": null,
@@ -8651,5 +8648,23 @@
     "created_at": "2026-06-05",
     "order": 2.25,
     "type": "area"
+  },
+  {
+    "id": "miles-фолоуап-авария-07-05-2026-06-12",
+    "title": "Фолоуап MILES — авария 07.05: получить ответ от Свена",
+    "parent_id": "area-personal-finance-miles",
+    "deadline": "2026-06-12",
+    "done": false,
+    "someday": false,
+    "order": 0.0
+  },
+  {
+    "id": "miles-фолоуап-инвойсы-propria-тикет-5356147",
+    "title": "Фолоуап MILES — инвойсы на Propria GmbH (тикет #5356147): получить ответ до 19.06",
+    "parent_id": "area-personal-finance-miles",
+    "deadline": "2026-06-19",
+    "done": false,
+    "someday": false,
+    "order": 0.0
   }
 ]

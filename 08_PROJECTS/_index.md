@@ -28,6 +28,12 @@ brain/ — командный центр. Реальная разработка 
 | [invertomatic](invertomatic/AGENTS.md) | Финансовая модель / ранняя стадия | `~/Projects/invertomatic/` | idea |
 | [home-server](home-server/AGENTS.md) | Домашний сервер | `~/Projects/Home Server/` | placeholder |
 
+## Споры / Претензии
+
+| Slug | Назначение | Статус |
+|---|---|---|
+| [miles-dispute](miles-dispute/context.md) | Спор с MILES: инвойсы на Propria GmbH + авария €1050 | active |
+
 ## Личные проекты
 
 | Slug | Назначение | Статус |
