@@ -8287,7 +8287,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "deadline": null,
+    "deadline": "2026-06-05",
     "priority": null,
     "stakes": null,
     "context": null,
