@@ -448,35 +448,58 @@ document.querySelectorAll('.r-btn[data-id]').forEach(function(btn) {
 });
 
 // task detail modal
+function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
+
+function makeField(label, value) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var val = document.createElement('div');
+  val.className = 'modal-field-value';
+  val.textContent = value;
+  wrap.appendChild(lbl);
+  wrap.appendChild(val);
+  return wrap;
+}
+
 function openTaskModal(taskId) {
   fetch('/api/task?id=' + encodeURIComponent(taskId))
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      document.getElementById('modal-title-text').textContent = d.title;
-      var dl = d.deadline || '—';
-      var prio = d.marker || '—';
-      var area = d.parent_title || '—';
-      var someday = d.someday ? '✓' : '—';
-      var notes = d.notes || '—';
-      document.getElementById('modal-fields').innerHTML =
-        '<div class="modal-grid">'
-        + '<div class="modal-field"><div class="modal-field-label">Дедлайн</div><div class="modal-field-value">' + dl + '</div></div>'
-        + '<div class="modal-field"><div class="modal-field-label">Someday</div><div class="modal-field-value">' + someday + '</div></div>'
-        + '<div class="modal-field"><div class="modal-field-label">Маркер</div><div class="modal-field-value">' + prio + '</div></div>'
-        + '<div class="modal-field"><div class="modal-field-label">Область</div><div class="modal-field-value">' + area + '</div></div>'
-        + '</div>';
+      document.getElementById('modal-title-text').textContent = d.title || '';
+      var grid = document.createElement('div');
+      grid.className = 'modal-grid';
+      grid.appendChild(makeField('Дедлайн', d.deadline || '—'));
+      grid.appendChild(makeField('Someday', d.someday ? '✓' : '—'));
+      grid.appendChild(makeField('Маркер', d.marker || '—'));
+      grid.appendChild(makeField('Область', d.parent_title || '—'));
+      var fieldsEl = document.getElementById('modal-fields');
+      fieldsEl.innerHTML = '';
+      fieldsEl.appendChild(grid);
       var sub = document.getElementById('modal-subtasks');
       var subSec = document.getElementById('modal-subtasks-section');
+      sub.innerHTML = '';
       if (d.subtasks && d.subtasks.length > 0) {
-        sub.innerHTML = d.subtasks.map(function(s) {
-          var cls = s.done ? ' done-sub' : '';
-          var chkIcon = s.done ? '✓' : '·';
-          var sid = s.id.replace(/'/g, "\\'");
-          return '<div class="modal-subtask' + cls + '">'
-            + '<span class="mchk" onclick="event.stopPropagation();post(\'/toggle-task\',{id:\''
-            + sid + '\'});this.textContent=this.textContent===\'·\'?\'✓\':\'·\'">' + chkIcon + '</span>'
-            + '<span>' + s.title + '</span></div>';
-        }).join('');
+        d.subtasks.forEach(function(s) {
+          var row = document.createElement('div');
+          row.className = 'modal-subtask' + (s.done ? ' done-sub' : '');
+          var chk = document.createElement('span');
+          chk.className = 'mchk';
+          chk.textContent = s.done ? '✓' : '·';
+          chk.dataset.id = s.id;
+          chk.addEventListener('click', function(e) {
+            e.stopPropagation();
+            post('/toggle-task', {id: s.id});
+            chk.textContent = chk.textContent === '·' ? '✓' : '·';
+          });
+          var title = document.createElement('span');
+          title.textContent = s.title;
+          row.appendChild(chk);
+          row.appendChild(title);
+          sub.appendChild(row);
+        });
         subSec.style.display = '';
       } else {
         subSec.style.display = 'none';
