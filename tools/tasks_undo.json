@@ -6153,26 +6153,6 @@
     "order": 7.0
   },
   {
-    "id": "personal-purchases-купить-32-гб-1600-mhz-ddr3-memory-module",
-    "title": "Купить 32 Гб 1600 MHz DDR3 memory module",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 8.0
-  },
-  {
     "id": "personal-purchases-купить-мясорубку",
     "title": "Купить мясорубку",
     "type": "task",
@@ -8790,7 +8770,8 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": false,
-    "created_at": "2026-06-05"
+    "created_at": "2026-06-05",
+    "order": 0.0
   },
   {
     "id": "переклеить-защитное-стекло-на-iphone",
