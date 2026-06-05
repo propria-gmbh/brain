@@ -8008,28 +8008,6 @@
     "type": "area"
   },
   {
-    "id": "projects-фолоуап-инвертоматик-2026-06-08",
-    "title": "Фолоуап Инвертоматик",
-    "type": "task",
-    "project": "projects",
-    "parent_id": "area-projects-инвертоматик",
-    "status": "todo",
-    "someday": false,
-    "deadline": "2026-06-08",
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [
-      "followup"
-    ],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-01",
-    "order": 2.0
-  },
-  {
     "id": "projects-разобраться-с-регистрацией-jmci",
     "title": "Разобраться с регистрацией JMCI — посмотреть видео созвона с Андреем",
     "type": "task",
