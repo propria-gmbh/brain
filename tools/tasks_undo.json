@@ -8734,7 +8734,7 @@
     "id": "уточнить-у-хорватского-бухгалтера-pdv-в-инвойсе-adventure-ho",
     "title": "Запросить Croatia Yachting можно ли им от имени Проприя выдать инвойс",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-sailing",
     "status": "todo",
     "someday": false,
     "deadline": "2026-06-05",
@@ -8765,6 +8765,22 @@
     "notes": "Новый IBAN: DE32 1005 0000 1076 5441 81 (Berliner Sparkasse). Онлайн через Meine BA или письмо. Связано: personal-finance-разобраться-с-получателями-платежей-сменить-банк",
     "waiting_for": null,
     "done_at": null,
+    "created_at": "2026-06-05",
+    "order": 0.0
+  },
+  {
+    "id": "area-safe-min",
+    "title": "Безопасный минимум",
+    "type": "area",
+    "order": -0.5
+  },
+  {
+    "id": "safe-min-проработать-возможные-пути-заработка-и-составить-п",
+    "title": "Проработать возможные пути заработка и составить план",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": true,
     "created_at": "2026-06-05",
     "order": 0.0
   }
