@@ -8645,11 +8645,11 @@
   {
     "id": "inbox-personal",
     "title": "Personal",
-    "parent_id": "area-inbox",
+    "parent_id": "area-projects-tacura",
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-05",
-    "order": 1.0,
+    "order": 2.25,
     "type": "area"
   }
 ]
