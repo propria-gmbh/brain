@@ -8455,11 +8455,12 @@
     "id": "inbox-полить-цветы",
     "title": "полить цветы",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-04",
     "order": 0.0,
-    "deadline": "2026-06-04"
+    "deadline": "2026-06-04",
+    "done_at": "2026-06-05"
   },
   {
     "id": "узнать-адрес-склада-нового-поставщика-kungfubuy-для-shipping",
