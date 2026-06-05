@@ -8734,7 +8734,7 @@
     "id": "уточнить-у-хорватского-бухгалтера-pdv-в-инвойсе-adventure-ho",
     "title": "Запросить Croatia Yachting можно ли им от имени Проприя выдать инвойс",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-sailing",
     "status": "todo",
     "someday": false,
     "deadline": "2026-06-05",
