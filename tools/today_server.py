@@ -118,6 +118,23 @@ li.indent3 { margin-left: 60px; }
 .indent2 { margin-left: 40px; }
 .indent3 { margin-left: 60px; }
 .ts { font-size: .7rem; color: var(--bg5); position: fixed; bottom: 12px; right: 16px; }
+.item-text.task-linked { cursor:pointer; }
+.item-text.task-linked:hover { text-decoration:underline dotted var(--text4); }
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:200; display:none; align-items:flex-start; justify-content:center; padding-top:80px; }
+.modal-overlay.open { display:flex; }
+.modal { background:var(--bg2); border-radius:10px; padding:24px 28px; min-width:360px; max-width:600px; width:90%; max-height:75vh; overflow-y:auto; position:relative; }
+.modal-close { position:absolute; top:12px; right:14px; background:none; border:none; color:var(--text4); font-size:1.1rem; cursor:pointer; padding:4px 8px; border-radius:4px; }
+.modal-close:hover { color:var(--text); background:var(--bg4); }
+.modal-title-area { font-size:1.05rem; font-weight:600; color:var(--text); margin-bottom:20px; padding-right:24px; }
+.modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+.modal-field { background:var(--bg3); border-radius:6px; padding:10px 12px; }
+.modal-field-label { font-size:.68rem; color:var(--text4); text-transform:uppercase; letter-spacing:.07em; margin-bottom:4px; }
+.modal-field-value { font-size:.88rem; color:var(--text2); }
+.modal-subtasks-header { font-size:.72rem; color:var(--text4); text-transform:uppercase; letter-spacing:.07em; margin:16px 0 8px; }
+.modal-subtask { display:flex; align-items:center; gap:8px; padding:7px 10px; border-radius:5px; background:var(--bg3); margin:3px 0; font-size:.87rem; color:var(--text2); }
+.modal-subtask.done-sub { color:var(--text5); text-decoration:line-through; }
+.mchk { flex-shrink:0; width:15px; height:15px; border-radius:3px; background:var(--bg4); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.65rem; color:var(--text5); }
+.mchk:hover { background:var(--chk-hov); }
 .section-tasks { padding-left: 16px; }
 .area-title[contenteditable=true] { outline: 1px solid #5b8dd9; border-radius: 3px; padding: 1px 4px; background: var(--bg2); cursor: text; }
 .area-title:hover { text-decoration: underline dotted var(--text4); cursor: text; }
@@ -148,9 +165,19 @@ function post(url, data, cb) {
     .then(function() { if (cb) cb(); else location.reload(); });
 }
 
-// today.md toggles
+// today.md toggles — checkbox only
 document.querySelectorAll('li[data-idx]').forEach(function(li) {
-  li.addEventListener('click', function() { post('/toggle', {idx: parseInt(li.dataset.idx)}); });
+  var chk = li.querySelector('.chk');
+  if (chk) chk.addEventListener('click', function(e) {
+    e.stopPropagation();
+    post('/toggle', {idx: parseInt(li.dataset.idx)});
+  });
+  var txt = li.querySelector('.item-text');
+  if (txt) txt.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var tid = li.dataset.taskId;
+    if (tid) openTaskModal(tid);
+  });
 });
 
 // today.md: remove item
@@ -420,6 +447,50 @@ document.querySelectorAll('.r-btn[data-id]').forEach(function(btn) {
   });
 });
 
+// task detail modal
+function openTaskModal(taskId) {
+  fetch('/api/task?id=' + encodeURIComponent(taskId))
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      document.getElementById('modal-title-text').textContent = d.title;
+      var dl = d.deadline || '—';
+      var prio = d.marker || '—';
+      var area = d.parent_title || '—';
+      var someday = d.someday ? '✓' : '—';
+      var notes = d.notes || '—';
+      document.getElementById('modal-fields').innerHTML =
+        '<div class="modal-grid">'
+        + '<div class="modal-field"><div class="modal-field-label">Дедлайн</div><div class="modal-field-value">' + dl + '</div></div>'
+        + '<div class="modal-field"><div class="modal-field-label">Someday</div><div class="modal-field-value">' + someday + '</div></div>'
+        + '<div class="modal-field"><div class="modal-field-label">Маркер</div><div class="modal-field-value">' + prio + '</div></div>'
+        + '<div class="modal-field"><div class="modal-field-label">Область</div><div class="modal-field-value">' + area + '</div></div>'
+        + '</div>';
+      var sub = document.getElementById('modal-subtasks');
+      var subSec = document.getElementById('modal-subtasks-section');
+      if (d.subtasks && d.subtasks.length > 0) {
+        sub.innerHTML = d.subtasks.map(function(s) {
+          var cls = s.done ? ' done-sub' : '';
+          var chkIcon = s.done ? '✓' : '·';
+          var sid = s.id.replace(/'/g, "\\'");
+          return '<div class="modal-subtask' + cls + '">'
+            + '<span class="mchk" onclick="event.stopPropagation();post(\'/toggle-task\',{id:\''
+            + sid + '\'});this.textContent=this.textContent===\'·\'?\'✓\':\'·\'">' + chkIcon + '</span>'
+            + '<span>' + s.title + '</span></div>';
+        }).join('');
+        subSec.style.display = '';
+      } else {
+        subSec.style.display = 'none';
+      }
+      document.getElementById('task-modal').classList.add('open');
+    });
+}
+function closeTaskModal() {
+  document.getElementById('task-modal').classList.remove('open');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeTaskModal();
+});
+
 // drag & drop
 window.isDragging = false;
 var _childTarget = null;
@@ -544,6 +615,19 @@ HTML = """<!DOCTYPE html>
 </nav>
 
 {body}
+
+<div id="task-modal" class="modal-overlay" onclick="if(event.target===this)closeTaskModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeTaskModal()">✕</button>
+    <div class="modal-title-area" id="modal-title-text"></div>
+    <div id="modal-fields"></div>
+    <div id="modal-subtasks-section">
+      <div class="modal-subtasks-header">Подзадачи</div>
+      <div id="modal-subtasks"></div>
+    </div>
+  </div>
+</div>
+
 <div class="ts">live</div>
 <script>{js}</script>
 </body>
@@ -596,6 +680,8 @@ def parse_today(path):
 
 def render_today(path):
     title, sections, all_items = parse_today(path)
+    tasks = load_tasks()
+    task_by_norm = {normalize_title(t.get("title", "")): t["id"] for t in tasks if t.get("type") != "area"}
     total = len(all_items)
     done_n = sum(1 for i in all_items if i["done"])
     pct = int(done_n / total * 100) if total else 0
@@ -626,7 +712,10 @@ def render_today(path):
         for item in todo:
             extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
             indent_cls = f" indent{min(item['indent'], 3)}" if item.get("indent", 0) > 0 else ""
-            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"><span class="chk">·</span><span class="item-text">{item["text"]}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+            task_id = task_by_norm.get(normalize_title(item["text"]), "")
+            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
+            link_cls = " task-linked" if task_id else ""
+            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{item["text"]}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
         if sec == "Утренний чеклист":
             left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">{sec}</summary><ul class="today-section">\n{items_html}</ul></details>\n'
         else:
@@ -1266,6 +1355,31 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/tasks":
             body = render_tasks()
             data = make_page(body, "tasks")
+        elif self.path.startswith("/api/task"):
+            from urllib.parse import urlparse as _up, parse_qs as _pqs
+            qs = _pqs(_up(self.path).query)
+            task_id = qs.get("id", [None])[0]
+            tasks = load_tasks()
+            task = next((t for t in tasks if t["id"] == task_id), None)
+            if not task:
+                self.send_error(404)
+                return
+            subtasks = [t for t in tasks if t.get("parent_id") == task_id]
+            parent = next((t for t in tasks if t["id"] == task.get("parent_id")), None)
+            result = dict(task)
+            result["parent_title"] = parent["title"] if parent else None
+            result["subtasks"] = [
+                {"id": s["id"], "title": s["title"], "done": s.get("status") == "done"}
+                for s in subtasks
+            ]
+            data = json.dumps(result, ensure_ascii=False).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", len(data))
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            self.wfile.write(data)
+            return
         else:
             self.send_error(404)
             return
