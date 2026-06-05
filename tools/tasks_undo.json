@@ -6193,26 +6193,6 @@
     "order": 10.0
   },
   {
-    "id": "personal-purchases-купить-фильтр",
-    "title": "Купить фильтр",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 11.0
-  },
-  {
     "id": "personal-purchases-яхтенная-обувь-httpswwwquoddycompagesmen",
     "title": "Яхтенная обувь https://www.quoddy.com/pages/men",
     "type": "task",
