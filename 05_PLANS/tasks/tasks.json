@@ -5924,26 +5924,6 @@
     "order": 3.0
   },
   {
-    "id": "personal-media-httpsyoutubecomwatchvlrifi8pu0c0si8yeyat7eriv",
-    "title": "https://youtube.com/watch?v=lRifI8pu0c0&si=8YeYAT7ERIVoi4g_",
-    "type": "task",
-    "project": "personal/media",
-    "parent_id": "area-personal-media",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 6.0
-  },
-  {
     "id": "personal-media-httpsyoutubekerggbjjpgssixqmi6jkawbavuj8",
     "title": "https://youtu.be/kerGgbjjpgs?si=XqMi6JKAwBAvUJ8-",
     "type": "task",
