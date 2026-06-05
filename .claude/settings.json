@@ -113,7 +113,8 @@
       "mcp__plugin_playwright_playwright__browser_select_option",
       "mcp__plugin_playwright_playwright__browser_drag",
       "mcp__plugin_playwright_playwright__browser_drop",
-      "mcp__plugin_playwright_playwright__browser_resize"
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_evaluate"
     ],
     "additionalDirectories": [
       "/Users/dister/.claude",
