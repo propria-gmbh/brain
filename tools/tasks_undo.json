@@ -8642,9 +8642,8 @@
   {
     "id": "inbox-personal",
     "title": "Personal",
-    "parent_id": "area-projects-tacura",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-05",
     "order": 2.25,
     "type": "area"
@@ -8655,7 +8654,8 @@
     "parent_id": "area-personal-finance-miles",
     "deadline": "2026-06-12",
     "done": false,
-    "someday": false
+    "someday": false,
+    "order": 0.0
   },
   {
     "id": "miles-фолоуап-инвойсы-propria-тикет-5356147",
@@ -8663,6 +8663,7 @@
     "parent_id": "area-personal-finance-miles",
     "deadline": "2026-06-19",
     "done": false,
-    "someday": false
+    "someday": false,
+    "order": 0.0
   }
 ]
