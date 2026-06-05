@@ -268,9 +268,9 @@
     "id": "area-personal-family-networking",
     "title": "Networking",
     "type": "area",
-    "parent_id": "area-personal-family",
+    "parent_id": "area-inbox",
     "status": "active",
-    "order": 2.0,
+    "order": 0.0,
     "created_at": "2026-05-25"
   },
   {
