@@ -8753,7 +8753,7 @@
     "id": "уведомить-familienkasse-о-смене-банковского-счёта",
     "title": "Уведомить Familienkasse о смене банковского счёта",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
     "status": "todo",
     "someday": true,
     "deadline": null,
