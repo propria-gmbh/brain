@@ -4,8 +4,15 @@
 
 ## Ilja Disterheft — пользователь
 
-- Адрес: Götzestr. 18A, Berlin
+- Адрес: Götzestr. 18A, 13467 Berlin
+- Geburtsdatum: 02.01.1975
+- Steuer-ID (Identifikationsnummer): 49210568930
 - Морской опыт: 6000 морских миль (из них 3000 шкипером)
+
+## Kindergeld
+
+- Kindergeldnummer: 001FK831792
+- Antragsteller: Ilja Disterheft
 
 ## Dr. Yury Poryadochnov — налоговый консультант (Prokurist)
 
@@ -43,6 +50,13 @@
 
 - Email: mitja.eichhorn@gmail.com
 - Тел: +49 179 1309460
+
+## Банковские реквизиты — Berliner Sparkasse
+
+- Kontoinhaber: Ilja Disterheft, Anna Disterheft
+- IBAN: DE32 1005 0000 1076 5441 81
+- BIC: BELADEBEXXX
+- Kreditinstitut: Berliner Sparkasse
 
 ## Алла Дудниченко — бухгалтер (Propria / Tacura)
 
