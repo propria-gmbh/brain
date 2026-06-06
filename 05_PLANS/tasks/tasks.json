@@ -2539,7 +2539,7 @@
     "parent_id": "area-projects-tacura",
     "status": "todo",
     "someday": true,
-    "deadline": null,
+    "deadline": "2026-06-08",
     "priority": null,
     "stakes": null,
     "context": null,
