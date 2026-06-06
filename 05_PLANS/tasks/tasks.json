@@ -7421,13 +7421,6 @@
     "order": 0.0
   },
   {
-    "id": "area-personal-agent-buffer",
-    "type": "area",
-    "parent_id": "area-ai-systems",
-    "title": "Telegram ↔ Claude буфер (VPS)",
-    "order": 0.0
-  },
-  {
     "id": "task-agent-buffer-vps-service",
     "type": "task",
     "parent_id": "area-brain-dashboard-доработки",
