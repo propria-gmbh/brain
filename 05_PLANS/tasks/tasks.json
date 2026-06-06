@@ -8542,7 +8542,7 @@
     "id": "telegram-бот-добавить-conversation-history-последние-10-сооб",
     "title": "Telegram бот: добавить conversation history (последние 10 сообщений в Redis)",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ai-systems",
     "status": "todo",
     "someday": false,
     "deadline": null,
