@@ -5885,7 +5885,7 @@
     "title": "Сделать SEPA на вывоз макулатуры",
     "type": "task",
     "project": "personal/media",
-    "parent_id": "area-personal-finance",
+    "parent_id": "area-personal-finance-счета-и-подписки",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -5898,7 +5898,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 8.0
+    "order": 0.0
   },
   {
     "id": "personal-purchases-купить-зубные-щетки",
