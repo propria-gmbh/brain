@@ -6931,7 +6931,7 @@
     "id": "miles-invoices-followup-3",
     "title": "Фолоуап MILES — корректные инвойсы на Propria GmbH (3й фолоуап)",
     "parent_id": "area-personal-finance-miles",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-02",
     "context": "email",
@@ -6940,7 +6940,8 @@
     "tags": [
       "reminder"
     ],
-    "done": "2026-06-05"
+    "done": "2026-06-05",
+    "done_at": "2026-06-06"
   },
   {
     "id": "personal-finance-оплатить-детям",
