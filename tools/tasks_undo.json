@@ -7481,7 +7481,7 @@
     "id": "визуализация-субагентов-в-дашборде",
     "title": "Визуализация субагентов в дашборде",
     "type": "task",
-    "parent_id": "area-ai-systems",
+    "parent_id": "area-brain-dashboard-доработки",
     "status": "todo",
     "someday": false,
     "deadline": null,
