@@ -1650,7 +1650,7 @@
     "title": "Сменить страну (CH Store)",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-marc-francois",
+    "parent_id": "task-marc-strategy-hightick",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1666,7 +1666,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 3.0
+    "order": 4.0
   },
   {
     "id": "ecom-сделать-подсвечивающиеся-пункты-меню-и-лого-п",
