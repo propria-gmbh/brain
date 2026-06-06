@@ -7569,7 +7569,7 @@
     "parent_id": "area-marc-francois",
     "title": "Принять решение: хай-тикет / НДС / стоит ли запускать рекламу (CH Store)",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "done": false,
     "created_at": "2026-05-29",
     "order": 0.0
