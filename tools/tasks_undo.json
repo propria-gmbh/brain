@@ -8093,7 +8093,7 @@
     "type": "task",
     "parent_id": "area-ecom",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
