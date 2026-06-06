@@ -7273,7 +7273,7 @@
   },
   {
     "id": "ai-systems-дашборд-фильтр-someday",
-    "title": "Дашборд: добавить фильтр по someday",
+    "title": "Дашборд: добавить фильтр по someday и явный запрет на больше N задач someday",
     "type": "task",
     "parent_id": "area-brain-dashboard-доработки",
     "status": "todo",
