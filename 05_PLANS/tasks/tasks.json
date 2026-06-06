@@ -7897,7 +7897,7 @@
     "id": "сделать-ссылки-в-названии-задач-в-дашборде-кликабельными",
     "title": "Сделать ссылки в названии задач в дашборде кликабельными",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ai-systems",
     "status": "todo",
     "someday": false,
     "deadline": null,

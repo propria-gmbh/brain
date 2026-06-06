@@ -8263,7 +8263,7 @@
     "title": "Найти Жене джойстик",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -8273,7 +8273,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-06",
     "created_at": "2026-06-04",
     "order": 0.0
   },
@@ -8672,6 +8672,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-06"
+    "created_at": "2026-06-06",
+    "order": 0.0
   }
 ]
