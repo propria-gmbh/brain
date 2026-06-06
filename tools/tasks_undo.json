@@ -4685,7 +4685,7 @@
     "title": "Запросить возмещение за уборку",
     "type": "task",
     "project": "personal/finance",
-    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "deadline": null,
