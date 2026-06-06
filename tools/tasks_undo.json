@@ -738,7 +738,7 @@
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "green",
     "stakes": null,
