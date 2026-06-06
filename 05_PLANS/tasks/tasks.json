@@ -598,7 +598,7 @@
     "project": "health",
     "parent_id": "health-начать-принимать-тестостерон",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
