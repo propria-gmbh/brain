@@ -4079,7 +4079,7 @@
     "title": "Найти вино Ане",
     "type": "task",
     "project": "personal/family",
-    "parent_id": "area-personal-family-семья",
+    "parent_id": "inbox-personal",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -4092,7 +4092,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 2.0
+    "order": 0.5
   },
   {
     "id": "personal-family-сдать-анализы-для-всеи-семьи-в-том-числе-на-ж",
