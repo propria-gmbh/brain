@@ -8626,7 +8626,7 @@
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
