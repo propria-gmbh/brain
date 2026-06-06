@@ -8628,5 +8628,36 @@
     "done": false,
     "deadline": null,
     "created_at": "2026-06-06"
+  },
+  {
+    "id": "propria-оплатить-счет-алла-дудниченко-06-2026",
+    "title": "Оплатить счёт Аллы Дудниченко 06.2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "someday": false,
+    "done": false,
+    "deadline": "2026-06-09",
+    "created_at": "2026-06-06",
+    "notes": "Письмо от a.dudnichenko@hecht-luxburg.de от 05.06.2026"
+  },
+  {
+    "id": "sailing-iyt-согласовать-с-хаусарцтом-форму-справки",
+    "title": "Согласовать с хаусарцтом форму справки для IYT",
+    "type": "task",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "someday": true,
+    "done": false,
+    "deadline": null,
+    "created_at": "2026-06-06"
+  },
+  {
+    "id": "sailing-iyt-найти-офтальмолога-справка",
+    "title": "Найти офтальмолога, который согласится выдать справку по форме IYT",
+    "type": "task",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "someday": true,
+    "done": false,
+    "deadline": null,
+    "created_at": "2026-06-06"
   }
 ]
