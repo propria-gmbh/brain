@@ -3669,7 +3669,7 @@
     "title": "Посмотреть плейлист про постановку целей https://www.youtube.com/playlist?list=PLm6zCN_KJCrU3ZgFEFz1KLrYSAl3k41ou",
     "type": "task",
     "project": "personal/development",
-    "parent_id": "area-personal-development-стратегия-развития",
+    "parent_id": "personal-development-определить-цели-по-методике-дорофеева",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -3682,7 +3682,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 0.0
+    "order": 7.0
   },
   {
     "id": "personal-development-изучить-курс-алекса-крола-по-ии",
