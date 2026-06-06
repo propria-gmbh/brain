@@ -7918,7 +7918,7 @@
     "id": "дашборд-обращений-к-openai-api-лимиты-стоимость",
     "title": "Дашборд обращений к OpenAI API (лимиты, стоимость)",
     "type": "task",
-    "parent_id": "area-ai-systems",
+    "parent_id": "реалтайм-контроль-использования-токенов-по-всем-моделям",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -7931,7 +7931,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-02",
-    "order": 0.0
+    "order": 1.0
   },
   {
     "id": "оплатить-аренду-25-х2",
