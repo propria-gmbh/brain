@@ -8598,8 +8598,8 @@
     "id": "area-brain-dashboard-доработки",
     "title": "Доработки дашборда с задачами",
     "type": "area",
-    "parent_id": "area-ai-systems",
-    "order": 0.0
+    "parent_id": "inbox-project-brain",
+    "order": 2.0
   },
   {
     "id": "brain-dashboard-правило-уникальных-названий-ареа",
