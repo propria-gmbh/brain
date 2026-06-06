@@ -3331,7 +3331,7 @@
     "project": "personal/development",
     "parent_id": "area-personal-development-система-и-фокус",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "green",
     "stakes": null,
