@@ -4681,26 +4681,6 @@
     "done": "2026-06-05"
   },
   {
-    "id": "personal-finance-поменять-реквизиты-киндергельд",
-    "title": "Поменять реквизиты киндергельд",
-    "type": "task",
-    "project": "personal/finance",
-    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 2.0
-  },
-  {
     "id": "personal-finance-запросить-возмещение-за-уборку",
     "title": "Запросить возмещение за уборку",
     "type": "task",
