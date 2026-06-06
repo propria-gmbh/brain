@@ -8414,7 +8414,7 @@
     "status": "todo",
     "someday": false,
     "deadline": null,
-    "priority": "red",
+    "priority": "green",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -8424,7 +8424,7 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0,
-    "marker": "🔴"
+    "marker": "🟢"
   },
   {
     "id": "сделать-поиск-конкурентов-для-charlie-and-ted-us",
