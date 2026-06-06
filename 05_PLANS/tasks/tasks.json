@@ -4727,7 +4727,7 @@
     "project": "personal/finance",
     "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "red",
     "stakes": null,
