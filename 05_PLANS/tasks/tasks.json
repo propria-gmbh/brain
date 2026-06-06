@@ -8624,7 +8624,7 @@
     "id": "переклеить-защитное-стекло-на-iphone",
     "title": "Переклеить защитное стекло на iPhone",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-personal",
     "status": "todo",
     "someday": true,
     "deadline": null,
