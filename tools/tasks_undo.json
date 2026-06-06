@@ -8468,7 +8468,7 @@
     "id": "telegram-бот-добавить-conversation-history-последние-10-сооб",
     "title": "Telegram бот: добавить conversation history (последние 10 сообщений в Redis)",
     "type": "task",
-    "parent_id": "area-ai-systems",
+    "parent_id": "area-brain-dashboard-доработки",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -8481,7 +8481,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-04",
-    "order": 0.0
+    "order": -4.0
   },
   {
     "id": "уточнить-у-хорватского-бухгалтера-pdv-в-инвойсе-adventure-ho",
