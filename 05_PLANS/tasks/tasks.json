@@ -4807,7 +4807,7 @@
     "project": "personal/finance",
     "parent_id": "area-personal-finance-jobcenter",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
