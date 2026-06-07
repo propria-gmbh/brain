@@ -7098,11 +7098,11 @@
     "id": "personal-purchases-насадки-зубная-щетка",
     "title": "Купить насадки для зубной щетки",
     "type": "task",
-    "parent_id": "area-personal-purchases",
+    "parent_id": "area-personal-purchases-нужные",
     "status": "active",
     "someday": false,
     "created_at": "2026-05-27",
-    "order": 0.0
+    "order": 0.5
   },
   {
     "id": "personal-purchases-зубная-щетка-электро",
