@@ -6164,26 +6164,6 @@
     "order": 2.0
   },
   {
-    "id": "personal-purchases-купить-слаисер",
-    "title": "Купить слайсер",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-хотелки",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 3.0
-  },
-  {
     "id": "personal-purchases-orient-express-paris-venezia",
     "title": "Orient Express Paris-Venezia",
     "type": "task",
