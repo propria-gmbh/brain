@@ -6108,7 +6108,7 @@
     "title": "Купить Caviar maker",
     "type": "task",
     "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-нужные",
+    "parent_id": "area-personal-purchases-хотелки",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -6121,7 +6121,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 17.0
+    "order": 0.0
   },
   {
     "id": "personal-purchases-новыи-телевизор-проектор-экран-комната-600038",
