@@ -4650,7 +4650,7 @@
     "project": "personal/finance",
     "parent_id": "area-personal-finance",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "red",
     "stakes": null,
