@@ -6264,26 +6264,6 @@
     "order": 4.0
   },
   {
-    "id": "personal-purchases-если-оборот-до-конца-мая-50к-mercedes-макс-35",
-    "title": "Если оборот до конца мая 50К — Mercedes макс 3500€; 100К — новый макс 7000€",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-покупки-призы-условие-выполнен",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 5.0
-  },
-  {
     "id": "personal-sailing-фолоуап-iyt-статус-заявки",
     "title": "Фолоуап IYT — статус заявки",
     "type": "task",
