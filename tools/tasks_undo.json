@@ -5870,7 +5870,7 @@
     "project": "personal/purchases",
     "parent_id": "area-personal-purchases-нужные",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
