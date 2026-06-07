@@ -6359,7 +6359,7 @@
     "type": "task",
     "project": "personal/sailing",
     "parent_id": "area-personal-sailing-планирование",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -6369,7 +6369,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-07",
     "created_at": "2026-05-25",
     "order": 1.0
   },

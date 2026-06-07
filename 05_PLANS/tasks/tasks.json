@@ -365,15 +365,6 @@
     "created_at": "2026-05-25"
   },
   {
-    "id": "area-personal-sailing-планирование",
-    "title": "Планирование",
-    "type": "area",
-    "parent_id": "area-personal-sailing",
-    "status": "active",
-    "order": 1.0,
-    "created_at": "2026-05-25"
-  },
-  {
     "id": "area-personal-sailing-логбук-и-память",
     "title": "Логбук и память",
     "type": "area",
@@ -6352,26 +6343,6 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 2.0
-  },
-  {
-    "id": "personal-sailing-посмотреть-лодку-на-8-человек-на-лето",
-    "title": "Посмотреть лодку на 8 человек на лето",
-    "type": "task",
-    "project": "personal/sailing",
-    "parent_id": "area-personal-sailing-планирование",
-    "status": "done",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": "2026-06-07",
-    "created_at": "2026-05-25",
-    "order": 1.0
   },
   {
     "id": "personal-sailing-переделать-логбук-нормально-добавить-италию-и",
