@@ -8562,11 +8562,11 @@
   {
     "id": "inbox-заказать-кредитную-карту-в-sparkasse",
     "title": "Заказать кредитную карту в Sparkasse",
-    "parent_id": "area-personal-finance",
+    "parent_id": "inbox-закрыть-кредитную-карту-сантандер-открыть-кредитну",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-06",
-    "order": 1.5,
+    "order": 2.5,
     "marker": "🔴",
     "priority": "red"
   },
