@@ -8636,12 +8636,12 @@
   {
     "id": "followup-familienkasse-смена-счета-подтверждение",
     "title": "Фолоуап: проверить что Familienkasse обработала смену счёта (PDF отправлен 07.06)",
-    "parent_id": "area-personal-finance-счета-и-подписки",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
     "done": null,
     "someday": false,
     "deadline": "2026-06-21",
     "notes": "Проверить что выплаты Kindergeld идут на новый IBAN DE32 1005 0000 1076 5441 81 (Berliner Sparkasse). Уведомление отправлено по почте 07.06.2026.",
-    "order": 0.5
+    "order": 6.0
   },
   {
     "id": "при-включении-фильтра-someday-разворачивать-все-area-с-somed",
