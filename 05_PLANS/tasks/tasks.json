@@ -8615,7 +8615,7 @@
   },
   {
     "id": "найти-на-сайте-bsr-расписание-вывоза-biotonne-с-домашнего-ад",
-    "title": "Найти на сайте BSR расписание вывоза BioTonne с домашнего адреса",
+    "title": "BSR: найти расписание вывоза BioTonne для Götzestr. 18A, 13467 Berlin и добавить даты в Google Calendar как повторяющиеся события с уведомлением за 1 день",
     "type": "task",
     "parent_id": "area-personal-home",
     "status": "todo",
@@ -8630,6 +8630,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-07",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   }
 ]
