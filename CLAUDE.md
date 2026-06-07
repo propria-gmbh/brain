@@ -83,3 +83,4 @@ tools/         — priority.py и другие скрипты
 | `tools/priority.py` | Ранжирование задач |
 | `08_PROJECTS/ecom/checklists/domain-verification.md` | Чеклист верификации домена магазина |
 | `08_PROJECTS/ecom/checklists/andrey-checklist.md` | Полный чеклист настройки магазина (Андрей) |
+| Google Sheet (Drive MCP) | Мастер-данные по магазинам и GMC: `1cMBL4p2pgXZu7-dlAFFcfjUZngd7CyKqn85m3WHIheE` |

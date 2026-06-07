@@ -261,6 +261,11 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
           r.style.display = visibleIds.has(r.dataset.id) ? '' : 'none';
         }
       });
+      // open all <details> that contain at least one visible someday row
+      document.querySelectorAll('details').forEach(function(det) {
+        var hasVisible = det.querySelectorAll('.task-row.someday').length > 0;
+        if (hasVisible) det.open = true;
+      });
     } else {
       rows.forEach(function(r) { r.style.display = ''; });
     }
