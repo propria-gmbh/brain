@@ -240,11 +240,30 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
   var sdLimit = window.SOMEDAY_LIMIT || 20;
   var on = localStorage.getItem('sd-filter') === '1';
   function apply() {
-    document.querySelectorAll('.task-row').forEach(function(r) {
-      if (!r.classList.contains('someday') && !r.classList.contains('done-task')) {
-        r.style.display = on ? 'none' : '';
+    var rows = document.querySelectorAll('.task-row');
+    if (on) {
+      // collect IDs of someday tasks, then expand to include their descendants
+      var visibleIds = new Set();
+      rows.forEach(function(r) { if (r.classList.contains('someday')) visibleIds.add(r.dataset.id); });
+      var changed = true;
+      while (changed) {
+        changed = false;
+        rows.forEach(function(r) {
+          var pid = r.dataset.parentId;
+          if (pid && visibleIds.has(pid) && !visibleIds.has(r.dataset.id)) {
+            visibleIds.add(r.dataset.id);
+            changed = true;
+          }
+        });
       }
-    });
+      rows.forEach(function(r) {
+        if (!r.classList.contains('done-task')) {
+          r.style.display = visibleIds.has(r.dataset.id) ? '' : 'none';
+        }
+      });
+    } else {
+      rows.forEach(function(r) { r.style.display = ''; });
+    }
     btn.textContent = 'Someday (' + sdCount + '/' + sdLimit + ')' + (on ? ' ✓' : '');
     btn.style.background = on ? 'var(--s-act)' : '';
     btn.style.color = sdCount > sdLimit ? '#e74c3c' : (on ? '#5b8dd9' : '');
@@ -934,8 +953,10 @@ def render_task_row(task, all_tasks, depth=0):
     r_label = recurring if recurring else "R"
 
     dl_val = deadline or ""
+    parent_id = task.get("parent_id", "")
+    parent_attr = f' data-parent-id="{_html.escape(parent_id, quote=True)}"' if parent_id else ""
     html = (
-        f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}">\n'
+        f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}"{parent_attr}>\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
         f'  <span class="task-text" data-id="{task_id}" data-raw="{_html.escape(title, quote=True)}">{linkify(title)}{recurring_badge}</span>\n'
         f'  {dl_html}\n'

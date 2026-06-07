@@ -2521,7 +2521,7 @@
     "project": "propria",
     "parent_id": "area-projects-tacura",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": "2026-06-08",
     "priority": null,
     "stakes": null,
