@@ -8473,7 +8473,7 @@
     "title": "Уведомить Familienkasse о смене банковского счёта",
     "type": "task",
     "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -8483,7 +8483,7 @@
     "tags": [],
     "notes": "Новый IBAN: DE32 1005 0000 1076 5441 81 (Berliner Sparkasse). Онлайн через Meine BA или письмо. Связано: personal-finance-разобраться-с-получателями-платежей-сменить-банк",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-07",
     "created_at": "2026-06-05",
     "order": 0.0,
     "done": "2026-06-07"
