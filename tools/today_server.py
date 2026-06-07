@@ -236,6 +236,7 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
 (function() {
   var btn = document.getElementById('someday-filter');
   if (!btn) return;
+  var baseLabel = btn.textContent;
   var on = localStorage.getItem('sd-filter') === '1';
   function apply() {
     document.querySelectorAll('.task-row').forEach(function(r) {
@@ -243,9 +244,9 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
         r.style.display = on ? 'none' : '';
       }
     });
-    btn.textContent = on ? 'Someday ✓' : 'Someday';
+    btn.textContent = on ? baseLabel + ' ✓' : baseLabel;
     btn.style.background = on ? 'var(--s-act)' : '';
-    btn.style.color = on ? '#5b8dd9' : '';
+    if (!btn.dataset.warn) btn.style.color = on ? '#5b8dd9' : '';
   }
   apply();
   btn.addEventListener('click', function() {

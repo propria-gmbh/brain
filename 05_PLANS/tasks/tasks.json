@@ -7426,7 +7426,7 @@
     "parent_id": "area-brain-dashboard-доработки",
     "title": "Сделать VPS-сервис: буфер между Telegram-ботом и Claude",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "notes": "Контекст теряется. Нужен буфер на VPS: хранить историю, накапливать если Claude не в сети, распознавать голос, отвечать голосом.",
     "order": -5.0
   },
