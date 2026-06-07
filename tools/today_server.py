@@ -236,7 +236,8 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
 (function() {
   var btn = document.getElementById('someday-filter');
   if (!btn) return;
-  var baseLabel = btn.textContent;
+  var sdCount = parseInt(btn.dataset.count || '0', 10);
+  var sdLimit = window.SOMEDAY_LIMIT || 20;
   var on = localStorage.getItem('sd-filter') === '1';
   function apply() {
     document.querySelectorAll('.task-row').forEach(function(r) {
@@ -244,9 +245,10 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
         r.style.display = on ? 'none' : '';
       }
     });
-    btn.textContent = on ? baseLabel + ' ✓' : baseLabel;
+    btn.textContent = 'Someday (' + sdCount + '/' + sdLimit + ')' + (on ? ' ✓' : '');
     btn.style.background = on ? 'var(--s-act)' : '';
-    if (!btn.dataset.warn) btn.style.color = on ? '#5b8dd9' : '';
+    btn.style.color = sdCount > sdLimit ? '#e74c3c' : (on ? '#5b8dd9' : '');
+    btn.style.fontWeight = sdCount > sdLimit ? '600' : '';
   }
   apply();
   btn.addEventListener('click', function() {
@@ -1001,7 +1003,7 @@ def render_tasks():
     b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};window.SOMEDAY_LIMIT={sd_limit};</script>\n"
          f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">'
          f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="flex:1;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr)">'
-         f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0{sd_warn_style}" data-count="{someday_count}">Someday ({someday_count}/{sd_limit})</button>'
+         f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0" data-count="{someday_count}">Someday</button>'
          f'</div>\n'
          f"<div id=\"top-areas\">\n")
     for area in top_areas:
