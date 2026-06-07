@@ -15,6 +15,7 @@ _SORTABLE_JS = (Path(__file__).parent / "sortable.min.js").read_text(encoding="u
 TODAY = BRAIN / "05_PLANS/today.md"
 CALENDAR_CACHE = BRAIN / "tools/calendar_cache.json"
 TASKS_FILE = BRAIN / "05_PLANS/tasks/tasks.json"
+SESSION_LOG = BRAIN / "04_THINKING" / "session-log.jsonl"
 
 PROJ_LABELS = {
     "health": "Здоровье",
@@ -118,6 +119,14 @@ li.indent3 { margin-left: 60px; }
 .indent2 { margin-left: 40px; }
 .indent3 { margin-left: 60px; }
 .ts { font-size: .7rem; color: var(--bg5); position: fixed; bottom: 12px; right: 16px; }
+.sess-day { margin-bottom: 24px; }
+.sess-day-header { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text4); margin-bottom: 8px; padding: 4px 0; border-bottom: 1px solid var(--bdr); }
+.sess-card { background: var(--bg2); border-radius: 6px; padding: 10px 14px; margin: 4px 0; display: flex; align-items: baseline; gap: 12px; }
+.sess-card:hover { background: var(--row-hov); }
+.sess-title { flex: 1; font-size: .9rem; color: var(--text2); }
+.sess-meta { font-size: .75rem; color: var(--text4); flex-shrink: 0; }
+.sess-files { font-size: .72rem; color: var(--text5); margin-top: 4px; }
+.sess-tag { display: inline-block; font-size: .65rem; padding: 1px 5px; border-radius: 3px; background: var(--bg4); color: var(--text4); margin-right: 4px; }
 .item-text.task-linked { cursor:pointer; }
 .item-text.task-linked:hover { text-decoration:underline dotted var(--text4); }
 .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:200; display:none; align-items:flex-start; justify-content:center; padding-top:80px; }
@@ -250,7 +259,12 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
 document.querySelectorAll('.s-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
     e.stopPropagation();
-    post('/someday', {id: btn.dataset.id});
+    fetch('/someday', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: btn.dataset.id})})
+      .then(function(r) { return r.json().catch(function() { return {}; }); })
+      .then(function(d) {
+        if (d.warning) alert(d.warning);
+        location.reload();
+      });
   });
 });
 
@@ -311,8 +325,12 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
     function save() {
       el.contentEditable = 'false';
       var txt = el.textContent.trim();
-      if (txt && txt !== orig) post('/rename', {id: el.dataset.id, text: txt});
-      else el.textContent = orig;
+      if (txt && txt !== orig) {
+        fetch('/rename', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: el.dataset.id, text: txt})})
+          .then(function(r) {
+            if (!r.ok) { r.json().then(function(d) { alert(d.error || 'Ошибка'); }); el.textContent = orig; }
+          });
+      } else el.textContent = orig;
     }
     function cancel() { el.contentEditable = 'false'; el.textContent = orig; }
     function cleanup() { el.removeEventListener('keydown', onKey); el.removeEventListener('blur', onBlur); }
@@ -408,8 +426,12 @@ document.querySelectorAll('.area-title[data-id]').forEach(function(el) {
     function save() {
       el.contentEditable = 'false';
       var txt = el.textContent.trim();
-      if (txt && txt !== orig) post('/rename', {id: el.dataset.id, text: txt});
-      else el.textContent = orig;
+      if (txt && txt !== orig) {
+        fetch('/rename', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: el.dataset.id, text: txt})})
+          .then(function(r) {
+            if (!r.ok) { r.json().then(function(d) { alert(d.error || 'Ошибка'); }); el.textContent = orig; }
+          });
+      } else el.textContent = orig;
     }
     function cancel() { el.contentEditable = 'false'; el.textContent = orig; }
     function cleanup() { el.removeEventListener('keydown', onKey); el.removeEventListener('blur', onBlur); }
@@ -629,6 +651,7 @@ HTML = """<!DOCTYPE html>
 <nav>
   <a href="/" class="{nav_today}">Сегодня</a>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
+  <a href="/sessions" class="{nav_sessions}">Сессии</a>
   <div style="display:flex;gap:6px;align-items:center;margin-left:16px;flex:1">
     <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:320px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
     <button onclick="addInboxTask()" style="padding:6px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem">+</button>
@@ -738,7 +761,7 @@ def render_today(path):
             task_id = task_by_norm.get(normalize_title(item["text"]), "")
             task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
             link_cls = " task-linked" if task_id else ""
-            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{item["text"]}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
         if sec == "Утренний чеклист":
             left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">{sec}</summary><ul class="today-section">\n{items_html}</ul></details>\n'
         else:
@@ -747,7 +770,7 @@ def render_today(path):
     if done_all:
         left += "<h2>Сделано</h2><ul>\n"
         for item in done_all:
-            left += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{item["text"]}</span></li>\n'
+            left += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{linkify(item["text"])}</span></li>\n'
         left += "</ul>\n"
 
     right = render_calendar_today()
@@ -971,11 +994,13 @@ def render_tasks():
         key=lambda t: t.get("order", 0),
     )
     areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
-    search_style = "width:100%;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr);margin-bottom:16px;display:block"
-    b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};</script>\n"
+    someday_count = sum(1 for t in active if t.get("someday") and t.get("type") != "area")
+    sd_limit = 20
+    sd_warn_style = ";color:#e74c3c;font-weight:600" if someday_count > sd_limit else ""
+    b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};window.SOMEDAY_LIMIT={sd_limit};</script>\n"
          f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">'
          f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="flex:1;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr)">'
-         f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0">Someday</button>'
+         f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0{sd_warn_style}" data-count="{someday_count}">Someday ({someday_count}/{sd_limit})</button>'
          f'</div>\n'
          f"<div id=\"top-areas\">\n")
     for area in top_areas:
@@ -1021,13 +1046,21 @@ def toggle_task(task_id):
         sync_tasks_to_today(title, done)
 
 
+SOMEDAY_LIMIT = 20
+
 def toggle_someday(task_id):
     tasks = load_tasks()
+    warning = None
     for t in tasks:
         if t["id"] == task_id:
             t["someday"] = not t.get("someday", False)
+            if t["someday"]:
+                count = sum(1 for x in tasks if x.get("someday") and x.get("status") != "done" and x.get("type") != "area")
+                if count > SOMEDAY_LIMIT:
+                    warning = f"Лимит someday превышен: {count}/{SOMEDAY_LIMIT}"
             break
     save_tasks(tasks)
+    return warning
 
 
 def delete_task(task_id):
@@ -1131,11 +1164,21 @@ def set_task_recurring(task_id, recurring):
 
 def rename_task(task_id, new_text):
     tasks = load_tasks()
+    target = next((t for t in tasks if t["id"] == task_id), None)
+    if target and target.get("type") == "area":
+        duplicate = any(
+            t["id"] != task_id and t.get("type") == "area"
+            and t.get("title", "").strip().lower() == new_text.strip().lower()
+            for t in tasks
+        )
+        if duplicate:
+            return False
     for t in tasks:
         if t["id"] == task_id:
             t["title"] = new_text
             break
     save_tasks(tasks)
+    return True
 
 
 def reorder_today(path, ordered_indices):
@@ -1342,14 +1385,72 @@ MONTH_NAMES = ["янв", "фев", "мар", "апр", "май", "июн", "ию
 
 # ── SERVER ───────────────────────────────────────────────
 
+def render_sessions():
+    records = []
+    if SESSION_LOG.exists():
+        seen = set()
+        for line in SESSION_LOG.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            sid = r.get("session_id", "")
+            if sid and sid in seen:
+                continue
+            if sid:
+                seen.add(sid)
+            records.append(r)
+
+    records.sort(key=lambda r: r.get("started_at") or r.get("date") or "", reverse=True)
+
+    by_date = {}
+    for r in records:
+        day = (r.get("started_at") or r.get("date") or "")[:10]
+        by_date.setdefault(day, []).append(r)
+
+    if not records:
+        return "<h1>Сессии</h1><p style='color:var(--text4);margin-top:24px'>Нет записей в session-log.jsonl</p>"
+
+    html = "<h1>Сессии</h1>\n"
+    for day in sorted(by_date.keys(), reverse=True):
+        day_recs = by_date[day]
+        html += f'<div class="sess-day">\n<div class="sess-day-header">{day}</div>\n'
+        for r in day_recs:
+            title = _html.escape(r.get("title") or r.get("first_msg") or "—")
+            dur = r.get("duration_min", 0)
+            turns = r.get("turns", 0)
+            cwd = r.get("cwd", "")
+            proj = cwd.split("/")[-1] if cwd else ""
+            files = r.get("files_modified", [])
+            file_names = [f.split("/")[-1] for f in files[:5]]
+            files_html = ""
+            if file_names:
+                files_html = f'<div class="sess-files">{_html.escape(", ".join(file_names))}</div>'
+            proj_tag = f'<span class="sess-tag">{_html.escape(proj)}</span>' if proj else ""
+            html += (
+                f'<div class="sess-card">'
+                f'<div><div class="sess-title">{proj_tag}{title}</div>{files_html}</div>'
+                f'<div class="sess-meta">{dur}мин · {turns}↔</div>'
+                f'</div>\n'
+            )
+        html += "</div>\n"
+    return html
+
+
+_PAGE_TITLES = {"today": "Сегодня", "tasks": "Задачи", "sessions": "Сессии"}
+
 def make_page(body, page):
     return HTML.format(
-        title="Сегодня" if page == "today" else "Задачи",
+        title=_PAGE_TITLES.get(page, "Brain"),
         refresh='<script>(function(){var h=null;function poll(){fetch("/poll").then(function(r){return r.json()}).then(function(d){if(h===null){h=d.hash}else if(d.hash!==h){var a=document.activeElement,tag=a?a.tagName:"";if(!window.isDragging&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()}}).catch(function(){});setTimeout(poll,2000)}poll()})()</script>',
         css=CSS, js=JS, body=body,
         sortable_js=_SORTABLE_JS,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
+        nav_sessions="active" if page == "sessions" else "",
     ).encode("utf-8")
 
 
@@ -1378,6 +1479,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/tasks":
             body = render_tasks()
             data = make_page(body, "tasks")
+        elif self.path == "/sessions":
+            body = render_sessions()
+            data = make_page(body, "sessions")
         elif self.path.startswith("/api/task"):
             from urllib.parse import urlparse as _up, parse_qs as _pqs
             qs = _pqs(_up(self.path).query)
@@ -1421,13 +1525,29 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/toggle-task":
             toggle_task(d["id"])
         elif self.path == "/someday":
-            toggle_someday(d["id"])
+            warning = toggle_someday(d["id"])
+            if warning:
+                resp = json.dumps({"warning": warning}).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", len(resp))
+                self.end_headers()
+                self.wfile.write(resp)
+                return
         elif self.path == "/delete":
             delete_task(d["id"])
         elif self.path == "/done-event":
             add_done_event(d["summary"], d.get("date"))
         elif self.path == "/rename":
-            rename_task(d["id"], d["text"])
+            ok = rename_task(d["id"], d["text"])
+            if ok is False:
+                err = json.dumps({"error": "Area с таким именем уже существует"}).encode("utf-8")
+                self.send_response(409)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", len(err))
+                self.end_headers()
+                self.wfile.write(err)
+                return
         elif self.path == "/set-type":
             set_task_type(d["id"], d["type"])
         elif self.path == "/set-parent":

@@ -114,7 +114,8 @@
       "mcp__plugin_playwright_playwright__browser_drag",
       "mcp__plugin_playwright_playwright__browser_drop",
       "mcp__plugin_playwright_playwright__browser_resize",
-      "mcp__plugin_playwright_playwright__browser_evaluate"
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "Bash(python3 -c \"import sys,json; [print\\(json.dumps\\(json.loads\\(l\\), ensure_ascii=False, indent=2\\)\\) for l in sys.stdin]\")"
     ],
     "additionalDirectories": [
       "/Users/dister/.claude",
