@@ -8651,5 +8651,24 @@
     "done_at": null,
     "created_at": "2026-06-07",
     "order": 0.0
+  },
+  {
+    "id": "создать-gmail-аккаунт-allspicefashioncomgmailcom-и-начать-пр",
+    "title": "Создать Gmail аккаунт allspicefashion.com@gmail.com и начать прогрев",
+    "type": "task",
+    "parent_id": "area-allspice",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-08",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-07",
+    "order": 0.0
   }
 ]
