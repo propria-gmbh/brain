@@ -5844,26 +5844,6 @@
     "order": 0.0
   },
   {
-    "id": "personal-purchases-купить-зубные-щетки",
-    "title": "Купить зубные щетки",
-    "type": "task",
-    "project": "personal/purchases",
-    "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 1.0
-  },
-  {
     "id": "personal-purchases-купить-летние-ботинки",
     "title": "Купить летние ботинки",
     "type": "task",
