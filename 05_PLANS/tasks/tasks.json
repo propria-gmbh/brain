@@ -7140,10 +7140,11 @@
     "title": "Выкопать растение у крыльца",
     "type": "task",
     "parent_id": "area-personal-home",
-    "status": "active",
+    "status": "done",
     "someday": false,
     "created_at": "2026-05-27",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-07"
   },
   {
     "id": "personal-home-посадить-вьющиеся-забор",
