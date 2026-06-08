@@ -14,9 +14,11 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 CONFIG_PATH = Path.home() / ".config" / "telegram-bot" / "config.json"
+HISTORY_PATH = Path.home() / ".config" / "telegram-bot" / "history.json"
 BRAIN_PATH = Path.home() / "Projects" / "brain"
 TODAY_FILE = BRAIN_PATH / "05_PLANS" / "today.md"
 LOG_PATH = Path.home() / ".config" / "telegram-bot" / "bot.log"
+HISTORY_LIMIT = 20  # max entries (10 pairs)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -38,6 +40,24 @@ def load_config() -> dict:
 def save_config(cfg: dict):
     CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
     CONFIG_PATH.write_text(json.dumps(cfg, indent=2))
+
+
+def load_history() -> list:
+    if HISTORY_PATH.exists():
+        try:
+            return json.loads(HISTORY_PATH.read_text())
+        except Exception:
+            return []
+    return []
+
+
+def append_history(role: str, text: str):
+    history = load_history()
+    history.append({"role": role, "text": text, "ts": datetime.now().isoformat()})
+    if len(history) > HISTORY_LIMIT:
+        history = history[-HISTORY_LIMIT:]
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2))
 
 
 def authorized(update: Update, cfg: dict) -> bool:
@@ -69,11 +89,19 @@ TELEGRAM_SYSTEM_PROMPT = (
 )
 
 
-def call_claude(message: str) -> str:
+def call_claude(message: str, history: list) -> str:
     cli = find_claude_cli()
+    prompt = message
+    if history:
+        lines = []
+        for entry in history:
+            role_label = "Пользователь" if entry["role"] == "user" else "Claude"
+            lines.append(f"{role_label}: {entry['text']}")
+        context = "\n".join(lines)
+        prompt = f"[История последних сообщений]\n{context}\n\n[Новое сообщение]\n{message}"
     result = subprocess.run(
         [
-            str(cli), "-p", message,
+            str(cli), "-p", prompt,
             "--dangerously-skip-permissions",
             "--append-system-prompt", TELEGRAM_SYSTEM_PROMPT,
         ],
@@ -184,13 +212,19 @@ async def handle_message(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     log.info(f"Message: {text[:80]}")
     thinking_msg = await update.message.reply_text("...")
 
+    history = load_history()
     try:
-        response = await asyncio.get_event_loop().run_in_executor(None, call_claude, text)
+        response = await asyncio.get_event_loop().run_in_executor(
+            None, call_claude, text, history
+        )
     except subprocess.TimeoutExpired:
         response = "Timeout (>3 мин)"
     except Exception as e:
         response = f"Ошибка: {e}"
         log.exception("Claude call failed")
+
+    append_history("user", text)
+    append_history("assistant", response[:500])
 
     await thinking_msg.delete()
 
