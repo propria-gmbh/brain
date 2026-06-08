@@ -8717,5 +8717,24 @@
     "done_at": null,
     "created_at": "2026-06-08",
     "order": 0.0
+  },
+  {
+    "id": "скачать-все-счета-fireflies-iljadisterheftgmailcom",
+    "title": "Скачать все счета Fireflies (ilja.disterheft@gmail.com)",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Settings → Billing → скачать каждый инвойс. Нужно для бухгалтерии.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-08",
+    "order": 0.0
   }
 ]
