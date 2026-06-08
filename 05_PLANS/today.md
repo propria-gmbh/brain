@@ -2,12 +2,12 @@
 
 ## Утренний чеклист
 
-- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [ ] Проверить тикеты службы поддержки (Gorgias)
-- [ ] Проверить GMC & GAds
-- [ ] Проверить бизнес-счёт Revolut
-- [ ] Заполнить P&L
-- [ ] Ответить AB в Slack
+- [x] 2026-06-08 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [x] 2026-06-08 Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [x] 2026-06-08 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [x] 2026-06-08 Проверить бизнес-счёт Revolut
+- [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
+- [x] 2026-06-08 Ответить AB в Slack
 
 ## Сегодня в календаре
 
@@ -15,9 +15,9 @@
 
 ## Задачи (дедлайн сегодня)
 
+- [ ] Разобраться с письмом IYT и запросить справки
 - [ ] Договориться со старым поставщиком о завершении работы
 - [ ] Разослать зарплатные листки
-- [ ] Разобраться с письмом IYT и запросить справки
 - [ ] Создать Gmail аккаунт oliverandfaye.com@gmail.com и начать прогрев
 - [x] 2026-06-08 Создать Gmail аккаунт allspicefashion.com@gmail.com и начать прогрев
 - [ ] Создать Gmail аккаунт lilymagsboutique.com@gmail.com и начать прогрев
