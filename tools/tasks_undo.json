@@ -8611,7 +8611,8 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-07"
+    "created_at": "2026-06-07",
+    "order": 0.0
   },
   {
     "id": "найти-на-сайте-bsr-расписание-вывоза-biotonne-с-домашнего-ад",

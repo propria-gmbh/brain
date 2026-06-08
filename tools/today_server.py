@@ -289,7 +289,7 @@ document.querySelectorAll('.s-btn[data-id]').forEach(function(btn) {
     fetch('/someday', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: btn.dataset.id})})
       .then(function(r) { return r.json().catch(function() { return {}; }); })
       .then(function(d) {
-        if (d.warning) alert(d.warning);
+        if (d.blocked) { alert(d.warning); return; }
         location.reload();
       });
   });
@@ -1079,17 +1079,20 @@ SOMEDAY_LIMIT = 20
 
 def toggle_someday(task_id):
     tasks = load_tasks()
-    warning = None
+    result = {"warning": None, "blocked": False}
     for t in tasks:
         if t["id"] == task_id:
-            t["someday"] = not t.get("someday", False)
-            if t["someday"]:
+            enabling = not t.get("someday", False)
+            if enabling:
                 count = sum(1 for x in tasks if x.get("someday") and x.get("status") != "done" and x.get("type") != "area")
-                if count > SOMEDAY_LIMIT:
-                    warning = f"Лимит someday превышен: {count}/{SOMEDAY_LIMIT}"
+                if count >= SOMEDAY_LIMIT:
+                    result["blocked"] = True
+                    result["warning"] = f"Лимит someday достигнут: {count}/{SOMEDAY_LIMIT}. Снимите someday с другой задачи."
+                    return result
+            t["someday"] = not t.get("someday", False)
             break
     save_tasks(tasks)
-    return warning
+    return result
 
 
 def delete_task(task_id):
@@ -1554,9 +1557,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/toggle-task":
             toggle_task(d["id"])
         elif self.path == "/someday":
-            warning = toggle_someday(d["id"])
-            if warning:
-                resp = json.dumps({"warning": warning}).encode("utf-8")
+            result = toggle_someday(d["id"])
+            if result.get("blocked") or result.get("warning"):
+                resp = json.dumps(result).encode("utf-8")
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
                 self.send_header("Content-Length", len(resp))
