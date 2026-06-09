@@ -7738,7 +7738,7 @@
     "title": "Сделать ссылки в названии задач в дашборде кликабельными",
     "type": "task",
     "parent_id": "area-brain-dashboard-доработки",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -7748,9 +7748,10 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-09",
     "created_at": "2026-05-31",
-    "order": -2.0
+    "order": -2.0,
+    "done": true
   },
   {
     "id": "inbox-prj-with-mitya",
@@ -8459,10 +8460,12 @@
     "id": "inbox-добавить-в-утренний-чеклист-кликабельные-ссылки",
     "title": "Добавить в утренний чеклист кликабельные ссылки",
     "parent_id": "area-brain-dashboard-доработки",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-06-05",
-    "order": -1.0
+    "order": -1.0,
+    "done": true,
+    "done_at": "2026-06-09"
   },
   {
     "id": "переклеить-защитное-стекло-на-iphone",
