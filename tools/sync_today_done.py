@@ -72,12 +72,8 @@ def main():
             continue
         task_title = task.get("title", "").strip()
         for done_title in done_titles:
-            # Exact match or today.md title is a prefix/substring of task title
-            if done_title and (
-                done_title == task_title
-                or task_title.startswith(done_title)
-                or done_title.startswith(task_title)
-            ):
+            # Exact match only — prefix/substring matching caused false positives
+            if done_title and done_title == task_title:
                 task["done"] = True
                 task["done_at"] = today_str
                 task["status"] = "done"
@@ -99,16 +95,14 @@ def main():
 
     # Commit
     import subprocess
-    subprocess.run(
-        ["git", "add", "05_PLANS/tasks/tasks.json"],
+    result = subprocess.run(
+        ["git", "commit", "-m", f"sync: close {changed} task(s) from today.md",
+         "--", "05_PLANS/tasks/tasks.json"],
         cwd="/Users/dister/Projects/brain",
         capture_output=True,
     )
-    subprocess.run(
-        ["git", "commit", "-m", f"sync: close {changed} task(s) from today.md"],
-        cwd="/Users/dister/Projects/brain",
-        capture_output=True,
-    )
+    if result.returncode != 0:
+        sys.stderr.write(f"git commit failed: {result.stderr.decode()}\n")
 
 
 if __name__ == "__main__":
