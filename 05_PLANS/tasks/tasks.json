@@ -4886,8 +4886,7 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 5.0,
-    "done": true,
-    "done_date": "2026-06-09"
+    "done": false
   },
   {
     "id": "personal-home-починить-интернет-при-закрытои-крышке-ноутбук",
@@ -8749,8 +8748,7 @@
     "done_at": null,
     "created_at": "2026-06-08",
     "order": 0.0,
-    "done": true,
-    "done_date": "2026-06-09"
+    "done": false
   },
   {
     "id": "dashboard-unified-today-scheduled-date",
