@@ -125,6 +125,17 @@
     ]
   },
   "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/dister/Projects/brain/tools/sync_today_done.py"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
