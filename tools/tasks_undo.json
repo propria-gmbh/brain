@@ -8854,25 +8854,6 @@
     "order": 0.0
   },
   {
-    "id": "врач-по-насморку",
-    "title": "Врач по насморку",
-    "type": "task",
-    "parent_id": "area-health",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": null,
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
     "id": "написать-письмо-в-jobcenter-спросить-о-формах-финансирования",
     "title": "Написать письмо в Jobcenter — спросить о формах финансирования",
     "type": "task",
