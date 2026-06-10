@@ -8224,7 +8224,7 @@
     "parent_id": "area-ecom",
     "status": "cancelled",
     "someday": true,
-    "deadline": null,
+    "deadline": "2026-06-11",
     "priority": "orange",
     "stakes": null,
     "goal": null,
