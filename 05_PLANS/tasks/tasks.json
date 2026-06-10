@@ -9235,25 +9235,6 @@
     "order": 0.0
   },
   {
-    "id": "image-generator-для-моноцветных-товаров-генерирует-градиент",
-    "title": "Image generator: для моноцветных товаров генерирует градиент",
-    "type": "task",
-    "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": "Нарушает соответствие оригиналу",
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
     "id": "кнопка-generate-description-не-работает",
     "title": "Кнопка Generate description не работает",
     "type": "task",
