@@ -1452,7 +1452,7 @@
     "title": "Найти дропшип поставщиков из Италии",
     "type": "task",
     "project": "ecom",
-    "parent_id": "ecom-разработать-схему-отправок-из-италии-для-gmc",
+    "parent_id": "area-casa-giannini",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1465,7 +1465,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 1.0
+    "order": 11.0
   },
   {
     "id": "ecom-разработать-итальянских-дропшипперов",
@@ -7303,10 +7303,9 @@
     "type": "task",
     "parent_id": "area-marc-francois",
     "title": "Верифицировать домен (Marc et Francois) — чеклист Андрея",
-    "status": "done",
+    "status": "todo",
     "someday": false,
-    "order": 0.0,
-    "done_at": "2026-06-10"
+    "order": 0.0
   },
   {
     "id": "task-verify-domain-bennet-gray",
