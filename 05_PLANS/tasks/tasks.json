@@ -1426,28 +1426,6 @@
     "order": -3.0
   },
   {
-    "id": "ecom-разработать-схему-отправок-из-италии-для-gmc",
-    "title": "Разработать схему отправок из Италии для GMC",
-    "type": "task",
-    "project": "ecom",
-    "parent_id": "area-casa-giannini",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": "green",
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [
-      "italy"
-    ],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 7.0
-  },
-  {
     "id": "ecom-наити-дропшип-поставщиков-из-италии",
     "title": "Найти дропшип поставщиков из Италии",
     "type": "task",
