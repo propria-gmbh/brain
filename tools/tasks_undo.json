@@ -7300,9 +7300,10 @@
     "type": "task",
     "parent_id": "area-oliver-faye",
     "title": "Верифицировать домен (Oliver and Faye) — чеклист Андрея",
-    "status": "todo",
+    "status": "done",
     "someday": false,
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-10"
   },
   {
     "id": "task-verify-domain-casa-giannini",

@@ -7453,13 +7453,13 @@
   {
     "id": "subtask-company-casa-giannini",
     "type": "task",
-    "parent_id": "task-verify-domain-casa-giannini",
+    "parent_id": "area-casa-giannini",
     "title": "Указать компанию Propria GmbH в данных регистранта (GoDaddy)",
     "status": "todo",
     "someday": false,
     "done": false,
     "created_at": "2026-05-29",
-    "order": 0.0
+    "order": -1.0
   },
   {
     "id": "task-marc-strategy-hightick",
