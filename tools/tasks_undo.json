@@ -8278,7 +8278,7 @@
     "type": "task",
     "parent_id": "area-ecom",
     "status": "cancelled",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
