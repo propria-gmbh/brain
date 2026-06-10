@@ -7303,9 +7303,10 @@
     "type": "task",
     "parent_id": "area-marc-francois",
     "title": "Верифицировать домен (Marc et Francois) — чеклист Андрея",
-    "status": "todo",
+    "status": "done",
     "someday": false,
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-10"
   },
   {
     "id": "task-verify-domain-bennet-gray",
