@@ -7310,9 +7310,10 @@
     "type": "task",
     "parent_id": "area-casa-giannini",
     "title": "Верифицировать домен (Casa Giannini) — чеклист Андрея",
-    "status": "todo",
+    "status": "done",
     "someday": false,
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-10"
   },
   {
     "id": "personal-purchases-ремонт-airpods",

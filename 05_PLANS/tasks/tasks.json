@@ -1430,7 +1430,7 @@
     "title": "Найти дропшип поставщиков из Италии",
     "type": "task",
     "project": "ecom",
-    "parent_id": "area-casa-giannini",
+    "parent_id": "ecom-ниша-льняные-изделия",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -1443,7 +1443,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 11.0
+    "order": 12.0
   },
   {
     "id": "ecom-разработать-итальянских-дропшипперов",
