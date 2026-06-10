@@ -7127,10 +7127,11 @@
     "title": "Выбрать рынок (oliverandfaye.com)",
     "type": "task",
     "parent_id": "area-oliver-faye",
-    "status": "open",
+    "status": "done",
     "someday": false,
     "order": 103.0,
-    "created_at": "2026-05-27"
+    "created_at": "2026-05-27",
+    "done_at": "2026-06-10"
   },
   {
     "id": "task-bennet-gray-warmup",
