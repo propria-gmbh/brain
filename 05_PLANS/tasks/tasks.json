@@ -9511,5 +9511,24 @@
     "done": false,
     "done_date": null,
     "created": "2026-06-10"
+  },
+  {
+    "id": "сделать-для-мити-подборку-аккаунтов-в-инсте-и-магазинов-по-л",
+    "title": "Сделать для Мити подборку аккаунтов в инсте и магазинов по льну",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-10",
+    "order": 0.0
   }
 ]
