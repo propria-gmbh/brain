@@ -2857,26 +2857,6 @@
     "order": 14.0
   },
   {
-    "id": "ai-systems-проект-personal-ops-автоматизация-самоуправле",
-    "title": "Проект personal-ops: автоматизация самоуправления (git auto-commit, трекинг состояния — мигрень/сон/спорт, учёт ивентов, анализ паттернов)",
-    "type": "task",
-    "project": "ai-systems",
-    "parent_id": "area-ai-systems",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 15.0
-  },
-  {
     "id": "ai-systems-принять-решение-о-продолжении-проекта-персона",
     "title": "Принять решение о продолжении проекта \"Персональный ассистент\"",
     "type": "task",
@@ -8092,11 +8072,12 @@
     "context": null,
     "goal": "поставщик",
     "tags": [],
-    "notes": null,
+    "notes": "Wang Xiaopeng (Liu Qingdong), +86 13360681687. 2nd Floor, Building 3, No. 10 Jinfu Road, Liaobu Town, Dongguan City, Guangdong Province. Door-to-door delivery only, no parcel lockers.",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-10",
     "created_at": "2026-06-04",
-    "order": 0.0
+    "order": 0.0,
+    "done": true
   },
   {
     "id": "обновить-warehouse-address-на-сайте-charlieandtedcom-сейчас-",
@@ -8111,7 +8092,7 @@
     "context": null,
     "goal": "gmc",
     "tags": [],
-    "notes": null,
+    "notes": "Новый адрес KungFuBuy: 2nd Floor, Building 3, No. 10 Jinfu Road, Liaobu Town, Dongguan City, Guangdong Province, China. Контакт: Wang Xiaopeng, +86 13360681687. Только курьерская доставка, без постаматов.",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-04",
