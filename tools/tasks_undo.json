@@ -9429,7 +9429,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-10",
-    "order": 0.0
+    "order": 0.0,
+    "context": "deep"
   },
   {
     "id": "разобраться-с-бородавками-на-ноге",
