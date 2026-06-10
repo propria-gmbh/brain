@@ -8371,7 +8371,7 @@
     "parent_id": "area-ecom",
     "status": "todo",
     "someday": true,
-    "deadline": null,
+    "deadline": "2026-06-11",
     "priority": null,
     "stakes": null,
     "context": null,
