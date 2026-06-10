@@ -7128,9 +7128,10 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-10",
     "created_at": "2026-05-28",
-    "order": 2.0
+    "order": 2.0,
+    "done": true
   },
   {
     "id": "inbox-узнать-есть-ли-кейсы-повышения-оценки-трастпайлот",
@@ -8464,10 +8465,11 @@
     "type": "task",
     "parent_id": "area-brain-dashboard-доработки",
     "someday": false,
-    "done": false,
+    "done": true,
     "deadline": null,
     "created_at": "2026-06-06",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-10"
   },
   {
     "id": "propria-оплатить-счет-алла-дудниченко-06-2026",
