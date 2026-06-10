@@ -2452,8 +2452,7 @@
     "waiting_for": null,
     "done_at": "2026-06-10",
     "created_at": "2026-05-25",
-    "order": 2.0,
-    "scheduled_date": "2026-06-10"
+    "order": 2.0
   },
   {
     "id": "propria-разослать-зарплатные-листки",
