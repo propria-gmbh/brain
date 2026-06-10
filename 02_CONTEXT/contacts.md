@@ -58,6 +58,14 @@
 - BIC: BELADEBEXXX
 - Kreditinstitut: Berliner Sparkasse
 
+## KungFuBuy — поставщик (Китай)
+
+- Контакт: Wang Xiaopeng (Liu Qingdong)
+- Тел: +86 13360681687
+- Адрес склада: 2nd Floor, Building 3, No. 10 Jinfu Road, Liaobu Town, Dongguan City, Guangdong Province, China
+- Доставка: только курьерская, без постаматов
+- Web: https://www.kungfubuy.com
+
 ## Алла Дудниченко — бухгалтер (Propria / Tacura)
 
 - Компания: HECHT, von LUXBURG (та же фирма)
