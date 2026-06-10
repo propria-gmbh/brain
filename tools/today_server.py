@@ -189,6 +189,24 @@ document.querySelectorAll('li[data-idx]').forEach(function(li) {
   });
 });
 
+// today tasks from tasks.json (scheduled) — checkbox + modal
+document.querySelectorAll('li[data-task-id]:not([data-idx])').forEach(function(li) {
+  var tid = li.dataset.taskId;
+  if (!tid) return;
+  var chk = li.querySelector('.task-chk');
+  if (chk) chk.addEventListener('click', function(e) {
+    e.stopPropagation();
+    li.classList.add('done-item');
+    chk.textContent = '✓';
+    post('/toggle-task', {id: tid});
+  });
+  var txt = li.querySelector('.item-text');
+  if (txt) txt.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openTaskModal(tid);
+  });
+});
+
 // today.md: remove item
 document.querySelectorAll('.del-today[data-idx]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -472,6 +490,32 @@ document.querySelectorAll('.area-title[data-id]').forEach(function(el) {
   });
 });
 
+// tasks.json: toggle scheduled for today
+document.querySelectorAll('.today-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isScheduled = btn.classList.contains('active');
+    var today = new Date().toISOString().split('T')[0];
+    post('/set-scheduled-date', {id: btn.dataset.id, scheduled_date: isScheduled ? null : today});
+  });
+});
+
+// tasks.json: cycle context
+document.querySelectorAll('.ctx-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var cycle = ['', 'deep', 'perekur', 'afternoon'];
+    var labels = {'': 'ctx', 'deep': '🧠', 'perekur': '🚶', 'afternoon': '🌆'};
+    var cur = btn.dataset.context || '';
+    var idx = cycle.indexOf(cur);
+    var nxt = cycle[(idx + 1) % cycle.length];
+    btn.dataset.context = nxt;
+    btn.textContent = labels[nxt];
+    btn.title = 'Контекст: ' + (nxt || 'нет');
+    post('/set-context', {id: btn.dataset.id, context: nxt || null});
+  });
+});
+
 // tasks.json: set recurring
 document.querySelectorAll('.r-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -513,6 +557,65 @@ function makeField(label, value) {
   return wrap;
 }
 
+function makeEditableDate(label, value, endpoint, taskId, extraKey) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  wrap.style.cursor = 'pointer';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var val = document.createElement('div');
+  val.className = 'modal-field-value';
+  val.textContent = value || '—';
+  wrap.appendChild(lbl);
+  wrap.appendChild(val);
+  wrap.addEventListener('click', function() {
+    var inp = document.createElement('input');
+    inp.type = 'date';
+    inp.value = value || '';
+    inp.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.85rem;padding:2px 6px;width:100%';
+    val.replaceWith(inp);
+    inp.focus();
+    function save() {
+      var body = {id: taskId};
+      body[extraKey] = inp.value || null;
+      post(endpoint, body);
+      val.textContent = inp.value || '—';
+      value = inp.value;
+      inp.replaceWith(val);
+    }
+    inp.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); save(); }
+      if (e.key === 'Escape') { inp.replaceWith(val); }
+    });
+    inp.addEventListener('blur', function() { setTimeout(function() { if (inp.parentNode) save(); }, 200); });
+  });
+  return wrap;
+}
+
+function makeContextSelect(label, value, taskId) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var sel = document.createElement('select');
+  sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer';
+  [['', '— нет —'], ['deep', '🧠 Задачи (утро)'], ['perekur', '🚶 Перекур'], ['afternoon', '🌆 2-я половина']].forEach(function(pair) {
+    var opt = document.createElement('option');
+    opt.value = pair[0];
+    opt.textContent = pair[1];
+    if (value === pair[0]) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', function() {
+    post('/set-context', {id: taskId, context: sel.value || null});
+  });
+  wrap.appendChild(lbl);
+  wrap.appendChild(sel);
+  return wrap;
+}
+
 function openTaskModal(taskId) {
   fetch('/api/task?id=' + encodeURIComponent(taskId))
     .then(function(r) { return r.json(); })
@@ -520,7 +623,9 @@ function openTaskModal(taskId) {
       document.getElementById('modal-title-text').textContent = d.title || '';
       var grid = document.createElement('div');
       grid.className = 'modal-grid';
-      grid.appendChild(makeField('Дедлайн', d.deadline || '—'));
+      grid.appendChild(makeEditableDate('Запланировано', d.scheduled_date, '/set-scheduled-date', d.id, 'scheduled_date'));
+      grid.appendChild(makeEditableDate('Дедлайн', d.deadline, '/set-deadline', d.id, 'deadline'));
+      grid.appendChild(makeContextSelect('Контекст', d.context || '', d.id));
       grid.appendChild(makeField('Someday', d.someday ? '✓' : '—'));
       grid.appendChild(makeField('Маркер', d.marker || '—'));
       grid.appendChild(makeField('Область', d.parent_title || '—'));
@@ -751,12 +856,51 @@ def parse_today(path):
     return title, sections, all_items
 
 
+CONTEXT_SECTIONS = [
+    ("deep",      "Задачи"),
+    ("perekur",   "Перекур / На улице"),
+    ("afternoon", "2-я половина дня"),
+]
+
+
+def _render_scheduled_item(task):
+    """Render a tasks.json task as a today-style list item."""
+    task_id = task["id"]
+    title = task.get("title", "")
+    priority = task.get("priority")
+    extra = {"red": " red", "green": " green", "orange": " orange"}.get(priority, "")
+    deadline = task.get("deadline", "")
+    dl_html = f' <span class="deadline{" overdue" if deadline and (date.fromisoformat(deadline) - date.today()).days < 0 else ""}" style="font-size:.72rem;color:var(--text4)">{deadline}</span>' if deadline else ""
+    return (
+        f'<li class="item todo{extra}" data-task-id="{task_id}">'
+        f'<span class="task-chk" data-id="{task_id}" style="flex-shrink:0;width:15px;height:15px;border-radius:3px;background:var(--chk);display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--text5);cursor:pointer">·</span>'
+        f'<span class="item-text task-linked" style="flex:1">{linkify(title)}</span>'
+        f'{dl_html}'
+        f'</li>\n'
+    )
+
+
 def render_today(path):
     title, sections, all_items = parse_today(path)
     tasks = load_tasks()
     task_by_norm = {normalize_title(t.get("title", "")): t["id"] for t in tasks if t.get("type") != "area"}
-    total = len(all_items)
-    done_n = sum(1 for i in all_items if i["done"])
+    today = today_str()
+
+    # Tasks scheduled for today (scheduled_date == today OR deadline == today, not done)
+    scheduled = [
+        t for t in tasks
+        if t.get("type") != "area"
+        and t.get("status") != "done"
+        and (t.get("scheduled_date") == today or t.get("deadline") == today)
+    ]
+
+    # Count total items: today.md checklist + scheduled tasks
+    checklist_items = [i for sec, items in sections for i in items if sec == "Утренний чеклист"]
+    total = len(checklist_items) + len(scheduled)
+    done_checklist = sum(1 for i in checklist_items if i["done"])
+    done_scheduled = sum(1 for t in tasks
+                         if t.get("status") == "done" and t.get("scheduled_date") == today)
+    done_n = done_checklist + done_scheduled
     pct = int(done_n / total * 100) if total else 0
 
     left = f"<h1>{title}</h1>\n"
@@ -772,28 +916,56 @@ def render_today(path):
         except ValueError:
             return False
 
-    done_all = []
+    # Render Утренний чеклист from today.md
     for sec, items in sections:
-        if section_is_future(sec):
+        if sec != "Утренний чеклист":
             continue
         todo = [i for i in items if not i["done"]]
-        done_all += [i for i in items if i["done"]]
-        if not todo:
-            continue
-        sec_key = sec.replace(" ", "_")[:30]
+        done_sec = [i for i in items if i["done"]]
         items_html = ""
         for item in todo:
             extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
-            indent_cls = f" indent{min(item['indent'], 3)}" if item.get("indent", 0) > 0 else ""
             task_id = task_by_norm.get(normalize_title(item["text"]), "")
             task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
             link_cls = " task-linked" if task_id else ""
-            items_html += f'<li class="item todo{extra}{indent_cls}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
-        if sec == "Утренний чеклист":
-            left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">{sec}</summary><ul class="today-section">\n{items_html}</ul></details>\n'
-        else:
-            left += f'<h2>{sec}</h2><ul class="today-section">\n{items_html}</ul>\n'
+            items_html += f'<li class="item todo{extra}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+        for item in done_sec:
+            items_html += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{linkify(item["text"])}</span></li>\n'
+        sec_key = "Утренний_чеклист"
+        left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">Утренний чеклист</summary><ul class="today-section">\n{items_html}</ul></details>\n'
 
+    # Render task sections from tasks.json grouped by context
+    for ctx_key, ctx_label in CONTEXT_SECTIONS:
+        if ctx_key == "deep":
+            ctx_tasks = [t for t in scheduled if t.get("context") in ("deep", None, "")]
+        else:
+            ctx_tasks = [t for t in scheduled if t.get("context") == ctx_key]
+        if not ctx_tasks:
+            continue
+        items_html = "".join(_render_scheduled_item(t) for t in ctx_tasks)
+        left += f'<h2>{ctx_label}</h2><ul class="today-section">\n{items_html}</ul>\n'
+
+    # Render non-checklist, non-task sections from today.md (Завтра, Сегодня в календаре, etc.)
+    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "Сделано"}
+    for sec, items in sections:
+        if section_is_future(sec):
+            continue
+        if sec in task_section_names:
+            continue
+        todo = [i for i in items if not i["done"]]
+        if not todo:
+            continue
+        items_html = ""
+        for item in todo:
+            extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
+            task_id = task_by_norm.get(normalize_title(item["text"]), "")
+            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
+            link_cls = " task-linked" if task_id else ""
+            items_html += f'<li class="item todo{extra}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+        left += f'<h2>{sec}</h2><ul class="today-section">\n{items_html}</ul>\n'
+
+    # Done section from today.md
+    done_all = [i for sec, items in sections for i in items if i["done"] and sec != "Утренний чеклист"]
     if done_all:
         left += "<h2>Сделано</h2><ul>\n"
         for item in done_all:
@@ -960,11 +1132,24 @@ def render_task_row(task, all_tasks, depth=0):
     dl_val = deadline or ""
     parent_id = task.get("parent_id", "")
     parent_attr = f' data-parent-id="{_html.escape(parent_id, quote=True)}"' if parent_id else ""
+
+    scheduled_date = task.get("scheduled_date", "")
+    is_today = scheduled_date == today_str()
+    today_active = " active" if is_today else ""
+    today_label = "✕↗" if is_today else "↗"
+    today_title = "Убрать из сегодня" if is_today else "Добавить в сегодня"
+
+    ctx = task.get("context", "")
+    ctx_labels = {"deep": "🧠", "perekur": "🚶", "afternoon": "🌆", "": "ctx"}
+    ctx_label_btn = ctx_labels.get(ctx, "ctx")
+
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}"{parent_attr}>\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
         f'  <span class="task-text" data-id="{task_id}" data-raw="{_html.escape(title, quote=True)}">{linkify(title)}{recurring_badge}</span>\n'
         f'  {dl_html}\n'
+        f'  <button class="btn today-btn{today_active}" data-id="{task_id}" data-scheduled="{scheduled_date}" title="{today_title}">{today_label}</button>\n'
+        f'  <button class="btn ctx-btn" data-id="{task_id}" data-context="{ctx}" title="Контекст: {ctx or "нет"}">{ctx_label_btn}</button>\n'
         f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
         f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
         f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
@@ -1200,6 +1385,30 @@ def set_task_recurring(task_id, recurring):
                 t["recurring"] = recurring
             else:
                 t.pop("recurring", None)
+            break
+    save_tasks(tasks)
+
+
+def set_task_scheduled_date(task_id, scheduled_date):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            if scheduled_date:
+                t["scheduled_date"] = scheduled_date
+            else:
+                t.pop("scheduled_date", None)
+            break
+    save_tasks(tasks)
+
+
+def set_task_context(task_id, context):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            if context:
+                t["context"] = context
+            else:
+                t.pop("context", None)
             break
     save_tasks(tasks)
 
@@ -1612,6 +1821,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             move_task_order(d["id"], d["direction"])
         elif self.path == "/set-recurring":
             set_task_recurring(d["id"], d.get("recurring") or None)
+        elif self.path == "/set-scheduled-date":
+            set_task_scheduled_date(d["id"], d.get("scheduled_date") or None)
+        elif self.path == "/set-context":
+            set_task_context(d["id"], d.get("context") or None)
         else:
             self.send_error(404)
             return
