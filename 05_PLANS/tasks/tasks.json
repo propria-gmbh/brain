@@ -8635,7 +8635,8 @@
     "waiting_for": null,
     "done_at": "2026-06-10",
     "created_at": "2026-06-07",
-    "order": 0.0
+    "order": 0.0,
+    "done": true
   },
   {
     "id": "создать-gmail-аккаунт-allspicefashioncomgmailcom-и-начать-пр",
