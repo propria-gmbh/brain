@@ -7391,13 +7391,13 @@
   {
     "id": "subtask-company-oliver-adler",
     "type": "task",
-    "parent_id": "task-verify-domain-oliver-adler",
+    "parent_id": "area-oliver-adler",
     "title": "Указать компанию Propria GmbH в данных регистранта (Namecheap)",
     "status": "todo",
     "someday": false,
     "done": false,
     "created_at": "2026-05-29",
-    "order": 0.0
+    "order": -1.0
   },
   {
     "id": "subtask-company-marc-francois",
