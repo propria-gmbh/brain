@@ -2445,7 +2445,7 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "deep",
     "goal": null,
     "tags": [],
     "notes": null,
