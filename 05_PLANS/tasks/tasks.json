@@ -8826,5 +8826,24 @@
     "done_at": null,
     "created_at": "2026-06-10",
     "order": 0.0
+  },
+  {
+    "id": "разобраться-с-epidermoid-zyste-в-паху-справа",
+    "title": "Разобраться с Epidermoid Zyste в паху справа",
+    "type": "task",
+    "parent_id": "area-health",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Диагноз кожника 2026-06-09 (Epidermoid cyst). Не беспокоит, но неэстетично. Обсудить удаление с кожником.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-10",
+    "order": 0.0
   }
 ]
