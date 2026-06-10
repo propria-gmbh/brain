@@ -2,18 +2,18 @@
 
 ## Утренний чеклист
 
-- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [ ] Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
-- [ ] Проверить бизнес-счёт Revolut
+- [x] 2026-06-10 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [x] 2026-06-10 Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [x] 2026-06-10 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [x] 2026-06-10 Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
 - [ ] PNL — заполнить (еженедельно)
-- [ ] Запросить квоты на новые товары у 3PL
-- [ ] Ответить AB в Slack
+- [x] 2026-06-10 Запросить квоты на новые товары у 3PL
+- [x] 2026-06-10 Ответить AB в Slack
 
 ## Задачи
 
-- [ ] [P=25] Узнать как матчатся данные юрлица в GMC и продавца в Shopify
+- [ ] Сделать для Мити подборку аккаунтов в инсте и магазинов по льну
 - [ ] Зарегистрировать 2 GMC (Oliver and Faye + Bennet and Gray)
 - [ ] US — добавлять товары через митину систему (Charlie & Ted)
 
