@@ -1134,11 +1134,21 @@ def set_task_deadline(task_id, deadline):
 
 def set_task_type(task_id, new_type):
     tasks = load_tasks()
+    if new_type == "area":
+        target_title = next((t.get("title", "").strip().lower() for t in tasks if t["id"] == task_id), None)
+        duplicate = any(
+            t["id"] != task_id and t.get("type") == "area"
+            and t.get("title", "").strip().lower() == target_title
+            for t in tasks
+        )
+        if duplicate:
+            return False
     for t in tasks:
         if t["id"] == task_id:
             t["type"] = new_type
             break
     save_tasks(tasks)
+    return True
 
 
 def next_deadline(recurring):
