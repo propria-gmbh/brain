@@ -8687,7 +8687,9 @@
     "deadline": null,
     "notes": "Добавить поле scheduled_date в tasks.json. Дашборд today = задачи где scheduled_date=сегодня AND done=false. Чекбокс напрямую пишет в tasks.json. today.md — генерируемый view. Убирает title-matching и рассинхронизацию.",
     "created_at": "2026-06-09",
-    "order": 0.0
+    "order": 0.0,
+    "done": true,
+    "done_at": "2026-06-10"
   },
   {
     "id": "фолоуап-fireflies-ответили-ли-на-запрос-отмены-и-возврата",
