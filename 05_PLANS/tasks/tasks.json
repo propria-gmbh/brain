@@ -1446,28 +1446,6 @@
     "order": 12.0
   },
   {
-    "id": "ecom-разработать-итальянских-дропшипперов",
-    "title": "Разработать итальянских дропшипперов",
-    "type": "task",
-    "project": "ecom",
-    "parent_id": "area-casa-giannini",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": "green",
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [
-      "italy"
-    ],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-05-25",
-    "order": 8.0
-  },
-  {
     "id": "ecom-ниша-льняные-изделия",
     "title": "Ниша — льняные изделия",
     "type": "task",
