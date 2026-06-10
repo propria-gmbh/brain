@@ -8635,7 +8635,8 @@
     "waiting_for": null,
     "done_at": "2026-06-10",
     "created_at": "2026-06-07",
-    "order": 0.0
+    "order": 0.0,
+    "done": true
   },
   {
     "id": "создать-gmail-аккаунт-allspicefashioncomgmailcom-и-начать-пр",
@@ -9229,25 +9230,6 @@
     "assignee": null,
     "tags": [],
     "notes": "Разобраться в причинах и улучшить",
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
-    "id": "кнопка-generate-description-не-работает",
-    "title": "Кнопка Generate description не работает",
-    "type": "task",
-    "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": null,
     "done": false,
     "done_date": null,
     "created": "2026-06-10",
