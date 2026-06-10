@@ -221,7 +221,9 @@ window.addInboxTask = function() {
   var title = (inp.value || '').trim();
   if (!title) return;
   inp.value = '';
-  post('/add-task', {title: title});
+  var ctx = (document.getElementById('inbox-context') || {}).value || null;
+  var marker = (document.getElementById('inbox-marker') || {}).value || null;
+  post('/add-task', {title: title, context: ctx, marker: marker});
 };
 var inboxInp = document.getElementById('inbox-input');
 if (inboxInp) inboxInp.addEventListener('keydown', function(e) {
@@ -785,7 +787,19 @@ HTML = """<!DOCTYPE html>
   <a href="/tasks" class="{nav_tasks}">Задачи</a>
   <a href="/sessions" class="{nav_sessions}">Сессии</a>
   <div style="display:flex;gap:6px;align-items:center;margin-left:16px;flex:1">
-    <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:320px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
+    <input id="inbox-input" type="text" placeholder="Быстрая задача в Inbox..." style="flex:1;max-width:280px;padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.85rem;outline:1px solid var(--bdr)">
+    <select id="inbox-context" style="padding:5px 6px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.82rem" title="Контекст">
+      <option value="">ctx</option>
+      <option value="deep">🧠 утро</option>
+      <option value="perekur">🚶 перекур</option>
+      <option value="afternoon">🌆 вечер</option>
+    </select>
+    <select id="inbox-marker" style="padding:5px 6px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.82rem" title="Маркер">
+      <option value="">—</option>
+      <option value="🔴">🔴</option>
+      <option value="🟢">🟢</option>
+      <option value="🟧">🟧</option>
+    </select>
     <button onclick="addInboxTask()" style="padding:6px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem">+</button>
   </div>
   <button class="undo-btn" onclick="post('/undo',null);setTimeout(function(){{location.reload()}},300)" title="Отменить последнее действие" style="padding:6px 10px;border-radius:6px;border:none;background:var(--bg2);color:var(--text3);cursor:pointer;font-size:.85rem;margin-left:4px">↩</button>
@@ -1457,7 +1471,7 @@ def remove_today_line(path, idx):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def add_task_inbox(title):
+def add_task_inbox(title, context=None, marker=None):
     tasks = load_tasks()
     if not any(t["id"] == "area-inbox" for t in tasks):
         tasks.insert(0, {"id": "area-inbox", "title": "Inbox", "type": "area", "order": -1})
@@ -1468,14 +1482,21 @@ def add_task_inbox(title):
     if task_id in existing_ids:
         import time
         task_id = f"inbox-{slug}-{int(time.time()) % 10000}"
-    tasks.append({
+    priority_map = {"🔴": "red", "🟢": "green", "🟧": "orange"}
+    task = {
         "id": task_id,
         "title": title,
         "parent_id": "area-inbox",
         "status": "todo",
         "someday": True,
         "created_at": today_str()
-    })
+    }
+    if context:
+        task["context"] = context
+    if marker:
+        task["marker"] = marker
+        task["priority"] = priority_map.get(marker)
+    tasks.append(task)
     save_tasks(tasks)
 
 
@@ -1810,7 +1831,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/reorder-today":
             reorder_today(TODAY, d["indices"])
         elif self.path == "/add-task":
-            add_task_inbox(d["title"])
+            add_task_inbox(d["title"], d.get("context"), d.get("marker"))
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
         elif self.path == "/set-marker":

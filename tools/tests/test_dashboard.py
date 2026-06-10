@@ -168,6 +168,37 @@ def test_task_row_schedule_button_active_when_scheduled_today():
     assert "active" in html and "today-btn" in html
 
 
+# ── add_task_inbox with context and marker ───────────────
+
+def test_add_task_inbox_sets_context(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        {"id": "area-inbox", "title": "Inbox", "type": "area", "order": -1}
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.add_task_inbox("Test task", context="perekur", marker="🔴")
+    result = json.loads(tasks_file.read_text())
+    new_task = next(t for t in result if t.get("title") == "Test task")
+    assert new_task["context"] == "perekur"
+    assert new_task["marker"] == "🔴"
+    assert new_task["priority"] == "red"
+
+
+def test_add_task_inbox_no_context_marker(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        {"id": "area-inbox", "title": "Inbox", "type": "area", "order": -1}
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.add_task_inbox("Plain task")
+    result = json.loads(tasks_file.read_text())
+    new_task = next(t for t in result if t.get("title") == "Plain task")
+    assert "context" not in new_task
+    assert "marker" not in new_task
+
+
 # ── api/task includes scheduled_date and context ─────────
 
 def test_api_task_includes_scheduled_date(tmp_path):
