@@ -8462,7 +8462,7 @@
     "title": "Доработки дашборда с задачами",
     "type": "area",
     "parent_id": "inbox-project-brain",
-    "order": 2.0
+    "order": 4.25
   },
   {
     "id": "brain-dashboard-правило-уникальных-названий-ареа",
