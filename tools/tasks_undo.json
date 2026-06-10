@@ -8629,10 +8629,11 @@
     "id": "inbox-разработать-механизм-при-котором-оркестратор-поруч",
     "title": "Разработать механизм, при котором оркестратор поручает последовательно субагенту задачи, которые может сделать самостоятельно или максимально полно подготовить",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-07",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-10"
   },
   {
     "id": "найти-на-сайте-bsr-расписание-вывоза-biotonne-с-домашнего-ад",
@@ -8719,7 +8720,8 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-08"
+    "created_at": "2026-06-08",
+    "order": 0.0
   },
   {
     "id": "фолоуап-croatia-yachting-ответ-по-инвойсу-от-propria-gmbh",
@@ -8770,7 +8772,8 @@
     "someday": false,
     "deadline": null,
     "notes": "Добавить поле scheduled_date в tasks.json. Дашборд today = задачи где scheduled_date=сегодня AND done=false. Чекбокс напрямую пишет в tasks.json. today.md — генерируемый view. Убирает title-matching и рассинхронизацию.",
-    "created_at": "2026-06-09"
+    "created_at": "2026-06-09",
+    "order": 0.0
   },
   {
     "id": "фолоуап-fireflies-ответили-ли-на-запрос-отмены-и-возврата",
@@ -8866,7 +8869,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "написать-письмо-в-jobcenter-спросить-о-формах-финансирования",
@@ -8884,7 +8888,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "узнать-подпадает-ли-мишин-kanufahrt-под-возмещение-jobcenter",
@@ -8902,7 +8907,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "подать-заявку-на-возмещение-в-jobcenter",
@@ -8920,7 +8926,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "фолоуап-возмещение-за-поездку-маши-на-сицилию",
@@ -8938,7 +8945,8 @@
     "notes": "Дедлайн по followup был 2026-05-14, проверить актуальность",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "разработать-чеклист-по-поиску-жилья-для-демонстрации-активно",
@@ -8956,7 +8964,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "подать-на-wbs-wohnberechtigungsschein",
@@ -8974,7 +8983,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "сделать-подписи-к-фотографиям",
@@ -8992,7 +9002,8 @@
     "notes": "Из mamas-book проекта [L2]",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "переклеить-ткань-на-маленьких-колонках-205x665",
@@ -9010,7 +9021,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "переклеить-ткань-на-больших-колонках-205x733",
@@ -9028,7 +9040,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "починить-большие-колонки",
@@ -9046,7 +9059,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "распаять-провода-для-колонок",
@@ -9064,7 +9078,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "купить-ремкомплект-для-колонок-magnat",
@@ -9082,7 +9097,8 @@
     "notes": "https://lautsprecher-technik.com/Speaker-Repair-Parts/Speaker-Refoaming-New-Edge-Foam-Surrounds-Repair/Magnat-Speaker-Surround-Refoam-Edge-Repair-Kits/Magnat-Art--Nr--144008-Speaker-Surround-Re-Foam-Repair-Kit.html",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "проверить-работоспособность-колонок-с-усилителем",
@@ -9100,7 +9116,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "купить-аудио-стойку-согласовать-с-аней-идею",
@@ -9118,7 +9135,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "сделать-медиацентр-home-assistant-смарт-дом-torrents",
@@ -9136,7 +9154,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "сделать-медиа-плеер-на-основе-минипк",
@@ -9154,7 +9173,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "купить-universal-rc-или-rc-hub",
@@ -9172,7 +9192,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "открыть-магазин-и-расшарить-доступ-с-митей",
@@ -9190,7 +9211,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "расшарить-github-репозиторий-с-митей",
@@ -9208,7 +9230,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "image-generator-добавить-фильтрацию-товаров-перед-запуском",
@@ -9226,7 +9249,8 @@
     "notes": "Сейчас только кнопка Run без выбора",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "цвет-научить-алгоритм-определять-пёстрое-платье",
@@ -9244,7 +9268,8 @@
     "notes": "У пёстрых товаров нет основного цвета, нужна отдельная категория",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "success-rate-поиска-товаров-слишком-низкий-2-из-8-25",
@@ -9262,7 +9287,8 @@
     "notes": "Разобраться в причинах и улучшить",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "image-generator-для-моноцветных-товаров-генерирует-градиент",
@@ -9280,7 +9306,8 @@
     "notes": "Нарушает соответствие оригиналу",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "кнопка-generate-description-не-работает",
@@ -9298,7 +9325,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "ux-коррекции-промта-непонятен",
@@ -9316,7 +9344,8 @@
     "notes": "Нужна документация или подсказка в интерфейсе",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "наполнить-us-store-charlie-and-ted-1000-товаров",
@@ -9334,7 +9363,8 @@
     "notes": "Преимущественно платья, с прицелом на Black Friday",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "сделать-дизайн-us-store-и-пройтись-по-чеклисту-gmc",
@@ -9352,7 +9382,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "найти-dtc-поставщиков-из-европы-сша",
@@ -9370,7 +9401,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "автоматическая-проверка-работоспособности-сайта",
@@ -9388,7 +9420,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "аналитика-поведения-пользователей",
@@ -9406,7 +9439,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "доплатить-60-чартеру",
@@ -9424,7 +9458,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "отправить-лицензию-и-cv-в-чартерную-компанию",
@@ -9442,7 +9477,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "заполнить-крюлист",
@@ -9460,7 +9496,8 @@
     "notes": "Подзадача: запросить данные у Юры",
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "получить-50-депозит-от-юрия",
@@ -9478,7 +9515,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "профолоуапить-сашу-по-парусному-походу",
@@ -9496,7 +9534,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "отдать-ане-на-распространение-парус",
@@ -9514,7 +9553,8 @@
     "notes": null,
     "done": false,
     "done_date": null,
-    "created": "2026-06-10"
+    "created": "2026-06-10",
+    "order": 0.0
   },
   {
     "id": "сделать-для-мити-подборку-аккаунтов-в-инсте-и-магазинов-по-л",
