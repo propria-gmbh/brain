@@ -7441,13 +7441,13 @@
   {
     "id": "subtask-company-oliver-faye",
     "type": "task",
-    "parent_id": "task-verify-domain-oliver-faye",
+    "parent_id": "area-oliver-faye",
     "title": "Указать компанию Propria GmbH в данных регистранта (GoDaddy)",
     "status": "todo",
     "someday": false,
     "done": false,
     "created_at": "2026-05-29",
-    "order": 0.0
+    "order": -1.0
   },
   {
     "id": "subtask-company-casa-giannini",
