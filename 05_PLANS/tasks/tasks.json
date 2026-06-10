@@ -8785,5 +8785,24 @@
     "done_at": null,
     "created_at": "2026-06-09",
     "order": 0.0
+  },
+  {
+    "id": "добавить-garmin-body-battery-в-утренний-чеклист",
+    "title": "Добавить Garmin Body Battery в утренний чеклист",
+    "type": "task",
+    "parent_id": "area-health",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Отслеживать Body Battery из Garmin в утреннем чеклисте и в течение дня. Взаимосвязь с тонусом подтверждена.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-10",
+    "order": 0.0
   }
 ]
