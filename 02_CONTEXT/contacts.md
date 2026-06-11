@@ -30,6 +30,14 @@
 - Teamnr: 6630
 - Тема: формы финансирования для предпринимателей
 
+## M. Sc. Wjatscheslaw Wolf — Hausarzt (Allgemeinmedizin)
+
+- Адрес: Eichhornstraße 2, 10785 Berlin (The Playce)
+- Тел: +49 30 25925300
+- Email: praxis-wolf@gzpp.de
+- Web: gzpp.de
+- Режим: до 16:00
+
 ## Prof. Dr. Andreas Kupsch — невролог
 
 - Адрес: Bismarckstraße 45-47, 10627 Berlin

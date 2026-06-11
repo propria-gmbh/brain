@@ -1,31 +1,19 @@
 {
-  "updated": "2026-06-10T08:42:00+02:00",
+  "updated": "2026-06-11T10:02:00+02:00",
   "events": [
-    {
-      "summary": "Тренировка",
-      "start": "2026-06-10T10:00:00+02:00",
-      "end": "2026-06-10T13:05:00+02:00",
-      "date": "2026-06-10"
-    },
-    {
-      "summary": "Тренировка",
-      "start": "2026-06-11T08:00:00+02:00",
-      "end": "2026-06-11T11:05:00+02:00",
-      "date": "2026-06-11"
-    },
-    {
-      "summary": "Созвон — Илья, Андрей, Екатерина",
-      "start": "2026-06-11T12:00:00+02:00",
-      "end": "2026-06-11T13:00:00+02:00",
-      "date": "2026-06-11",
-      "calendar": "Shopify Tribe",
-      "conferenceUrl": "https://meet.google.com/grs-ohbm-nsa"
-    },
     {
       "summary": "BioTonne вывоз (BSR)",
       "start": "2026-06-11",
       "end": "2026-06-12",
       "date": "2026-06-11"
+    },
+    {
+      "summary": "звонок — Илья, Андрей, Екатерина",
+      "start": "2026-06-11T12:00:00+02:00",
+      "end": "2026-06-11T13:00:00+02:00",
+      "date": "2026-06-11",
+      "calendar": "Shopify Tribe",
+      "conferenceUrl": "https://meet.google.com/grs-ohbm-nsa"
     },
     {
       "summary": "Ask Alec Anything",
@@ -47,6 +35,13 @@
       "description": "Еженедельный чеклист: ~/Projects/brain/05_PLANS/recurring/weekly.md"
     },
     {
+      "summary": "Shopify Tribe Meeting",
+      "start": "2026-06-14T14:00:00+02:00",
+      "end": "2026-06-14T15:50:00+02:00",
+      "date": "2026-06-14",
+      "calendar": "Shopify Tribe"
+    },
+    {
       "summary": "Тренировка",
       "start": "2026-06-14T17:00:00+02:00",
       "end": "2026-06-14T19:35:00+02:00",
@@ -57,6 +52,13 @@
       "start": "2026-06-16T08:00:00+02:00",
       "end": "2026-06-16T08:00:00+02:00",
       "date": "2026-06-16"
+    },
+    {
+      "summary": "Call ECOM GOOGLE MM",
+      "start": "2026-06-16T14:00:00+02:00",
+      "end": "2026-06-16T15:00:00+02:00",
+      "date": "2026-06-16",
+      "calendar": "Shopify Tribe"
     },
     {
       "summary": "Ask AB Anything",

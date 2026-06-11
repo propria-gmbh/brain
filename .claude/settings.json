@@ -120,7 +120,8 @@
       "Bash(bash deploy.sh)",
       "Bash(python3 -c \"import sys,json; [print\\(l[:120]\\) for l in sys.stdin]\")",
       "Bash(python3 ~/.claude/hooks/stretch-check.py)",
-      "Bash(osascript -e 'display notification \"тест растяжки\" with title \"Brain\" sound name \"Ping\"')"
+      "Bash(osascript -e 'display notification \"тест растяжки\" with title \"Brain\" sound name \"Ping\"')",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(k\\) for k in d.get\\('mcpServers',{}\\).keys\\(\\)]\")"
     ],
     "additionalDirectories": [
       "/Users/dister/.claude",
