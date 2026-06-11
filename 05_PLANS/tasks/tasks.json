@@ -9432,7 +9432,7 @@
     "id": "сделать-для-мити-подборку-аккаунтов-в-инсте-и-магазинов-по-л",
     "title": "Сделать для Мити подборку аккаунтов в инсте и магазинов по льну",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
     "deadline": null,
