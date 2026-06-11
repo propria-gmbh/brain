@@ -8,6 +8,7 @@
 - Geburtsdatum: 02.01.1975
 - Steuer-ID (Identifikationsnummer): 49210568930
 - Морской опыт: 6000 морских миль (из них 3000 шкипером)
+- Рабочий WhatsApp: 0177 819 2313 (+49 177 8192313)
 
 ## Kindergeld
 

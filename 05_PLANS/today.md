@@ -2,19 +2,19 @@
 
 ## Утренний чеклист
 
-- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [ ] Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [x] 2026-06-11 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [x] 2026-06-11 Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
 - [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
 - [ ] PNL — заполнить (еженедельно)
-- [ ] Запросить квоты на новые товары у 3PL
-- [ ] Ответить AB в Slack
+- [x] 2026-06-11 Запросить квоты на новые товары у 3PL
+- [x] 2026-06-11 Ответить AB в Slack
 
 ## Задачи
 
 - [ ] Разобраться с primary/non-primary events в трекинге (charlieandted.com)
-- [ ] Узнать как матчатся данные юрлица в GMC и продавца в Shopify (Propria GmbH vs store)
+- [x] 2026-06-11 Узнать как матчатся данные юрлица в GMC и продавца в Shopify (Propria GmbH vs store)
 - [ ] Проработать возможные пути заработка и составить план
 
 ## Перекур / На улице
@@ -34,3 +34,5 @@
 - 20:00–21:00 Ask Alec Anything
 
 ## Сделано
+- [x] 2026-06-11 BioTonne вывоз (BSR)
+- [x] 2026-06-11 звонок — Илья, Андрей, Екатерина

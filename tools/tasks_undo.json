@@ -12,7 +12,8 @@
     "parent_id": null,
     "status": "active",
     "order": 0.0,
-    "created_at": "2026-05-25"
+    "created_at": "2026-05-25",
+    "goal_rank": 2
   },
   {
     "id": "area-ecom",
@@ -21,7 +22,8 @@
     "parent_id": null,
     "status": "active",
     "order": 1.0,
-    "created_at": "2026-05-25"
+    "created_at": "2026-05-25",
+    "goal_rank": 2
   },
   {
     "id": "area-ecom-stores",
@@ -48,7 +50,8 @@
     "parent_id": null,
     "status": "active",
     "order": 1.5,
-    "created_at": "2026-05-25"
+    "created_at": "2026-05-25",
+    "goal_rank": 3
   },
   {
     "id": "area-personal-finance",
@@ -57,7 +60,8 @@
     "parent_id": "inbox-personal",
     "status": "active",
     "order": 2.4375,
-    "created_at": "2026-05-25"
+    "created_at": "2026-05-25",
+    "goal_rank": 3
   },
   {
     "id": "area-personal-home",
@@ -93,7 +97,8 @@
     "parent_id": "inbox-personal",
     "status": "active",
     "order": 8.0,
-    "created_at": "2026-05-25"
+    "created_at": "2026-05-25",
+    "goal_rank": 2
   },
   {
     "id": "area-personal-sailing",
@@ -8236,7 +8241,8 @@
     "created_at": "2026-06-04",
     "order": 0.0,
     "marker": "🟧",
-    "context": "deep"
+    "context": "deep",
+    "scheduled_date": "2026-06-11"
   },
   {
     "id": "разобрать-конспект-созвона-с-андреем-и-максимом",
@@ -8294,7 +8300,8 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0,
-    "context": "deep"
+    "context": "deep",
+    "scheduled_date": "2026-06-11"
   },
   {
     "id": "telegram-бот-добавить-conversation-history-последние-10-сооб",
@@ -8361,7 +8368,8 @@
     "title": "Безопасный минимум",
     "type": "area",
     "order": -0.5,
-    "parent_id": null
+    "parent_id": null,
+    "goal_rank": 1
   },
   {
     "id": "safe-min-проработать-возможные-пути-заработка-и-составить-п",
@@ -8372,7 +8380,7 @@
     "someday": true,
     "created_at": "2026-06-05",
     "order": 0.0,
-    "scheduled_date": "2026-06-10",
+    "scheduled_date": "2026-06-11",
     "context": "deep"
   },
   {
@@ -8496,7 +8504,7 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "someday": true,
     "done": false,
-    "deadline": null,
+    "deadline": "2026-06-12",
     "created_at": "2026-06-06",
     "order": 0.0
   },
@@ -8507,7 +8515,7 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "someday": true,
     "done": false,
-    "deadline": null,
+    "deadline": "2026-06-12",
     "created_at": "2026-06-06",
     "order": 0.0
   },
@@ -9475,6 +9483,44 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-10",
+    "order": 0.0
+  },
+  {
+    "id": "изучить-сервисы-pythagoio-и-trustpilot-оценить-применимость-",
+    "title": "Изучить сервисы pythago.io и TrustPilot — оценить применимость для себя",
+    "type": "task",
+    "parent_id": "area-ecom-knowledge",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-11",
+    "order": 0.0
+  },
+  {
+    "id": "зарегистрировать-gmc-на-физика",
+    "title": "Зарегистрировать GMC на физика",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-11",
     "order": 0.0
   }
 ]
