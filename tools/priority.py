@@ -7,7 +7,7 @@ Priority formula:
   C (color/priority): orange=4  red=3  green=2  none=1
   D (deadline urgency): <1wk=5  1-2wk=4  2-4wk=3  1-3mo=2  overdue=4  3mo+=0  none=0
   S (stakes): 1-5 (number of $)
-  G (goal, inferred from area): health=3  financial-min=2  business=2  life/peace=1  none=0
+  G (goal_rank on area, inherited up tree): rank1=5  rank2=3  rank3=1  none=0
 
 Usage:
   python3 tools/priority.py              # top 30 someday tasks
@@ -27,33 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 TASKS_FILE = ROOT / '05_PLANS' / 'tasks' / 'tasks.json'
 
-GOAL_SCORES = {
-    # Active goals
-    'gmc': 4,
-    'us-store': 4,
-    'поставщик': 4,
-    # Base goals
-    'health': 4,
-    'financial-min': 4,
-    'business': 2,
-    'life': 1,
-    'peace': 1,
-}
-
-AREA_GOAL_MAP = {
-    'area-health': 'health',
-    'area-ecom': 'financial-min',
-    'area-propria': 'financial-min',
-    'area-personal-finance': 'financial-min',
-    'area-ai-systems': 'business',
-    'area-projects': 'business',
-    'area-personal-development': 'life',
-    'area-personal-family': 'life',
-    'area-personal-home': 'life',
-    'area-personal-sailing': 'life',
-    'area-personal-purchases': 'life',
-    'area-personal-media': 'life',
-}
+GOAL_RANK_SCORES = {1: 5, 2: 3, 3: 1}
 
 
 def load_tasks():
@@ -65,21 +39,19 @@ def build_task_map(data):
     return {t['id']: t for t in data if isinstance(t, dict) and 'id' in t}
 
 
-def infer_goal(task, task_map):
-    if task.get('goal'):
-        return task['goal']
-    pid = task.get('parent_id', '')
+def infer_goal_rank(task, task_map):
+    # Check task itself first, then walk up parent_id tree
+    node = task
     seen = set()
-    while pid and pid not in seen:
-        seen.add(pid)
-        for prefix, goal in AREA_GOAL_MAP.items():
-            if pid.startswith(prefix):
-                return goal
-        parent = task_map.get(pid)
-        if parent:
-            pid = parent.get('parent_id', '')
-        else:
+    while node:
+        nid = node.get('id', '')
+        if nid in seen:
             break
+        seen.add(nid)
+        if node.get('goal_rank'):
+            return node['goal_rank']
+        pid = node.get('parent_id', '')
+        node = task_map.get(pid) if pid else None
     return None
 
 
@@ -147,10 +119,10 @@ def score_task(task, task_map, today):
     is_reminder = 'reminder' in (task.get('tags') or [])
     d = deadline_score(deadline, today, is_reminder)
     s, s_label = stakes_score(task.get('stakes'))
-    goal = infer_goal(task, task_map)
-    g = GOAL_SCORES.get(goal, 0)
+    goal_rank = infer_goal_rank(task, task_map)
+    g = GOAL_RANK_SCORES.get(goal_rank, 0)
     p = c * 2 + d * 3 + s * 2 + g * 2
-    return p, c, d, s, s_label, g, goal, deadline
+    return p, c, d, s, s_label, g, goal_rank, deadline
 
 
 def format_area(task, task_map):
@@ -221,14 +193,14 @@ def main():
 
     scored = []
     for t in tasks:
-        p, c, d, s, s_label, g, goal, deadline = score_task(t, task_map, today)
+        p, c, d, s, s_label, g, goal_rank, deadline = score_task(t, task_map, today)
         scored.append({
             'p': p,
             'title': t.get('title', '')[:72],
             'priority': t.get('priority'),
             'deadline': deadline,
             'stakes_label': s_label,
-            'goal': goal,
+            'goal_rank': goal_rank,
             'area': format_area(t, task_map),
         })
 
@@ -241,14 +213,14 @@ def main():
         print('Задачи не найдены.')
         return
 
-    print(f"\n {'P':>3}  {'Тип':4}  {'$':5}  {'Дедлайн':12}  {'Цель':14}  Задача")
+    print(f"\n {'P':>3}  {'Тип':4}  {'$':5}  {'Дедлайн':12}  {'G':4}  Задача")
     print('─' * 100)
     for t in scored:
         cl = color_label(t['priority'])
         dl = t['deadline'] or '—'
         st = t['stakes_label'] or '—'
-        gl = (t['goal'] or '—')[:13]
-        print(f" {t['p']:>3}  {cl}  {st:5}  {dl:12}  {gl:14}  {t['title']}")
+        gl = f"G{t['goal_rank']}" if t['goal_rank'] else '—'
+        print(f" {t['p']:>3}  {cl}  {st:5}  {dl:12}  {gl:4}  {t['title']}")
 
 
 if __name__ == '__main__':
