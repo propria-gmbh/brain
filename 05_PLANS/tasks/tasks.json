@@ -8241,7 +8241,8 @@
     "created_at": "2026-06-04",
     "order": 0.0,
     "marker": "🟧",
-    "context": "deep"
+    "context": "deep",
+    "scheduled_date": "2026-06-11"
   },
   {
     "id": "разобрать-конспект-созвона-с-андреем-и-максимом",
@@ -8299,7 +8300,8 @@
     "done_at": null,
     "created_at": "2026-06-04",
     "order": 0.0,
-    "context": "deep"
+    "context": "deep",
+    "scheduled_date": "2026-06-11"
   },
   {
     "id": "telegram-бот-добавить-conversation-history-последние-10-сооб",
@@ -8378,7 +8380,7 @@
     "someday": true,
     "created_at": "2026-06-05",
     "order": 0.0,
-    "scheduled_date": "2026-06-10",
+    "scheduled_date": "2026-06-11",
     "context": "deep"
   },
   {
