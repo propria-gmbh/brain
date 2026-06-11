@@ -9599,5 +9599,24 @@
     "done_at": null,
     "created_at": "2026-06-11",
     "order": 0.0
+  },
+  {
+    "id": "сделать-одностраничный-сайт-для-монтажного-сервиса",
+    "title": "Сделать одностраничный сайт для монтажного сервиса",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-11",
+    "order": 0.0
   }
 ]
