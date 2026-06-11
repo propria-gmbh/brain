@@ -15,6 +15,7 @@ frequency: daily
 - [ ] PNL — заполнить (еженедельно)
 - [ ] Запросить квоты на новые товары у 3PL
 - [ ] Ответить AB в Slack
+- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Контейнеризация дня
 
