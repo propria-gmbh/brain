@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Giannini — Project Brief</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sand: #F5F0E8;
+    --linen: #EDE8DC;
+    --terracotta: #C4704F;
+    --sage: #7A8C6E;
+    --dark: #2C2A25;
+    --mid: #6B6559;
+    --light: #A09890;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background: white;
+    color: var(--dark);
+    font-size: 11pt;
+    line-height: 1.65;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--dark);
+    color: white;
+    padding: 80px 70px 70px;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(196, 112, 79, 0.15);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 200px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(122, 140, 110, 0.12);
+  }
+
+  .cover-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+  }
+
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48pt;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .cover-subtitle {
+    font-size: 13pt;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    margin-top: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .cover-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .cover-meta span strong {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 60px 70px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 52px;
+  }
+
+  .section-label {
+    font-size: 7.5pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--linen);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22pt;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 10px;
+    margin-top: 28px;
+  }
+
+  p {
+    color: var(--mid);
+    margin-bottom: 12px;
+  }
+
+  strong {
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: var(--sand);
+    border-left: 3px solid var(--terracotta);
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+
+  /* TWO-COL INTRO */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .info-block {
+    background: var(--sand);
+    padding: 18px 20px;
+    border-radius: 2px;
+  }
+
+  .info-block .label {
+    font-size: 7.5pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 6px;
+  }
+
+  .info-block .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14pt;
+    color: var(--dark);
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 9pt;
+  }
+
+  thead tr {
+    background: var(--dark);
+    color: white;
+  }
+
+  thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.5px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--linen);
+  }
+
+  tbody tr:nth-child(even) {
+    background: #faf8f4;
+  }
+
+  tbody tr.highlight-row {
+    background: #f0ece2;
+  }
+
+  td {
+    padding: 8px 12px;
+    color: var(--mid);
+    vertical-align: top;
+  }
+
+  td strong {
+    color: var(--dark);
+  }
+
+  td.accent {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  td.tag {
+    font-size: 8pt;
+    color: var(--light);
+  }
+
+  /* DOMAINS */
+  .domains {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+
+  .domain-card {
+    border: 1px solid var(--linen);
+    padding: 20px;
+    border-radius: 2px;
+  }
+
+  .domain-card .phase {
+    font-size: 7.5pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 6px;
+  }
+
+  .domain-card .url {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15pt;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .domain-card .desc {
+    font-size: 8.5pt;
+    color: var(--light);
+    line-height: 1.5;
+  }
+
+  /* STATUS */
+  .status-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  .status-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--linen);
+    font-size: 9.5pt;
+    color: var(--mid);
+  }
+
+  .status-list li:last-child { border-bottom: none; }
+
+  .check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+  }
+
+  .check.done { background: var(--sage); color: white; }
+  .check.open { border: 1.5px solid var(--linen); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--sand);
+    padding: 24px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8pt;
+    color: var(--light);
+    letter-spacing: 0.5px;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    color: var(--dark);
+    font-style: italic;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">Market Overview — Confidential</div>
+    <h1>Casa<br><em>Giannini</em></h1>
+    <div class="cover-subtitle">Italian Linen Lifestyle Brand</div>
+    <div class="cover-meta">
+      <span><strong>Date</strong>June 11, 2026</span>
+      <span><strong>Team</strong>Ilja &amp; Mitya</span>
+      <span><strong>Status</strong>Phase 1 Planning</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- CONCEPT -->
+    <div class="section">
+      <div class="section-label">01 — Concept</div>
+      <div class="highlight">"Linen for the unhurried life."</div>
+      <p>Casa Giannini is a branded DTC linen brand built on Mediterranean lifestyle aesthetics. Phase 1: branded dropshipping with no inventory risk. Phase 2: private label brand with own woven label.</p>
+      <p>Previous experience confirmed demand for linen goods. The niche is growing at the intersection of slow fashion, sustainability, and aspirational living. Target customer: women 25–45, Italy and US markets. Minimum order value: <strong>$100</strong>.</p>
+
+      <div class="two-col" style="margin-top: 24px;">
+        <div class="info-block">
+          <div class="label">Phase 1</div>
+          <div class="value">Branded Dropshipping</div>
+        </div>
+        <div class="info-block">
+          <div class="label">Phase 2</div>
+          <div class="value">Private Label Brand</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSITIONING -->
+    <div class="section">
+      <div class="section-label">02 — Market Position</div>
+      <p>Casa Giannini occupies a gap where no strong player currently exists: an Italian-heritage brand with the story of a place, combined with a modern DTC machine.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Players</th>
+            <th>Price Range</th>
+            <th>What They Miss</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Baltic Mass Market</td>
+            <td>MagicLinen, notPerfectLinen</td>
+            <td>$40–100</td>
+            <td>No heritage, no place</td>
+          </tr>
+          <tr>
+            <td>Australian Resort</td>
+            <td>Faithfull, Posse</td>
+            <td>$80–200</td>
+            <td>No EU roots, no Mediterranean story</td>
+          </tr>
+          <tr>
+            <td>Mediterranean Artisan</td>
+            <td>Haris Cotton, Bottega di Brunella</td>
+            <td>$60–180</td>
+            <td>Small reach, no DTC machine</td>
+          </tr>
+          <tr>
+            <td>Japanese Minimal</td>
+            <td>Fog Linen Work</td>
+            <td>$60–150</td>
+            <td>Niche, no Italy story</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Casa Giannini</strong></td>
+            <td><strong>Our position</strong></td>
+            <td class="accent"><strong>$100–180</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- INSTAGRAM -->
+    <div class="section">
+      <div class="section-label">03 — Instagram Reference Accounts</div>
+      <p>Accounts to study for aesthetics, content strategy, and community building.</p>
+
+      <h3>Clothing</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th>Brand</th>
+            <th>Followers</th>
+            <th>Region</th>
+            <th>Why Watch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>@faithfullthebrand</strong></td>
+            <td>Faithfull the Brand</td>
+            <td>1M</td>
+            <td>AU/Global</td>
+            <td>Best aspirational vacation linen, strong funnel</td>
+          </tr>
+          <tr>
+            <td><strong>@posse</strong></td>
+            <td>Posse</td>
+            <td>475K</td>
+            <td>AU/Global</td>
+            <td>100% linen collection, pure minimalism, high AOV</td>
+          </tr>
+          <tr>
+            <td><strong>@notperfectlinen</strong></td>
+            <td>not PERFECT LINEN</td>
+            <td>198K</td>
+            <td>LT/Global</td>
+            <td>Handcrafted story, converts well, Shopify DTC</td>
+          </tr>
+          <tr>
+            <td><strong>@linenfox</strong></td>
+            <td>Linenfox</td>
+            <td>71K</td>
+            <td>LT/Global</td>
+            <td>Made-to-order, earthy tones, Etsy-to-DTC story</td>
+          </tr>
+          <tr>
+            <td><strong>@haris_cotton</strong></td>
+            <td>Haris Cotton</td>
+            <td>~20K</td>
+            <td>GR/EU</td>
+            <td>Closest positioning: Mediterranean, 50+ yr heritage</td>
+          </tr>
+          <tr>
+            <td><strong>@bottegadibrunella</strong></td>
+            <td>Bottega di Brunella</td>
+            <td>niche</td>
+            <td>IT (Positano)</td>
+            <td>Handcrafted in Positano — Italian artisan benchmark</td>
+          </tr>
+          <tr>
+            <td><strong>@lanhtropy</strong></td>
+            <td>Lanhtropy</td>
+            <td>~10K</td>
+            <td>EU</td>
+            <td>Elegant, timeless positioning</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Home &amp; Lifestyle</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th>Brand</th>
+            <th>Followers</th>
+            <th>Region</th>
+            <th>Why Watch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>@parachutehome</strong></td>
+            <td>Parachute Home</td>
+            <td>550K</td>
+            <td>US</td>
+            <td>DTC pioneer, aspirational bedroom staging</td>
+          </tr>
+          <tr>
+            <td><strong>@cultiver_goods</strong></td>
+            <td>Cultiver</td>
+            <td>166K</td>
+            <td>AU/Global</td>
+            <td>Premium European flax, effortlessly chic staging</td>
+          </tr>
+          <tr>
+            <td><strong>@magiclinen</strong></td>
+            <td>MagicLinen</td>
+            <td>106K</td>
+            <td>LT/Global</td>
+            <td>Strong color range, high content volume</td>
+          </tr>
+          <tr>
+            <td><strong>@linentales</strong></td>
+            <td>Linen Tales</td>
+            <td>49K</td>
+            <td>LT/Global</td>
+            <td>Home + sleepwear, handmade in EU, Vilnius store</td>
+          </tr>
+          <tr>
+            <td><strong>@foglinenwork</strong></td>
+            <td>Fog Linen Work</td>
+            <td>65K</td>
+            <td>JP/Global</td>
+            <td>Japanese wabi-sabi cult following, minimal aesthetic</td>
+          </tr>
+          <tr>
+            <td><strong>@libeco_home</strong></td>
+            <td>Libeco</td>
+            <td>17K</td>
+            <td>BE/EU</td>
+            <td>Belgian linen heritage, interior designer favorite</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- STORES -->
+    <div class="section">
+      <div class="section-label">04 — Reference Stores</div>
+      <p>Online brands to study for UX, pricing, product range, and brand story.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Website</th>
+            <th>Niche</th>
+            <th>Market</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Faithfull the Brand</strong></td>
+            <td>faithfullthebrand.com</td>
+            <td>Clothing</td>
+            <td>AU/Global</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Posse</strong></td>
+            <td>possethelabel.com</td>
+            <td>Clothing</td>
+            <td>AU/Global</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>not PERFECT LINEN</strong></td>
+            <td>notperfectlinen.com</td>
+            <td>Clothing</td>
+            <td>EU/Global</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>MagicLinen</strong></td>
+            <td>magiclinen.com</td>
+            <td>Bedding + Clothing</td>
+            <td>EU/Global</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Linenfox</strong></td>
+            <td>linenfoxclothes.com</td>
+            <td>Clothing</td>
+            <td>EU/Global</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Linen Tales</strong></td>
+            <td>linentales.com</td>
+            <td>Home + Sleepwear</td>
+            <td>EU/Global</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Cultiver</strong></td>
+            <td>cultiver.com</td>
+            <td>Bedding</td>
+            <td>AU/US</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Parachute Home</strong></td>
+            <td>parachutehome.com</td>
+            <td>Bedding + Home</td>
+            <td>US</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Fog Linen Work</strong></td>
+            <td>foglinenwork.com</td>
+            <td>Home + Clothing</td>
+            <td>JP/Global</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Libeco</strong></td>
+            <td>libeco.com</td>
+            <td>Home &amp; Interior</td>
+            <td>BE/EU/US</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Haris Cotton</strong></td>
+            <td>hariscotton.com</td>
+            <td>Clothing</td>
+            <td>GR/EU/US</td>
+            <td class="accent">$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Coyuchi</strong></td>
+            <td>coyuchi.com</td>
+            <td>Organic Bedding</td>
+            <td>US</td>
+            <td class="accent">$$$$</td>
+          </tr>
+          <tr>
+            <td><strong>Baltic Linen Store</strong></td>
+            <td>balticlinenstore.com</td>
+            <td>Clothing</td>
+            <td>EU/Global</td>
+            <td class="accent">$$</td>
+          </tr>
+          <tr>
+            <td><strong>Quince</strong></td>
+            <td>quince.com</td>
+            <td>Clothing</td>
+            <td>US</td>
+            <td class="accent">$$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="section">
+      <div class="section-label">05 — Product Matrix</div>
+      <p>Minimum selling unit: <strong>$100</strong>. No items sold below this price individually. Sets sold as one SKU. Launch with 3–4 SKUs.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Retail Price</th>
+            <th>Wholesale (China)</th>
+            <th>Margin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Women's Linen Maxi Dress</td>
+            <td>$110–145</td>
+            <td>$15–20</td>
+            <td class="accent">6–8x</td>
+          </tr>
+          <tr>
+            <td>Women's Linen Midi Dress</td>
+            <td>$100–120</td>
+            <td>$12–16</td>
+            <td class="accent">6–8x</td>
+          </tr>
+          <tr>
+            <td>Linen Blazer</td>
+            <td>$120–160</td>
+            <td>$22–28</td>
+            <td class="accent">5–6x</td>
+          </tr>
+          <tr>
+            <td>Linen Robe / Kimono</td>
+            <td>$100–130</td>
+            <td>$10–14</td>
+            <td class="accent">7–9x</td>
+          </tr>
+          <tr>
+            <td>Set: Blouse + Wide-Leg Pants</td>
+            <td>$120–165</td>
+            <td>$14–20</td>
+            <td class="accent">7–9x</td>
+          </tr>
+          <tr>
+            <td>Linen Bedding Set</td>
+            <td>$130–200</td>
+            <td>$28–40</td>
+            <td class="accent">4–6x</td>
+          </tr>
+          <tr>
+            <td>Linen Curtains (pair)</td>
+            <td>$150–220</td>
+            <td>$40–50</td>
+            <td class="accent">4–5x</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DOMAINS -->
+    <div class="section">
+      <div class="section-label">06 — Domains &amp; Markets</div>
+
+      <div class="domains">
+        <div class="domain-card">
+          <div class="phase">Phase 1 — Italy</div>
+          <div class="url">casa-giannini.it</div>
+          <div class="desc">GMC Italy feed. Prices include 22% Italian VAT. IOSS for VAT collection at checkout.</div>
+        </div>
+        <div class="domain-card">
+          <div class="phase">Phase 2 — US + Global</div>
+          <div class="url">casagiannini.com</div>
+          <div class="desc">US GMC feed. Note: Chinese de minimis exemption removed May 2025. US 3PL to be evaluated.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="section">
+      <div class="section-label">07 — Status</div>
+
+      <ul class="status-list">
+        <li>
+          <div class="check done">✓</div>
+          <span>Domain <strong>casa-giannini.it</strong> — registered</span>
+        </li>
+        <li>
+          <div class="check done">✓</div>
+          <span>Domain <strong>casagiannini.com</strong> — registered June 11, 2026</span>
+        </li>
+        <li>
+          <div class="check open"></div>
+          <span>3PL supplier response — awaiting (quality linen branded dropshipping)</span>
+        </li>
+        <li>
+          <div class="check open"></div>
+          <span>Final SKU selection (3–4 products for launch)</span>
+        </li>
+        <li>
+          <div class="check open"></div>
+          <span>Brand identity — tone of voice, visual style, About page</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Casa Giannini</div>
+    <div>Market Overview — June 2026 — Confidential</div>
+  </div>
+
+</div>
+</body>
+</html>
