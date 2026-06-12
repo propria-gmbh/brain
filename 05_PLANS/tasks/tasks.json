@@ -9634,7 +9634,7 @@
     "id": "проверить-twint-в-shopify-admin-для-marcfrancoisch",
     "title": "Проверить TWINT в Shopify Admin для marcfrancois.ch",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-marc-francois",
     "status": "todo",
     "someday": true,
     "deadline": null,
