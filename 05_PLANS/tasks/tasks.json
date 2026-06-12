@@ -9697,7 +9697,7 @@
     "id": "написать-lanyou-и-hongda-запрос-на-образцы-и-условия-oem-для",
     "title": "Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Giannini",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-casa-giannini",
     "status": "todo",
     "someday": true,
     "deadline": null,
