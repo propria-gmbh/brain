@@ -9620,5 +9620,14 @@
     "done_at": null,
     "created_at": "2026-06-11",
     "order": 0.0
+  },
+  {
+    "id": "prj-mitya-followup-linen-supplier",
+    "title": "Фолоуап посреднику — есть ли поставщики льна под branded dropshipping",
+    "parent_id": "inbox-prj-with-mitya",
+    "context": "perekur",
+    "deadline": "2026-06-14",
+    "someday": false,
+    "done": false
   }
 ]
