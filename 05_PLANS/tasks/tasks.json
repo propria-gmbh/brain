@@ -2465,7 +2465,7 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-projects-tacura",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-08",
     "priority": null,
@@ -2475,7 +2475,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-13",
     "created_at": "2026-05-25",
     "order": 2.5,
     "recurring": "monthly"
@@ -9712,5 +9712,25 @@
     "done_at": null,
     "created_at": "2026-06-12",
     "order": 0.0
+  },
+  {
+    "title": "Разослать зарплатные листки",
+    "type": "task",
+    "project": "propria",
+    "parent_id": "area-projects-tacura",
+    "someday": false,
+    "deadline": "2026-07-13",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "created_at": "2026-05-25",
+    "order": 2.5,
+    "recurring": "monthly",
+    "id": "propria-разослать-зарплатные-листки-next",
+    "status": "todo"
   }
 ]
