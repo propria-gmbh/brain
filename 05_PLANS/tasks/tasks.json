@@ -7143,11 +7143,12 @@
     "id": "inbox-узнать-есть-ли-кейсы-повышения-оценки-трастпайлот",
     "title": "Узнать есть ли кейсы повышения оценки ТрастПайлот",
     "parent_id": "area-ecom",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-05-28",
     "order": 0.0,
-    "deadline": null
+    "deadline": null,
+    "done_at": "2026-06-13"
   },
   {
     "id": "miles-accident-followup-3",
