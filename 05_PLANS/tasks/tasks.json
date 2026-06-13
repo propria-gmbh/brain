@@ -4515,7 +4515,7 @@
     "parent_id": "area-personal-finance-счета-и-подписки",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-06-07",
+    "deadline": "2026-06-20",
     "priority": "red",
     "stakes": null,
     "context": null,
@@ -9630,7 +9630,8 @@
     "context": "perekur",
     "deadline": "2026-06-14",
     "someday": false,
-    "done": false
+    "done": false,
+    "order": 0.0
   },
   {
     "id": "проверить-twint-в-shopify-admin-для-marcfrancoisch",

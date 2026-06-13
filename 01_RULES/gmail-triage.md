@@ -32,6 +32,9 @@ Self-learning rules based on observed user actions. Update after each inbox sess
 | Google location sharing reminders | Archive |
 | Auto-reply confirmation (subject "Vielen Dank für Ihre E-Mail") | Archive |
 | nausys.com sailing newsletters | Yachting + archive |
+| Revolut "Your expenses are missing some info" | Delete |
+| Revolut "Your weekly expenses summary" | Delete |
+| newsletter@deutscheoperberlin.de | Always read and summarize content to user |
 | Ryanair / travel reminders | Archive after calendar event is created |
 | AliExpress tracking notifications | Delete after informing user |
 
@@ -49,6 +52,9 @@ Cannot click unsubscribe links via MCP. Tell user to unsubscribe manually first,
 - info@skippercheck.net (unsubscribed 2026-05-21)
 
 ## Spam watch list — flag immediately if appears in inbox again
+
+Unsubscribed 2026-05-20 (still sending as of 2026-06-11 — flag + delete):
+- info@skippercheck.net
 
 Unsubscribed 2026-05-20:
 - noreply@gelato.com
@@ -70,6 +76,10 @@ Unsubscribed 2026-05-27 (yacht newsletters — keep worldcruising.com):
 Старые письма в Rechnungen (50 шт.) не трогать.
 
 Поисковые ключевые слова для инвойсов: receipt, invoice, rechnung, счет, счета
+
+## Правило: метка = убрать INBOX
+
+Когда любая метка присваивается треду из inbox (label_thread или label_message) — **всегда** сразу вызывать unlabel_thread/unlabel_message с INBOX. Без исключений.
 
 ## After creating a task from an email
 

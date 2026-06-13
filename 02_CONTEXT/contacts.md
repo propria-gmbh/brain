@@ -75,6 +75,15 @@
 - Доставка: только курьерская, без постаматов
 - Web: https://www.kungfubuy.com
 
+## Propria GmbH — основная операционная компания
+
+- Юридический адрес: Potsdamer Straße 92, 10785 Berlin
+- HRB: 273583 B · Amtsgericht Berlin-Charlottenburg
+- Steuernummer: 30/479/52142
+- USt-IdNr.: DE453380620
+- Geschäftsführer: Ilja Disterheft
+- Email: info@propria.gmbh
+
 ## Алла Дудниченко — бухгалтер (Propria / Tacura)
 
 - Компания: HECHT, von LUXBURG (та же фирма)

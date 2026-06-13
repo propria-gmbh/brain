@@ -230,6 +230,52 @@ if (inboxInp) inboxInp.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') addInboxTask();
 });
 
+// overdue filter
+(function() {
+  var btn = document.getElementById('overdue-filter');
+  if (!btn) return;
+  var today = new Date().toISOString().split('T')[0];
+  var on = localStorage.getItem('od-filter') === '1';
+  function apply() {
+    var rows = document.querySelectorAll('.task-row');
+    if (on) {
+      var visibleIds = new Set();
+      rows.forEach(function(r) {
+        var dl = r.querySelector('.deadline');
+        if (dl && dl.classList.contains('overdue')) visibleIds.add(r.dataset.id);
+      });
+      rows.forEach(function(r) {
+        if (!r.classList.contains('done-task')) {
+          r.style.display = visibleIds.has(r.dataset.id) ? '' : 'none';
+        }
+      });
+      document.querySelectorAll('details').forEach(function(det) {
+        var hasVisible = Array.from(det.querySelectorAll('.task-row')).some(function(r) {
+          return visibleIds.has(r.dataset.id);
+        });
+        det.style.display = hasVisible ? '' : 'none';
+        if (hasVisible) det.open = true;
+      });
+    } else {
+      rows.forEach(function(r) { r.style.display = ''; });
+      document.querySelectorAll('details').forEach(function(det) { det.style.display = ''; });
+    }
+    btn.style.background = on ? 'var(--s-act)' : '';
+    btn.style.color = on ? '#5b8dd9' : '';
+  }
+  apply();
+  btn.addEventListener('click', function() {
+    on = !on;
+    localStorage.setItem('od-filter', on ? '1' : '0');
+    // turn off someday filter if we're turning this on
+    if (on) localStorage.setItem('sd-filter', '0');
+    apply();
+    // re-apply someday off
+    var sdBtn = document.getElementById('someday-filter');
+    if (sdBtn && on) sdBtn.click && false;
+  });
+})();
+
 // tasks.json: toggle done
 document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
   el.addEventListener('click', function(e) {
@@ -1224,11 +1270,19 @@ def render_tasks():
     areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
     someday_count = sum(1 for t in active if t.get("someday") and t.get("type") != "area")
     sd_limit = 20
+    today_iso = date.today().isoformat()
+    overdue_count = sum(
+        1 for t in active
+        if t.get("type") != "area" and t.get("deadline") and t["deadline"] not in ("-", "None")
+        and t["deadline"] <= today_iso
+    )
     sd_warn_style = ";color:#e74c3c;font-weight:600" if someday_count > sd_limit else ""
+    overdue_warn_style = ";color:#e74c3c;font-weight:600" if overdue_count > 0 else ""
     b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};window.SOMEDAY_LIMIT={sd_limit};</script>\n"
          f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">'
          f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="flex:1;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr)">'
          f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0" data-count="{someday_count}">Someday</button>'
+         f'<button id="overdue-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0{overdue_warn_style}" data-count="{overdue_count}">Просрочено ({overdue_count})</button>'
          f'</div>\n'
          f"<div id=\"top-areas\">\n")
     for area in top_areas:
