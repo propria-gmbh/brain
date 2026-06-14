@@ -13,8 +13,8 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
   .card { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 0.2s; }
   .card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
-  .card img { width: 100%; height: 270px; object-fit: cover; display: block; background: #eee; transition: transform 0.5s ease; }
-  .card:hover img { transform: scale(1.5); }
+  .img-wrap { height: 270px; overflow: hidden; cursor: zoom-in; }
+  .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; background: #eee; }
   .card-body { padding: 12px 14px 14px; }
   .card-title { font-size: 12px; color: #555; line-height: 1.5; margin-bottom: 8px; min-height: 36px; }
   .price { font-size: 14px; font-weight: bold; color: #222; }
@@ -32,13 +32,13 @@
 <body>
 
 <h1>Linen Sourcing Catalog</h1>
-<p class="subtitle">marcfrancois.ch (women's) · Casa Giannini (bedding) · Updated 2026-06-13 · via Miles (3PL) / 1688.com</p>
+<p class="subtitle">marcfrancois.ch (women's) · Casa Giannini (bedding) · Updated 2026-06-14 · via Miles (3PL) / 1688.com</p>
 
 <h2>Women's Dresses &amp; Tops</h2>
 <div class="grid">
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01vg2ZwC1oOz16AqwXG_!!2220410465216-0-cib.jpg_.webp" alt="Linen sleeveless dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01vg2ZwC1oOz16AqwXG_!!2220410465216-0-cib.jpg_.webp" alt="Linen sleeveless dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Japanese Minimalist Linen Sleeveless Maxi Dress — Backless, Drawstring Waist</p>
@@ -49,7 +49,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01qRWQey2H5OvscSwnu_!!1675409099-0-cib.jpg_.webp" alt="French vintage linen dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01qRWQey2H5OvscSwnu_!!1675409099-0-cib.jpg_.webp" alt="French vintage linen dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">French-Style Vintage Linen Dress — V-Neck, Waist-Cinching, Slit Mid-Length</p>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01q9lQor1oOz1MNJJgk_!!2220410465216-0-cib.jpg_.webp" alt="Tencel linen dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01q9lQor1oOz1MNJJgk_!!2220410465216-0-cib.jpg_.webp" alt="Tencel linen dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Tencel-Linen Irregular Tie-Waist Dress — V-Neck, Asymmetric Hem</p>
@@ -71,7 +71,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01WTWSIF1GMy9XClson_!!2206591070609-0-cib.jpg_.webp" alt="Cotton linen polka dot dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01WTWSIF1GMy9XClson_!!2206591070609-0-cib.jpg_.webp" alt="Cotton linen polka dot dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Cotton-Linen Polka Dot Loose Dress — V-Neck, Short Sleeve, Mid-Length</p>
@@ -82,7 +82,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01YyP9hx1aU6onHnK5j_!!2200596663332-0-cib.jpg_.webp" alt="Striped linen maxi dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01YyP9hx1aU6onHnK5j_!!2200596663332-0-cib.jpg_.webp" alt="Striped linen maxi dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Classic Striped Linen Maxi Dress — Vintage Artistic Style, with Pockets</p>
@@ -93,7 +93,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01jqKuvf27EQV4cZlRm_!!2214268657765-0-cib.jpg_.webp" alt="Linen embroidered shirt">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01jqKuvf27EQV4cZlRm_!!2214268657765-0-cib.jpg_.webp" alt="Linen embroidered shirt"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">100% Natural Linen Embroidered White Shirt — Short Sleeve, High-End</p>
@@ -104,7 +104,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01453Oha1RF9HKuo7LA_!!2453352081-0-cib.jpg_.webp" alt="Chinese style linen shirt">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01453Oha1RF9HKuo7LA_!!2453352081-0-cib.jpg_.webp" alt="Chinese style linen shirt"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Hemp Color-Blocked Linen Shirt — Stand Collar, Button-Up, Short Sleeve</p>
@@ -115,7 +115,7 @@
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01iHcUQW1RF9AHKfAy1_!!2453352081-0-cib.jpg_.webp" alt="Retro linen tea dress">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01iHcUQW1RF9AHKfAy1_!!2453352081-0-cib.jpg_.webp" alt="Retro linen tea dress"></div>
     <div class="card-body">
       <span class="tag tag-w">Women</span>
       <p class="card-title">Retro Cotton-Linen Stand Collar Diagonal Button Top — Tea Dress Style</p>
@@ -127,45 +127,74 @@
 
 </div>
 
-<h2>Men's Clothing</h2>
+<h2>Men's Clothing — 100% Linen</h2>
 <div class="grid">
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01QGdRqM29CFvxuUIH5_!!2215020858031-0-cib.jpg_.webp" alt="Old money linen shirt long sleeve navy">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN01B9y20f1LmgbnP8bij_!!2220139601342-0-cib.jpg_.webp" alt="100% linen old money long sleeve shirt"></div>
     <div class="card-body">
       <span class="tag tag-m">Men</span>
-      <p class="card-title">Lightweight Breathable Linen Shirt — Long Sleeve, 2026 Old Money Style, Multi-Color</p>
-      <p class="price">¥174 <span>≈ €22.60</span></p>
+      <p class="card-title">100% Linen Long Sleeve Shirt — Old Money Style, Casual Business, Spring/Summer · 81% return rate</p>
+      <p class="price">¥168 <span>≈ €21.85</span></p>
       <p class="moq">MOQ: уточнить у Miles</p>
-      <a class="link" href="https://detail.1688.com/offer/1036070292642.html" target="_blank">View on 1688 →</a>
+      <a class="link" href="https://detail.1688.com/offer/972102295127.html" target="_blank">View on 1688 →</a>
     </div>
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01jRVXEP2I9oLycXhhM_!!2216453429244-0-cib.jpg_.webp" alt="Solid color linen long sleeve shirt">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN010umTjb2AhgkCKOlyA_!!2215145088235-0-cib.jpg_.webp" alt="Italian style 100% linen shirt old money"></div>
     <div class="card-body">
       <span class="tag tag-m">Men</span>
-      <p class="card-title">30% Linen Solid Color Shirt — Long Sleeve, Multi-Color, Breathable, Anti-Wrinkle</p>
-      <p class="price">¥75 <span>≈ €9.75</span></p>
+      <p class="card-title">Italian-Style 100% Linen Long Sleeve Shirt — Old Money, Loose Fit, Sun-Protective</p>
+      <p class="price">¥145 <span>≈ €18.85</span></p>
       <p class="moq">MOQ: уточнить у Miles</p>
-      <a class="link" href="https://detail.1688.com/offer/1018878030427.html" target="_blank">View on 1688 →</a>
+      <a class="link" href="https://detail.1688.com/offer/1052865198259.html" target="_blank">View on 1688 →</a>
     </div>
   </div>
 
   <div class="card">
-    <img src="https://cbu01.alicdn.com/img/ibank/O1CN01PsJFgW1wnGuDq6Rtp_!!2563606352-0-cib.jpg_.webp" alt="Striped cotton linen short sleeve shirt">
+    <div class="img-wrap"><img src="https://cbu01.alicdn.com/img/ibank/O1CN019R67f11YRF7EgPhSq_!!2209657723055-0-cib.jpg_.webp" alt="100% linen luxury feel long sleeve shirt"></div>
     <div class="card-body">
       <span class="tag tag-m">Men</span>
-      <p class="card-title">Cotton-Linen Striped Short Sleeve Shirt — Slim Fit, Small Collar, Casual</p>
-      <p class="price">¥48 <span>≈ €6.24</span></p>
+      <p class="card-title">100% Linen Long Sleeve Shirt — Antibacterial, Breathable, Luxury Urban Feel · 62% return rate</p>
+      <p class="price">¥136 <span>≈ €17.67</span></p>
       <p class="moq">MOQ: уточнить у Miles</p>
-      <a class="link" href="https://detail.1688.com/offer/549019555497.html" target="_blank">View on 1688 →</a>
+      <a class="link" href="https://detail.1688.com/offer/1043112506919.html" target="_blank">View on 1688 →</a>
     </div>
   </div>
 
 </div>
 
-<p class="updated">Обновлено: 2026-06-13 · Курс: 1 CNY = €0.13 · Все ссылки ведут на 1688.com (требуется аккаунт для заказа)</p>
+<p class="updated">Обновлено: 2026-06-14 · Курс: 1 CNY = €0.13 · Все ссылки ведут на 1688.com (требуется аккаунт для заказа)</p>
+
+<div id="zoom-overlay" style="display:none;position:fixed;z-index:9999;background:#fff;border:1px solid #ddd;box-shadow:0 8px 32px rgba(0,0,0,0.22);border-radius:10px;width:440px;height:440px;pointer-events:none;"><img id="zoom-img" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"></div>
+
+<script>
+(function() {
+  var overlay = document.getElementById('zoom-overlay');
+  var zImg = document.getElementById('zoom-img');
+
+  document.querySelectorAll('.img-wrap').forEach(function(wrap) {
+    var img = wrap.querySelector('img');
+    wrap.addEventListener('mouseenter', function() {
+      zImg.src = img.src;
+      overlay.style.display = 'block';
+    });
+    wrap.addEventListener('mousemove', function(e) {
+      var left = e.clientX + 24;
+      if (left + 450 > window.innerWidth) left = e.clientX - 464;
+      var top = e.clientY - 220;
+      if (top < 8) top = 8;
+      if (top + 450 > window.innerHeight) top = window.innerHeight - 458;
+      overlay.style.left = left + 'px';
+      overlay.style.top = top + 'px';
+    });
+    wrap.addEventListener('mouseleave', function() {
+      overlay.style.display = 'none';
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
