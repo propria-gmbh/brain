@@ -167,7 +167,7 @@
 
 <p class="updated">Обновлено: 2026-06-14 · Курс: 1 CNY = €0.13 · Все ссылки ведут на 1688.com (требуется аккаунт для заказа)</p>
 
-<div id="zoom-overlay" style="display:none;position:fixed;z-index:9999;background:#fff;border:1px solid #ddd;box-shadow:0 8px 32px rgba(0,0,0,0.22);border-radius:10px;width:440px;height:440px;pointer-events:none;"><img id="zoom-img" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"></div>
+<div id="zoom-overlay" style="display:none;position:fixed;z-index:9999;background:#fff;border:1px solid #ddd;box-shadow:0 8px 32px rgba(0,0,0,0.22);border-radius:10px;width:600px;height:600px;pointer-events:none;"><img id="zoom-img" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"></div>
 
 <script>
 (function() {
@@ -182,10 +182,10 @@
     });
     wrap.addEventListener('mousemove', function(e) {
       var left = e.clientX + 24;
-      if (left + 450 > window.innerWidth) left = e.clientX - 464;
-      var top = e.clientY - 220;
+      if (left + 610 > window.innerWidth) left = e.clientX - 624;
+      var top = e.clientY - 300;
       if (top < 8) top = 8;
-      if (top + 450 > window.innerHeight) top = window.innerHeight - 458;
+      if (top + 610 > window.innerHeight) top = window.innerHeight - 618;
       overlay.style.left = left + 'px';
       overlay.style.top = top + 'px';
     });

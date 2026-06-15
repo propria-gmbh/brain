@@ -4174,7 +4174,7 @@
     "parent_id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-05-31",
+    "deadline": "2026-06-14",
     "priority": null,
     "stakes": null,
     "context": null,
@@ -9736,5 +9736,15 @@
     "recurring": "monthly",
     "id": "propria-разослать-зарплатные-листки-next",
     "status": "todo"
+  },
+  {
+    "id": "shopify-limyko-de-termination-form",
+    "title": "Отправить форму отмены домена limyko.de в Shopify (контакт должен совпадать с админом)",
+    "parent_id": "ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": "2026-11-01",
+    "context": "perekur",
+    "created_at": "2026-06-13"
   }
 ]
