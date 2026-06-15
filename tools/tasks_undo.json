@@ -5409,7 +5409,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-15"
   },
   {
     "id": "personal-home-переделать-стул-перетянуть-спинку",
@@ -9745,6 +9746,7 @@
     "someday": true,
     "deadline": "2026-11-01",
     "context": "perekur",
-    "created_at": "2026-06-13"
+    "created_at": "2026-06-13",
+    "order": 0.0
   }
 ]
