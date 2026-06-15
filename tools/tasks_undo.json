@@ -270,7 +270,8 @@
     "status": "active",
     "order": 1.0,
     "created_at": "2026-05-25",
-    "someday": true
+    "someday": true,
+    "deadline": "2026-06-15"
   },
   {
     "id": "area-personal-finance-генерали-зубы",
