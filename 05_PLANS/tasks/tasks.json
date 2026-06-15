@@ -265,7 +265,7 @@
   {
     "id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
     "title": "Найти автомобиль в лизинг или в абонемент (с сентября 2026)",
-    "type": "area",
+    "type": "task",
     "parent_id": "area-personal-finance",
     "status": "active",
     "order": 1.0,

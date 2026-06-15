@@ -8432,7 +8432,8 @@
     "deadline": "2026-06-12",
     "done": false,
     "someday": false,
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-15"
   },
   {
     "id": "miles-фолоуап-инвойсы-propria-тикет-5356147",
