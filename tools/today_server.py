@@ -386,9 +386,14 @@ if (searchInput) {
       row.style.display = (!q || text.includes(q)) ? '' : 'none';
     });
     document.querySelectorAll('details').forEach(function(det) {
+      var summaryText = (det.querySelector('summary') || det).textContent.toLowerCase();
+      var summaryMatch = q && summaryText.includes(q);
+      if (summaryMatch) {
+        det.querySelectorAll('.task-row').forEach(function(r) { r.style.display = ''; });
+      }
       var visible = det.querySelectorAll('.task-row:not([style*="none"])').length;
-      det.style.display = (!q || visible > 0) ? '' : 'none';
-      if (q && visible > 0) det.open = true;
+      det.style.display = (!q || visible > 0 || summaryMatch) ? '' : 'none';
+      if (q && (visible > 0 || summaryMatch)) det.open = true;
     });
   });
 }
