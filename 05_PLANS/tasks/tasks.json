@@ -7461,11 +7461,12 @@
     "type": "task",
     "parent_id": "area-allspice",
     "title": "Получить домен allspicefashion.com (ожидание до 31.05)",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "done": false,
     "created_at": "2026-05-29",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-16"
   },
   {
     "id": "task-allspice-verify",
