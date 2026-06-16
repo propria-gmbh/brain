@@ -9393,7 +9393,7 @@
     "title": "Получить 50% депозит от Юрия",
     "type": "task",
     "parent_id": "area-personal-sailing-поход-по-лазурке",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -9405,7 +9405,8 @@
     "done": false,
     "done_date": null,
     "created": "2026-06-10",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-16"
   },
   {
     "id": "профолоуапить-сашу-по-парусному-походу",
