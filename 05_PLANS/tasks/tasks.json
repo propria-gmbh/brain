@@ -9370,25 +9370,6 @@
     "order": 0.0
   },
   {
-    "id": "заполнить-крюлист",
-    "title": "Заполнить крюлист",
-    "type": "task",
-    "parent_id": "area-personal-sailing-поход-по-лазурке",
-    "status": "todo",
-    "someday": false,
-    "deadline": "2026-07-20",
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": "Подзадача: запросить данные у Юры",
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
     "id": "получить-50-депозит-от-юрия",
     "title": "Получить 50% депозит от Юрия",
     "type": "task",
