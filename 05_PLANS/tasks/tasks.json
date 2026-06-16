@@ -9780,5 +9780,24 @@
     "marker": "🟢",
     "priority": "green",
     "order": 0.0
+  },
+  {
+    "id": "разобраться-с-применением-layer-19-20-capability-manifest-ad",
+    "title": "Разобраться с применением Layer 19/20 (capability manifest + adversarial review) к текущей работе с Claude",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Обсуждали 2026-06-16: интересна идея автономных capability с manifest/rate-limit/outcome-check, но не для всей работы целиком, а для 1-2 узких повторяющихся операций (например авто-закрытие задач). Нужно решить, стоит ли ослаблять confirmation.md для конкретных capability.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-16",
+    "order": 0.0
   }
 ]
