@@ -9763,5 +9763,24 @@
     "done_at": null,
     "created_at": "2026-06-16",
     "order": 0.0
+  },
+  {
+    "id": "заполнить-форму-twint-для-marcfrancoisch",
+    "title": "Заполнить форму TWINT для marcfrancois.ch",
+    "type": "task",
+    "parent_id": "area-marc-francois",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Owner: Ilja Disterheft. Company: Propria GmbH. Address: Potsdamer Straße 92, 10785 Berlin. Email/Phone: info@propria.gmbh / +49 1626814404. VAT-ID: DE453380620. Reg. No: HRB 273583 B (Amtsgericht Berlin Charlottenburg).",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-16",
+    "order": 0.0
   }
 ]
