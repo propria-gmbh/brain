@@ -5400,7 +5400,7 @@
     "project": "personal/home",
     "parent_id": "area-personal-home-house-физический-дом",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
