@@ -9788,11 +9788,12 @@
   {
     "id": "inbox-протестировать-подключение-gads",
     "title": "Протестировать подключение GAds",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-16",
     "marker": "🟢",
-    "priority": "green"
+    "priority": "green",
+    "order": 0.0
   }
 ]
