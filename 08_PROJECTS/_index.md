@@ -21,12 +21,12 @@ brain/ — командный центр. Реальная разработка 
 
 | Slug | Назначение | Где код | Статус |
 |---|---|---|---|
-| [listing_automation](../../../Projects/listing_automation/) | Автоматизация листингов | `~/Projects/listing_automation/` | active |
+| [listing_automation](../../../Projects/_archive/listing_automation/) | Автоматизация листингов | `~/Projects/_archive/listing_automation/` | archived |
 | [vaition](vaition/AGENTS.md) | VAYDY Layer 0 — протокол / спецификация | `~/Projects/vaition/` | active |
 | [personal-agent](personal-agent/AGENTS.md) | Персональный Telegram-бот + Gmail агент на Hetzner VPS | `~/Projects/personal-agent/` | active |
 | [customer_support](customer_support/AGENTS.md) | AI-assisted reply drafting для Shopify + Gorgias | `~/Projects/customer_support/` | draft |
-| [invertomatic](invertomatic/AGENTS.md) | Финансовая модель / ранняя стадия | `~/Projects/invertomatic/` | idea |
-| [home-server](home-server/AGENTS.md) | Домашний сервер | `~/Projects/Home Server/` | placeholder |
+| [invertomatic](../../../Projects/_archive/invertomatic/) | Финансовая модель / ранняя стадия | `~/Projects/_archive/invertomatic/` | archived |
+| [shopify_assistant](../../../Projects/_archive/shopify_assistant/) | Мультиролевой workflow Planner → Developer → Validator | `~/Projects/_archive/shopify_assistant/` | archived |
 
 ## Споры / Претензии
 
