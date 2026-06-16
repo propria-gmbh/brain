@@ -9685,26 +9685,6 @@
     "done": false
   },
   {
-    "id": "personal-зарегистрировать-марию-на-schulbuchausleihe",
-    "title": "Зарегистрировать Марию на Schulbuchausleihe через IServ",
-    "type": "task",
-    "parent_id": "area-personal-home",
-    "status": "todo",
-    "someday": false,
-    "deadline": "2026-06-16",
-    "priority": null,
-    "stakes": null,
-    "context": "perekur",
-    "goal": null,
-    "tags": [],
-    "notes": "Открывается 15.06. Войти через IServ аккаунт Марии → модуль Schulbuchausleihe → оплатить через Überweisungsträger внутри IServ. Не переводить напрямую на счёт школы.",
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-12",
-    "order": 0.0,
-    "done": false
-  },
-  {
     "id": "написать-lanyou-и-hongda-запрос-на-образцы-и-условия-oem-для",
     "title": "Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Giannini",
     "type": "task",

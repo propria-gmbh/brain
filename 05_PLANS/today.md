@@ -7,8 +7,8 @@
 - [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [ ] Ответить AB в Slack
-- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [x] 2026-06-16 Ответить AB в Slack
+- [x] 2026-06-16 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Задачи
 
