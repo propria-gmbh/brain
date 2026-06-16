@@ -35,7 +35,7 @@
 
 - Адрес: Eichhornstraße 2, 10785 Berlin (The Playce)
 - Тел: +49 30 25925300
-- Email: praxis-wolf@gzpp.de
+- Email: praxis-wolf-berlin@hotmail.com
 - Web: gzpp.de
 - Режим: до 16:00
 
