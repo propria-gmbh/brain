@@ -9807,7 +9807,7 @@
     "parent_id": "area-marc-francois",
     "status": "waiting",
     "someday": false,
-    "deadline": null,
+    "deadline": "2026-06-22",
     "priority": null,
     "stakes": null,
     "context": null,
