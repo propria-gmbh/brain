@@ -66,7 +66,7 @@ def main():
     changed = 0
 
     for task in tasks:
-        if task.get("done") or task.get("done_at"):
+        if task.get("status") == "done":
             continue
         if task.get("type") in ("area", "project"):
             continue
@@ -74,9 +74,8 @@ def main():
         for done_title in done_titles:
             # Exact match only — prefix/substring matching caused false positives
             if done_title and done_title == task_title:
-                task["done"] = True
-                task["done_at"] = today_str
                 task["status"] = "done"
+                task["done_at"] = today_str
                 changed += 1
                 break
 
