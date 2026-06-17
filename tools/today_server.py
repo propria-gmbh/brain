@@ -385,7 +385,7 @@ if (searchInput) {
       var text = (row.querySelector('.task-text') || row).textContent.toLowerCase();
       row.style.display = (!q || text.includes(q)) ? '' : 'none';
     });
-    document.querySelectorAll('details').forEach(function(det) {
+    Array.from(document.querySelectorAll('details')).reverse().forEach(function(det) {
       var summaryText = (det.querySelector('summary') || det).textContent.toLowerCase();
       var summaryMatch = q && summaryText.includes(q);
       if (summaryMatch) {
