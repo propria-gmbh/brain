@@ -2122,7 +2122,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 4.0
+    "order": 4.0,
+    "marker": "🔴"
   },
   {
     "id": "propria-ответить-алле-прислать-данные-для-начисления",
