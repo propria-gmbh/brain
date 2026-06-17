@@ -9729,7 +9729,7 @@
     "title": "Узнать свой класс автостраховки",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-15",
     "order": 0.0
   },
