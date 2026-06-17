@@ -9825,9 +9825,10 @@
   {
     "id": "inbox-решить-заводить-ли-бизнес-аккаунт-на-kleineanzeige",
     "title": "Решить, заводить ли бизнес-аккаунт на Kleineanzeigen",
-    "parent_id": "area-inbox",
+    "parent_id": "area-safe-min",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-17"
+    "created_at": "2026-06-17",
+    "order": 0.0
   }
 ]
