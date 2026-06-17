@@ -9760,7 +9760,7 @@
     "status": "todo",
     "someday": false,
     "deadline": "2026-06-23",
-    "priority": null,
+    "priority": "red",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -9769,7 +9769,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-16",
-    "order": 0.0
+    "order": 0.0,
+    "marker": "🔴"
   },
   {
     "id": "заполнить-форму-twint-для-marcfrancoisch",
