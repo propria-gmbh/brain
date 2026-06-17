@@ -9788,7 +9788,7 @@
     "id": "разобраться-с-применением-layer-19-20-capability-manifest-ad",
     "title": "Разобраться с применением Layer 19/20 (capability manifest + adversarial review) к текущей работе с Claude",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ai-systems",
     "status": "todo",
     "someday": false,
     "deadline": null,
