@@ -9948,7 +9948,7 @@
     "id": "протестировать-систему-listing-automation-митя-повторный-рау",
     "title": "Протестировать систему Listing Automation (Митя) — повторный раунд",
     "type": "task",
-    "parent_id": "area-ecom",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
     "deadline": "2026-06-18",
