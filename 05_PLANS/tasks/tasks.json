@@ -9974,5 +9974,24 @@
     "created_at": "2026-06-18",
     "order": 0.0,
     "deadline": "2026-06-22"
+  },
+  {
+    "id": "починить-sync_today_donepy-хук-не-реагирует-на-правки-через-",
+    "title": "Починить sync_today_done.py — хук не реагирует на правки через дашборд today_server.py, только на Edit/Write",
+    "type": "task",
+    "parent_id": "area-brain-dashboard-доработки",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-18",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-18",
+    "order": 0.0
   }
 ]
