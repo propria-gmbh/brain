@@ -9857,7 +9857,7 @@
     "id": "фолоуап-мехлис-ждать-пересчёт-tiguan-sf3-vollkasko-gewerblic",
     "title": "Фолоуап Мехлис — ждать пересчёт Tiguan (SF3, Vollkasko, Gewerblich, ЕС)",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-purchases",
     "status": "todo",
     "someday": false,
     "deadline": "2026-06-24",
