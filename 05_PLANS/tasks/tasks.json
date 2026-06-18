@@ -9918,5 +9918,24 @@
     "done_at": null,
     "created_at": "2026-06-18",
     "order": 0.0
+  },
+  {
+    "id": "ответить-на-тест-вадима",
+    "title": "Ответить на тест Вадима",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": "2026-06-18",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-18",
+    "order": 0.0
   }
 ]
