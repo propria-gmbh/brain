@@ -9651,7 +9651,9 @@
     "deadline": "2026-06-14",
     "someday": false,
     "done": false,
-    "order": 0.0
+    "order": 0.0,
+    "status": "done",
+    "done_at": "2026-06-18"
   },
   {
     "id": "проверить-twint-в-shopify-admin-для-marcfrancoisch",
