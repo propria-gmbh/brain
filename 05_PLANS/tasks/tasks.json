@@ -2215,7 +2215,7 @@
     "parent_id": "area-propria",
     "status": "todo",
     "someday": false,
-    "deadline": null,
+    "deadline": "2026-06-19",
     "priority": "red",
     "stakes": null,
     "context": null,
