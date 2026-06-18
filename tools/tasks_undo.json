@@ -10016,7 +10016,7 @@
   {
     "id": "inbox-gmc-комплайенс",
     "title": "GMC комплайенс",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-18",
@@ -10037,6 +10037,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-18"
+    "created_at": "2026-06-18",
+    "order": 0.0
   }
 ]
