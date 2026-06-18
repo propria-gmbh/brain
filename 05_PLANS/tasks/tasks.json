@@ -9937,5 +9937,24 @@
     "done_at": null,
     "created_at": "2026-06-18",
     "order": 0.0
+  },
+  {
+    "id": "протестировать-систему-listing-automation-митя-повторный-рау",
+    "title": "Протестировать систему Listing Automation (Митя) — повторный раунд",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": "2026-06-18",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-18",
+    "order": 0.0
   }
 ]
