@@ -9803,7 +9803,8 @@
     "created_at": "2026-06-16",
     "marker": "🟢",
     "priority": "green",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-18"
   },
   {
     "id": "разобраться-с-применением-layer-19-20-capability-manifest-ad",
