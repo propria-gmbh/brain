@@ -10036,7 +10036,7 @@
     "title": "Customer Support",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-18",
     "order": 0.0
   }
