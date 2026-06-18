@@ -9993,5 +9993,24 @@
     "done_at": null,
     "created_at": "2026-06-18",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-mehlis-kaskoschutz-reifen-2-fahrer-tiguan",
+    "title": "Фолоуап Mehlis — KaskoSchutz, Reifen, 2 Fahrer (Tiguan)",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-21",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "context: perekur",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-18",
+    "order": 0.0
   }
 ]
