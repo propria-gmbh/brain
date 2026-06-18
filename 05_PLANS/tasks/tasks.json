@@ -10025,7 +10025,7 @@
   {
     "id": "inbox-поиск-создание-и-публикация-коротких-видео",
     "title": "Поиск, создание и публикация коротких видео",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-18",
