@@ -270,7 +270,7 @@
     "status": "todo",
     "order": 1.0,
     "created_at": "2026-05-25",
-    "someday": true,
+    "someday": false,
     "deadline": "2026-06-29",
     "context": "deep"
   },
