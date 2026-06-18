@@ -9902,7 +9902,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-18",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-18"
   },
   {
     "id": "фолоуап-riedemann-ждать-пересчёт-volvo-xc60-sf3-vollkasko-ge",

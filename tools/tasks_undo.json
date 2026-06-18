@@ -6686,7 +6686,8 @@
     "order": 2.0,
     "marker": "🟧",
     "priority": "orange",
-    "context": "deep"
+    "context": "deep",
+    "scheduled_date": "2026-06-18"
   },
   {
     "id": "sailing-oksana-instructor-followup",
