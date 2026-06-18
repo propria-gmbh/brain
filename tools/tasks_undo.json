@@ -9937,7 +9937,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-18",
-    "order": 0.0
+    "order": 0.0,
+    "context": "deep"
   },
   {
     "id": "протестировать-систему-listing-automation-митя-повторный-рау",

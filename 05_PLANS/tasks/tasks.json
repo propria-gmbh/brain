@@ -4724,7 +4724,8 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 1.0,
-    "executor": "claude"
+    "executor": "claude",
+    "marker": "🔴"
   },
   {
     "id": "personal-home-проверить-даты-паспортов-и-расставить-напомин",
