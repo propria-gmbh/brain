@@ -9515,7 +9515,7 @@
     "type": "task",
     "parent_id": "area-ecom-knowledge",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
