@@ -9899,11 +9899,12 @@
     "id": "inbox-убрать-счета-из-коробок-для-сережи",
     "title": "Убрать счета из коробок для Сережи",
     "parent_id": "area-personal-home",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-18",
     "order": 0.0,
-    "scheduled_date": "2026-06-18"
+    "scheduled_date": "2026-06-18",
+    "done_at": "2026-06-18"
   },
   {
     "id": "фолоуап-riedemann-ждать-пересчёт-volvo-xc60-sf3-vollkasko-ge",
