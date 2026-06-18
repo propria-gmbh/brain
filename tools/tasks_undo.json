@@ -10034,7 +10034,7 @@
   {
     "id": "inbox-customer-support",
     "title": "Customer Support",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-18",
