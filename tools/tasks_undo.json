@@ -4714,7 +4714,7 @@
     "status": "todo",
     "someday": false,
     "deadline": null,
-    "priority": "red",
+    "priority": "green",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -4725,7 +4725,7 @@
     "created_at": "2026-05-25",
     "order": 1.0,
     "executor": "claude",
-    "marker": "🔴"
+    "marker": "🟢"
   },
   {
     "id": "personal-home-проверить-даты-паспортов-и-расставить-напомин",
