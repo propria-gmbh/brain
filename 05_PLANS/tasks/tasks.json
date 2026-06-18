@@ -10019,6 +10019,15 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
+    "created_at": "2026-06-18",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-поиск-создание-и-публикация-коротких-видео",
+    "title": "Поиск, создание и публикация коротких видео",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
     "created_at": "2026-06-18"
   }
 ]
