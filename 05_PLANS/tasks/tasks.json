@@ -9929,7 +9929,7 @@
     "title": "Ответить на тест Вадима",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": "2026-06-18",
     "priority": null,
@@ -9938,7 +9938,7 @@
     "tags": [],
     "notes": " [проект vaition/VAYDY — Вадим, нет отдельной area, оставлено в inbox]",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-18",
     "created_at": "2026-06-18",
     "order": 0.0,
     "context": "deep"

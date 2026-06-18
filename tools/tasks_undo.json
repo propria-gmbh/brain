@@ -9965,7 +9965,7 @@
   {
     "id": "inbox-follow-up-twint",
     "title": "Follow up TWINT",
-    "parent_id": "area-inbox",
+    "parent_id": "area-marc-francois",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-18",
