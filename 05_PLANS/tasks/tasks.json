@@ -4405,7 +4405,7 @@
     "project": "personal/finance",
     "parent_id": "area-personal-finance-генерали-зубы",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": "red",
     "stakes": null,
