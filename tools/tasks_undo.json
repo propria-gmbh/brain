@@ -10018,7 +10018,7 @@
     "title": "GMC комплайенс",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-18",
     "order": 0.0
   },
