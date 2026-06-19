@@ -9854,10 +9854,12 @@
     "id": "inbox-решить-заводить-ли-бизнес-аккаунт-на-kleineanzeige",
     "title": "Решить, заводить ли бизнес-аккаунт на Kleineanzeigen",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-17",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-19",
+    "notes": " Решение: gewerblich-аккаунт с Impressum Propria GmbH."
   },
   {
     "id": "фолоуап-мехлис-ждать-пересчёт-tiguan-sf3-vollkasko-gewerblic",
