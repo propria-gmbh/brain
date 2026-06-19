@@ -9952,7 +9952,7 @@
     "type": "task",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": "2026-06-18",
     "priority": null,
     "stakes": null,
