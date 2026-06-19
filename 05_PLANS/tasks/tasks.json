@@ -10058,5 +10058,24 @@
     "done_at": "2026-06-18",
     "created_at": "2026-06-18",
     "order": 0.0
+  },
+  {
+    "id": "создать-таблицу-symptoms_log-в-postgres-мигрени-медикаменты-",
+    "title": "Создать таблицу symptoms_log в Postgres (мигрени/медикаменты) и команду в health.py",
+    "type": "task",
+    "parent_id": "area-ai-systems",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Поля: дата, интенсивность, препарат, доза, триггер-гипотеза. Цель: сопоставлять с food_entries (вино) и погодой. Контекст: schema.sql и health.py на VPS /opt/server-agent/health/. Вечер 19.06 или бэклог.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-19",
+    "order": 0.0
   }
 ]
