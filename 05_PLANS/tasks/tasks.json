@@ -10077,5 +10077,24 @@
     "done_at": null,
     "created_at": "2026-06-19",
     "order": 0.0
+  },
+  {
+    "id": "подготовить-и-отправить-b2b-посыл-для-hausverwaltungen-vermi",
+    "title": "Подготовить и отправить B2B-посыл для Hausverwaltungen/Vermieter/Maklerbüros (другой канал, не Kleinanzeigen) — 'один подрядчик для всех ваших квартир'",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-19",
+    "order": 0.0
   }
 ]
