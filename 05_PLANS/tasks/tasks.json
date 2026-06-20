@@ -10117,5 +10117,24 @@
     "done_at": null,
     "created_at": "2026-06-20",
     "order": 0.0
+  },
+  {
+    "id": "подготовить-agb-и-datenschutzerklärung-для-propria-gmbh-mont",
+    "title": "Подготовить AGB и Datenschutzerklärung для Propria GmbH (montage-услуги)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-20",
+    "order": 0.0
   }
 ]
