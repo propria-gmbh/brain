@@ -78,11 +78,16 @@
 ## Propria GmbH — основная операционная компания
 
 - Юридический адрес: Potsdamer Straße 92, 10785 Berlin
+- Тел: +49 1626 814404
 - HRB: 273583 B · Amtsgericht Berlin-Charlottenburg
+- Alleingesellschafter und Geschäftsführer: Ilja Disterheft
 - Steuernummer: 30/479/52142
 - USt-IdNr.: DE453380620
-- Geschäftsführer: Ilja Disterheft
 - Email: info@propria.gmbh
+
+**Банковские реквизиты (бизнес-счета):**
+- IBAN: DE74 1204 0000 0463 2238 00 · BIC: COBADEFFXXX · Commerzbank AG (основной, для приёма платежей от немецких клиентов)
+- IBAN: LT31 3250 0373 7693 6179 · BIC: REVOLT21 · Intermediary BIC: CHASDEFX · Revolut (мультивалютный)
 
 ## Алла Дудниченко — бухгалтер (Propria / Tacura)
 
