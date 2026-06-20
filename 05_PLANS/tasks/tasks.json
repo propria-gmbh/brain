@@ -10098,5 +10098,24 @@
     "done_at": null,
     "created_at": "2026-06-19",
     "order": 0.0
+  },
+  {
+    "id": "оформить-haftpflichtversicherung-für-handwerker-hiscox-axa-a",
+    "title": "Оформить Haftpflichtversicherung für Handwerker (Hiscox/AXA/Allianz, ~150-300€/год) до первого реального заказа (Georgia, монтаж в июле)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": true,
+    "deadline": "2026-07-01",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-20",
+    "order": 0.0
   }
 ]
