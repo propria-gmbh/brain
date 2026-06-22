@@ -10210,10 +10210,11 @@
     "id": "inbox-проанализировать-объявления-конкурентов",
     "title": "Проанализировать объявления конкурентов",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-22",
     "order": 0.0,
-    "scheduled_date": "2026-06-22"
+    "scheduled_date": "2026-06-22",
+    "done_at": "2026-06-22"
   }
 ]

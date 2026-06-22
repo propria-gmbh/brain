@@ -10199,11 +10199,12 @@
     "id": "inbox-ответить-хайман",
     "title": "Ответить Хайман",
     "parent_id": "area-personal-home",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-22",
     "order": 0.0,
-    "scheduled_date": "2026-06-22"
+    "scheduled_date": "2026-06-22",
+    "done_at": "2026-06-22"
   },
   {
     "id": "inbox-проанализировать-объявления-конкурентов",
