@@ -194,6 +194,55 @@ WhatsApp: 0177 8192313
 
 ---
 
+## Найденные объявления — отклики (мы откликаемся как мастер, не входящий лид)
+
+### Объявление — Wohnung Tegel, Küchenmontage IKEA (найдено 22.06.2026)
+
+**Ссылка:** https://www.kleinanzeigen.de/s-anzeige/kuechenmontage-ikea-gesucht/3440444334-239-24319
+**Локация:** 13509 Berlin-Borsigwalde
+**Размещено:** 21.06.2026
+
+**Текст объявления:**
+```
+Suche gute erfahrene Hände für neue Ikea Küche.
+Arbeitsplatten müssen geschnitten werden und elektro Geräte sowie Spülbecken anschließen.
+
+Küche wird am 11.07 geliefert also gewünscht ab 12.07 für die Montage. Sie müssen alle werkzeugen mitbringen (Silikon wird von mir besorgt).
+
+Bitte die Bilder genau anschauen und geben Sie mir ihres Angebot.
+```
+
+**Видно по фото/планам IKEA-планировщика:** небольшая галерейная кухня (~2,9-3,1 м общий периметр), варочная панель (induction), мойка, вероятно посудомоечная машина (иконка в плане), духовка/вытяжка на рендерах не видны явно. Столешницы требуют резки на месте (минимум под варочную панель).
+
+**Наш отклик (отправлен 22.06.2026):**
+```
+Hallo,
+
+ich biete professionelle Küchenmontage in Berlin an und würde Ihnen gerne ein Festpreisangebot machen.
+
+Der 12.07 als Starttermin passt aktuell bei mir.
+
+Dafür ein paar Fragen:
+- Welche Geräte müssen montiert werden?
+- Ist eine Leiter vor Ort vorhanden, oder soll ich meine eigene mitbringen?
+- Muss eine alte Küche zuerst demontiert/entsorgt werden, oder ist der Raum bereits leer?
+- Wandmaterial (Gipskarton, Mauerwerk oder Beton)? Wichtig für die Befestigung der Hängeschränke.
+- Hat das Kochfeld einen normalen Stecker, oder benötigt es einen Festanschluss? Falls Festanschluss nötig ist, muss dafür ein Elektriker hinzugezogen werden – das liegt außerhalb meines Angebots.
+- Gibt es eine Dunstabzugshaube? Falls ja: eigener Abluftweg nach außen oder Umluftbetrieb?
+- Sind die Arbeitsplatten schon mit Ausschnitten für Spüle/Kochfeld vorbereitet, oder muss ich diese vor Ort ausschneiden?
+
+Ich melde mich innerhalb von 24 Stunden mit einem konkreten Angebot zurück.
+
+Viele Grüße
+Ilja Disterheft
+Propria GmbH
+WhatsApp: 0177 8192313
+```
+
+**Статус:** ожидание ответа.
+
+---
+
 ## Лид #1 — Georgia (входящее сообщение, 19-20.06.2026)
 
 **Запрос:** EBK (Einbauküche) montieren lassen, 3,65 м, IKEA METOD (подтверждено по скрину планировщика, Designcode 32SJYZY, 73 детали). Готова получить кухню за 4-10 дней, монтаж нужен в июле.
