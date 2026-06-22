@@ -8254,7 +8254,7 @@
     "type": "task",
     "parent_id": "area-ecom",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": "orange",
     "stakes": null,
