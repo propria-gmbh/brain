@@ -9896,7 +9896,7 @@
     "title": "Фолоуап Riedemann — ждать пересчёт Volvo XC60 (SF3, Vollkasko, Gewerblich, ЕС, 2 водителя, сентябрь)",
     "type": "task",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-25",
     "priority": null,
@@ -9906,7 +9906,7 @@
     "tags": [],
     "notes": "Отправлено 18.06.2026. Ждём оффер с Vollkasko Allianz SF3, gewerblich Propria GmbH, 2 Fahrer (02.01.1975 + 12.01.1984), 24 мес, 15k км, ЕС, передача сентябрь 2026.",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-22",
     "created_at": "2026-06-18",
     "order": 0.0
   },
