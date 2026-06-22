@@ -1,48 +1,48 @@
-# План на 2026-06-18
+# План на 2026-06-22
 
 ## Утренний чеклист
 
-- [x] 2026-06-18 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-06-18 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [x] 2026-06-18 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [x] 2026-06-18 Ответить AB в Slack
+- [ ] Ответить AB в Slack
 - [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Календарь сегодня
 
-- [x] Papiertonne Abholung (08:00)
-- [ ] **Ask Kevin Anything — 19:00–20:00**
+- Событий нет
 
 ## Задачи
 
 ### Deep (утро)
 
-- [ ] 🟧 Разобраться с primary/non-primary events в трекинге (charlieandted.com) [P=29]
-- [ ] 🟧 Написать в налоговую Райникендорф — нужно запустить или ликвидировать ИП [P=25, дедлайн завтра 19.06]
-- [ ] Протестировать систему Listing Automation (Митя) — повторный раунд [P=23, дедлайн сегодня]
-- [x] 2026-06-18 Ответить на тест Вадима (VAYDY) [P=17, дедлайн сегодня]
+- [ ] 🔴 Разобрать возмещения Generali: сравнить что на руках, что отправлено + почему не оплатили чистку зубов [дедлайн сегодня]
 
 ### Someday — приоритет
 
-- [ ] Найти автомобиль в лизинг или в абонемент (с сентября 2026) [P=16]
-- [ ] Изучить сервисы pythago.io и TrustPilot — оценить применимость для себя [P=8]
+- [ ] Зарегистрировать GMC на физика [P=8]
+- [ ] Определить цели по методике Дорофеева [P=4]
 
 ## Перекур / На улице
 
-- [ ] Отправить форму отмены домена limyko.de в Shopify
+- [ ] Followup: TWINT — ответ от Shopify Payments team [дедлайн сегодня]
+- [ ] Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Giannini [P=8]
+- [ ] Написать письмо в Jobcenter — спросить о формах финансирования
+- [ ] Посмотреть запись 1M call в AB Inner Circle [P=8]
 
 ## 2-я половина дня
 
-- [ ] 🔴 Закрыть кредитную карту Сантандер
-- [ ] Посмотреть запись 1M call в AB Inner Circle
+- [ ] Запросить в АОК возмещение оплаты фитнес-клуба
+- [ ] Разработать форму возврата в PDF
 
 ## На неделе
 
-- Пт 19.06: Weekly Review 13:00–14:00
-- Вс 21.06: Shopify Tribe Meeting 14:00–15:50
-- Вт 23.06: Call ECOM GOOGLE MM 14:00–15:00; Ask AB Anything 20:00–21:00
+- Вт 23.06: Reinigungstag 10:00; Call ECOM GOOGLE MM 14:00–15:00; Ask AB Anything 20:00–21:00; дедлайн «Написать в налоговую Райникендорф»
+- Ср 24.06: Мастермайнд 15:00–20:00
+- Чт 25.06: BioTonne вывоз (BSR)
+- Пт 26.06: Weekly Review 13:00–14:00
+- Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
-- [x] 2026-06-18 Papiertonne Abholung

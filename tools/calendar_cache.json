@@ -1,46 +1,6 @@
 {
-  "updated": "2026-06-17T06:43:00.493827Z",
+  "updated": "2026-06-22T13:30:00Z",
   "events": [
-    {
-      "date": "2026-06-17",
-      "time": "08:00",
-      "summary": "Hausmüll (BSR) Abholung",
-      "calendar": "Disters"
-    },
-    {
-      "date": "2026-06-17",
-      "time": "09:15",
-      "summary": "Augenarzt Termin",
-      "end": "10:15",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-18",
-      "time": "08:00",
-      "summary": "Papiertonne Abholung",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-18",
-      "time": "19:00",
-      "summary": "Ask Kevin Anything",
-      "end": "20:00",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-19",
-      "time": "13:00",
-      "summary": "Weekly Review",
-      "end": "14:00",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-21",
-      "time": "14:00",
-      "summary": "Shopify Tribe Meeting",
-      "end": "15:50",
-      "calendar": "Shopify Tribe"
-    },
     {
       "date": "2026-06-23",
       "time": "10:00",
@@ -61,6 +21,32 @@
       "summary": "Ask AB Anything",
       "end": "21:00",
       "calendar": "ilja"
+    },
+    {
+      "date": "2026-06-24",
+      "time": "15:00",
+      "summary": "Мастермайнд",
+      "end": "20:00",
+      "calendar": "ilja"
+    },
+    {
+      "date": "2026-06-25",
+      "summary": "BioTonne вывоз (BSR)",
+      "calendar": "ilja"
+    },
+    {
+      "date": "2026-06-26",
+      "time": "13:00",
+      "summary": "Weekly Review",
+      "end": "14:00",
+      "calendar": "ilja"
+    },
+    {
+      "date": "2026-06-28",
+      "time": "14:00",
+      "summary": "Shopify Tribe Meeting",
+      "end": "15:50",
+      "calendar": "Shopify Tribe"
     }
   ]
 }
