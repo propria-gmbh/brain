@@ -10124,7 +10124,7 @@
     "title": "Фолоуап Talesnik — Rückfrage zu Rechnung Michael Disterheft / Eigenanteil",
     "type": "task",
     "parent_id": "area-personal-finance-генерали-зубы",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-25",
     "priority": null,
@@ -10134,7 +10134,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-22",
     "created_at": "2026-06-22",
     "order": 0.0
   },
