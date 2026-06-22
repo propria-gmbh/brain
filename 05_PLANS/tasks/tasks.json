@@ -10260,6 +10260,15 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
+    "created_at": "2026-06-22",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-добавить-возможность-добавить-подзадачу-сразу-в-за",
+    "title": "Добавить возможность добавить подзадачу сразу в задачу в списке",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
     "created_at": "2026-06-22"
   }
 ]
