@@ -10202,7 +10202,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-22",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-22"
   },
   {
     "id": "inbox-проанализировать-объявления-конкурентов",
