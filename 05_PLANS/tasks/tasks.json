@@ -10198,9 +10198,10 @@
   {
     "id": "inbox-ответить-хайман",
     "title": "Ответить Хайман",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-home",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-22"
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
