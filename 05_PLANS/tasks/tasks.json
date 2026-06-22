@@ -10104,7 +10104,7 @@
     "title": "Подготовить AGB и Datenschutzerklärung для Propria GmbH (montage-услуги)",
     "type": "task",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -10114,7 +10114,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-22",
     "created_at": "2026-06-20",
     "order": 0.0
   },
