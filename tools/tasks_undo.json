@@ -10105,7 +10105,7 @@
     "type": "task",
     "parent_id": "area-safe-min",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": "2026-07-01",
     "priority": null,
     "stakes": null,
