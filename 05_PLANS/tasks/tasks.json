@@ -10155,5 +10155,24 @@
     "done_at": null,
     "created_at": "2026-06-22",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-pavlovic-curaziel-iyt-медсправка",
+    "title": "Фолоуап Pavlovic/CuraZiel — IYT медсправка",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-23",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Письмо отправлено 22.06 на kaiserdamm@curaziel.de, ждём ответ по медсправке IYT (Teil 1, форма Medical/Physical Fitness Standards). Если без ответа — резерв: доктор Wolf (praxis-wolf@gzpp.de, запрос от 11.06, тоже без ответа).",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
