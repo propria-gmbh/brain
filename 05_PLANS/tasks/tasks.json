@@ -4404,7 +4404,7 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance-генерали-зубы",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-22",
     "priority": "red",
@@ -4414,7 +4414,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-22",
     "created_at": "2026-05-25",
     "order": 0.0
   },
