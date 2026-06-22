@@ -10161,7 +10161,7 @@
     "id": "фолоуап-anastasia-iyt-медсправка-оплата-инвойса",
     "title": "Фолоуап Anastasia (IYT) — медсправка / оплата инвойса",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
     "someday": false,
     "deadline": "2026-06-25",
