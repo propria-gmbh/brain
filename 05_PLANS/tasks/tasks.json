@@ -9952,11 +9952,12 @@
     "id": "inbox-follow-up-twint",
     "title": "Follow up TWINT",
     "parent_id": "area-marc-francois",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-06-18",
     "order": 0.0,
-    "deadline": "2026-06-22"
+    "deadline": "2026-06-22",
+    "done_at": "2026-06-22"
   },
   {
     "id": "починить-sync_today_donepy-хук-не-реагирует-на-правки-через-",
