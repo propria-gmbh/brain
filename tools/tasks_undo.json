@@ -10239,9 +10239,10 @@
   {
     "id": "inbox-сделать-оповещения-по-поиску-в-kleineanzeigen",
     "title": "Сделать оповещения по поиску в Kleineanzeigen",
-    "parent_id": "area-inbox",
+    "parent_id": "area-safe-min",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-22"
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
