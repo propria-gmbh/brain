@@ -2214,7 +2214,7 @@
     "project": "propria",
     "parent_id": "area-propria",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-06-23",
     "priority": "red",
     "stakes": null,
