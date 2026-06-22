@@ -10136,5 +10136,24 @@
     "done_at": null,
     "created_at": "2026-06-20",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-talesnik-rückfrage-zu-rechnung-michael-disterheft-ei",
+    "title": "Фолоуап Talesnik — Rückfrage zu Rechnung Michael Disterheft / Eigenanteil",
+    "type": "task",
+    "parent_id": "area-personal-finance-генерали-зубы",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-25",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
