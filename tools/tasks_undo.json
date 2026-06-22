@@ -4445,7 +4445,7 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance-аок",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": "red",
@@ -4455,7 +4455,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-22",
     "created_at": "2026-05-25",
     "order": 2.0
   },
@@ -10269,6 +10269,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-22"
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
