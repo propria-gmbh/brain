@@ -10175,5 +10175,24 @@
     "done_at": null,
     "created_at": "2026-06-22",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-shopify-support-twint-escalation",
+    "title": "Фолоуап Shopify support — TWINT escalation",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-25",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Чат-саппорт зафолапил по TWINT, escalation to Dedicated Team в среду 17.06, ответа не было. Follow-up через 3 дня.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-22",
+    "order": 0.0
   }
 ]
