@@ -3955,7 +3955,7 @@
   },
   {
     "id": "personal-family-наити-вино-ане",
-    "title": "Найти вино Ане",
+    "title": "Посмотреть расписание дегустаций Mövenpeak (Найти вино Ане)",
     "type": "task",
     "project": "personal/family",
     "parent_id": "inbox-personal",
