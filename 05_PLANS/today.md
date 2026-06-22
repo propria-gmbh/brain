@@ -27,7 +27,7 @@
 
 ## Перекур / На улице
 
-- [ ] Followup: TWINT — ответ от Shopify Payments team [дедлайн сегодня]
+- [x] 2026-06-22 Followup: TWINT — ответ от Shopify Payments team [дедлайн сегодня]
 - [ ] Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Giannini [P=8]
 - [ ] Написать письмо в Jobcenter — спросить о формах финансирования
 - [ ] Посмотреть запись 1M call в AB Inner Circle [P=8]
