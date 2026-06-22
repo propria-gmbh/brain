@@ -4,6 +4,15 @@
 
 ---
 
+## Лог метрик объявлений
+
+| Дата | Объявление | Besucher | Gemerkt | Nachrichten |
+|---|---|---|---|---|
+| 22.06.2026 | Komplette Wohnungseinrichtung & Möbelmontage | 72 | 3 | 0 |
+| 22.06.2026 | Küchenmontage Berlin | 38 | 3 | 1 |
+
+---
+
 ## Impressum (Propria GmbH)
 
 ```
@@ -160,6 +169,25 @@ WhatsApp: 0177 8192313
 **Безопасность/легальность (твёрдые границы, не предмет торга):**
 - Festanschluss электрики (без вилки) — не делать самому, привлекать электрика, прописывать вне скоупа.
 - Подключение вытяжки к общедомовой системе — как правило не разрешено, не делать без явного подтверждения, что это разрешено домом/Hausverwaltung.
+
+**Правило бронирования слота:**
+- Слот резервируется только после внесения предоплаты (20%), не после устной договорённости о дате.
+- Отмена более чем за 48 часов до термина — предоплата возвращается полностью.
+- Если термин сдвигается уже после внесения предоплаты (например, из-за задержки поставки кухни) — у клиента приоритетное право на ближайшие свободные слоты.
+- Этот пункт должен быть в Stornierung-разделе каждого Angebot.
+
+**Тональность текстов (Angebot, переписка, объявления):**
+- Цель — конверсия, но без "продажности": никаких манипулятивных триггеров (искусственный дефицит, давление, заискивание).
+- Тон солидный, спокойный, с сохранением чувства собственного достоинства — мастер предлагает услугу, а не выпрашивает заказ.
+- Конкретика и чёткие условия (цена, сроки, что входит/не входит) сами по себе работают на конверсию лучше эмоциональных уговоров.
+
+**Стандартная клаузула "Nicht im Leistungsumfang enthalten" (для каждого Angebot, дополнять под конкретный заказ):**
+- Elektroarbeiten: Einrichten neuer Steckdosen, Festanschluss von Geräten, Arbeiten am Sicherungskasten — nur durch Elektrofachkraft, nicht Teil des Angebots
+- Gasarbeiten: An-/Abklemmen von Gasgeräten — nur durch zugelassene Fachkraft
+- Bauliche Veränderungen: Versetzen von Wänden, Fenstern oder Türen
+- Sanitär: Versetzen von Leitungen oder Installation neuer Wasseranschlüsse (enthalten ist nur der Anschluss an einen bereits vorhandenen Wasseranschluss im Spülenschrank)
+- Dekorative Arbeiten: Fliesenlegen, Verputzen, Streichen, Bodenverlegearbeiten
+- Demontage und Entsorgung der alten Küche (sofern nicht separat vereinbart)
 
 **Метод расчёта итоговой цены:**
 База по объёму (сетка выше) × множитель по бренду + надбавки (демонтаж, выходные) = Festpreis. Не считать время × ставку.
