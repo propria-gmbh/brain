@@ -10241,7 +10241,7 @@
     "title": "Сделать оповещения по поиску в Kleineanzeigen",
     "parent_id": "area-safe-min",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-22",
     "order": 0.0
   },
@@ -10281,6 +10281,7 @@
     "created_at": "2026-06-22",
     "context": "perekur",
     "marker": "🔴",
-    "priority": "red"
+    "priority": "red",
+    "order": 0.0
   }
 ]
