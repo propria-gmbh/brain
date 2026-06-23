@@ -10574,5 +10574,24 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "составить-описание-похода-для-сайта-партнёров-берлинк",
+    "title": "Составить описание похода для сайта партнёров Берлинк",
+    "type": "task",
+    "parent_id": "area-personal-sailing-поход-по-лазурке",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
