@@ -10241,15 +10241,6 @@
     "order": 0.0
   },
   {
-    "id": "inbox-сделать-оповещения-по-поиску-в-kleineanzeigen",
-    "title": "Сделать оповещения по поиску в Kleineanzeigen",
-    "parent_id": "area-safe-min",
-    "status": "todo",
-    "someday": false,
-    "created_at": "2026-06-22",
-    "order": 0.0
-  },
-  {
     "id": "inbox-отправить-сергею-документы-по-дтп",
     "title": "Отправить Сергею документы по ДТП",
     "parent_id": "area-personal-finance-miles",
