@@ -10536,5 +10536,24 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "создать-шаблон-энергобаланса-для-типовых-катамаранов-lagoon-",
+    "title": "Создать шаблон энергобаланса для типовых катамаранов (Lagoon 42/46, Bali 4.1/4.6)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
