@@ -10283,7 +10283,7 @@
     "title": "Запросить в АОК возмещение по машиным брекетам",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-22",
     "context": "perekur",
     "marker": "🔴",
