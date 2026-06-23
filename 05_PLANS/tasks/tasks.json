@@ -10555,5 +10555,24 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "изучить-личный-кабинет-mein-ihk-berlin-check-по-ссылке-от-ih",
+    "title": "Изучить личный кабинет Mein IHK Berlin Check по ссылке от IHK (переслано Аллой Бессин) — заполнить профиль компании, выбрать темы интересов",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Ссылка: https://service.berlin.ihk.de/?utm_source=kampagne_aktivierung... (тред Alla Bessin, IHK, 2026-06-22). Портал: персонализированные рекомендации по 180+ услугам IHK, бенчмаркинг отрасли, выборы IHK 2027, обновление данных компании, выбор до 9 тем интересов (Digitalisierung, Finanzierung & Förderung, Rechtsänderungen и др.)",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
