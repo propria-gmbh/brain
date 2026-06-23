@@ -385,3 +385,5 @@ Ilja
 Модалка не имеет своего URL/якоря (открытие чисто на JS), поэтому единственная "одна ссылка на все три" — это сама ссылка на объявление, клиент кликает "Rechtliche Angaben" сам:
 https://www.kleinanzeigen.de/s-anzeige/kuechenmontage-berlin-ikea-nobilia-auch-am-wochenende/3439395287-239-3498
 Раздел "Rechtliche Angaben" в Business Portal Einstellungen — это форма загрузки именно этих документов, не отдельная скрытая admin-функция, как предполагалось ранее.
+
+**Финальный Angebot отправлен Tarik 23.06.2026, 21:03, через Kleinanzeigen-сообщение.** Festpreis 1.596€ (netto 1.341,18€ + 19% MwSt 254,82€), 3 Arbeitstage ab 08.07.2026, ссылка на Rechtliche Angaben вместо приложенных файлов. Статус: ожидание ответа клиента.

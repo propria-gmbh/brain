@@ -51,5 +51,6 @@
 - Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
+- [x] 2026-06-23 Ask AB Anything
 - [x] 2026-06-23 Call ECOM GOOGLE MM
 - [x] 2026-06-23 Reinigungstag (Уборка)
