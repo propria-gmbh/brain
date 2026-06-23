@@ -8454,10 +8454,13 @@
     "title": "Фолоуап MILES — авария 07.05: получить ответ от Свена",
     "parent_id": "area-personal-finance-miles",
     "deadline": "2026-06-23",
-    "done": false,
+    "done": true,
     "someday": false,
     "order": 0.0,
-    "scheduled_date": "2026-06-23"
+    "scheduled_date": "2026-06-23",
+    "status": "done",
+    "done_at": "2026-06-23",
+    "notes": " | 23.06.2026: Mahnung отправлена (email на abo@miles-mobility.com, cc hello@), бумажное письмо распечатано и будет отправлено по почте."
   },
   {
     "id": "miles-фолоуап-инвойсы-propria-тикет-5356147",
