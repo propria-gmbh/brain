@@ -10479,5 +10479,24 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "найти-надёжного-электрика-монтажника-в-одной-марине-хорватия",
+    "title": "Найти надёжного электрика/монтажника в одной марине (Хорватия/Испания/Франция)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
