@@ -10649,5 +10649,24 @@
     "someday": true,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-tarik-festpreisangebot-küchenmontage-angebot-nr-027",
+    "title": "Фолоуап Tarik — Festpreisangebot Küchenmontage (Angebot Nr. 027)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-29",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Festpreis 1.596€ отправлен 23.06.2026 через Kleinanzeigen. Angebot gültig bis 30.06.2026. Если нет ответа — короткий фолоуап с напоминанием о сроке.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
