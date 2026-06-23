@@ -1003,6 +1003,8 @@ def render_today(path):
     for ctx_key, ctx_label in CONTEXT_SECTIONS:
         if ctx_key == "deep":
             ctx_tasks = [t for t in scheduled if t.get("context") in ("deep", None, "")]
+        elif ctx_key == "perekur":
+            ctx_tasks = [t for t in scheduled if t.get("context") in ("perekur", "phone", "email")]
         else:
             ctx_tasks = [t for t in scheduled if t.get("context") == ctx_key]
         if not ctx_tasks:

@@ -10631,5 +10631,13 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "inbox-full-cycle-md-for-mitya",
+    "title": "Full Cycle md for Mitya",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-06-23"
   }
 ]
