@@ -10593,5 +10593,24 @@
     "done_at": null,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "оплатить-счёт-за-мишу",
+    "title": "Оплатить счёт за Мишу",
+    "type": "task",
+    "parent_id": "area-personal-finance-генерали-зубы",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "59,96 EUR клинике KFO (Dr. Talesnik), счёт от 25.03.2026, подтверждено Generali в письме",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-23",
+    "order": 0.0
   }
 ]
