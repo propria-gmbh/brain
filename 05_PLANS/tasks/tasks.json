@@ -10627,9 +10627,10 @@
     "id": "inbox-full-cycle-md-for-mitya",
     "title": "Full Cycle md for Mitya",
     "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-06-23",
+    "done_at": "2026-06-23",
     "order": 0.0,
     "scheduled_date": "2026-06-23"
   },
