@@ -8,7 +8,7 @@
 - [x] 2026-06-23 Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
 - [x] 2026-06-23 Ответить AB в Slack
-- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [x] 2026-06-23 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Календарь сегодня
 
