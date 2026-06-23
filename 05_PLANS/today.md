@@ -54,3 +54,6 @@
 - [x] 2026-06-23 Ask AB Anything
 - [x] 2026-06-23 Call ECOM GOOGLE MM
 - [x] 2026-06-23 Reinigungstag (Уборка)
+- [x] 2026-06-23 Full Cycle md for Mitya
+- [x] 2026-06-23 Безопасный минимум — оффер Тарику (Angebot Nr. 027, 1.596€), отправлен через Kleinanzeigen
+- [x] 2026-06-23 Аудит задач area-safe-min, удалён дубликат
