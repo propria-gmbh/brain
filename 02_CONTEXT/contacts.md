@@ -94,3 +94,12 @@
 - Компания: HECHT, von LUXBURG (та же фирма)
 - Email: a.dudnichenko@hecht-luxburg.de
 - Тел: +49 30 549082293
+
+## Sergei Tcherniak — Immobilienmakler (Berolinum Immobilien)
+
+- Адрес: Tauroggener Str. 36a, 10589 Berlin, Germany
+- Gewerbeerlaubnis: §34c GewO, erteilt durch BA Berlin-Charlottenburg
+- Тел: +49-152-06684796
+- Email: st@berolinum-immobilien.de
+- Instagram: https://www.instagram.com/berolinum_immobilien/
+- YouTube: https://www.youtube.com/@berolinum-immobilien
