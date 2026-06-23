@@ -10274,7 +10274,7 @@
     "title": "Добавить возможность добавить подзадачу сразу в задачу в списке",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-22",
     "order": 0.0
   },
