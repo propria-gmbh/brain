@@ -10265,7 +10265,7 @@
     "title": "Во вкладке задачи все свернуто по умолчанию и на каждом проекте кнопка свернуть/развернуть все",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-22",
     "order": 0.0
   },
