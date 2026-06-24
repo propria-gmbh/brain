@@ -9851,7 +9851,7 @@
     "title": "Фолоуап Мехлис — ждать пересчёт Tiguan (SF3, Vollkasko, Gewerblich, ЕС)",
     "type": "task",
     "parent_id": "area-personal-purchases",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-24",
     "priority": null,
@@ -9861,7 +9861,7 @@
     "tags": [],
     "notes": "Отправлено 17.06.2026. Ждём новые офферы под SF3, Vollkasko в ставке, gewerblich 2 Fahrer, ЕС без ограничений, передача сентябрь 2026.",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-24",
     "created_at": "2026-06-17",
     "order": 0.0
   },
