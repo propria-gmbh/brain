@@ -10670,5 +10670,24 @@
     "someday": true,
     "created_at": "2026-06-23",
     "order": 0.0
+  },
+  {
+    "id": "оплатить-страховые-взносы-зарплата-алла-июнь-2026-20599-на-a",
+    "title": "Оплатить страховые взносы (зарплата Алла июнь 2026): €205.99 на AOK Nordost",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-26",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-24",
+    "order": 0.0
   }
 ]
