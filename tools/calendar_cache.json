@@ -1,52 +1,50 @@
 {
-  "updated": "2026-06-22T13:30:00Z",
+  "updated": "2026-06-24T05:09:33Z",
   "events": [
     {
-      "date": "2026-06-23",
-      "time": "10:00",
-      "summary": "Reinigungstag (Уборка)",
-      "end": "11:00",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-23",
-      "time": "14:00",
-      "summary": "Call ECOM GOOGLE MM",
-      "end": "15:00",
-      "calendar": "Shopify Tribe"
-    },
-    {
-      "date": "2026-06-23",
-      "time": "20:00",
-      "summary": "Ask AB Anything",
-      "end": "21:00",
-      "calendar": "ilja"
-    },
-    {
-      "date": "2026-06-24",
-      "time": "15:00",
       "summary": "Мастермайнд",
-      "end": "20:00",
-      "calendar": "ilja"
+      "start": "2026-06-24T15:00:00+02:00",
+      "end": "2026-06-24T20:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
     },
     {
-      "date": "2026-06-25",
       "summary": "BioTonne вывоз (BSR)",
-      "calendar": "ilja"
+      "start": "2026-06-25",
+      "end": "2026-06-26",
+      "allDay": true,
+      "calendar": "ilja.disterheft@gmail.com"
     },
     {
-      "date": "2026-06-26",
-      "time": "13:00",
       "summary": "Weekly Review",
-      "end": "14:00",
-      "calendar": "ilja"
+      "start": "2026-06-26T13:00:00+02:00",
+      "end": "2026-06-26T14:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
     },
     {
-      "date": "2026-06-28",
-      "time": "14:00",
+      "summary": "Wertstoffe (BSR) Abholung",
+      "start": "2026-06-30T08:00:00+02:00",
+      "end": "2026-06-30T08:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com / Disters"
+    },
+    {
+      "summary": "Ask AB Anything",
+      "start": "2026-06-30T20:00:00+02:00",
+      "end": "2026-06-30T21:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
+    },
+    {
       "summary": "Shopify Tribe Meeting",
-      "end": "15:50",
-      "calendar": "Shopify Tribe"
+      "start": "2026-06-28T14:00:00+02:00",
+      "end": "2026-06-28T15:50:00+02:00",
+      "calendar": "3553194@gmail.com (Shopify Tribe)",
+      "location": "https://us06web.zoom.us/j/89487961287?pwd=QQ3ujy7wHsqPpgxRzaGQuqvWVr9aOg.1"
+    },
+    {
+      "summary": "Call ECOM GOOGLE MM",
+      "start": "2026-06-30T14:00:00+02:00",
+      "end": "2026-06-30T15:00:00+02:00",
+      "calendar": "3553194@gmail.com (Shopify Tribe)",
+      "location": "https://us06web.zoom.us/j/85638879630?pwd=hVDiBAHxulRW2cOgypS6sQOrhH7s6E.1"
     }
   ]
 }

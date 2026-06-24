@@ -1,40 +1,27 @@
-# План на 2026-06-23
+# План на 2026-06-24
 
 ## Утренний чеклист
 
-- [x] 2026-06-23 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-06-23 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [x] 2026-06-23 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
-- [x] 2026-06-23 Проверить бизнес-счёт Revolut
+- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [x] 2026-06-23 Ответить AB в Slack
-- [x] 2026-06-23 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [ ] Запросить квоты на новые товары у 3PL
+- [ ] Ответить AB в Slack
+- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Календарь сегодня
 
-- 10:00–11:00 Reinigungstag (Уборка)
-- 14:00–15:00 Call ECOM GOOGLE MM
-- 20:00–21:00 Ask AB Anything
+- 15:00–20:00 Мастермайнд
 
 ## Задачи
 
-### Deep (утро)
-
-- [ ] 🟧 Написать в налоговую Райникендорф — нужно запустить или ликвидировать ИП [дедлайн сегодня, P=25]
-- [ ] 🔴 Ответить Алле Дудниченко — отправить документы Q1 НДС (ждёт с 2026-04-07) [дедлайн сегодня, P=21]
-- [ ] 🟧 Составить методику и график аудита личных активов и пассивов [дедлайн сегодня]
-
-### Someday — приоритет
-
-- [ ] Посмотреть запись 1M call в AB Inner Circle [P=8]
-- [ ] Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Giannini [P=8]
-- [ ] 🟢 Определить цели по методике Дорофеева [P=4]
+(нет — день занят Мастермаймом, своими словами "не успею")
 
 ## Перекур / На улице
 
-- [ ] Фолоуап Саша Дортман — поход по Лазурке [дедлайн сегодня]
-- [ ] Фолоуап MILES — авария 07.05: получить ответ от Свена [дедлайн сегодня]
-- [x] 2026-06-23 🔴 Фолоуап MILES — отправить черновик ответа (период до 23.02.2026, аргумент Vorsteuerabzug) и проверить реакцию [дедлайн сегодня]
+- [ ] 🟢 Фолоуап Саша Дортман — поход по Лазурке [дедлайн сегодня]
 
 ## 2-я половина дня
 
@@ -44,16 +31,9 @@
 
 ## На неделе
 
-- Вт 23.06: Reinigungstag 10:00; Call ECOM GOOGLE MM 14:00–15:00; Ask AB Anything 20:00–21:00; дедлайн «Написать в налоговую Райникендорф»
 - Ср 24.06: Мастермайнд 15:00–20:00
 - Чт 25.06: BioTonne вывоз (BSR)
-- Пт 26.06: Weekly Review 13:00–14:00
+- Пт 26.06: Weekly Review 13:00–14:00; дедлайн ELSTER Fragebogen (Finanzamt Reinickendorf); дедлайн оплаты AOK страховых взносов €205.99
 - Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
-- [x] 2026-06-23 Ask AB Anything
-- [x] 2026-06-23 Call ECOM GOOGLE MM
-- [x] 2026-06-23 Reinigungstag (Уборка)
-- [x] 2026-06-23 Full Cycle md for Mitya
-- [x] 2026-06-23 Безопасный минимум — оффер Тарику (Angebot Nr. 027, 1.596€), отправлен через Kleinanzeigen
-- [x] 2026-06-23 Аудит задач area-safe-min, удалён дубликат

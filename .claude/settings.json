@@ -3,6 +3,7 @@
     "allow": [
       "Bash(python3 tools/priority.py *)",
       "Bash(python3 tools/add_task.py *)",
+      "Bash(python3 tools/*.py *)",
       "Read(//Users/dister/.claude/**)",
       "mcp__claude_ai_Gmail__get_thread",
       "mcp__claude_ai_Google_Calendar__create_event",
