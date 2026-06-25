@@ -446,7 +446,7 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
   });
 });
 
-// pick main task ("1 задача")
+// pick main task ("1 задача перед утренним чеклистом")
 (function() {
   var btn = document.getElementById('pick-main-task');
   if (!btn) return;
@@ -1031,10 +1031,10 @@ def render_today(path):
     left = f"<h1>{title}</h1>\n"
     left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
-    # 1 задача — rendered first, above Утренний чеклист
+    # 1 задача перед утренним чеклистом — rendered first, above Утренний чеклист
     main_task_found = False
     for sec, items in sections:
-        if sec != "1 задача":
+        if sec != "1 задача перед утренним чеклистом":
             continue
         main_task_found = True
         items_html = ""
@@ -1051,13 +1051,13 @@ def render_today(path):
                 f'<button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
             )
         left += (
-            f'<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">1 задача'
+            f'<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">1 задача перед утренним чеклистом'
             f'<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
             f'<ul class="today-section">\n{items_html}</ul>\n'
         )
     if not main_task_found:
         left += (
-            '<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">1 задача'
+            '<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">1 задача перед утренним чеклистом'
             '<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
         )
 
@@ -1103,7 +1103,7 @@ def render_today(path):
         left += f'<h2>{ctx_label}</h2><ul class="today-section">\n{items_html}</ul>\n'
 
     # Render non-checklist, non-task sections from today.md (Завтра, Сегодня в календаре, etc.)
-    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "1 задача", "Сделано"}
+    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "1 задача перед утренним чеклистом", "Сделано"}
     for sec, items in sections:
         if section_is_future(sec):
             continue
@@ -1648,7 +1648,7 @@ def set_main_task(title):
     while i < len(lines):
         line = lines[i]
         out.append(line)
-        if line.strip() == "## 1 задача":
+        if line.strip() == "## 1 задача перед утренним чеклистом":
             found = True
             i += 1
             # skip existing content of this section until next "## " heading
@@ -1667,7 +1667,7 @@ def set_main_task(title):
             new_out.append(line)
             if line.startswith("# ") and not inserted:
                 new_out.append("")
-                new_out.append("## 1 задача")
+                new_out.append("## 1 задача перед утренним чеклистом")
                 new_out.append("")
                 new_out.append(f"- [ ] {title}")
                 inserted = True
