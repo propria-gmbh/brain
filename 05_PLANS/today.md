@@ -1,27 +1,28 @@
-# План на 2026-06-24
+# План на 2026-06-25
 
 ## Утренний чеклист
 
-- [x] 2026-06-24 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-06-24 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [x] 2026-06-24 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [x] 2026-06-24 Запросить квоты на новые товары у 3PL
+- [ ] Запросить квоты на новые товары у 3PL
 - [ ] Ответить AB в Slack
-- [x] 2026-06-24 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Календарь сегодня
 
-- 15:00–20:00 Мастермайнд
+- Весь день: BioTonne вывоз (BSR)
 
 ## Задачи
 
-(нет — день занят Мастермаймом, своими словами "не успею")
+(ожидает выбора пользователя из someday-списка)
 
 ## Перекур / На улице
 
-- [ ] 🟢 Фолоуап Саша Дортман — поход по Лазурке [дедлайн сегодня]
+- [x] 2026-06-25 Фолоуап Anastasia (IYT) — медсправка / оплата инвойса [дедлайн сегодня]
+- [ ] Фолоуап Shopify support — TWINT escalation [дедлайн сегодня]
 
 ## 2-я половина дня
 
@@ -31,10 +32,8 @@
 
 ## На неделе
 
-- Ср 24.06: Мастермайнд 15:00–20:00
 - Чт 25.06: BioTonne вывоз (BSR)
 - Пт 26.06: Weekly Review 13:00–14:00; дедлайн ELSTER Fragebogen (Finanzamt Reinickendorf); дедлайн оплаты AOK страховых взносов €205.99
 - Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
-- [x] 2026-06-25 BioTonne вывоз (BSR)

@@ -41,6 +41,8 @@
       "Bash(security find-generic-password *)",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); keys=list\\(d.keys\\(\\)\\); print\\(keys\\)\")",
       "Bash(python3 -c ' *)",
+      "Bash(cat /Users/dister/Projects/brain/05_PLANS/tasks/tasks.json | python3 -c *)",
+      "Bash(jq *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(python3 -)",
