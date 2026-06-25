@@ -95,6 +95,8 @@
 - Email: a.dudnichenko@hecht-luxburg.de
 - Тел: +49 30 549082293
 
+## Frau Heymann — хозяйка дома (Vermieterin/Hausverwalterin)
+
 ## Sergei Tcherniak — Immobilienmakler (Berolinum Immobilien)
 
 - Адрес: Tauroggener Str. 36a, 10589 Berlin, Germany
