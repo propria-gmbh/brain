@@ -10757,13 +10757,5 @@
     "done_at": null,
     "created_at": "2026-06-25",
     "order": 0.0
-  },
-  {
-    "id": "inbox-тестовая-задача-проверки-кнопки-на-area",
-    "title": "Тестовая задача проверки кнопки на area",
-    "parent_id": "area-safe-min",
-    "status": "todo",
-    "someday": true,
-    "created_at": "2026-06-25"
   }
 ]
