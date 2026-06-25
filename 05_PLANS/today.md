@@ -1,6 +1,6 @@
 # План на 2026-06-25
 
-## Главное сегодня
+## 1 задача
 
 - [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн завтра 26.06]
 
