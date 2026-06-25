@@ -2,7 +2,7 @@
 
 ## Главное сегодня
 
-- [x] 2026-06-25 Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн завтра 26.06]
+- [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн завтра 26.06]
 
 ## Утренний чеклист
 
