@@ -32,6 +32,7 @@
       "Bash(npm list *)",
       "Bash(python3 tools/today_server.py)",
       "Bash(curl -s http://localhost:7777)",
+      "Bash(open http://localhost:7777)",
       "Bash(echo '\\\\nalias today=\"python3 ~/Projects/brain/tools/today_server.py\"' >> ~/.zshrc && echo \"done\")",
       "Bash(curl -s http://localhost:7777/)",
       "Bash(curl -s http://localhost:7777/tasks)",

@@ -442,6 +442,33 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
   });
 });
 
+// add subtask inline
+document.querySelectorAll('.sub-btn[data-id]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var inp = document.createElement('input');
+    inp.type = 'text';
+    inp.placeholder = 'Текст подзадачи...';
+    inp.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;max-width:220px';
+    btn.replaceWith(inp);
+    inp.focus();
+    function restore() { if (inp.parentNode) inp.replaceWith(btn); }
+    function submit() {
+      var title = inp.value.trim();
+      if (title) {
+        post('/add-task', {title: title, parent_id: btn.dataset.id});
+      } else {
+        restore();
+      }
+    }
+    inp.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); submit(); }
+      if (e.key === 'Escape') restore();
+    });
+    inp.addEventListener('blur', function() { setTimeout(function() { if (inp.parentNode && !inp.value.trim()) restore(); }, 150); });
+  });
+});
+
 // parent selector
 document.querySelectorAll('.p-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -1223,6 +1250,7 @@ def render_task_row(task, all_tasks, depth=0):
         f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
         f'  <button class="btn m-btn" data-id="{task_id}"{marker_style}>{marker_label}</button>\n'
         f'  <button class="btn r-btn" data-id="{task_id}" data-recurring="{recurring or ""}">{r_label}</button>\n'
+        f'  <button class="btn sub-btn" data-id="{task_id}" title="Добавить подзадачу">+</button>\n'
         f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
@@ -1532,10 +1560,12 @@ def remove_today_line(path, idx):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def add_task_inbox(title, context=None, marker=None):
+def add_task_inbox(title, context=None, marker=None, parent_id=None):
     tasks = load_tasks()
     if not any(t["id"] == "area-inbox" for t in tasks):
         tasks.insert(0, {"id": "area-inbox", "title": "Inbox", "type": "area", "order": -1})
+    if parent_id and not any(t["id"] == parent_id for t in tasks):
+        parent_id = None
     slug = re.sub(r'[^\w\s-]', '', title.lower())
     slug = re.sub(r'[\s_]+', '-', slug)[:50]
     task_id = f"inbox-{slug}"
@@ -1547,7 +1577,7 @@ def add_task_inbox(title, context=None, marker=None):
     task = {
         "id": task_id,
         "title": title,
-        "parent_id": "area-inbox",
+        "parent_id": parent_id or "area-inbox",
         "status": "todo",
         "someday": True,
         "created_at": today_str()
@@ -1892,7 +1922,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/reorder-today":
             reorder_today(TODAY, d["indices"])
         elif self.path == "/add-task":
-            add_task_inbox(d["title"], d.get("context"), d.get("marker"))
+            add_task_inbox(d["title"], d.get("context"), d.get("marker"), d.get("parent_id"))
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
         elif self.path == "/set-marker":
