@@ -5,9 +5,13 @@ import http.server
 import json
 import re
 import subprocess
+import sys
 import webbrowser
 from datetime import date, datetime, timedelta
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import priority as _priority
 
 PORT = 7777
 BRAIN = Path(__file__).parent.parent
@@ -441,6 +445,35 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
     el.addEventListener('blur', onBlur);
   });
 });
+
+// pick main task ("Главное сегодня")
+(function() {
+  var btn = document.getElementById('pick-main-task');
+  if (!btn) return;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    fetch('/api/top-priority').then(function(r) { return r.json(); }).then(function(list) {
+      var sel = document.createElement('select');
+      sel.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;max-width:320px';
+      var none = document.createElement('option');
+      none.value = '';
+      none.textContent = '— выбрать задачу —';
+      sel.appendChild(none);
+      list.forEach(function(t) {
+        var opt = document.createElement('option');
+        opt.value = t.title;
+        opt.textContent = 'P' + t.score + ' — ' + t.title;
+        sel.appendChild(opt);
+      });
+      btn.replaceWith(sel);
+      sel.focus();
+      sel.addEventListener('change', function() {
+        if (sel.value) post('/set-main-task', {title: sel.value});
+      });
+      sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
+    });
+  });
+})();
 
 // add subtask inline
 document.querySelectorAll('.sub-btn[data-id]').forEach(function(btn) {
@@ -999,9 +1032,11 @@ def render_today(path):
     left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
     # Главное сегодня — rendered first, above Утренний чеклист
+    main_task_found = False
     for sec, items in sections:
         if sec != "Главное сегодня":
             continue
+        main_task_found = True
         items_html = ""
         for item in items:
             done_cls = " done-item" if item["done"] else ""
@@ -1015,8 +1050,16 @@ def render_today(path):
                 f'<span class="chk">{chk_icon}</span><span class="item-text{link_cls}">{linkify(item["text"])}</span>'
                 f'<button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
             )
-        if items_html:
-            left += f'<h2 style="color:#5b8dd9">Главное сегодня</h2><ul class="today-section">\n{items_html}</ul>\n'
+        left += (
+            f'<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">Главное сегодня'
+            f'<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
+            f'<ul class="today-section">\n{items_html}</ul>\n'
+        )
+    if not main_task_found:
+        left += (
+            '<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">Главное сегодня'
+            '<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
+        )
 
     def section_is_future(sec):
         m = re.search(r'(\d{1,2})\.(\d{2})', sec)
@@ -1580,6 +1623,58 @@ def remove_today_line(path, idx):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def get_top_priority(n=5):
+    data = _priority.load_tasks()
+    task_map = _priority.build_task_map(data)
+    today = date.today()
+    candidates = [
+        t for t in data
+        if isinstance(t, dict) and t.get("type") != "area"
+        and t.get("status") != "done" and t.get("someday")
+    ]
+    scored = []
+    for t in candidates:
+        p, *_ = _priority.score_task(t, task_map, today)
+        scored.append((p, t))
+    scored.sort(key=lambda x: -x[0])
+    return [{"id": t["id"], "title": t.get("title", ""), "score": p} for p, t in scored[:n]]
+
+
+def set_main_task(title):
+    lines = TODAY.read_text(encoding="utf-8").splitlines()
+    out = []
+    i = 0
+    found = False
+    while i < len(lines):
+        line = lines[i]
+        out.append(line)
+        if line.strip() == "## Главное сегодня":
+            found = True
+            i += 1
+            # skip existing content of this section until next "## " heading
+            while i < len(lines) and not lines[i].startswith("## "):
+                i += 1
+            out.append("")
+            out.append(f"- [ ] {title}")
+            out.append("")
+            continue
+        i += 1
+    if not found:
+        # insert right after the "# " title line
+        new_out = []
+        inserted = False
+        for line in out:
+            new_out.append(line)
+            if line.startswith("# ") and not inserted:
+                new_out.append("")
+                new_out.append("## Главное сегодня")
+                new_out.append("")
+                new_out.append(f"- [ ] {title}")
+                inserted = True
+        out = new_out
+    TODAY.write_text("\n".join(out) + "\n", encoding="utf-8")
+
+
 def add_task_inbox(title, context=None, marker=None, parent_id=None):
     tasks = load_tasks()
     if not any(t["id"] == "area-inbox" for t in tasks):
@@ -1865,6 +1960,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/sessions":
             body = render_sessions()
             data = make_page(body, "sessions")
+        elif self.path == "/api/top-priority":
+            data = json.dumps(get_top_priority(5), ensure_ascii=False).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", len(data))
+            self.end_headers()
+            self.wfile.write(data)
+            return
         elif self.path.startswith("/api/task"):
             from urllib.parse import urlparse as _up, parse_qs as _pqs
             qs = _pqs(_up(self.path).query)
@@ -1943,6 +2046,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             reorder_today(TODAY, d["indices"])
         elif self.path == "/add-task":
             add_task_inbox(d["title"], d.get("context"), d.get("marker"), d.get("parent_id"))
+        elif self.path == "/set-main-task":
+            set_main_task(d["title"])
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
         elif self.path == "/set-marker":
