@@ -1,5 +1,9 @@
 # План на 2026-06-25
 
+## Главное сегодня
+
+- [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн завтра 26.06]
+
 ## Утренний чеклист
 
 - [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)

@@ -998,6 +998,26 @@ def render_today(path):
     left = f"<h1>{title}</h1>\n"
     left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
+    # Главное сегодня — rendered first, above Утренний чеклист
+    for sec, items in sections:
+        if sec != "Главное сегодня":
+            continue
+        items_html = ""
+        for item in items:
+            done_cls = " done-item" if item["done"] else ""
+            chk_icon = "✓" if item["done"] else "·"
+            extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
+            task_id = task_by_norm.get(normalize_title(item["text"]), "")
+            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
+            link_cls = " task-linked" if task_id else ""
+            items_html += (
+                f'<li class="item{done_cls}{extra}" data-idx="{item["idx"]}"{task_id_attr} style="font-size:1.02rem;font-weight:600">'
+                f'<span class="chk">{chk_icon}</span><span class="item-text{link_cls}">{linkify(item["text"])}</span>'
+                f'<button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
+            )
+        if items_html:
+            left += f'<h2 style="color:#5b8dd9">Главное сегодня</h2><ul class="today-section">\n{items_html}</ul>\n'
+
     def section_is_future(sec):
         m = re.search(r'(\d{1,2})\.(\d{2})', sec)
         if not m:
@@ -1040,7 +1060,7 @@ def render_today(path):
         left += f'<h2>{ctx_label}</h2><ul class="today-section">\n{items_html}</ul>\n'
 
     # Render non-checklist, non-task sections from today.md (Завтра, Сегодня в календаре, etc.)
-    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "Сделано"}
+    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "Главное сегодня", "Сделано"}
     for sec, items in sections:
         if section_is_future(sec):
             continue
