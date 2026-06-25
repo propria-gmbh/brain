@@ -10754,5 +10754,24 @@
     "done_at": null,
     "created_at": "2026-06-25",
     "order": 0.0
+  },
+  {
+    "id": "подключить-mollie-twint-в-shopify-marc-et-francois",
+    "title": "Подключить Mollie + TWINT в Shopify (Marc et Francois)",
+    "type": "task",
+    "parent_id": "area-marc-francois",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Установить Mollie app в Shopify admin (Install app → Connect via Mollie → выбрать website profile id), затем активировать Mollie - TWINT отдельно (методы ставятся по одному). Документация: https://docs.mollie.com/docs/shopify-app-installation",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-25",
+    "order": 0.0
   }
 ]
