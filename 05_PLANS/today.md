@@ -37,3 +37,4 @@
 - Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
+- [x] 2026-06-25 BioTonne вывоз (BSR)
