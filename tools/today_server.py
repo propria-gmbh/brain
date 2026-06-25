@@ -1334,10 +1334,11 @@ def render_area(area, all_nodes):
             f'<div class="task-row" data-id="{area_id}">\n'
             f'  <span class="task-text">{title}'
             f'<span style="font-size:.7rem;color:var(--text4);margin-left:6px">area</span></span>\n'
+            f'  <button class="btn sub-btn" data-id="{area_id}" title="Добавить задачу">+</button>\n'
             f'  <button class="btn del-btn" data-id="{area_id}">×</button>\n'
             f'</div>\n'
         )
-    b = f'<details data-key="{area_id}" data-id="{area_id}"><summary><span class="area-title" data-id="{area_id}">{title}</span><button class="btn type-btn" data-id="{area_id}" data-current="area" onclick="event.stopPropagation()">A</button></summary>\n'
+    b = f'<details data-key="{area_id}" data-id="{area_id}"><summary><span class="area-title" data-id="{area_id}">{title}</span><button class="btn type-btn" data-id="{area_id}" data-current="area" onclick="event.stopPropagation()">A</button><button class="btn sub-btn" data-id="{area_id}" title="Добавить задачу" onclick="event.stopPropagation()">+</button></summary>\n'
     b += '<div class="section-tasks">\n'
     for child in children:
         if child.get("type") == "area":
