@@ -6756,7 +6756,7 @@
   },
   {
     "id": "personal-health-mvz-kaleth-новый-термин",
-    "title": "MVZ Kaleth — записаться на новый термин или найти другого ортопеда",
+    "title": "Найти другого ортопеда или MVZ Kaleth — записаться на новый термин или",
     "parent_id": "area-health",
     "status": "todo",
     "someday": false,
@@ -10802,6 +10802,7 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-26",
-    "context": "perekur"
+    "context": "perekur",
+    "order": 0.0
   }
 ]
