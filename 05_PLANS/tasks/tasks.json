@@ -10676,7 +10676,7 @@
     "title": "Оплатить страховые взносы (зарплата Алла июнь 2026): €205.99 на AOK Nordost",
     "type": "task",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-26",
     "priority": null,
@@ -10686,7 +10686,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-26",
     "created_at": "2026-06-24",
     "order": 0.0
   },
