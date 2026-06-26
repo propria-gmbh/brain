@@ -10826,9 +10826,11 @@
     "deadline": "2026-06-29",
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "perekur",
     "goal": null,
-    "tags": [],
+    "tags": [
+      "q1-2026"
+    ],
     "notes": null,
     "waiting_for": null,
     "done_at": null,
