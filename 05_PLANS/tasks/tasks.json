@@ -10845,5 +10845,13 @@
     "someday": true,
     "created_at": "2026-06-26",
     "order": 0.0
+  },
+  {
+    "id": "inbox-commerzbank-q2-transactions",
+    "title": "Commerzbank Q2 transactions",
+    "parent_id": "inbox-продолжить-q1-q2-propria",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-06-26"
   }
 ]

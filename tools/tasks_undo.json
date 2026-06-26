@@ -10840,9 +10840,10 @@
   {
     "id": "inbox-продолжить-q1-q2-propria",
     "title": "Продолжить Q1 Q2 Propria",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-26"
+    "created_at": "2026-06-26",
+    "order": 0.0
   }
 ]
