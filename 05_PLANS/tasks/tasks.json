@@ -2213,7 +2213,7 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": "2026-06-23",
     "priority": "red",
@@ -2223,7 +2223,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-26",
     "created_at": "2026-05-25",
     "order": 9.0,
     "scheduled_date": "2026-06-18"
