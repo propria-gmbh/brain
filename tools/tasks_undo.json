@@ -10772,7 +10772,7 @@
     "title": "Möbelmontage",
     "parent_id": "area-safe-min",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-26",
     "order": 0.0
   },
