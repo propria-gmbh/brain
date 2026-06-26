@@ -10070,7 +10070,7 @@
     "id": "подготовить-и-отправить-b2b-посыл-для-hausverwaltungen-vermi",
     "title": "Подготовить и отправить B2B-посыл для Hausverwaltungen/Vermieter/Maklerbüros (другой канал, не Kleinanzeigen) — 'один подрядчик для всех ваших квартир'",
     "type": "task",
-    "parent_id": "area-safe-min",
+    "parent_id": "inbox-möbelmontage",
     "status": "todo",
     "someday": false,
     "deadline": null,
