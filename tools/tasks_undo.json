@@ -9613,7 +9613,7 @@
     "id": "сделать-одностраничный-сайт-для-монтажного-сервиса",
     "title": "Сделать одностраничный сайт для монтажного сервиса",
     "type": "task",
-    "parent_id": "area-safe-min",
+    "parent_id": "inbox-möbelmontage",
     "status": "todo",
     "someday": true,
     "deadline": null,
