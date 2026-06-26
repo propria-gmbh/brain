@@ -513,6 +513,7 @@ document.querySelectorAll('.p-btn[data-id]').forEach(function(btn) {
     none.textContent = '— нет родителя —';
     sel.appendChild(none);
     (window.AREAS || []).forEach(function(a) {
+      if (a.id === btn.dataset.id) return;
       var opt = document.createElement('option');
       opt.value = a.id;
       opt.textContent = a.title;
@@ -1349,12 +1350,12 @@ def render_area(area, all_nodes):
     return b
 
 
-def build_area_options(areas, all_nodes, prefix=""):
+def build_area_options(nodes, all_nodes, prefix=""):
     opts = []
-    for a in sorted(areas, key=lambda t: t.get("order", 0)):
+    for a in sorted(nodes, key=lambda t: t.get("order", 0)):
         path = prefix + a.get("title", "")
         opts.append({"id": a["id"], "title": path})
-        sub = [t for t in all_nodes if t.get("parent_id") == a["id"] and t.get("type") == "area"]
+        sub = [t for t in all_nodes if t.get("parent_id") == a["id"]]
         opts.extend(build_area_options(sub, all_nodes, path + " › "))
     return opts
 
