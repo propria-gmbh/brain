@@ -19,12 +19,9 @@
 
 - 13:00–14:00: Weekly Review
 
-## Задачи (дедлайн завтра)
-
-- [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн 26.06]
-
 ## Задачи
 
+- [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt Reinickendorf) [дедлайн 26.06]
 - [ ] Ответить Алле Дудниченко — отправить документы Q1 НДС (ждёт с 2026-04-07) [дедлайн 2026-06-23, просрочено]
 - [ ] Настроить автоматическую проверку сохранённого поиска Kleinanzeigen и уведомление о новых Gesuche
 - [ ] Ответить Госпоже Хайман
