@@ -10781,7 +10781,7 @@
     "title": "Доделать дашборд Health",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-26",
     "order": 0.0
   },
@@ -10809,6 +10809,7 @@
     "parent_id": "inbox-доделать-дашборд-health",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-26"
+    "created_at": "2026-06-26",
+    "order": 0.0
   }
 ]
