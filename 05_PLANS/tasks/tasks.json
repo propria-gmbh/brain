@@ -10799,7 +10799,7 @@
     "title": "Указывать тип дня питания",
     "parent_id": "inbox-доделать-дашборд-health",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-26",
     "order": 0.0
   },
