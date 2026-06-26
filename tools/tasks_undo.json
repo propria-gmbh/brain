@@ -10812,6 +10812,8 @@
     "parent_id": "area-health",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-26"
+    "created_at": "2026-06-26",
+    "order": 0.0,
+    "deadline": "2026-06-30"
   }
 ]
