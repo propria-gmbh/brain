@@ -6927,10 +6927,11 @@
     "title": "Запроектировать health tracking (CSV + дашборд)",
     "type": "task",
     "parent_id": "area-health",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-05-27",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-26"
   },
   {
     "id": "personal-purchases-купить-майку",

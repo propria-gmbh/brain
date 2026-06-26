@@ -10805,5 +10805,13 @@
     "created_at": "2026-06-26",
     "context": "perekur",
     "order": 0.0
+  },
+  {
+    "id": "inbox-записаться-на-прием-по-косоглазию-в-шарите",
+    "title": "Записаться на прием по косоглазию в Шарите",
+    "parent_id": "area-health",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-06-26"
   }
 ]
