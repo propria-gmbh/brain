@@ -10765,7 +10765,8 @@
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-26",
-    "order": 0.0
+    "order": 0.0,
+    "type": "area"
   },
   {
     "id": "inbox-möbelmontage",
