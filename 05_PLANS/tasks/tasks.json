@@ -10791,6 +10791,15 @@
     "parent_id": "inbox-доделать-дашборд-health",
     "status": "todo",
     "someday": true,
+    "created_at": "2026-06-26",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-указывать-тип-дня-питания",
+    "title": "Указывать тип дня питания",
+    "parent_id": "inbox-доделать-дашборд-health",
+    "status": "todo",
+    "someday": true,
     "created_at": "2026-06-26"
   }
 ]
