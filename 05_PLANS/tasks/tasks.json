@@ -9615,7 +9615,7 @@
     "type": "task",
     "parent_id": "area-safe-min",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
