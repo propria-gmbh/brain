@@ -10811,9 +10811,30 @@
     "title": "Записаться на прием по косоглазию в Шарите",
     "parent_id": "area-health",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-26",
     "order": 0.0,
     "deadline": "2026-06-30"
+  },
+  {
+    "id": "фолоуап-fireflies-прислали-ли-инвойсы-за-q1-2026-январь-март",
+    "title": "Фолоуап Fireflies — прислали ли инвойсы за Q1 2026 (январь-март)",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-06-29",
+    "priority": null,
+    "stakes": null,
+    "context": "perekur",
+    "goal": null,
+    "tags": [
+      "q1-2026"
+    ],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-26",
+    "order": 0.0
   }
 ]

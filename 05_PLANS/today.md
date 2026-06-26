@@ -6,14 +6,14 @@
 
 ## Утренний чеклист
 
-- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [x] 2026-06-26 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [x] 2026-06-26 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [x] 2026-06-26 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [ ] Запросить квоты на новые товары у 3PL
-- [ ] Ответить AB в Slack
-- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [x] 2026-06-26 Запросить квоты на новые товары у 3PL
+- [x] 2026-06-26 Ответить AB в Slack
+- [x] 2026-06-26 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
 ## Календарь на завтра
 
@@ -45,4 +45,5 @@
 - Вс 28.06: Shopify Tribe Meeting 14:00–15:50
 
 ## Сделано
+- [x] 2026-06-26 Weekly Review
 - [x] 2026-06-25 BioTonne вывоз (BSR)

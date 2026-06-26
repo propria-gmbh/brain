@@ -4589,7 +4589,7 @@
     "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": true,
-    "deadline": "2026-06-26",
+    "deadline": null,
     "priority": "orange",
     "stakes": null,
     "context": null,

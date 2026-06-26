@@ -33,6 +33,8 @@ brain/ — командный центр. Реальная разработка 
 | Slug | Назначение | Статус |
 |---|---|---|
 | [accounting-process](accounting-process.md) | Порядок закрытия квартала: банк → инвойсы → таблица (Propria + ecom) | active |
+| [q1-2026-closing-log](q1-2026-closing-log.md) | Лог закрытия Q1 2026 (НДС, Propria) | active |
+| [q2-2026-closing-checklist](q2-2026-closing-checklist.md) | Чеклист закрытия Q2 2026 | active |
 
 ## Споры / Претензии
 
