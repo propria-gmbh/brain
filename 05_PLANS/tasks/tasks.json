@@ -10608,7 +10608,7 @@
     "id": "настроить-автоматическую-проверку-сохранённого-поиска-kleina",
     "title": "Настроить автоматическую проверку сохранённого поиска Kleinanzeigen и уведомление о новых Gesuche (встроенные уведомления Kleinanzeigen не работают для gewerblich-аккаунта)",
     "type": "task",
-    "parent_id": "area-safe-min",
+    "parent_id": "inbox-möbelmontage",
     "status": "todo",
     "someday": true,
     "deadline": null,
@@ -10621,7 +10621,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-23",
-    "order": 0.0
+    "order": 1.0
   },
   {
     "id": "inbox-full-cycle-md-for-mitya",
