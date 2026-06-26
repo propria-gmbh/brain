@@ -28,6 +28,12 @@ brain/ — командный центр. Реальная разработка 
 | [invertomatic](../../../Projects/_archive/invertomatic/) | Финансовая модель / ранняя стадия | `~/Projects/_archive/invertomatic/` | archived |
 | [shopify_assistant](../../../Projects/_archive/shopify_assistant/) | Мультиролевой workflow Planner → Developer → Validator | `~/Projects/_archive/shopify_assistant/` | archived |
 
+## Бухгалтерия
+
+| Slug | Назначение | Статус |
+|---|---|---|
+| [accounting-process](accounting-process.md) | Порядок закрытия квартала: банк → инвойсы → таблица (Propria + ecom) | active |
+
 ## Споры / Претензии
 
 | Slug | Назначение | Статус |
