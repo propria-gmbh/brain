@@ -10735,7 +10735,7 @@
     "title": "Sequential THinking /ultrap ultraplan",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-25",
     "order": 0.0
   },
