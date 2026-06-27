@@ -10856,5 +10856,13 @@
     "someday": true,
     "created_at": "2026-06-26",
     "order": 0.0
+  },
+  {
+    "id": "inbox-анализ-рекламных-кампаний",
+    "title": "Анализ рекламных кампаний",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-06-27"
   }
 ]
