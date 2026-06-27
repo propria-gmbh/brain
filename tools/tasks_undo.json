@@ -10861,10 +10861,11 @@
     "title": "Miles follow up",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-27",
     "context": "perekur",
     "marker": "🔴",
-    "priority": "red"
+    "priority": "red",
+    "order": 0.0
   }
 ]

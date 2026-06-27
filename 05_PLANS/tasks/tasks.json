@@ -10866,6 +10866,7 @@
     "context": "perekur",
     "marker": "🔴",
     "priority": "red",
-    "order": 0.0
+    "order": 0.0,
+    "deadline": "2026-07-03"
   }
 ]
