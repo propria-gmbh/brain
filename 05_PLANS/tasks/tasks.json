@@ -10894,7 +10894,8 @@
     "title": "Сделать справку от Хаустарцта",
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
-    "someday": true,
-    "created_at": "2026-06-29"
+    "someday": false,
+    "created_at": "2026-06-29",
+    "order": 0.0
   }
 ]
