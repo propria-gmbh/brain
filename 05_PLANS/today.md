@@ -1,10 +1,11 @@
-# План на 2026-06-27
+# План на 2026-06-30
 
 ## Утренний чеклист
 
-- [x] 2026-06-27 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-06-27 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [x] 2026-06-27 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [ ] Составить описание похода для сайта партнёров Берлинк (сделать первым, до остального чеклиста)
+- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
 - [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
 - [ ] Запросить квоты на новые товары у 3PL
@@ -13,13 +14,15 @@
 
 ## Календарь на завтра
 
-- 14:00–15:50: Shopify Tribe Meeting
+- 08:00 — Wertstoffe (BSR) Abholung
+- 20:00–21:00 — Ask AB Anything
 
 ## Задачи
 
-- [ ] Протестировать Shopus
-
 ## Перекур / На улице
+
+- [ ] Фолоуап Tarik — Festpreisangebot Küchenmontage (Angebot Nr. 027), Angebot gültig bis 30.06
+- [ ] Записаться на приём по косоглазию в Шарите
 
 ## 2-я половина дня
 
