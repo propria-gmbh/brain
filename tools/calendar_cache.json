@@ -1,23 +1,11 @@
 {
-  "updated": "2026-06-24T05:09:33Z",
+  "updated": "2026-06-29T15:20:20Z",
   "events": [
     {
-      "summary": "Мастермайнд",
-      "start": "2026-06-24T15:00:00+02:00",
-      "end": "2026-06-24T20:00:00+02:00",
-      "calendar": "ilja.disterheft@gmail.com"
-    },
-    {
-      "summary": "BioTonne вывоз (BSR)",
-      "start": "2026-06-25",
-      "end": "2026-06-26",
+      "summary": "Alexander Dortmann's Birthday",
+      "start": "2026-06-29",
+      "end": "2026-06-30",
       "allDay": true,
-      "calendar": "ilja.disterheft@gmail.com"
-    },
-    {
-      "summary": "Weekly Review",
-      "start": "2026-06-26T13:00:00+02:00",
-      "end": "2026-06-26T14:00:00+02:00",
       "calendar": "ilja.disterheft@gmail.com"
     },
     {
@@ -33,18 +21,43 @@
       "calendar": "ilja.disterheft@gmail.com"
     },
     {
-      "summary": "Shopify Tribe Meeting",
-      "start": "2026-06-28T14:00:00+02:00",
-      "end": "2026-06-28T15:50:00+02:00",
-      "calendar": "3553194@gmail.com (Shopify Tribe)",
-      "location": "https://us06web.zoom.us/j/89487961287?pwd=QQ3ujy7wHsqPpgxRzaGQuqvWVr9aOg.1"
+      "summary": "Hausmüll (BSR) Abholung",
+      "start": "2026-07-01T08:00:00+02:00",
+      "end": "2026-07-01T08:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com / Disters"
     },
     {
-      "summary": "Call ECOM GOOGLE MM",
-      "start": "2026-06-30T14:00:00+02:00",
-      "end": "2026-06-30T15:00:00+02:00",
+      "summary": "Wolf — Sprechstunde ohne Termin (IYT медсправка)",
+      "start": "2026-07-02T09:00:00+02:00",
+      "end": "2026-07-02T12:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com",
+      "note": "резервный вариант, можно прийти без термина"
+    },
+    {
+      "summary": "Ask Kevin Anything",
+      "start": "2026-07-02T19:00:00+02:00",
+      "end": "2026-07-02T20:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
+    },
+    {
+      "summary": "Wolf — Sprechstunde ohne Termin (IYT медсправка)",
+      "start": "2026-07-03T09:00:00+02:00",
+      "end": "2026-07-03T12:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com",
+      "note": "резервный вариант, можно прийти без термина"
+    },
+    {
+      "summary": "Weekly Review",
+      "start": "2026-07-03T13:00:00+02:00",
+      "end": "2026-07-03T14:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
+    },
+    {
+      "summary": "Shopify Tribe Meeting",
+      "start": "2026-07-05T14:00:00+02:00",
+      "end": "2026-07-05T15:50:00+02:00",
       "calendar": "3553194@gmail.com (Shopify Tribe)",
-      "location": "https://us06web.zoom.us/j/85638879630?pwd=hVDiBAHxulRW2cOgypS6sQOrhH7s6E.1"
+      "note": "перенесено с 30.06 на 05.07 — в кэше от 24.06 было неверно"
     }
   ]
 }
