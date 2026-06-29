@@ -8937,7 +8937,8 @@
     "created": "2026-06-10",
     "order": 0.0,
     "executor": "claude",
-    "marker": "🔴"
+    "marker": "🔴",
+    "scheduled_date": "2026-06-29"
   },
   {
     "id": "сделать-подписи-к-фотографиям",
