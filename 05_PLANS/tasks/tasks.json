@@ -10227,7 +10227,7 @@
     "title": "Сравнить Top-Anzeige (Küchenmontage) против контроля (Möbelmontage): Besucher/Nachrichten",
     "type": "task",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-29",
     "priority": null,
@@ -10237,7 +10237,7 @@
     "tags": [],
     "notes": "Эксперимент запущен 22.06.2026, Top-Anzeige 24,99€/7 дней на Küchenmontage Berlin. База: Küchenmontage 44 Besucher/4 gemerkt, Möbelmontage (контроль) 84 Besucher/3 gemerkt. См. 09_kleinanzeigen_ads_pricing.md",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-29",
     "created_at": "2026-06-22",
     "order": 0.0
   },

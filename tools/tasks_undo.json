@@ -271,7 +271,7 @@
     "order": 1.0,
     "created_at": "2026-05-25",
     "someday": false,
-    "deadline": "2026-06-29",
+    "deadline": "2026-07-20",
     "context": "deep"
   },
   {
@@ -9615,7 +9615,7 @@
     "title": "Сделать одностраничный сайт для монтажного сервиса",
     "type": "task",
     "parent_id": "inbox-möbelmontage",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -9625,7 +9625,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-29",
     "created_at": "2026-06-11",
     "order": 0.0
   },
