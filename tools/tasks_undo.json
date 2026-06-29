@@ -10870,11 +10870,22 @@
     "deadline": "2026-07-03"
   },
   {
-    "id": "inbox-shopus",
-    "title": "Shopus",
-    "parent_id": "area-inbox",
+    "id": "протестировать-shopus",
+    "title": "Протестировать Shopus",
+    "type": "task",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-27"
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-27",
+    "order": 0.0
   }
 ]
