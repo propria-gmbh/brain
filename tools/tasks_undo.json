@@ -5815,7 +5815,7 @@
     "type": "task",
     "project": "personal/purchases",
     "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -5825,7 +5825,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-06-29",
     "created_at": "2026-05-25",
     "order": 3.0
   },
