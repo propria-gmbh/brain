@@ -8926,7 +8926,7 @@
     "status": "todo",
     "someday": false,
     "deadline": null,
-    "priority": null,
+    "priority": "red",
     "stakes": null,
     "context": null,
     "assignee": null,
@@ -8936,7 +8936,8 @@
     "done_date": null,
     "created": "2026-06-10",
     "order": 0.0,
-    "executor": "claude"
+    "executor": "claude",
+    "marker": "🔴"
   },
   {
     "id": "сделать-подписи-к-фотографиям",
