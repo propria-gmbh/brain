@@ -10852,7 +10852,7 @@
     "title": "Анализ поведения пользователей на сайте",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-27",
     "order": 0.0
   },

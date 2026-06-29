@@ -10495,7 +10495,7 @@
     "id": "изучить-личный-кабинет-mein-ihk-berlin-check-по-ссылке-от-ih",
     "title": "Изучить личный кабинет Mein IHK Berlin Check по ссылке от IHK (переслано Аллой Бессин) — заполнить профиль компании, выбрать темы интересов",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": false,
     "deadline": null,
