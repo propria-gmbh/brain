@@ -10843,7 +10843,7 @@
     "title": "Анализ рекламных кампаний",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-06-27",
     "order": 0.0
   },
