@@ -9112,25 +9112,6 @@
     "order": 0.0
   },
   {
-    "id": "сделать-медиа-плеер-на-основе-минипк",
-    "title": "Сделать медиа-плеер на основе миниПК",
-    "type": "task",
-    "parent_id": "area-personal-home-house-физический-дом",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": null,
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
     "id": "купить-universal-rc-или-rc-hub",
     "title": "Купить Universal RC или RC Hub",
     "type": "task",

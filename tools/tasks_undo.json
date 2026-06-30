@@ -10785,12 +10785,13 @@
     "id": "inbox-написать-емейл-неврологу-попросить-рецепт-на-ascot",
     "title": "Написать емейл неврологу попросить рецепт на Ascotop x2",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-06-26",
     "context": "perekur",
     "order": 0.0,
-    "scheduled_date": "2026-06-30"
+    "scheduled_date": "2026-06-30",
+    "done_at": "2026-06-30"
   },
   {
     "id": "inbox-записаться-на-прием-по-косоглазию-в-шарите",
