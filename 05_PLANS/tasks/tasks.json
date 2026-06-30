@@ -10658,7 +10658,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-25",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-30"
   },
   {
     "id": "inbox-sequential-thinking-ultrap-ultraplan",
