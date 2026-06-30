@@ -24,8 +24,8 @@
 
 ## Перекур / На улице
 
-- [ ] Фолоуап Tarik — Festpreisangebot Küchenmontage (Angebot Nr. 027), Angebot gültig bis 30.06
-- [ ] Записаться на приём по косоглазию в Шарите
+- [x] 2026-06-30 Фолоуап Tarik — Festpreisangebot Küchenmontage (Angebot Nr. 027), Angebot gültig bis 30.06
+- [x] 2026-06-30 Записаться на приём по косоглазию в Шарите
 
 ## 2-я половина дня
 
