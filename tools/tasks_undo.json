@@ -8548,7 +8548,8 @@
     "someday": false,
     "deadline": "2026-06-21",
     "notes": "Проверить что выплаты Kindergeld идут на новый IBAN DE32 1005 0000 1076 5441 81 (Berliner Sparkasse). Уведомление отправлено по почте 07.06.2026.",
-    "order": 6.0
+    "order": 6.0,
+    "scheduled_date": "2026-06-30"
   },
   {
     "id": "при-включении-фильтра-someday-разворачивать-все-area-с-somed",
