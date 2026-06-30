@@ -10715,7 +10715,8 @@
     "someday": true,
     "created_at": "2026-06-30",
     "order": 0.0,
-    "scheduled_date": "2026-06-30"
+    "scheduled_date": "2026-06-30",
+    "deadline": "2026-07-01"
   },
   {
     "id": "inbox-отчет-за-1-квартал-2026",
