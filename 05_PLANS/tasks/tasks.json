@@ -9932,7 +9932,7 @@
   },
   {
     "id": "inbox-customer-support",
-    "title": "Customer Support",
+    "title": "PR Customer Support",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": false,
