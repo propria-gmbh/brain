@@ -10861,12 +10861,13 @@
   {
     "id": "inbox-отчет-за-1-квартал-2026",
     "title": "Отчет за 1 квартал 2026",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": true,
     "created_at": "2026-06-30",
     "context": "deep",
     "marker": "🟧",
-    "priority": "orange"
+    "priority": "orange",
+    "order": 0.0
   }
 ]
