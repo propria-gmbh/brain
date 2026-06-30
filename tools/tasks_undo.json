@@ -9176,7 +9176,7 @@
     "id": "наполнить-us-store-charlie-and-ted-1000-товаров",
     "title": "Наполнить US store (Charlie and Ted) 1000 товаров",
     "type": "task",
-    "parent_id": "inbox-prj-with-mitya",
+    "parent_id": "area-charlie-ted",
     "status": "todo",
     "someday": false,
     "deadline": null,
