@@ -10788,7 +10788,8 @@
     "someday": true,
     "created_at": "2026-06-26",
     "context": "perekur",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-06-30"
   },
   {
     "id": "inbox-записаться-на-прием-по-косоглазию-в-шарите",
@@ -10907,6 +10908,7 @@
     "parent_id": "health-операция-на-глаза-от-близорукости-и-косоглази",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-06-30"
+    "created_at": "2026-06-30",
+    "order": 0.0
   }
 ]
