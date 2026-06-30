@@ -10305,25 +10305,6 @@
     "order": 0.0
   },
   {
-    "id": "вступить-в-facebook-группы-владельцев-катамаранов-lagoon-bal",
-    "title": "Вступить в Facebook-группы владельцев катамаранов (Lagoon, Bali, Fountaine Pajot, Catana, Excess)",
-    "type": "task",
-    "parent_id": "area-safe-min",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-23",
-    "order": 0.0
-  },
-  {
     "id": "составить-список-собственных-апгрейдов-на-яхте-с-фото-и-опис",
     "title": "Составить список собственных апгрейдов на яхте с фото и описаниями для кейса",
     "type": "task",
