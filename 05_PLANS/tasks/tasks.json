@@ -9021,7 +9021,7 @@
     "title": "Распаять провода для колонок",
     "type": "task",
     "parent_id": "area-personal-home-house-физический-дом",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -9033,7 +9033,8 @@
     "done": false,
     "done_date": null,
     "created": "2026-06-10",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-06-30"
   },
   {
     "id": "купить-ремкомплект-для-колонок-magnat",
