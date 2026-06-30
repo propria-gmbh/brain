@@ -10746,5 +10746,24 @@
     "done_at": null,
     "created_at": "2026-06-30",
     "order": 0.0
+  },
+  {
+    "id": "уточнить-у-поставщика-east-baite-vs-youlu-international-один",
+    "title": "Уточнить у поставщика: EAST BAITE vs Youlu International — один поставщик или два? Инвойсы с одинаковыми номерами (напр. 2026053884)",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "В Drive папке Propria лежат парные файлы: EAST BAITE 2026053884 12-31.pdf и Youlu International Development Limited 2026053884 12-31.pdf. Одинаковые номера и суммы. context: perekur",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-06-30",
+    "order": 0.0
   }
 ]
