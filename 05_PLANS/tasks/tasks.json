@@ -9173,25 +9173,6 @@
     "done_at": "2026-06-30"
   },
   {
-    "id": "ux-коррекции-промта-непонятен",
-    "title": "UX коррекции промта непонятен",
-    "type": "task",
-    "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "assignee": null,
-    "tags": [],
-    "notes": "Нужна документация или подсказка в интерфейсе",
-    "done": false,
-    "done_date": null,
-    "created": "2026-06-10",
-    "order": 0.0
-  },
-  {
     "id": "наполнить-us-store-charlie-and-ted-1000-товаров",
     "title": "Наполнить US store (Charlie and Ted) 1000 товаров",
     "type": "task",
