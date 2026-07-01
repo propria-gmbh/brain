@@ -10775,5 +10775,13 @@
     "someday": true,
     "created_at": "2026-07-01",
     "order": 0.0
+  },
+  {
+    "id": "inbox-аудит-регистрационных-документов-контрагентов",
+    "title": "Аудит регистрационных документов контрагентов",
+    "parent_id": "area-projects-tacura",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-01"
   }
 ]
