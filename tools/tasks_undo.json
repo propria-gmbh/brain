@@ -2507,7 +2507,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 3.0
+    "order": 3.0,
+    "scheduled_date": "2026-07-01"
   },
   {
     "id": "propria-сделать-отчет-по-подоходному-за-2025-год",
@@ -10772,6 +10773,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-07-01"
+    "created_at": "2026-07-01",
+    "order": 0.0
   }
 ]
