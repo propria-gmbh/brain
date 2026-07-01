@@ -1,25 +1,6 @@
 {
-  "updated": "2026-06-29T15:20:20Z",
+  "updated": "2026-07-01T08:16:00+02:00",
   "events": [
-    {
-      "summary": "Alexander Dortmann's Birthday",
-      "start": "2026-06-29",
-      "end": "2026-06-30",
-      "allDay": true,
-      "calendar": "ilja.disterheft@gmail.com"
-    },
-    {
-      "summary": "Wertstoffe (BSR) Abholung",
-      "start": "2026-06-30T08:00:00+02:00",
-      "end": "2026-06-30T08:00:00+02:00",
-      "calendar": "ilja.disterheft@gmail.com / Disters"
-    },
-    {
-      "summary": "Ask AB Anything",
-      "start": "2026-06-30T20:00:00+02:00",
-      "end": "2026-06-30T21:00:00+02:00",
-      "calendar": "ilja.disterheft@gmail.com"
-    },
     {
       "summary": "Hausmüll (BSR) Abholung",
       "start": "2026-07-01T08:00:00+02:00",
@@ -56,8 +37,20 @@
       "summary": "Shopify Tribe Meeting",
       "start": "2026-07-05T14:00:00+02:00",
       "end": "2026-07-05T15:50:00+02:00",
-      "calendar": "3553194@gmail.com (Shopify Tribe)",
-      "note": "перенесено с 30.06 на 05.07 — в кэше от 24.06 было неверно"
+      "calendar": "3553194@gmail.com (Shopify Tribe)"
+    },
+    {
+      "summary": "Встреча с Сергеем Черняком",
+      "start": "2026-07-07T08:30:00+02:00",
+      "end": "2026-07-07T09:30:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com",
+      "conferenceUrl": "https://meet.google.com/sky-nojt-cgj"
+    },
+    {
+      "summary": "Reinigungstag (Уборка)",
+      "start": "2026-07-07T10:00:00+02:00",
+      "end": "2026-07-07T11:00:00+02:00",
+      "calendar": "ilja.disterheft@gmail.com"
     }
   ]
 }

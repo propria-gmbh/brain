@@ -1,4 +1,4 @@
-# План на 2026-06-30
+# План на 2026-07-01
 
 ## Первая задача
 
@@ -6,29 +6,34 @@
 
 ## Утренний чеклист
 
-- [x] 2026-06-30 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-06-30 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [ ] KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [ ] Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
 - [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
-- [x] 2026-06-30 Проверить бизнес-счёт Revolut
+- [ ] Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
-- [x] 2026-06-30 Запросить квоты на новые товары у 3PL
-- [x] 2026-06-30 Ответить AB в Slack
-- [x] 2026-06-30 Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
+- [ ] Запросить квоты на новые товары у 3PL
+- [ ] Ответить AB в Slack
+- [ ] Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)
 
-## Календарь на завтра
+## Календарь на эту неделю
 
-- 08:00 — Wertstoffe (BSR) Abholung
-- 20:00–21:00 — Ask AB Anything
+- 02.07 09:00 — Wolf — Sprechstunde ohne Termin (IYT медсправка)
+- 02.07 19:00 — Ask Kevin Anything
+- 03.07 09:00 — Wolf — Sprechstunde ohne Termin (IYT медсправка) [резерв]
+- 03.07 13:00 — Weekly Review
+- 05.07 14:00 — Shopify Tribe Meeting
+- 07.07 08:30 — Встреча с Сергеем Черняком
+- 07.07 10:00 — Reinigungstag (Уборка)
 
 ## Задачи
 
-## Перекур / На улице
+- [ ] Подать Fragebogen zur steuerlichen Erfassung через ELSTER (ИП, Finanzamt)
+- [ ] Написать Lanyou и Hongda — запрос на образцы и условия OEM для Casa Gian
+- [ ] Протестировать Shopus
+- [ ] Посмотреть запись 1M call в AB Inner Circle
 
-- [x] 2026-06-30 Фолоуап Tarik — Festpreisangebot Küchenmontage (Angebot Nr. 027), Angebot gültig bis 30.06
-- [x] 2026-06-30 Записаться на приём по косоглазию в Шарите
+## Перекур / На улице
 
 ## 2-я половина дня
 
 ## Сделано
-- [x] 2026-06-30 Wertstoffe (BSR) Abholung
-- [x] 2026-06-29 Alexander Dortmann's Birthday
