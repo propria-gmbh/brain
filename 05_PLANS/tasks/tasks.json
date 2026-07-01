@@ -10003,7 +10003,7 @@
     "parent_id": "inbox-möbelmontage",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-01",
+    "deadline": null,
     "priority": null,
     "stakes": null,
     "context": null,
