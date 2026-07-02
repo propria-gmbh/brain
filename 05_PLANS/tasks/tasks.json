@@ -6621,7 +6621,7 @@
     "title": "Фолоуап Саша Дортман — поход по Лазурке",
     "type": "task",
     "parent_id": "area-personal-sailing-поход-по-лазурке",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-24",
     "priority": "green",
@@ -6633,9 +6633,10 @@
     ],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-02",
     "created_at": "2026-05-26",
-    "order": 0
+    "order": 0,
+    "done": "2026-07-02"
   },
   {
     "id": "personal-development-определить-цели-по-методике-дорофеева",
