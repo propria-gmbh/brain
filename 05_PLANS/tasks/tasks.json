@@ -10845,5 +10845,24 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-wolf-забрать-справку-iyt",
+    "title": "Фолоуап Wolf — забрать медсправку IYT",
+    "type": "task",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "status": "todo",
+    "someday": true,
+    "deadline": "2026-07-08",
+    "priority": null,
+    "stakes": null,
+    "context": "perekur",
+    "goal": null,
+    "tags": [],
+    "notes": "Обследование у Wolf пройдено 02.07, справка будет готова на следующей неделе.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-02",
+    "order": 0.0
   }
 ]
