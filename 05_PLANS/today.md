@@ -31,4 +31,5 @@
 ## 2-я половина дня
 
 ## Сделано
+- [x] 2026-07-02 Wolf — Sprechstunde ohne Termin (IYT медсправка)
 - [x] 2026-07-01 Hausmüll (BSR) Abholung

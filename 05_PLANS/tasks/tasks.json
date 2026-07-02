@@ -10701,11 +10701,12 @@
     "id": "inbox-сделать-справку-от-хаустарцта",
     "title": "Сделать справку от Хаустарцта",
     "parent_id": "area-personal-sailing-инструкторство",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-06-29",
     "order": 0.0,
-    "deadline": "2026-07-02"
+    "deadline": "2026-07-02",
+    "done_at": "2026-07-02"
   },
   {
     "id": "inbox-назначить-термин-в-шарите",
