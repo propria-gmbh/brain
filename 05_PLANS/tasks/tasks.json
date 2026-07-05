@@ -10289,25 +10289,6 @@
     "order": 1.0
   },
   {
-    "id": "создать-шаблон-энергобаланса-для-типовых-катамаранов-lagoon-",
-    "title": "Создать шаблон энергобаланса для типовых катамаранов (Lagoon 42/46, Bali 4.1/4.6)",
-    "type": "task",
-    "parent_id": "inbox-catamaran",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-23",
-    "order": 2.0
-  },
-  {
     "id": "изучить-личный-кабинет-mein-ihk-berlin-check-по-ссылке-от-ih",
     "title": "Изучить личный кабинет Mein IHK Berlin Check по ссылке от IHK (переслано Аллой Бессин) — заполнить профиль компании, выбрать темы интересов",
     "type": "task",

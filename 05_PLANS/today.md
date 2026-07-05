@@ -1,35 +1,25 @@
-# План на 2026-07-02
+# План на 2026-07-05
 
 ## Первая задача
 
-- [ ] Определить цели по методике Дорофеева
+- [ ] Определить цели по методике Дорофеева (дедлайн был 2026-07-01, просрочено)
 
 ## Утренний чеклист
 
-- [x] 2026-07-02 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
-- [x] 2026-07-02 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
-- [ ] Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
-- [x] 2026-07-02 Проверить бизнес-счёт Revolut
+- [x] 2026-07-05 KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)
+- [x] 2026-07-05 Проверить тикеты Gorgias (https://havgaard-kobenhavn.gorgias.com/app/views/44819)
+- [x] 2026-07-05 Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)
+- [x] 2026-07-05 Проверить бизнес-счёт Revolut
 - [ ] Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)
 
 ## Календарь
 
-- 09:00 — Wolf — Sprechstunde ohne Termin (IYT медсправка / справка от Хаустарцта)
-- 19:00 — Ask Kevin Anything
+- 14:00 — Shopify Tribe Meeting (Zoom)
 
 ## Задачи
 
-- [ ] Определить ближайшие действия по Еком — новые магазины, брендбук от Мити, GMC
-- [ ] Принять решение, нужно ли Подать Fragebogen ELSTER (ИП, Finanzamt)
-- [ ] Подать на WBS (Wohnberechtigungsschein)
-- [ ] Купить насадки для зубной щетки
-
 ## Перекур / На улице
-
-- [ ] Ответить госпоже Хайман
 
 ## 2-я половина дня
 
 ## Сделано
-- [x] 2026-07-02 Wolf — Sprechstunde ohne Termin (IYT медсправка)
-- [x] 2026-07-01 Hausmüll (BSR) Abholung
