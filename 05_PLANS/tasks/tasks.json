@@ -1483,7 +1483,7 @@
     "project": "ecom",
     "parent_id": "ecom-ниша-льняные-изделия",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": null,
     "priority": null,
     "stakes": null,
