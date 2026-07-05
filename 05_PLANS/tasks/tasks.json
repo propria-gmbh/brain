@@ -10853,7 +10853,7 @@
     "id": "ответить-croatia-yachting-уточнить-резервацию-и-vat-для-коми",
     "title": "Ответить Croatia Yachting: уточнить резервацию и VAT для комиссионного инвойса P-2025-001",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": false,
     "deadline": null,
