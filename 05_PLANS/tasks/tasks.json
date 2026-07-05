@@ -9600,7 +9600,7 @@
     "type": "task",
     "parent_id": "area-casa-giannini",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
