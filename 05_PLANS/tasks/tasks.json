@@ -10757,7 +10757,7 @@
     "title": "Начать рекламу на Пинтерест",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-01",
     "order": 0.0
   },
