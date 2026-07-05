@@ -10848,5 +10848,24 @@
     "done_at": null,
     "created_at": "2026-07-02",
     "order": 0.0
+  },
+  {
+    "id": "ответить-croatia-yachting-уточнить-резервацию-и-vat-для-коми",
+    "title": "Ответить Croatia Yachting: уточнить резервацию и VAT для комиссионного инвойса P-2025-001",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Ответили 01.07: Propria GmbH не в резервации, VAT-номер неверный. Thread: 19eab772988f5d00",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-05",
+    "order": 0.0
   }
 ]
