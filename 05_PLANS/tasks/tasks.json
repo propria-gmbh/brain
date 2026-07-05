@@ -10872,7 +10872,7 @@
     "id": "подать-abmahnung-на-miles",
     "title": "Подать Abmahnung на MILES",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-propria",
     "status": "todo",
     "someday": false,
     "deadline": "2026-07-06",
