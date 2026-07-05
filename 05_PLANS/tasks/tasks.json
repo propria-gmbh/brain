@@ -10783,12 +10783,13 @@
     "title": "Фолоуап Шарите augenambulanz-cvk — ответ на письмо по косоглазию",
     "type": "task",
     "parent_id": "area-health",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": "2026-07-08",
     "context": "perekur",
     "created_at": "2026-07-01",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-07-05"
   },
   {
     "id": "определить-ближайшие-действия-по-еком-новые-магазины-брендбу",
