@@ -10867,5 +10867,24 @@
     "done_at": null,
     "created_at": "2026-07-05",
     "order": 0.0
+  },
+  {
+    "id": "подать-abmahnung-на-miles",
+    "title": "Подать Abmahnung на MILES",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-06",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Переписка MILES VW Taigo BMS1706646, thread 199382d61ca64e9b",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-05",
+    "order": 0.0
   }
 ]
