@@ -10886,5 +10886,13 @@
     "done_at": null,
     "created_at": "2026-07-05",
     "order": 0.0
+  },
+  {
+    "id": "inbox-косметические-процедуры",
+    "title": "Косметические процедуры",
+    "parent_id": "area-health",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-05"
   }
 ]
