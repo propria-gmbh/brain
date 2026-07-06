@@ -1,4 +1,4 @@
-"""Tests for today_server.py — scheduled_date feature."""
+"""Tests for today_server.py — tasks.json-only dashboard."""
 import json
 import sys
 import tempfile
@@ -20,12 +20,6 @@ def make_task(task_id="t1", title="Test Task", **kwargs):
 def write_tasks(tmp_path, tasks):
     f = tmp_path / "tasks.json"
     f.write_text(json.dumps(tasks), encoding="utf-8")
-    return f
-
-
-def write_today(tmp_path, content):
-    f = tmp_path / "today.md"
-    f.write_text(content, encoding="utf-8")
     return f
 
 
@@ -89,11 +83,11 @@ def test_render_today_shows_scheduled_date_task(tmp_path):
     tasks_file = write_tasks(tmp_path, [
         make_task("t1", title="Deep Work Task", scheduled_date=TODAY, context="deep")
     ])
-    today_file = write_today(tmp_path, "# План на " + TODAY + "\n\n## Утренний чеклист\n\n## Сделано\n")
     with patch.object(srv, "TASKS_FILE", tasks_file), \
-         patch.object(srv, "TODAY", today_file), \
-         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"):
-        html = srv.render_today(today_file)
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"), \
+         patch("subprocess.run"):
+        html = srv.render_today()
     assert "Deep Work Task" in html
 
 
@@ -101,11 +95,11 @@ def test_render_today_shows_deadline_task(tmp_path):
     tasks_file = write_tasks(tmp_path, [
         make_task("t1", title="Deadline Task", deadline=TODAY, context="afternoon")
     ])
-    today_file = write_today(tmp_path, "# План\n\n## Утренний чеклист\n\n## Сделано\n")
     with patch.object(srv, "TASKS_FILE", tasks_file), \
-         patch.object(srv, "TODAY", today_file), \
-         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"):
-        html = srv.render_today(today_file)
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"), \
+         patch("subprocess.run"):
+        html = srv.render_today()
     assert "Deadline Task" in html
 
 
@@ -113,11 +107,11 @@ def test_render_today_excludes_future_scheduled(tmp_path):
     tasks_file = write_tasks(tmp_path, [
         make_task("t1", title="Future Task", scheduled_date=TOMORROW, context="deep")
     ])
-    today_file = write_today(tmp_path, "# План\n\n## Утренний чеклист\n\n## Сделано\n")
     with patch.object(srv, "TASKS_FILE", tasks_file), \
-         patch.object(srv, "TODAY", today_file), \
-         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"):
-        html = srv.render_today(today_file)
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"), \
+         patch("subprocess.run"):
+        html = srv.render_today()
     assert "Future Task" not in html
 
 
@@ -125,11 +119,11 @@ def test_render_today_excludes_done_tasks(tmp_path):
     tasks_file = write_tasks(tmp_path, [
         make_task("t1", title="Done Task", scheduled_date=TODAY, status="done")
     ])
-    today_file = write_today(tmp_path, "# План\n\n## Утренний чеклист\n\n## Сделано\n")
     with patch.object(srv, "TASKS_FILE", tasks_file), \
-         patch.object(srv, "TODAY", today_file), \
-         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"):
-        html = srv.render_today(today_file)
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"), \
+         patch("subprocess.run"):
+        html = srv.render_today()
     assert "Done Task" not in html
 
 
@@ -139,11 +133,11 @@ def test_render_today_groups_by_context(tmp_path):
         make_task("t2", title="Perekur Task", scheduled_date=TODAY, context="perekur"),
         make_task("t3", title="Afternoon Task", scheduled_date=TODAY, context="afternoon"),
     ])
-    today_file = write_today(tmp_path, "# План\n\n## Утренний чеклист\n\n## Сделано\n")
     with patch.object(srv, "TASKS_FILE", tasks_file), \
-         patch.object(srv, "TODAY", today_file), \
-         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"):
-        html = srv.render_today(today_file)
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "CALENDAR_CACHE", tmp_path / "cal.json"), \
+         patch("subprocess.run"):
+        html = srv.render_today()
     # All three tasks present
     assert "Deep Task" in html
     assert "Perekur Task" in html
@@ -152,6 +146,128 @@ def test_render_today_groups_by_context(tmp_path):
     assert "Задачи" in html
     assert "Перекур" in html
     assert "половина" in html
+
+
+# ── reset_daily_recurring ─────────────────────────────────
+
+def test_reset_daily_recurring_resets_status_and_counts_miss(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        make_task("t1", recurring="daily", status="todo", last_reset_date="2020-01-01", missed_count=0)
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        tasks = srv.load_tasks()
+        srv.reset_daily_recurring(tasks)
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["status"] == "todo"
+    assert result[0]["last_reset_date"] == TODAY
+    assert result[0]["missed_count"] == 1
+
+
+def test_reset_daily_recurring_no_miss_if_done(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        make_task("t1", recurring="daily", status="done", last_reset_date="2020-01-01", missed_count=0)
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        tasks = srv.load_tasks()
+        srv.reset_daily_recurring(tasks)
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["status"] == "todo"
+    assert result[0]["missed_count"] == 0
+
+
+def test_reset_daily_recurring_noop_if_already_reset_today(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        make_task("t1", recurring="daily", status="done", last_reset_date=TODAY, missed_count=0)
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        tasks = srv.load_tasks()
+        srv.reset_daily_recurring(tasks)
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["status"] == "done"
+
+
+# ── set_main_task_date ────────────────────────────────────
+
+def test_set_main_task_date_sets_and_clears_others(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        make_task("t1", main_task_date=TODAY),
+        make_task("t2"),
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.set_main_task_date("t2")
+    result = json.loads(tasks_file.read_text())
+    by_id = {t["id"]: t for t in result}
+    assert "main_task_date" not in by_id["t1"]
+    assert by_id["t2"]["main_task_date"] == TODAY
+
+
+# ── set_task_assignee ─────────────────────────────────────
+
+def test_set_task_assignee_toggles(tmp_path):
+    tasks_file = write_tasks(tmp_path, [make_task("t1")])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.set_task_assignee("t1")
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["assignee"] == "claude"
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.set_task_assignee("t1")
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["assignee"] is None
+
+
+# ── mark_event_done ───────────────────────────────────────
+
+def test_mark_event_done_creates_linked_task(tmp_path):
+    tasks_file = write_tasks(tmp_path, [])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "write_daylog_entries"), \
+         patch("subprocess.run"):
+        srv.mark_event_done("Team Meeting", TODAY)
+    result = json.loads(tasks_file.read_text())
+    ev = next(t for t in result if t.get("type") == "event")
+    assert ev["event_summary"] == "Team Meeting"
+    assert ev["event_date"] == TODAY
+    assert ev["status"] == "done"
+
+
+def test_mark_event_done_toggles_existing(tmp_path):
+    tasks_file = write_tasks(tmp_path, [
+        {"id": "event-x", "title": "X", "type": "event", "event_summary": "X",
+         "event_date": TODAY, "status": "done", "done_at": TODAY}
+    ])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch.object(srv, "write_daylog_entries"), \
+         patch("subprocess.run"):
+        srv.mark_event_done("X", TODAY)
+    result = json.loads(tasks_file.read_text())
+    assert result[0]["status"] == "todo"
+
+
+# ── task without children invariant ───────────────────────
+
+def test_add_subtask_promotes_parent_to_area(tmp_path):
+    tasks_file = write_tasks(tmp_path, [make_task("parent", title="Parent")])
+    with patch.object(srv, "TASKS_FILE", tasks_file), \
+         patch.object(srv, "UNDO_FILE", tmp_path / "undo.json"), \
+         patch("subprocess.run"):
+        srv.add_task_inbox("Child", parent_id="parent")
+    result = json.loads(tasks_file.read_text())
+    parent = next(t for t in result if t["id"] == "parent")
+    assert parent["type"] == "area"
 
 
 # ── task_row contains schedule button ────────────────────

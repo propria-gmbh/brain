@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Brain Task Manager — today.md + tasks.json in browser."""
+"""Brain Task Manager — tasks.json in browser."""
 
 import http.server
 import json
@@ -12,11 +12,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import priority as _priority
+from daylog import write_daylog_entries
 
 PORT = 7777
 BRAIN = Path(__file__).parent.parent
 _SORTABLE_JS = (Path(__file__).parent / "sortable.min.js").read_text(encoding="utf-8")
-TODAY = BRAIN / "05_PLANS/today.md"
 CALENDAR_CACHE = BRAIN / "tools/calendar_cache.json"
 TASKS_FILE = BRAIN / "05_PLANS/tasks/tasks.json"
 SESSION_LOG = BRAIN / "04_THINKING" / "session-log.jsonl"
@@ -178,23 +178,8 @@ function post(url, data, cb) {
     .then(function() { if (cb) cb(); else location.reload(); });
 }
 
-// today.md toggles — checkbox only
-document.querySelectorAll('li[data-idx]').forEach(function(li) {
-  var chk = li.querySelector('.chk');
-  if (chk) chk.addEventListener('click', function(e) {
-    e.stopPropagation();
-    post('/toggle', {idx: parseInt(li.dataset.idx)});
-  });
-  var txt = li.querySelector('.item-text');
-  if (txt) txt.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var tid = li.dataset.taskId;
-    if (tid) openTaskModal(tid);
-  });
-});
-
 // today tasks from tasks.json (scheduled) — checkbox + modal
-document.querySelectorAll('li[data-task-id]:not([data-idx])').forEach(function(li) {
+document.querySelectorAll('li[data-task-id]').forEach(function(li) {
   var tid = li.dataset.taskId;
   if (!tid) return;
   var chk = li.querySelector('.task-chk');
@@ -208,14 +193,6 @@ document.querySelectorAll('li[data-task-id]:not([data-idx])').forEach(function(l
   if (txt) txt.addEventListener('click', function(e) {
     e.stopPropagation();
     openTaskModal(tid);
-  });
-});
-
-// today.md: remove item
-document.querySelectorAll('.del-today[data-idx]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    if (confirm('Убрать из сегодня?')) post('/remove-today', {idx: parseInt(btn.dataset.idx)});
   });
 });
 
@@ -352,19 +329,6 @@ document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
   });
 })();
 
-// tasks.json: toggle someday
-document.querySelectorAll('.s-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    fetch('/someday', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: btn.dataset.id})})
-      .then(function(r) { return r.json().catch(function() { return {}; }); })
-      .then(function(d) {
-        if (d.blocked) { alert(d.warning); return; }
-        location.reload();
-      });
-  });
-});
-
 // tasks.json: cycle marker
 document.querySelectorAll('.m-btn[data-id]').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -412,6 +376,13 @@ document.querySelectorAll('.del-btn[data-id]').forEach(function(btn) {
 
 // tasks.json: rename (double-click)
 document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
+  var clickTimer = null;
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (el.contentEditable === 'true') return;
+    if (clickTimer) { clearTimeout(clickTimer); clickTimer = null; return; }
+    clickTimer = setTimeout(function() { clickTimer = null; openTaskModal(el.dataset.id); }, 250);
+  });
   el.addEventListener('dblclick', function(e) {
     e.stopPropagation();
     if (el.contentEditable === 'true') return;
@@ -461,14 +432,14 @@ document.querySelectorAll('.task-text[data-id]').forEach(function(el) {
       sel.appendChild(none);
       list.forEach(function(t) {
         var opt = document.createElement('option');
-        opt.value = t.title;
+        opt.value = t.id;
         opt.textContent = 'P' + t.score + ' — ' + t.title;
         sel.appendChild(opt);
       });
       btn.replaceWith(sel);
       sel.focus();
       sel.addEventListener('change', function() {
-        if (sel.value) post('/set-main-task', {title: sel.value});
+        if (sel.value) post('/set-main-task', {id: sel.value});
       });
       sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
     });
@@ -499,61 +470,6 @@ document.querySelectorAll('.sub-btn[data-id]').forEach(function(btn) {
       if (e.key === 'Escape') restore();
     });
     inp.addEventListener('blur', function() { setTimeout(function() { if (inp.parentNode && !inp.value.trim()) restore(); }, 150); });
-  });
-});
-
-// parent selector
-document.querySelectorAll('.p-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var sel = document.createElement('select');
-    sel.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;max-width:200px';
-    var none = document.createElement('option');
-    none.value = '';
-    none.textContent = '— нет родителя —';
-    sel.appendChild(none);
-    (window.AREAS || []).forEach(function(a) {
-      if (a.id === btn.dataset.id) return;
-      var opt = document.createElement('option');
-      opt.value = a.id;
-      opt.textContent = a.title;
-      sel.appendChild(opt);
-    });
-    btn.replaceWith(sel);
-    sel.focus();
-    sel.addEventListener('change', function() {
-      post('/set-parent', {id: btn.dataset.id, parent_id: sel.value || null});
-      setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 100);
-    });
-    sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
-    sel.addEventListener('keydown', function(e) { if (e.key === 'Escape') sel.replaceWith(btn); });
-  });
-});
-
-// deadline editor
-document.querySelectorAll('.d-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var inp = document.createElement('input');
-    inp.type = 'date';
-    inp.value = btn.dataset.deadline || '';
-    inp.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px;width:130px';
-    btn.replaceWith(inp);
-    inp.focus();
-    function save() {
-      post('/set-deadline', {id: btn.dataset.id, deadline: inp.value || null});
-      setTimeout(function() { location.reload(); }, 150);
-    }
-    inp.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') { e.preventDefault(); save(); }
-      if (e.key === 'Escape') inp.replaceWith(btn);
-    });
-    inp.addEventListener('blur', function(e) {
-      setTimeout(function() {
-        if (document.activeElement === inp) return;
-        if (inp.parentNode) { if (inp.value) save(); else inp.replaceWith(btn); }
-      }, 300);
-    });
   });
 });
 
@@ -611,46 +527,6 @@ document.querySelectorAll('.today-btn[data-id]').forEach(function(btn) {
     var isScheduled = btn.classList.contains('active');
     var today = new Date().toISOString().split('T')[0];
     post('/set-scheduled-date', {id: btn.dataset.id, scheduled_date: isScheduled ? null : today});
-  });
-});
-
-// tasks.json: cycle context
-document.querySelectorAll('.ctx-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var cycle = ['', 'deep', 'perekur', 'afternoon'];
-    var labels = {'': 'ctx', 'deep': '🧠', 'perekur': '🚶', 'afternoon': '🌆'};
-    var cur = btn.dataset.context || '';
-    var idx = cycle.indexOf(cur);
-    var nxt = cycle[(idx + 1) % cycle.length];
-    btn.dataset.context = nxt;
-    btn.textContent = labels[nxt];
-    btn.title = 'Контекст: ' + (nxt || 'нет');
-    post('/set-context', {id: btn.dataset.id, context: nxt || null});
-  });
-});
-
-// tasks.json: set recurring
-document.querySelectorAll('.r-btn[data-id]').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var sel = document.createElement('select');
-    sel.style.cssText = 'background:var(--bg2);color:var(--text);border:1px solid #5b8dd9;border-radius:3px;font-size:.75rem;padding:2px 4px';
-    [['', 'нет'], ['weekly', 'еженедельно'], ['monthly', 'ежемесячно'], ['quarterly', 'раз в квартал'], ['yearly', 'ежегодно']].forEach(function(pair) {
-      var opt = document.createElement('option');
-      opt.value = pair[0];
-      opt.textContent = pair[1];
-      if (btn.dataset.recurring === pair[0]) opt.selected = true;
-      sel.appendChild(opt);
-    });
-    btn.replaceWith(sel);
-    sel.focus();
-    sel.addEventListener('change', function() {
-      post('/set-recurring', {id: btn.dataset.id, recurring: sel.value || null});
-      setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 100);
-    });
-    sel.addEventListener('blur', function() { setTimeout(function() { if (sel.parentNode) sel.replaceWith(btn); }, 200); });
-    sel.addEventListener('keydown', function(e) { if (e.key === 'Escape') sel.replaceWith(btn); });
   });
 });
 
@@ -730,6 +606,101 @@ function makeContextSelect(label, value, taskId) {
   return wrap;
 }
 
+function makeRecurringSelect(label, value, taskId) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var sel = document.createElement('select');
+  sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer';
+  [['', 'нет'], ['daily', 'ежедневно'], ['weekly', 'еженедельно'], ['monthly', 'ежемесячно'], ['quarterly', 'раз в квартал'], ['yearly', 'ежегодно']].forEach(function(pair) {
+    var opt = document.createElement('option');
+    opt.value = pair[0];
+    opt.textContent = pair[1];
+    if ((value || '') === pair[0]) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', function() {
+    post('/set-recurring', {id: taskId, recurring: sel.value || null});
+  });
+  wrap.appendChild(lbl);
+  wrap.appendChild(sel);
+  return wrap;
+}
+
+function makeTypeSelect(label, value, taskId) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var sel = document.createElement('select');
+  sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer';
+  [['task', 'Действие'], ['area', 'Область']].forEach(function(pair) {
+    var opt = document.createElement('option');
+    opt.value = pair[0];
+    opt.textContent = pair[1];
+    if ((value || 'task') === pair[0]) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', function() {
+    post('/set-type', {id: taskId, type: sel.value});
+  });
+  wrap.appendChild(lbl);
+  wrap.appendChild(sel);
+  return wrap;
+}
+
+function makeAreaSelect(label, taskId, currentParentId) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var sel = document.createElement('select');
+  sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer';
+  var none = document.createElement('option');
+  none.value = '';
+  none.textContent = '— нет родителя —';
+  if (!currentParentId) none.selected = true;
+  sel.appendChild(none);
+  (window.AREAS || []).forEach(function(a) {
+    if (a.id === taskId) return;
+    var opt = document.createElement('option');
+    opt.value = a.id;
+    opt.textContent = a.title;
+    if (a.id === currentParentId) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', function() {
+    post('/set-parent', {id: taskId, parent_id: sel.value || null});
+  });
+  wrap.appendChild(lbl);
+  wrap.appendChild(sel);
+  return wrap;
+}
+
+function makeToggleField(label, checked, onToggle) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  wrap.style.cursor = 'pointer';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var val = document.createElement('div');
+  val.className = 'modal-field-value';
+  val.textContent = checked ? '✓' : '—';
+  wrap.appendChild(lbl);
+  wrap.appendChild(val);
+  wrap.addEventListener('click', function() {
+    checked = !checked;
+    val.textContent = checked ? '✓' : '—';
+    onToggle(checked);
+  });
+  return wrap;
+}
+
 function openTaskModal(taskId) {
   fetch('/api/task?id=' + encodeURIComponent(taskId))
     .then(function(r) { return r.json(); })
@@ -740,12 +711,32 @@ function openTaskModal(taskId) {
       grid.appendChild(makeEditableDate('Запланировано', d.scheduled_date, '/set-scheduled-date', d.id, 'scheduled_date'));
       grid.appendChild(makeEditableDate('Дедлайн', d.deadline, '/set-deadline', d.id, 'deadline'));
       grid.appendChild(makeContextSelect('Контекст', d.context || '', d.id));
-      grid.appendChild(makeField('Someday', d.someday ? '✓' : '—'));
+      grid.appendChild(makeTypeSelect('Тип', d.type || 'task', d.id));
+      grid.appendChild(makeAreaSelect('Область', d.id, d.parent_id || ''));
+      grid.appendChild(makeRecurringSelect('Повтор', d.recurring || '', d.id));
+      grid.appendChild(makeToggleField('Someday', !!d.someday, function() {
+        fetch('/someday', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id: d.id})})
+          .then(function(r) { return r.json().catch(function() { return {}; }); })
+          .then(function(res) { if (res.blocked) alert(res.warning); });
+      }));
+      grid.appendChild(makeToggleField('Клод', d.assignee === 'claude', function() {
+        post('/set-assignee', {id: d.id}, function() {});
+      }));
       grid.appendChild(makeField('Маркер', d.marker || '—'));
-      grid.appendChild(makeField('Область', d.parent_title || '—'));
       var fieldsEl = document.getElementById('modal-fields');
       fieldsEl.innerHTML = '';
       fieldsEl.appendChild(grid);
+      var delBtn = document.createElement('button');
+      delBtn.className = 'btn';
+      delBtn.textContent = 'Удалить задачу';
+      delBtn.style.cssText = 'margin-top:8px;color:#e74c3c;font-size:.78rem';
+      delBtn.addEventListener('click', function() {
+        if (confirm('Удалить «' + (d.title || '') + '»?')) {
+          post('/delete', {id: d.id});
+          closeTaskModal();
+        }
+      });
+      fieldsEl.appendChild(delBtn);
       var sub = document.getElementById('modal-subtasks');
       var subSec = document.getElementById('modal-subtasks-section');
       sub.innerHTML = '';
@@ -768,10 +759,22 @@ function openTaskModal(taskId) {
           row.appendChild(title);
           sub.appendChild(row);
         });
-        subSec.style.display = '';
-      } else {
-        subSec.style.display = 'none';
       }
+      subSec.style.display = '';
+      var addRow = document.createElement('div');
+      addRow.style.cssText = 'margin-top:6px';
+      var addInp = document.createElement('input');
+      addInp.type = 'text';
+      addInp.placeholder = 'Добавить подзадачу...';
+      addInp.style.cssText = 'background:var(--bg3);color:var(--text);border:none;border-radius:5px;font-size:.85rem;padding:6px 10px;width:100%';
+      addInp.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          var title = addInp.value.trim();
+          if (title) { post('/add-task', {title: title, parent_id: d.id}); }
+        }
+      });
+      addRow.appendChild(addInp);
+      sub.appendChild(addRow);
       document.getElementById('task-modal').classList.add('open');
     });
 }
@@ -830,20 +833,6 @@ if (topAreas && typeof Sortable !== 'undefined') {
     }
   });
 }
-
-document.querySelectorAll('.today-section').forEach(function(ul) {
-  if (typeof Sortable === 'undefined') return;
-  Sortable.create(ul, {
-    animation: 100,
-    ghostClass: 'sortable-ghost',
-    onEnd: function() {
-      var indices = Array.from(ul.querySelectorAll('li[data-idx]')).map(function(li) {
-        return parseInt(li.dataset.idx);
-      });
-      post('/reorder-today', {indices: indices});
-    }
-  });
-});
 
 document.querySelectorAll('.section-tasks').forEach(function(container) {
   if (typeof Sortable === 'undefined') return;
@@ -942,44 +931,24 @@ def today_str():
     return date.today().strftime("%Y-%m-%d")
 
 
-def extract_deadline(text):
-    m = re.search(r'\((\d{4}-\d{2}-\d{2})\)', text)
-    return m.group(1) if m else None
-
-
-def clean_text(text):
-    text = re.sub(r'^\d{4}-\d{2}-\d{2} ', '', text)
-    return text.strip()
-
-
-# ── TODAY ────────────────────────────────────────────────
-
-def parse_today(path):
-    lines = path.read_text(encoding="utf-8").splitlines()
-    sections, current_sec, current_items, title = [], None, [], ""
-    idx = 0
-    all_items = []
-
-    for i, line in enumerate(lines):
-        if line.startswith("# "):
-            title = line[2:].strip()
-        elif line.startswith("## "):
-            if current_sec is not None:
-                sections.append((current_sec, current_items))
-            current_sec, current_items = line[3:].strip(), []
-        elif re.match(r'\s*- \[.\]', line):
-            done = bool(re.match(r'\s*- \[x\]', line, re.I))
-            indent = (len(line) - len(line.lstrip())) // 2
-            text = re.sub(r'\s*- \[.\] ', '', line).strip()
-            text = clean_text(text)
-            item = {"done": done, "text": text, "line": i, "idx": idx, "indent": indent}
-            current_items.append(item)
-            all_items.append(item)
-            idx += 1
-
-    if current_sec is not None:
-        sections.append((current_sec, current_items))
-    return title, sections, all_items
+def reset_daily_recurring(tasks):
+    """Reset recurring:daily tasks to todo each calendar day; count a miss if not done."""
+    today = today_str()
+    changed = False
+    for t in tasks:
+        if t.get("recurring") != "daily":
+            continue
+        if t.get("last_reset_date") == today:
+            continue
+        if t.get("status") != "done":
+            t["missed_count"] = t.get("missed_count", 0) + 1
+        t["status"] = "todo"
+        t["done_at"] = None
+        t["last_reset_date"] = today
+        changed = True
+    if changed:
+        save_tasks(tasks)
+    return tasks
 
 
 CONTEXT_SECTIONS = [
@@ -993,24 +962,28 @@ def _render_scheduled_item(task):
     """Render a tasks.json task as a today-style list item."""
     task_id = task["id"]
     title = task.get("title", "")
+    done = task.get("status") == "done"
     priority = task.get("priority")
     extra = {"red": " red", "green": " green", "orange": " orange"}.get(priority, "")
     deadline = task.get("deadline", "")
-    dl_html = f' <span class="deadline{" overdue" if deadline and (date.fromisoformat(deadline) - date.today()).days < 0 else ""}" style="font-size:.72rem;color:var(--text4)">{deadline}</span>' if deadline else ""
+    dl_html = f' <span class="deadline{" overdue" if deadline and (date.fromisoformat(deadline) - date.today()).days < 0 else ""}" style="font-size:.72rem;color:var(--text4)">{deadline}</span>' if (deadline and not done) else ""
+    done_cls = " done-item" if done else ""
+    chk_icon = "✓" if done else "·"
     return (
-        f'<li class="item todo{extra}" data-task-id="{task_id}">'
-        f'<span class="task-chk" data-id="{task_id}" style="flex-shrink:0;width:15px;height:15px;border-radius:3px;background:var(--chk);display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--text5);cursor:pointer">·</span>'
+        f'<li class="item todo{done_cls}{extra}" data-task-id="{task_id}">'
+        f'<span class="task-chk" data-id="{task_id}" style="flex-shrink:0;width:15px;height:15px;border-radius:3px;background:var(--chk);display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--text5);cursor:pointer">{chk_icon}</span>'
         f'<span class="item-text task-linked" style="flex:1">{linkify(title)}</span>'
         f'{dl_html}'
         f'</li>\n'
     )
 
 
-def render_today(path):
-    title, sections, all_items = parse_today(path)
+def render_today():
     tasks = load_tasks()
-    task_by_norm = {normalize_title(t.get("title", "")): t["id"] for t in tasks if t.get("type") != "area"}
+    reset_daily_recurring(tasks)
     today = today_str()
+
+    checklist_tasks = [t for t in tasks if t.get("recurring") == "daily"]
 
     # Tasks scheduled for today (scheduled_date == today OR deadline == today, not done)
     scheduled = [
@@ -1020,75 +993,36 @@ def render_today(path):
         and (t.get("scheduled_date") == today or t.get("deadline") == today)
     ]
 
-    # Count total items: today.md checklist + scheduled tasks
-    checklist_items = [i for sec, items in sections for i in items if sec == "Утренний чеклист"]
-    total = len(checklist_items) + len(scheduled)
-    done_checklist = sum(1 for i in checklist_items if i["done"])
+    total = len(checklist_tasks) + len(scheduled)
+    done_checklist = sum(1 for t in checklist_tasks if t.get("status") == "done")
     done_scheduled = sum(1 for t in tasks
                          if t.get("status") == "done" and t.get("scheduled_date") == today)
     done_n = done_checklist + done_scheduled
     pct = int(done_n / total * 100) if total else 0
 
-    left = f"<h1>{title}</h1>\n"
+    left = f"<h1>План на {today}</h1>\n"
     left += f'<div class="progress"><span class="pct">{done_n}/{total} — {pct}%</span><div class="bar"><div class="fill" style="width:{pct}%"></div></div></div>\n'
 
     # Первая задача — rendered first, above Утренний чеклист
-    main_task_found = False
-    for sec, items in sections:
-        if sec != "Первая задача":
-            continue
-        main_task_found = True
-        items_html = ""
-        for item in items:
-            done_cls = " done-item" if item["done"] else ""
-            chk_icon = "✓" if item["done"] else "·"
-            extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
-            task_id = task_by_norm.get(normalize_title(item["text"]), "")
-            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
-            link_cls = " task-linked" if task_id else ""
-            items_html += (
-                f'<li class="item{done_cls}{extra}" data-idx="{item["idx"]}"{task_id_attr} style="font-size:1.02rem;font-weight:600">'
-                f'<span class="chk">{chk_icon}</span><span class="item-text{link_cls}">{linkify(item["text"])}</span>'
-                f'<button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
-            )
-        left += (
-            f'<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">Первая задача'
-            f'<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
-            f'<ul class="today-section">\n{items_html}</ul>\n'
+    main_task = next((t for t in tasks if t.get("main_task_date") == today), None)
+    left += '<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">Первая задача'
+    left += '<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
+    if main_task:
+        item_html = _render_scheduled_item(main_task).replace(
+            '<li class="item', '<li style="font-size:1.02rem;font-weight:600" class="item', 1
         )
-    if not main_task_found:
+        left += f'<ul class="today-section">\n{item_html}</ul>\n'
+
+    # Утренний чеклист — recurring:daily tasks from tasks.json
+    if checklist_tasks:
+        todo_items = "".join(_render_scheduled_item(t) for t in checklist_tasks if t.get("status") != "done")
+        done_items = "".join(_render_scheduled_item(t) for t in checklist_tasks if t.get("status") == "done")
+        items_html = todo_items + done_items
         left += (
-            '<h2 style="color:#5b8dd9;display:flex;align-items:center;gap:8px">Первая задача'
-            '<button class="btn" id="pick-main-task" style="font-size:.65rem;text-transform:none;letter-spacing:0">выбрать</button></h2>'
+            f'<details data-key="today_Утренний_чеклист"><summary style="font-size:.75rem;text-transform:uppercase;'
+            f'letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">Утренний чеклист'
+            f'</summary><ul class="today-section">\n{items_html}</ul></details>\n'
         )
-
-    def section_is_future(sec):
-        m = re.search(r'(\d{1,2})\.(\d{2})', sec)
-        if not m:
-            return False
-        try:
-            d = date(date.today().year, int(m.group(2)), int(m.group(1)))
-            return d > date.today()
-        except ValueError:
-            return False
-
-    # Render Утренний чеклист from today.md
-    for sec, items in sections:
-        if sec != "Утренний чеклист":
-            continue
-        todo = [i for i in items if not i["done"]]
-        done_sec = [i for i in items if i["done"]]
-        items_html = ""
-        for item in todo:
-            extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
-            task_id = task_by_norm.get(normalize_title(item["text"]), "")
-            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
-            link_cls = " task-linked" if task_id else ""
-            items_html += f'<li class="item todo{extra}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
-        for item in done_sec:
-            items_html += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{linkify(item["text"])}</span></li>\n'
-        sec_key = "Утренний_чеклист"
-        left += f'<details data-key="today_{sec_key}"><summary style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text4);padding:4px 0;list-style:none;cursor:pointer">Утренний чеклист</summary><ul class="today-section">\n{items_html}</ul></details>\n'
 
     # Render task sections from tasks.json grouped by context
     for ctx_key, ctx_label in CONTEXT_SECTIONS:
@@ -1103,97 +1037,15 @@ def render_today(path):
         items_html = "".join(_render_scheduled_item(t) for t in ctx_tasks)
         left += f'<h2>{ctx_label}</h2><ul class="today-section">\n{items_html}</ul>\n'
 
-    # Render non-checklist, non-task sections from today.md (Завтра, Сегодня в календаре, etc.)
-    task_section_names = {"Задачи", "Перекур / На улице", "2-я половина дня", "Утренний чеклист", "Первая задача", "Сделано"}
-    for sec, items in sections:
-        if section_is_future(sec):
-            continue
-        if sec in task_section_names:
-            continue
-        todo = [i for i in items if not i["done"]]
-        if not todo:
-            continue
-        items_html = ""
-        for item in todo:
-            extra = " red" if "🔴" in item["text"] else (" green" if "🟢" in item["text"] else (" orange" if "🟧" in item["text"] else ""))
-            task_id = task_by_norm.get(normalize_title(item["text"]), "")
-            task_id_attr = f' data-task-id="{task_id}"' if task_id else ""
-            link_cls = " task-linked" if task_id else ""
-            items_html += f'<li class="item todo{extra}" data-idx="{item["idx"]}"{task_id_attr}><span class="chk">·</span><span class="item-text{link_cls}">{linkify(item["text"])}</span><button class="btn del-today" data-idx="{item["idx"]}">×</button></li>\n'
-        left += f'<h2>{sec}</h2><ul class="today-section">\n{items_html}</ul>\n'
-
-    # Done section from today.md
-    done_all = [i for sec, items in sections for i in items if i["done"] and sec != "Утренний чеклист"]
+    # Сделано — everything completed today
+    done_all = [t for t in tasks if t.get("status") == "done" and t.get("done_at") == today]
     if done_all:
         left += "<h2>Сделано</h2><ul>\n"
-        for item in done_all:
-            left += f'<li class="item done-item" data-idx="{item["idx"]}"><span class="chk">✓</span><span>{linkify(item["text"])}</span></li>\n'
+        left += "".join(_render_scheduled_item(t) for t in done_all)
         left += "</ul>\n"
 
     right = render_calendar_today()
     return f'<div class="two-col"><div class="col-left">{left}</div><div class="col-right">{right}</div></div>\n'
-
-
-def normalize_title(text):
-    text = re.sub(r'[🔴🟢🟧⏳]', '', text)
-    text = re.sub(r'\[.*?\]', '', text)
-    text = re.sub(r'\(.*?\)', '', text)
-    return re.sub(r'\s+', ' ', text).strip().lower()
-
-
-def sync_today_to_tasks(item_text, done):
-    norm = normalize_title(item_text)
-    if not norm:
-        return
-    tasks = load_tasks()
-    changed = False
-    for t in tasks:
-        if t.get("type") == "area":
-            continue
-        if normalize_title(t.get("title", "")) == norm:
-            t["status"] = "done" if done else "todo"
-            t["done_at"] = today_str() if done else None
-            changed = True
-            break
-    if changed:
-        save_tasks(tasks)
-
-
-def sync_tasks_to_today(task_title, done):
-    if not TODAY.exists():
-        return
-    norm = normalize_title(task_title)
-    lines = TODAY.read_text(encoding="utf-8").splitlines()
-    for i, line in enumerate(lines):
-        if not re.match(r'\s*- \[.\]', line):
-            continue
-        raw = re.sub(r'\s*- \[.\] (\d{4}-\d{2}-\d{2} )?', '', line).strip()
-        if normalize_title(raw) == norm:
-            if done:
-                lines[i] = re.sub(r'- \[ \] ', f'- [x] {today_str()} ', line)
-            else:
-                lines[i] = re.sub(r'- \[x\] \d{4}-\d{2}-\d{2} ', '- [ ] ', line, flags=re.I)
-                lines[i] = re.sub(r'- \[x\] ', '- [ ] ', lines[i], flags=re.I)
-            break
-    TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def toggle_today(path, idx):
-    lines = path.read_text(encoding="utf-8").splitlines()
-    _, _, all_items = parse_today(path)
-    item = next((i for i in all_items if i["idx"] == idx), None)
-    if not item:
-        return
-    line = lines[item["line"]]
-    now_done = item["done"]
-    if now_done:
-        line = re.sub(r'- \[x\] \d{4}-\d{2}-\d{2} ', '- [ ] ', line, flags=re.I)
-        line = re.sub(r'- \[x\] ', '- [ ] ', line, flags=re.I)
-    else:
-        line = re.sub(r'- \[ \] ', f'- [x] {today_str()} ', line)
-    lines[item["line"]] = line
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    sync_today_to_tasks(item["text"], not now_done)
 
 
 # ── TASKS JSON ───────────────────────────────────────────
@@ -1258,8 +1110,6 @@ def render_task_row(task, all_tasks, depth=0):
     someday_cls = " someday" if someday else ""
     prio_cls = {"red": " red", "green": " green", "orange": " orange"}.get(priority, "")
     chk_icon = "✓" if done else "·"
-    s_active = " active" if someday else ""
-    s_label = "✕S" if someday else "S"
 
     dl_html = ""
     if deadline:
@@ -1283,11 +1133,9 @@ def render_task_row(task, all_tasks, depth=0):
     recurring = task.get("recurring")
     recurring_badge = ""
     if recurring:
-        badge_letter = {"weekly": "W", "monthly": "M", "quarterly": "Q", "yearly": "Y"}.get(recurring, "R")
+        badge_letter = {"daily": "D", "weekly": "W", "monthly": "M", "quarterly": "Q", "yearly": "Y"}.get(recurring, "R")
         recurring_badge = f'<span style="font-size:.65rem;color:var(--text4);margin-left:4px">↻{badge_letter}</span>'
-    r_label = recurring if recurring else "R"
 
-    dl_val = deadline or ""
     parent_id = task.get("parent_id", "")
     parent_attr = f' data-parent-id="{_html.escape(parent_id, quote=True)}"' if parent_id else ""
 
@@ -1297,25 +1145,13 @@ def render_task_row(task, all_tasks, depth=0):
     today_label = "✕↗" if is_today else "↗"
     today_title = "Убрать из сегодня" if is_today else "Добавить в сегодня"
 
-    ctx = task.get("context", "")
-    ctx_labels = {"deep": "🧠", "perekur": "🚶", "afternoon": "🌆", "": "ctx"}
-    ctx_label_btn = ctx_labels.get(ctx, "ctx")
-
     html = (
         f'<div class="task-row{indent_cls}{done_cls}{someday_cls}{prio_cls}" data-id="{task_id}"{parent_attr}>\n'
         f'  <span class="task-chk" data-id="{task_id}">{chk_icon}</span>\n'
         f'  <span class="task-text" data-id="{task_id}" data-raw="{_html.escape(title, quote=True)}">{linkify(title)}{recurring_badge}</span>\n'
         f'  {dl_html}\n'
         f'  <button class="btn today-btn{today_active}" data-id="{task_id}" data-scheduled="{scheduled_date}" title="{today_title}">{today_label}</button>\n'
-        f'  <button class="btn ctx-btn" data-id="{task_id}" data-context="{ctx}" title="Контекст: {ctx or "нет"}">{ctx_label_btn}</button>\n'
-        f'  <button class="btn type-btn" data-id="{task_id}" data-current="task">T</button>\n'
-        f'  <button class="btn p-btn" data-id="{task_id}">P</button>\n'
-        f'  <button class="btn d-btn" data-id="{task_id}" data-deadline="{dl_val}">D</button>\n'
-        f'  <button class="btn s-btn{s_active}" data-id="{task_id}">{s_label}</button>\n'
         f'  <button class="btn m-btn" data-id="{task_id}"{marker_style}>{marker_label}</button>\n'
-        f'  <button class="btn r-btn" data-id="{task_id}" data-recurring="{recurring or ""}">{r_label}</button>\n'
-        f'  <button class="btn sub-btn" data-id="{task_id}" title="Добавить подзадачу">+</button>\n'
-        f'  <button class="btn del-btn" data-id="{task_id}">×</button>\n'
         f'</div>\n'
     )
     for child in children:
@@ -1407,7 +1243,7 @@ def toggle_task(task_id):
                 t["done_at"] = today_str()
                 done = True
                 recurring = t.get("recurring")
-                if recurring:
+                if recurring and recurring != "daily":
                     import time as _time
                     base_id = task_id + "-next"
                     existing_ids = {x["id"] for x in tasks}
@@ -1424,8 +1260,8 @@ def toggle_task(task_id):
     if cloned:
         tasks.append(cloned)
     save_tasks(tasks)
-    if title:
-        sync_tasks_to_today(title, done)
+    if title and done:
+        write_daylog_entries(today_str(), [title])
 
 
 SOMEDAY_LIMIT = 20
@@ -1470,6 +1306,8 @@ def set_task_parent(task_id, parent_id):
             else:
                 t.pop("parent_id", None)
             break
+    if parent_id:
+        ensure_area(tasks, parent_id)
     save_tasks(tasks)
 
 
@@ -1483,6 +1321,14 @@ def set_task_deadline(task_id, deadline):
                 t["deadline"] = None
             break
     save_tasks(tasks)
+
+
+def ensure_area(tasks, task_id):
+    """A task can't have children — if it's about to gain one, promote it to an area in place."""
+    for t in tasks:
+        if t["id"] == task_id and t.get("type") != "area":
+            t["type"] = "area"
+            break
 
 
 def set_task_type(task_id, new_type):
@@ -1545,6 +1391,15 @@ def set_task_marker(task_id):
     save_tasks(tasks)
 
 
+def set_task_assignee(task_id):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            t["assignee"] = None if t.get("assignee") == "claude" else "claude"
+            break
+    save_tasks(tasks)
+
+
 def set_task_recurring(task_id, recurring):
     tasks = load_tasks()
     for t in tasks:
@@ -1600,31 +1455,6 @@ def rename_task(task_id, new_text):
     return True
 
 
-def reorder_today(path, ordered_indices):
-    _, _, all_items = parse_today(path)
-    lines = path.read_text(encoding="utf-8").splitlines()
-    by_idx = {item["idx"]: item for item in all_items}
-    items_in_order = [by_idx[i] for i in ordered_indices if i in by_idx]
-    if len(items_in_order) < 2:
-        return
-    original_line_nums = sorted(item["line"] for item in items_in_order)
-    # capture content before any writes to avoid overwrite-then-read bug
-    contents = [lines[item["line"]] for item in items_in_order]
-    for line_num, content in zip(original_line_nums, contents):
-        lines[line_num] = content
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def remove_today_line(path, idx):
-    _, _, all_items = parse_today(path)
-    item = next((i for i in all_items if i["idx"] == idx), None)
-    if not item:
-        return
-    lines = path.read_text(encoding="utf-8").splitlines()
-    del lines[item["line"]]
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
 def get_top_priority(n=5):
     data = _priority.load_tasks()
     task_map = _priority.build_task_map(data)
@@ -1643,39 +1473,17 @@ def get_top_priority(n=5):
     return [{"id": t["id"], "title": t.get("title", ""), "score": p} for p, t in scored[:n]]
 
 
-def set_main_task(title):
-    lines = TODAY.read_text(encoding="utf-8").splitlines()
-    out = []
-    i = 0
-    found = False
-    while i < len(lines):
-        line = lines[i]
-        out.append(line)
-        if line.strip() == "## Первая задача":
-            found = True
-            i += 1
-            # skip existing content of this section until next "## " heading
-            while i < len(lines) and not lines[i].startswith("## "):
-                i += 1
-            out.append("")
-            out.append(f"- [ ] {title}")
-            out.append("")
-            continue
-        i += 1
-    if not found:
-        # insert right after the "# " title line
-        new_out = []
-        inserted = False
-        for line in out:
-            new_out.append(line)
-            if line.startswith("# ") and not inserted:
-                new_out.append("")
-                new_out.append("## Первая задача")
-                new_out.append("")
-                new_out.append(f"- [ ] {title}")
-                inserted = True
-        out = new_out
-    TODAY.write_text("\n".join(out) + "\n", encoding="utf-8")
+def set_main_task_date(task_id):
+    tasks = load_tasks()
+    today = today_str()
+    for t in tasks:
+        if t["id"] != task_id and t.get("main_task_date") == today:
+            t.pop("main_task_date", None)
+    for t in tasks:
+        if t["id"] == task_id:
+            t["main_task_date"] = today
+            break
+    save_tasks(tasks)
 
 
 def add_task_inbox(title, context=None, marker=None, parent_id=None):
@@ -1706,6 +1514,8 @@ def add_task_inbox(title, context=None, marker=None, parent_id=None):
         task["marker"] = marker
         task["priority"] = priority_map.get(marker)
     tasks.append(task)
+    if parent_id:
+        ensure_area(tasks, parent_id)
     save_tasks(tasks)
 
 
@@ -1719,6 +1529,7 @@ def move_task(src_id, target_id, position):
 
     if position == "child":
         src["parent_id"] = target_id
+        ensure_area(tasks, target_id)
         siblings = [t for t in tasks if t.get("parent_id") == target_id]
         src["order"] = max((t.get("order", 0) for t in siblings), default=0) + 1.0
     else:
@@ -1771,31 +1582,41 @@ def move_task_order(task_id, direction):
 
 # ── CALENDAR ─────────────────────────────────────────────
 
-def done_event_summaries():
-    if not TODAY.exists():
-        return set()
-    done = set()
-    for line in TODAY.read_text(encoding="utf-8").splitlines():
-        m = re.match(r'\s*- \[x\] (\d{4}-\d{2}-\d{2}) (.+)', line)
-        if m:
-            done.add((m.group(1), m.group(2).strip()))
-    return done
+def done_event_summaries(tasks=None):
+    tasks = tasks if tasks is not None else load_tasks()
+    return {
+        (t.get("event_date"), t.get("event_summary"))
+        for t in tasks
+        if t.get("type") == "event" and t.get("status") == "done"
+    }
 
 
-def add_done_event(summary, date_str=None):
+def mark_event_done(summary, date_str=None):
     entry_date = date_str or today_str()
-    text = TODAY.read_text(encoding="utf-8")
-    entry = f"- [x] {entry_date} {summary}"
-    if entry in text:
+    tasks = load_tasks()
+    existing = next(
+        (t for t in tasks if t.get("type") == "event"
+         and t.get("event_summary") == summary and t.get("event_date") == entry_date),
+        None,
+    )
+    if existing:
+        toggle_task(existing["id"])
         return
-    lines = text.splitlines()
-    for i, line in enumerate(lines):
-        if line.strip() == "## Сделано":
-            lines.insert(i + 1, entry)
-            TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
-            return
-    lines += ["", "## Сделано", entry]
-    TODAY.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    slug = re.sub(r'[^\w\s-]', '', summary.lower())
+    slug = re.sub(r'[\s_]+', '-', slug)[:50]
+    task_id = f"event-{entry_date}-{slug}"
+    tasks.append({
+        "id": task_id,
+        "title": summary,
+        "type": "event",
+        "event_summary": summary,
+        "event_date": entry_date,
+        "status": "done",
+        "done_at": entry_date,
+        "scheduled_date": entry_date,
+    })
+    save_tasks(tasks)
+    write_daylog_entries(entry_date, [summary])
 
 
 def render_calendar_today():
@@ -1940,7 +1761,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         if self.path == "/poll":
             import hashlib
             mtimes = ""
-            for f in [TODAY, TASKS_FILE, CALENDAR_CACHE]:
+            for f in [TASKS_FILE, CALENDAR_CACHE]:
                 try:
                     mtimes += str(f.stat().st_mtime)
                 except Exception:
@@ -1955,7 +1776,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(data)
             return
         elif self.path == "/":
-            body = render_today(TODAY)
+            body = render_today()
             data = make_page(body, "today")
         elif self.path == "/tasks":
             body = render_tasks()
@@ -2009,9 +1830,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
         length = int(self.headers.get("Content-Length", 0))
         d = json.loads(self.rfile.read(length))
-        if self.path == "/toggle":
-            toggle_today(TODAY, d["idx"])
-        elif self.path == "/toggle-task":
+        if self.path == "/toggle-task":
             toggle_task(d["id"])
         elif self.path == "/someday":
             result = toggle_someday(d["id"])
@@ -2026,7 +1845,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/delete":
             delete_task(d["id"])
         elif self.path == "/done-event":
-            add_done_event(d["summary"], d.get("date"))
+            mark_event_done(d["summary"], d.get("date"))
         elif self.path == "/rename":
             ok = rename_task(d["id"], d["text"])
             if ok is False:
@@ -2043,18 +1862,16 @@ class Handler(http.server.BaseHTTPRequestHandler):
             set_task_parent(d["id"], d.get("parent_id"))
         elif self.path == "/set-deadline":
             set_task_deadline(d["id"], d.get("deadline"))
-        elif self.path == "/remove-today":
-            remove_today_line(TODAY, d["idx"])
-        elif self.path == "/reorder-today":
-            reorder_today(TODAY, d["indices"])
         elif self.path == "/add-task":
             add_task_inbox(d["title"], d.get("context"), d.get("marker"), d.get("parent_id"))
         elif self.path == "/set-main-task":
-            set_main_task(d["title"])
+            set_main_task_date(d["id"])
         elif self.path == "/move":
             move_task(d["src_id"], d["target_id"], d["position"])
         elif self.path == "/set-marker":
             set_task_marker(d["id"])
+        elif self.path == "/set-assignee":
+            set_task_assignee(d["id"])
         elif self.path == "/undo":
             undo_tasks()
         elif self.path == "/move-order":

@@ -45,7 +45,7 @@ python3 tools/add_task.py "Текст задачи" --area area-ecom --someday -
 
 ## brain/tools/today_server.py
 
-**Что делает:** браузерный дашборд задач, читает/пишет `05_PLANS/tasks/tasks.json` и `05_PLANS/today.md` напрямую (без Claude). HTTP-сервер на стдлиб (`http.server`), HTML/CSS/JS зашиты в самом файле как строки. Три таба: **Сегодня**, **Задачи**, **Сессии**. Автообновление страницы через polling `/poll` каждые 2 сек (перезагружает, если изменился хэш mtime файлов `today.md`/`tasks.json`/`calendar_cache.json`, но не во время drag/фокуса на input).
+**Что делает:** браузерный дашборд задач, читает/пишет только `05_PLANS/tasks/tasks.json` (нет отдельного файла-плана — `today.md` упразднён, всё живёт в tasks.json). HTTP-сервер на стдлиб (`http.server`), HTML/CSS/JS зашиты в самом файле как строки. Три таба: **Сегодня**, **Задачи**, **Сессии**. Автообновление страницы через polling `/poll` каждые 2 сек (перезагружает, если изменился хэш mtime файлов `tasks.json`/`calendar_cache.json`, но не во время drag/фокуса на input).
 
 **Запуск:**
 ```bash
@@ -73,24 +73,30 @@ python3 ~/Projects/brain/tools/today_server.py
 | `context` | `"deep"` (Задачи), `"perekur"`/`"phone"`/`"email"` (Перекур), `"afternoon"` (2-я половина дня), `null`/`""` |
 | `priority` | `"red"`/`"green"`/`"orange"`/`null` — синхронизирован с `marker` |
 | `marker` | `"🔴"`/`"🟢"`/`"🟧"`/`""` — цикличная кнопка M на task-row, при смене обновляет `priority` |
-| `recurring` | `"weekly"`/`"monthly"`/`"quarterly"`/`"yearly"`/`null` — при выполнении задачи клонирует её с новым id `<id>-next` и пересчитанным дедлайном |
+| `recurring` | `"daily"` (сбрасывается на `todo` каждый день на месте, см. `reset_daily_recurring`) \| `"weekly"`/`"monthly"`/`"quarterly"`/`"yearly"` (при выполнении клонирует задачу с новым id `<id>-next` и пересчитанным дедлайном) \| `null` |
+| `last_reset_date`, `missed_count` | только у `recurring: "daily"` — дата последнего сброса и счётчик пропусков (инкрементируется, если на момент сброса задача не была done) |
+| `main_task_date` | `YYYY-MM-DD` — задача с этим полем равным сегодня рендерится в секции "Первая задача" (максимум одна такая задача одновременно) |
+| `assignee` | `"claude"` \| `null` — переключается кнопкой "Клод" в модалке задачи |
+| `type: "event"` + `event_summary` + `event_date` | связка календарного события (из `calendar_cache.json`) с задачей — так у события появляется done/todo состояние и запись в дейлог |
 | `order` | float, порядок среди siblings (drag&drop пересчитывает как среднее между соседями) |
 | `done_at` | `YYYY-MM-DD`, когда задача закрыта |
 | `stakes`, `goal_rank`, `tags`, `notes`, `waiting_for`, `created_at` | используются `priority.py` для скоринга или как метаданные, сервер их не рендерит напрямую (кроме как в модалке через `/api/task`) |
 
+**Инвариант:** у задачи `type: "task"` не может быть дочерних элементов (детей по `parent_id`) — если у неё появляется ребёнок (через `/add-task` с `parent_id`, `/set-parent` или drag&drop "в родители"), сервер автоматически переключает её в `type: "area"` (`ensure_area()`). «Проект» — это просто верхний `area` без `parent_id`, отдельного типа для него нет.
+
 ### Таб "Сегодня" (`/`)
 
-- Парсит `today.md` по `##`-секциям (`parse_today`): чекбоксы `- [ ]`/`- [x]`.
-- Секция **"Первая задача"** — рендерится первой, крупным шрифтом, с кнопкой "выбрать" (`#pick-main-task`) — открывает `<select>` с топ-5 задач из `/api/top-priority` (только someday-задачи с `priority == "green"`), выбор пишет в `today.md` через `/set-main-task`.
-- Секция **"Утренний чеклист"** — сворачиваемый `<details>`.
+Рендерится целиком из `tasks.json`, живого файла-плана нет.
+
+- При каждом открытии страницы сначала вызывается `reset_daily_recurring(tasks)`: для всех задач с `recurring == "daily"`, у которых `last_reset_date != сегодня` — если `status != "done"`, `missed_count += 1`; затем `status = "todo"`, `done_at = None`, `last_reset_date = сегодня`.
+- Секция **"Первая задача"** — задача с `main_task_date == сегодня` (максимум одна), рендерится первой крупным шрифтом. Кнопка "выбрать" (`#pick-main-task`) открывает `<select>` с топ-5 задач из `/api/top-priority` (только someday-задачи с `priority == "green"`), выбор пишет `main_task_date` через `/set-main-task` (`set_main_task_date` — снимает поле с любой другой задачи, у которой оно было на сегодня, прежде чем поставить на выбранную).
+- Секция **"Утренний чеклист"** (сворачиваемый `<details>`) — задачи с `recurring == "daily"`, todo сверху, done снизу.
 - Секции по контексту из tasks.json (`CONTEXT_SECTIONS`): "Задачи" (context=deep/None), "Перекур / На улице" (context=perekur/phone/email), "2-я половина дня" (context=afternoon) — показывают задачи с `scheduled_date == сегодня` или `deadline == сегодня`, не done.
-- Остальные `##`-секции today.md (кроме служебных) рендерятся как есть, кроме секций с датой в заголовке в будущем (`section_is_future` — пропускает, если дата `DD.MM` в названии больше сегодняшней).
-- Секция "Сделано" — все done-пункты today.md.
-- Правый столбец — календарь на сегодня+будущее из `calendar_cache.json` (предупреждение "кэш устарел Nч" если старше 24ч); клик по событию сегодняшнего дня помечает done (`/done-event`, пишет строку в `## Сделано` today.md).
-- Чекбокс today.md синхронизируется с tasks.json по совпадению нормализованного текста (`sync_today_to_tasks`/`sync_tasks_to_today`) — задача с тем же заголовком (без эмодзи/тегов/скобок) в обоих местах помечается done одновременно.
-- Кнопка `×` на пункте today.md удаляет строку (`/remove-today`), без подтверждения в коде сервера (confirm — на стороне JS).
+- Секция "Сделано" — задачи с `status=="done" and done_at==сегодня`.
+- Правый столбец — календарь на сегодня+будущее из `calendar_cache.json` (предупреждение "кэш устарел Nч" если старше 24ч); клик по событию сегодняшнего дня помечает done (`/done-event` → `mark_event_done`, создаёт/переключает связанную задачу `type: "event"`, событие остаётся видимым в календаре, но блёклым/зачёркнутым — `cal-done`).
 - Quick-add инпут (`#inbox-input`) с опциональным контекстом/маркером — Enter создаёт задачу в `area-inbox` (`/add-task` → `add_task_inbox`).
-- Drag&drop пунктов today-секций — переставляет строки в файле (`/reorder-today`).
+
+**Дейлог:** при любой отметке задачи выполненной (`/toggle-task`, а также создание done-задачи через `/done-event`) сервер дописывает `04_THINKING/daylogs/YYYY-MM-DD.md` через `tools/daylog.py` (`write_daylog_entries`) и коммитит файл отдельным git-коммитом `"daylog: YYYY-MM-DD"`.
 
 ### Таб "Задачи" (`/tasks`)
 
@@ -100,9 +106,9 @@ python3 ~/Projects/brain/tools/today_server.py
 - **Кнопка Someday (N/20)** — фильтр, показывает только someday-задачи и их потомков (наследование вверх по дереву раскрывает родительские area). Подсвечивается красным, если `N > 20` (лимит см. `SOMEDAY_LIMIT`/`sd_limit`).
 - **Кнопка "Просрочено (N)"** — фильтр по задачам с `deadline <= сегодня`, не area. Взаимоисключающий с Someday-фильтром (включение одного выключает другой через localStorage `od-filter`/`sd-filter`).
 - **Каждый area-узел** (`<details>`): заголовок с инлайн-rename (двойной клик → contenteditable, Enter/blur сохраняет через `/rename`, Escape отменяет), кнопка **`A`** (`type-btn`) — переключает тип area↔task с подтверждением `confirm()` (`/set-type`; блокируется на сервере если переименование в area создаёт дубликат имени среди area), кнопка **`+`** (`sub-btn`) — открывает inline `<input>` для создания новой задачи прямо в этой area (`/add-task` с `parent_id` = id area, Enter создаёт, Escape/blur без текста отменяет). Area без детей рендерится одной строкой (без `<details>`) с тем же `+` и кнопкой `×` удаления.
-- **Каждая задача** (`task-row`), слева→справа: чекбокс done (`task-chk`, `/toggle-task` — если у задачи `recurring`, при выполнении клонирует со сдвинутым дедлайном), текст (двойной клик → inline rename как у area; одинарный клик в режиме модалки открывает `/api/task`), дедлайн (если есть, красным если просрочен), кнопка **↗/✕↗** (`today-btn`) — добавляет/убирает `scheduled_date=сегодня` (показ в табе Сегодня), кнопка **ctx-иконка** (`ctx-btn`) — циклит context `''→deep→perekur→afternoon→''` (иконки 🧠/🚶/🌆), кнопка **`T`** (`type-btn`) — то же переключение типа что у area, но без диалога подтверждения видно из кода — confirm общий для обоих, кнопка **`P`** (`p-btn`) — открывает `<select>` со списком всех area (`window.AREAS`, построен `build_area_options` — иерархический список с `›`-путём, без текущего узла) для смены `parent_id` (`/set-parent`), кнопка **`D`** (`d-btn`) — `<input type=date>` для дедлайна (`/set-deadline`), кнопка **S/✕S** (`s-btn`) — toggle someday (`/someday`; если лимит 20 достигнут — сервер возвращает `{blocked:true, warning:...}`, JS показывает `alert()` и не обновляет страницу), кнопка **маркер** (`m-btn`, цикл `''→🔴→🟢→🟧→''`, синхронизирует `priority`), кнопка **R/буква** (`r-btn`) — `<select>` для recurring (нет/еженедельно/ежемесячно/раз в квартал/ежегодно), кнопка **`+`** (`sub-btn`) — inline-инпут для подзадачи (`parent_id` = текущая задача), кнопка **`×`** (`del-btn`) — удаляет задачу и рекурсивно всех потомков по `parent_id`, с `confirm()`.
-- **Drag&drop** (через `sortable.min.js`, бандл лежит в `tools/sortable.min.js`): top-level area можно переставлять между собой (только за `summary`, группа `top-areas`). Задачи можно перетаскивать между area (общая drag-группа `tasks`) — обычное перетаскивание переставляет порядок (`/move` с `position: before/after`), удержание над строкой ≥500мс делает её родителем (`position: child`, подсветка класса `drop-child`).
-- **Модалка карточки задачи** (`openTaskModal`, `/api/task?id=`): показывает редактируемые поля "Запланировано" (`scheduled_date`), "Дедлайн" (оба — клик → `<input type=date>`), select "Контекст", read-only "Someday"/"Маркер"/"Область" (`parent_title`), и список подзадач с чекбоксами (клик по чекбоксу подзадачи тоже шлёт `/toggle-task`).
+- **Каждая задача** (`task-row`) — разгружена до 4 элементов: чекбокс done (`task-chk`, `/toggle-task` — если у задачи `recurring` и это не `daily`, при выполнении клонирует со сдвинутым дедлайном; `daily` сбрасывается отдельно через `reset_daily_recurring`), текст (одиночный клик с debounce 250мс открывает модалку `openTaskModal`/`/api/task`, двойной клик — inline rename, оба обработчика не конфликтуют благодаря таймеру), дедлайн (если есть, только отображение, красным если просрочен), кнопка **↗/✕↗** (`today-btn`) — добавляет/убирает `scheduled_date=сегодня`, кнопка **маркер** (`m-btn`, цикл `''→🔴→🟢→🟧→''`, синхронизирует `priority`). Остальные поля (контекст, тип, область/родитель, someday, повтор, assignee, дедлайн-редактирование, добавление подзадачи, удаление) — только через модалку, на строке больше не отображаются.
+- **Drag&drop** (через `sortable.min.js`, бандл лежит в `tools/sortable.min.js`): top-level area можно переставлять между собой (только за `summary`, группа `top-areas`). Задачи можно перетаскивать между area (общая drag-группа `tasks`) — обычное перетаскивание переставляет порядок (`/move` с `position: before/after`), удержание над строкой ≥500мс делает её родителем (`position: child`, подсветка класса `drop-child`; переводит целевую задачу в `area`, если она ещё не была).
+- **Модалка карточки задачи** (`openTaskModal`, `/api/task?id=`): "Запланировано"/"Дедлайн" (клик → `<input type=date>`), select "Контекст", select "Тип" (task/area, `/set-type`), select "Область" (родитель из `window.AREAS`, `/set-parent` — переводит новый родитель в area автоматически), select "Повтор" (нет/ежедневно/еженедельно/ежемесячно/раз в квартал/ежегодно, `/set-recurring`), toggle "Someday" (`/someday`, показывает `alert()` при блокировке лимита), toggle "Клод" (`/set-assignee`), read-only "Маркер", кнопка "Удалить задачу" (с `confirm()`, `/delete`), список подзадач с чекбоксами + инпут добавления новой подзадачи по Enter (`/add-task` с `parent_id`).
 
 ### Таб "Сессии" (`/sessions`)
 
@@ -112,7 +118,7 @@ python3 ~/Projects/brain/tools/today_server.py
 
 GET: `/` (Сегодня), `/tasks` (Задачи), `/sessions` (Сессии), `/poll` (хэш mtime для автообновления), `/api/top-priority` (топ-5 someday по приоритету), `/api/task?id=` (детали задачи + subtasks + parent_title).
 
-POST (читают JSON body, возвращают 200 без тела, кроме отмеченных): `/toggle` (today.md чекбокс по idx), `/toggle-task` (done/todo по id, клонирует recurring), `/someday` (toggle, **возвращает JSON** при блокировке лимита), `/delete` (рекурсивное удаление), `/done-event` (отметить событие календаря выполненным), `/rename` (**возвращает 409 JSON** при дубликате имени area), `/set-type`, `/set-parent`, `/set-deadline`, `/remove-today`, `/reorder-today`, `/add-task` (создание в area-inbox или указанный parent_id), `/set-main-task`, `/move` (drag&drop), `/set-marker`, `/undo` (откат последнего `save_tasks` из бэкапа `tools/tasks_undo.json`, не привязан к кнопке UI), `/move-order` (сдвиг up/down по соседям, не привязан к видимой кнопке UI), `/set-recurring`, `/set-scheduled-date`, `/set-context`.
+POST (читают JSON body, возвращают 200 без тела, кроме отмеченных): `/toggle-task` (done/todo по id, клонирует recurring кроме daily, пишет дейлог при переходе в done), `/someday` (toggle, **возвращает JSON** при блокировке лимита), `/delete` (рекурсивное удаление), `/done-event` (отметить/снять событие календаря выполненным через связанную задачу `type: event`), `/rename` (**возвращает 409 JSON** при дубликате имени area), `/set-type`, `/set-parent` (переводит нового родителя в area), `/set-deadline`, `/add-task` (создание в area-inbox или указанный parent_id, переводит parent в area), `/set-main-task` (принимает `{id}`, эксклюзивно выставляет `main_task_date`), `/move` (drag&drop), `/set-marker`, `/set-assignee` (toggle `assignee: "claude"`), `/undo` (откат последнего `save_tasks` из бэкапа `tools/tasks_undo.json`, не привязан к кнопке UI), `/move-order` (сдвиг up/down по соседям, не привязан к видимой кнопке UI), `/set-recurring`, `/set-scheduled-date`, `/set-context`.
 
 ---
 
@@ -204,12 +210,14 @@ python3 ~/Projects/brain/tools/gmail_invoice_dl.py --dest ~/другая/пап�
 
 **Запуск:** автоматически через launchd (`com.dister.telegram-bot`), стартует при входе в систему.
 
+**⚠️ Сломано (2026-07-06):** `/today`, `/add`, `/done` читают/пишут `05_PLANS/today.md` напрямую — файл удалён при переходе дашборда на tasks.json-only. Задача на починку в tasks.json (area-inbox). До починки эти три команды не работают, свободный текст (через Claude CLI) работает как обычно.
+
 **Команды:**
 | Команда | Что делает |
 |---|---|
-| `/today` | Показать today.md (мгновенно) |
-| `/add <текст>` | Добавить задачу в today.md |
-| `/done <задача>` | Отметить задачу выполненной |
+| `/today` | Показать today.md (мгновенно) — сломано, см. выше |
+| `/add <текст>` | Добавить задачу в today.md — сломано, см. выше |
+| `/done <задача>` | Отметить задачу выполненной — сломано, см. выше |
 | Любой текст | Claude отвечает с контекстом brain/ |
 
 **Push из скриптов:**
@@ -265,9 +273,9 @@ python3 tools/convert_vtt_kb.py
 
 ---
 
-## brain/tools/sync_today_done.py
+## brain/tools/daylog.py
 
-**Что делает:** PostToolUse-хук Claude Code. Срабатывает при любом Write/Edit, целевой файл которого содержит `today.md` в пути. Парсит `[x]`-строки today.md, ищет точное совпадение очищенного текста (без `[P=XX]`, дедлайн-суффиксов, эмодзи-маркеров) с `title` задачи в `tasks.json` (не area/project, не уже done) и закрывает её (`status=done`, `done_at=сегодня`). Если есть закрытые задачи — создаёт/дополняет дейлог `04_THINKING/daylogs/YYYY-MM-DD.md` (секция "## Задачи выполнены", без дублей), затем коммитит изменения (`tasks.json` + дейлог) одним git-коммитом `"sync: close N task(s) from today.md + daylog"`.
+**Что делает:** модуль (не хук — импортируется напрямую `today_server.py`), функция `write_daylog_entries(date_str, titles)`. Вызывается из `toggle_task()` и `mark_event_done()` при переходе задачи в `done` (заголовки в tasks.json уже чистые, доп. нормализация не нужна — в отличие от старого today.md-хука). Создаёт/дополняет дейлог `04_THINKING/daylogs/YYYY-MM-DD.md` (секция "## Задачи выполнены", без дублей), коммитит файл отдельным git-коммитом `"daylog: YYYY-MM-DD"`. Раньше это делал внешний PostToolUse-хук `sync_today_done.py`, реагировавший на правки `today.md` — упразднён вместе с самим файлом.
 
 **Запуск:** не запускается вручную — подключён как hook (`PostToolUse`) в `~/.claude/settings.json`, получает данные хука через stdin (JSON с `tool_input.file_path`).
 
