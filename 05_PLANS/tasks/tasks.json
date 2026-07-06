@@ -839,7 +839,7 @@
     "title": "Узнать, какие есть процедуры по уходу за лицом — блефаропластика, что-то ещё?",
     "type": "task",
     "project": "health",
-    "parent_id": "area-health",
+    "parent_id": "inbox-косметические-процедуры",
     "status": "todo",
     "someday": false,
     "deadline": null,
