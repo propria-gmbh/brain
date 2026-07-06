@@ -10188,7 +10188,7 @@
   {
     "id": "inbox-запросить-в-аок-возмещение-по-машиным-брекетам",
     "title": "Запросить в АОК возмещение по машиным брекетам",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-22",
