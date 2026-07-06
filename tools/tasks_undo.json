@@ -10665,7 +10665,8 @@
     "marker": "🔴",
     "priority": "red",
     "order": 0.0,
-    "deadline": "2026-07-03"
+    "deadline": "2026-07-03",
+    "scheduled_date": "2026-07-06"
   },
   {
     "id": "протестировать-shopus",
