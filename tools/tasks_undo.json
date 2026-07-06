@@ -11062,5 +11062,13 @@
     "order": 0.0,
     "marker": "🟢",
     "priority": "green"
+  },
+  {
+    "id": "inbox-сделать-мсс-гуглоаккаунт-на-домене-propriagmbh",
+    "title": "Сделать МСС гуглоаккаунт на домене propria.gmbh",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-06"
   }
 ]

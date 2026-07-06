@@ -11066,9 +11066,10 @@
   {
     "id": "inbox-сделать-мсс-гуглоаккаунт-на-домене-propriagmbh",
     "title": "Сделать МСС гуглоаккаунт на домене propria.gmbh",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-07-06"
+    "created_at": "2026-07-06",
+    "order": 0.0
   }
 ]
