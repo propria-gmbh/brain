@@ -11049,5 +11049,13 @@
     "created_at": "2026-07-06",
     "context": "perekur",
     "order": 0.0
+  },
+  {
+    "id": "inbox-провести-аудит-объявлений-решить-что-дальше",
+    "title": "Провести аудит объявлений решить что дальше",
+    "parent_id": "inbox-möbelmontage",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-06"
   }
 ]
