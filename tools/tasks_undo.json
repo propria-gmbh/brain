@@ -9881,7 +9881,7 @@
     "title": "Починить sync_today_done.py — хук не реагирует на правки через дашборд today_server.py, только на Edit/Write",
     "type": "task",
     "parent_id": "area-brain-dashboard-доработки",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-18",
     "priority": null,
@@ -9891,7 +9891,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-06",
     "created_at": "2026-06-18",
     "order": 0.0
   },
