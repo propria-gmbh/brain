@@ -7719,7 +7719,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-01",
-    "order": 1.0
+    "order": 1.0,
+    "assignee": "claude"
   },
   {
     "id": "personal-finance-оплатить-аренду-минус-25-х2",
