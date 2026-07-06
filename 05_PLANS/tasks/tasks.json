@@ -10968,7 +10968,7 @@
     "last_reset_date": "2026-07-06",
     "missed_count": 0,
     "order": 0.0,
-    "assignee": "claude",
+    "assignee": null,
     "main_task_date": "2026-07-06"
   },
   {
@@ -11053,6 +11053,7 @@
     "event_date": "2026-07-06",
     "status": "done",
     "done_at": "2026-07-06",
-    "scheduled_date": "2026-07-06"
+    "scheduled_date": "2026-07-06",
+    "order": 0.0
   }
 ]
