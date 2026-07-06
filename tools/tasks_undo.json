@@ -11056,6 +11056,9 @@
     "parent_id": "inbox-möbelmontage",
     "status": "todo",
     "someday": true,
-    "created_at": "2026-07-06"
+    "created_at": "2026-07-06",
+    "order": 0.0,
+    "marker": "🔴",
+    "priority": "red"
   }
 ]
