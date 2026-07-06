@@ -10172,7 +10172,8 @@
     "someday": false,
     "created_at": "2026-06-22",
     "order": 0.0,
-    "deadline": null
+    "deadline": null,
+    "assignee": "claude"
   },
   {
     "id": "inbox-добавить-возможность-добавить-подзадачу-сразу-в-за",
