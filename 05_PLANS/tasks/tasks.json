@@ -10905,7 +10905,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-05",
-    "order": 0.0
+    "order": 0.0,
+    "type": "area"
   },
   {
     "id": "area-ecom-daily-checklist",
