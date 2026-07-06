@@ -10991,11 +10991,12 @@
     "title": "Ответить AB в Slack",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-06",
     "missed_count": 0,
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-07-06"
   },
   {
     "id": "daily-kleinanzeigen",
@@ -11006,6 +11007,25 @@
     "recurring": "daily",
     "last_reset_date": "2026-07-06",
     "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
+    "title": "Починить telegram_bot.py: команды /today, /add, /done читают/пишут today.md, которого больше нет — переписать на tasks.json",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "today.md удалён при переходе дашборда на tasks.json-only (2026-07-06). /today -> задачи scheduled_date==сегодня + recurring:daily; /add -> add_task_inbox-style; /done -> найти по title, status=done",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-06",
     "order": 0.0
   }
 ]
