@@ -11035,7 +11035,7 @@
   {
     "id": "inbox-поменять-деньги",
     "title": "Поменять деньги",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-06",
