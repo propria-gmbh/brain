@@ -10967,7 +10967,8 @@
     "recurring": "daily",
     "last_reset_date": "2026-07-06",
     "missed_count": 0,
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "daily-pnl-weekly",
