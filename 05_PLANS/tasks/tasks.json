@@ -10954,11 +10954,12 @@
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-06",
     "missed_count": 0,
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-07-06"
   },
   {
     "id": "daily-pnl",
