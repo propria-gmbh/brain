@@ -265,7 +265,7 @@
   {
     "id": "area-personal-finance-найти-автомобиль-в-лизинг-или-",
     "title": "Найти автомобиль в лизинг или в абонемент (с сентября 2026)",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-personal-finance",
     "status": "todo",
     "order": 1.0,
@@ -477,7 +477,7 @@
   {
     "id": "health-операция-на-глаза-от-близорукости-и-косоглази",
     "title": "Операция на глаза от близорукости и косоглазия https://www.instagram.com/p/DLCENZggEkZ/",
-    "type": "task",
+    "type": "area",
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
@@ -497,7 +497,7 @@
   {
     "id": "health-назначить-термин-у-вольфа-запросить-направлен",
     "title": "Назначить термин у Вольфа, запросить направление к ЛОР",
-    "type": "task",
+    "type": "area",
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
@@ -577,7 +577,7 @@
   {
     "id": "health-начать-принимать-тестостерон",
     "title": "Начать принимать тестостерон",
-    "type": "task",
+    "type": "area",
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
@@ -737,7 +737,7 @@
   {
     "id": "health-разработать-комплекс-упражнении-на-мобильност",
     "title": "Разработать комплекс упражнений на мобильность",
-    "type": "task",
+    "type": "area",
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
@@ -940,7 +940,7 @@
   {
     "id": "ecom-договориться-со-старым-поставщиком-о-завершен",
     "title": "Договориться со старым поставщиком о завершении работы (с сохранением доступа к документам)",
-    "type": "task",
+    "type": "area",
     "project": "ecom",
     "parent_id": "area-ecom-поставщик",
     "status": "todo",
@@ -1022,7 +1022,7 @@
   {
     "id": "ecom-проверить-все-подписки-shopify",
     "title": "Проверить все подписки Shopify и отключить ненужные + сделать дашборд подписок",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-ecom-финансы-подписки",
     "status": "todo",
     "someday": false,
@@ -1251,7 +1251,7 @@
   {
     "id": "ecom-проанализировать-чеклист-андрея",
     "title": "Проанализировать чеклист Андрея",
-    "type": "task",
+    "type": "area",
     "project": "ecom",
     "parent_id": "area-ecom-knowledge",
     "status": "todo",
@@ -1457,7 +1457,7 @@
   {
     "id": "ecom-ниша-льняные-изделия",
     "title": "Ниша — льняные изделия",
-    "type": "task",
+    "type": "area",
     "project": "ecom",
     "parent_id": "area-casa-giannini",
     "status": "todo",
@@ -1610,7 +1610,7 @@
   {
     "id": "ecom-сменить-страну-ch-store",
     "title": "Сменить страну (CH Store)",
-    "type": "task",
+    "type": "area",
     "project": "ecom",
     "parent_id": "task-marc-strategy-hightick",
     "status": "todo",
@@ -1887,7 +1887,7 @@
   {
     "id": "ecom-принять-решение-о-реализации-customer-support",
     "title": "Принять решение о реализации customer support — идеи автоматизации",
-    "type": "task",
+    "type": "area",
     "project": "ecom",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
@@ -2168,7 +2168,7 @@
   {
     "id": "propria-запросить-регистрационные-документы-у-контраг",
     "title": "Запросить регистрационные документы у контрагентов",
-    "type": "task",
+    "type": "area",
     "project": "propria",
     "parent_id": "area-propria",
     "status": "todo",
@@ -2210,7 +2210,7 @@
   {
     "id": "propria-ответить-алле-дудниченко-отправить-документы",
     "title": "Ответить Алле Дудниченко — отправить документы Q1 НДС (ждёт с 2026-04-07)",
-    "type": "task",
+    "type": "area",
     "project": "propria",
     "parent_id": "area-propria",
     "status": "done",
@@ -3356,7 +3356,7 @@
   {
     "id": "personal-development-провести-еженедельныи-обзор",
     "title": "Провести еженедельный обзор",
-    "type": "task",
+    "type": "area",
     "project": "personal/development",
     "parent_id": "area-personal-development-система-и-фокус",
     "status": "todo",
@@ -3916,7 +3916,7 @@
   {
     "id": "personal-family-нарисовать-2-3-картины-в-подарок-на-свадьбу-1",
     "title": "Нарисовать 2-3 картины в подарок на свадьбу — 1 готова",
-    "type": "task",
+    "type": "area",
     "project": "personal/family",
     "parent_id": "area-personal-family-семья",
     "status": "done",
@@ -4361,7 +4361,7 @@
   {
     "id": "personal-finance-аня-генерали-отправить-3-счета-за-зубы-маша",
     "title": "Аня → Генерали: отправить 3 счёта за зубы + Маша",
-    "type": "task",
+    "type": "area",
     "project": "personal/finance",
     "parent_id": "area-personal-finance-генерали-зубы",
     "status": "todo",
@@ -4524,7 +4524,7 @@
   {
     "id": "personal-finance-перевести-все-счета-на-sparkasse",
     "title": "Перевести все счета на Sparkasse",
-    "type": "task",
+    "type": "area",
     "project": "personal/finance",
     "parent_id": "area-personal-finance-счета-и-подписки",
     "status": "todo",
@@ -5112,7 +5112,7 @@
   {
     "id": "personal-home-восстановление-газона-газон-разделен-на-3-час",
     "title": "Восстановление газона (газон разделён на 3 части: 2 пострижены, 1 восстанавливается)",
-    "type": "task",
+    "type": "area",
     "project": "personal/home",
     "parent_id": "area-personal-home-house-физический-дом",
     "status": "todo",
@@ -5433,7 +5433,7 @@
   {
     "id": "personal-home-очистить-обеденныи-стол-от-старого-покрытия-и",
     "title": "Очистить обеденный стол от старого покрытия и покрыть новым",
-    "type": "task",
+    "type": "area",
     "project": "personal/home",
     "parent_id": "area-personal-home-house-физический-дом",
     "status": "done",
@@ -6444,7 +6444,7 @@
   {
     "id": "health-найти-cbd-препараты",
     "title": "Найти CBD препараты",
-    "type": "task",
+    "type": "area",
     "project": "health",
     "parent_id": "area-health",
     "status": "todo",
@@ -6523,7 +6523,7 @@
   {
     "id": "ecom-аудит-магазинов-и-gmc",
     "title": "Аудит магазинов и GMC",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-ecom",
     "status": "done",
     "someday": false,
@@ -6641,7 +6641,7 @@
   {
     "id": "personal-development-определить-цели-по-методике-дорофеева",
     "title": "Определить цели по методике Дорофеева",
-    "type": "task",
+    "type": "area",
     "project": "personal/development",
     "parent_id": "area-personal-development-система-и-фокус",
     "status": "todo",
@@ -6669,7 +6669,8 @@
     "marker": "🟧",
     "priority": "orange",
     "context": "deep",
-    "deadline": "2026-06-23"
+    "deadline": "2026-06-23",
+    "type": "area"
   },
   {
     "id": "sailing-oksana-instructor-followup",
@@ -7404,7 +7405,7 @@
   },
   {
     "id": "task-marc-strategy-hightick",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-marc-francois",
     "title": "Принять решение: хай-тикет / НДС / стоит ли запускать рекламу (CH Store)",
     "status": "todo",
@@ -7915,7 +7916,7 @@
   {
     "id": "реалтайм-контроль-использования-токенов-по-всем-моделям",
     "title": "Реалтайм контроль использования токенов по всем моделям",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-ai-systems",
     "status": "todo",
     "someday": false,
@@ -10528,7 +10529,8 @@
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-26",
-    "order": 0.0
+    "order": 0.0,
+    "type": "area"
   },
   {
     "id": "inbox-кривое-отображение-тренировок",
@@ -10618,7 +10620,8 @@
     "created_at": "2026-06-26",
     "order": 0.0,
     "deadline": "2026-07-02",
-    "context": "deep"
+    "context": "deep",
+    "type": "area"
   },
   {
     "id": "inbox-commerzbank-q2-transactions",
@@ -10768,7 +10771,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-01",
-    "order": 0.0
+    "order": 0.0,
+    "type": "area"
   },
   {
     "id": "inbox-составить-список-контрагентов-с-которыми-работала-",
@@ -10828,7 +10832,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-01",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-06"
   },
   {
     "id": "фолоуап-wolf-забрать-справку-iyt",
@@ -10894,6 +10899,133 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-05",
+    "order": 0.0
+  },
+  {
+    "id": "area-ecom-daily-checklist",
+    "title": "Daily Shopify Checklist",
+    "type": "area",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "order": 0.0
+  },
+  {
+    "id": "daily-kungfubuy",
+    "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-gorgias",
+    "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-gmc-gads",
+    "title": "Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-revolut",
+    "title": "Проверить бизнес-счёт Revolut",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-pnl",
+    "title": "Заполнить P&L (https://docs.google.com/spreadsheets/d/1-BOWSedzxN1MHFUXstKuogxHGuXKA1wGGcMQxoYhvRk/edit?gid=2058533918#gid=2058533918)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-pnl-weekly",
+    "title": "PNL — заполнить (еженедельно)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-3pl-quotes",
+    "title": "Запросить квоты на новые товары у 3PL",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "daily-ab-slack",
+    "title": "Ответить AB в Slack",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "done",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0,
+    "done_at": "2026-07-06"
+  },
+  {
+    "id": "daily-kleinanzeigen",
+    "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "recurring": "daily",
+    "last_reset_date": "2026-07-06",
+    "missed_count": 0,
+    "order": 0.0
+  },
+  {
+    "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
+    "title": "Починить telegram_bot.py: команды /today, /add, /done читают/пишут today.md, которого больше нет — переписать на tasks.json",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "today.md удалён при переходе дашборда на tasks.json-only (2026-07-06). /today -> задачи scheduled_date==сегодня + recurring:daily; /add -> add_task_inbox-style; /done -> найти по title, status=done",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-06",
     "order": 0.0
   }
 ]
