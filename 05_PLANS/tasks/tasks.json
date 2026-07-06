@@ -11044,5 +11044,15 @@
     "created_at": "2026-07-06",
     "context": "perekur",
     "order": 0.0
+  },
+  {
+    "id": "event-2026-07-06-test-event",
+    "title": "Test Event",
+    "type": "event",
+    "event_summary": "Test Event",
+    "event_date": "2026-07-06",
+    "status": "done",
+    "done_at": "2026-07-06",
+    "scheduled_date": "2026-07-06"
   }
 ]
