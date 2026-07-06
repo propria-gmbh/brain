@@ -1972,7 +1972,7 @@
     "parent_id": "area-ecom-обвязка-инфраструктура",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-06-07",
+    "deadline": null,
     "priority": null,
     "stakes": null,
     "context": null,
