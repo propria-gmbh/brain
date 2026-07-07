@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Propria GmbH · Q1+Q2 2026</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:13px}
+body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#f4f5f0;color:#1a1a1a}
+
+/* topbar */
+.tb{position:sticky;top:0;z-index:999;background:#1e2d5a;color:#fff;display:flex;align-items:center;gap:14px;padding:0 22px;height:50px}
+.tb-logo{font-size:13px;font-weight:700;white-space:nowrap}
+.bc{flex:1;font-size:12px;color:#8aa4d8;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.bc-a{color:#7ab8f5;cursor:pointer;text-decoration:underline}.bc-a:hover{color:#fff}
+.bc-sep{color:#3a5090}
+#bk{display:none;padding:5px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:5px;color:#fff;font-size:12px;cursor:pointer}
+#bk:hover{background:rgba(255,255,255,.22)}
+
+/* app */
+#app{padding:24px}
+
+/* home */
+.h-intro{font-size:14px;color:#888;margin-bottom:18px}
+.h-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:900px}
+.htile{background:#fff;border-radius:10px;padding:20px;cursor:pointer;border:1px solid #e5e8f0;border-top:4px solid;transition:box-shadow .15s,transform .1s}
+.htile:hover{box-shadow:0 4px 16px rgba(0,0,0,.10);transform:translateY(-2px)}
+.ht-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#bbb;margin-bottom:6px}
+.ht-name{font-size:15px;font-weight:800;margin-bottom:10px}
+.ht-cnt{font-size:40px;font-weight:900;line-height:1;margin-bottom:6px}
+.ht-sub{font-size:11px;color:#aaa}
+.tc-r{border-top-color:#3b82f6}.tc-r .ht-cnt{color:#3b82f6}
+.tc-p{border-top-color:#22c55e}.tc-p .ht-cnt{color:#22c55e}
+.tc-o{border-top-color:#f97316}.tc-o .ht-cnt{color:#f97316}
+.tc-i{border-top-color:#a855f7}.tc-i .ht-cnt{color:#a855f7}
+
+/* section heading */
+.sec-hdr{font-size:16px;font-weight:800;margin-bottom:16px}
+.sec-cnt{font-size:11px;color:#aaa;font-weight:400;margin-left:8px}
+
+/* table */
+.tw{max-width:1080px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+thead tr{background:#f0f2fa}
+th{padding:9px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#777;border-bottom:1px solid #e6eaf5;white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid #f2f4fb;vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.cl{cursor:pointer}
+tbody tr.cl:hover{background:#f5f8ff}
+.tr{text-align:right}
+.mn{font-family:'SF Mono','Fira Mono',monospace;font-size:12px}
+.pos{color:#1a7a3c;font-weight:700}
+.neg{color:#c0392b;font-weight:700}
+.dim{color:#bbb}
+.tft td{background:#f0f2fa;font-weight:700;border-top:2px solid #dce3f8}
+
+/* document */
+.dw{max-width:760px}
+.dc{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.dh{padding:20px 26px;border-left:5px solid #ccc;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.dh.hr{border-left-color:#3b82f6}.dh.hp{border-left-color:#22c55e}
+.dh.ho{border-left-color:#f97316}.dh.hi{border-left-color:#a855f7}
+.de{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#bbb;margin-bottom:5px}
+.dt{font-size:20px;font-weight:800}
+.ds{font-size:12px;color:#888;margin-top:4px}
+.da{font-size:26px;font-weight:900;padding-top:4px}
+.db{padding:20px 26px}
+
+/* fields */
+.flds{display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;margin-bottom:4px}
+.fl .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:#ccc}
+.fl .val{font-size:13px;font-weight:600;margin-top:2px}
+
+/* related docs */
+.rels{margin-top:20px;padding-top:16px;border-top:1px solid #f0f0f0}
+.rels-ttl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#ccc;margin-bottom:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:6px;border:1px solid;font-size:12px;font-weight:600;cursor:pointer;margin:3px;transition:opacity .1s,transform .1s}
+.chip:hover{opacity:.72;transform:translateY(-1px)}
+.cr{background:#dbeafe;color:#1e40af;border-color:#93c5fd}
+.cp{background:#dcfce7;color:#15803d;border-color:#86efac}
+.co{background:#ffedd5;color:#c2410c;border-color:#fdba74}
+.ci{background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe}
+
+/* inline table link */
+.tl{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;border:1px solid;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
+
+/* sub-table inside doc */
+.sub-ttl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#bbb;margin:18px 0 8px}
+
+/* badges */
+.bdg{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px}
+.bs{background:#dcfce7;color:#166534}.br{background:#fee2e2;color:#991b1b}
+.bd{background:#fef9c3;color:#854d0e}.bv{background:#d1fae5;color:#065f46}
+.bw{background:#fee2e2;color:#991b1b}.bx{background:#dbeafe;color:#1e40af}
+
+@media print{
+  .tb,#bk{display:none}
+  #app{padding:0}
+  .dc{box-shadow:none;border:1px solid #ddd;page-break-after:always}
+}
+</style>
+</head>
+<body>
+<div class="tb">
+  <div class="tb-logo" onclick="goHome()" style="cursor:pointer" title="На главную">Propria GmbH · Q1+Q2 2026</div>
+  <nav class="bc" id="bc"></nav>
+  <button id="bk" onclick="back()">← Назад</button>
+</div>
+<main id="app"></main>
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+
+const DB = {
+  revolut: {
+    'rev_001':{date:'46023',desc:'Google Ads4938084535',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:200399.0,docUrl:'',docLabel:'',fields:{'Дата':'46023','Тип':'CARD_PAYMENT','Описание':'Google Ads4938084535','Контрагент':'—','Сумма':'−€10,00','Баланс':'€200399,00'},refs:[]},
+    'rev_002':{date:'46024',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:198052.0,docUrl:'',docLabel:'',fields:{'Дата':'46024','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€198052,00'},refs:[]},
+    'rev_003':{date:'46024',desc:'Google Ads4938084535',party:'',type:'CARD_PAYMENT',amount:-5.0,balance:198862.0,docUrl:'',docLabel:'',fields:{'Дата':'46024','Тип':'CARD_PAYMENT','Описание':'Google Ads4938084535','Контрагент':'—','Сумма':'−€5,00','Баланс':'€198862,00'},refs:[]},
+    'rev_004':{date:'46024',desc:'Google Ads7438923370',party:'',type:'CARD_PAYMENT',amount:-3.0,balance:199362.0,docUrl:'',docLabel:'',fields:{'Дата':'46024','Тип':'CARD_PAYMENT','Описание':'Google Ads7438923370','Контрагент':'—','Сумма':'−€3,00','Баланс':'€199362,00'},refs:[]},
+    'rev_005':{date:'46024',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-7.0,balance:199392.0,docUrl:'https://drive.google.com/file/d/1-DB_uIIzyTKyIsOdSLDVEm1xtWWFwCL2/view',docLabel:'',fields:{'Дата':'46024','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€7,00','Баланс':'€199392,00'},refs:[]},
+    'rev_006':{date:'46024',desc:'Google*ads1118510856',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:199399.0,docUrl:'https://drive.google.com/file/d/1-DB_uIIzyTKyIsOdSLDVEm1xtWWFwCL2/view',docLabel:'',fields:{'Дата':'46024','Тип':'CARD_PAYMENT','Описание':'Google*ads1118510856','Контрагент':'—','Сумма':'−€10,00','Баланс':'€199399,00'},refs:[]},
+    'rev_007':{date:'46025',desc:'Paddle.net* N8n Cloud1',party:'',type:'CARD_PAYMENT',amount:-2856.0,balance:195196.0,docUrl:'',docLabel:'',fields:{'Дата':'46025','Тип':'CARD_PAYMENT','Описание':'Paddle.net* N8n Cloud1','Контрагент':'—','Сумма':'−€2856,00','Баланс':'€195196,00'},refs:[]},
+    'rev_008':{date:'46027',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:19365.0,docUrl:'',docLabel:'',fields:{'Дата':'46027','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€19365,00'},refs:[]},
+    'rev_009':{date:'46028',desc:'From UNIMAIS LLP',party:'',type:'TRANSFER',amount:36637.0,balance:250211.0,docUrl:'',docLabel:'Возврат баланса рекламного агентства UNIMAIS — входящий доход',fields:{'Дата':'46028','Тип':'TRANSFER','Описание':'From UNIMAIS LLP','Контрагент':'—','Сумма':'+€36637,00','Баланс':'€250211,00','Референс':'Refund-025565-06-01-2026'},refs:[]},
+    'rev_010':{date:'46028',desc:'Slack T08anv20ve0',party:'',type:'CARD_PAYMENT',amount:-2475.0,balance:213574.0,docUrl:'',docLabel:'',fields:{'Дата':'46028','Тип':'CARD_PAYMENT','Описание':'Slack T08anv20ve0','Контрагент':'—','Сумма':'−€2475,00','Баланс':'€213574,00'},refs:[]},
+    'rev_011':{date:'46028',desc:'Reward',party:'',type:'REWARD',amount:170.0,balance:216049.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46028','Тип':'REWARD','Описание':'Reward','Контрагент':'—','Сумма':'+€170,00','Баланс':'€216049,00'},refs:[]},
+    'rev_012':{date:'46028',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:5399.0,balance:199049.0,docUrl:'https://docs.google.com/spreadsheets/d/1u33wtTs4K7e7vtlsdrT5ysHRD3LB4dCmdlI5__tLjPA/edit#gid=799511803&range=A2',docLabel:'',fields:{'Дата':'46028','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€5399,00','Баланс':'€199049,00','Референс':'Shopify H9G9S9'},refs:[]},
+    'rev_013':{date:'46030',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-8287.0,balance:241924.0,docUrl:'',docLabel:'',fields:{'Дата':'46030','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€8287,00','Баланс':'€241924,00','Референс':'AAV90155 2025-01-02, 07'},refs:[]},
+    'rev_014':{date:'46031',desc:'Shopify* 470359632',party:'',type:'CARD_PAYMENT',amount:-6623.0,balance:235301.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46031','Тип':'CARD_PAYMENT','Описание':'Shopify* 470359632','Контрагент':'—','Сумма':'−€6623,00','Баланс':'€235301,00'},refs:[]},
+    'rev_015':{date:'46034',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-303.0,balance:229995.0,docUrl:'https://drive.google.com/file/d/1lrdFiME3LuUu-nmYNcVC_oodcTWk-3am/view',docLabel:'',fields:{'Дата':'46034','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€303,00','Баланс':'€229995,00'},refs:[]},
+    'rev_016':{date:'46034',desc:'Google Ads4938084535',party:'',type:'CARD_PAYMENT',amount:-50.0,balance:230301.0,docUrl:'',docLabel:'',fields:{'Дата':'46034','Тип':'CARD_PAYMENT','Описание':'Google Ads4938084535','Контрагент':'—','Сумма':'−€50,00','Баланс':'€230301,00'},refs:[]},
+    'rev_017':{date:'46035',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:14453.0,balance:244448.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46035','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€14453,00','Баланс':'€244448,00','Референс':'Shopify C3N3Q8'},refs:[]},
+    'rev_018':{date:'46038',desc:'Transfer refund',party:'',type:'REFUND',amount:13000.0,balance:1539219.0,docUrl:'',docLabel:'Возврат оплаты ноябрь 2025 — Winner Circle коучинг. Повторно оплачено 18.01.2026 (строка 23)',fields:{'Дата':'46038','Тип':'REFUND','Описание':'Transfer refund','Контрагент':'—','Сумма':'+€13000,00','Баланс':'€1539219,00'},refs:[]},
+    'rev_019':{date:'46038',desc:'Shopify* 474257978',party:'',type:'CARD_PAYMENT',amount:-5229.0,balance:239219.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46038','Тип':'CARD_PAYMENT','Описание':'Shopify* 474257978','Контрагент':'—','Сумма':'−€5229,00','Баланс':'€239219,00'},refs:[]},
+    'rev_020':{date:'46039',desc:'Google*ads1118510856',party:'',type:'CARD_PAYMENT',amount:-50.0,balance:1534219.0,docUrl:'https://drive.google.com/file/d/1dmhcQuTFW0uEW6P3LU5uG-CGOjS7e2Ly/view',docLabel:'',fields:{'Дата':'46039','Тип':'CARD_PAYMENT','Описание':'Google*ads1118510856','Контрагент':'—','Сумма':'−€50,00','Баланс':'€1534219,00'},refs:[]},
+    'rev_021':{date:'46040',desc:'Cursor, Ai Powered Ide',party:'',type:'CARD_PAYMENT',amount:-1726.0,balance:230676.0,docUrl:'https://drive.google.com/file/d/1Aoemm3B2vQmLCltlw6t_VD1DjT61hP0m/view',docLabel:'',fields:{'Дата':'46040','Тип':'CARD_PAYMENT','Описание':'Cursor, Ai Powered Ide','Контрагент':'—','Сумма':'−€1726,00','Баланс':'€230676,00'},refs:[]},
+    'rev_022':{date:'46040',desc:'Whop*winner Circle',party:'',type:'CARD_PAYMENT',amount:-13000.0,balance:232419.0,docUrl:'',docLabel:'Winner Circle коучинг (оригинальная оплата ноябрь 2025 потерялась, возврат 16.01 строка 19, повторная оплата)',fields:{'Дата':'46040','Тип':'CARD_PAYMENT','Описание':'Whop*winner Circle','Контрагент':'—','Сумма':'−€13000,00','Баланс':'€232419,00'},refs:[]},
+    'rev_023':{date:'46040',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:1532419.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46040','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€1532419,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_024':{date:'46040',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:1533419.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46040','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€1533419,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_025':{date:'46041',desc:'Shopify* 476141905',party:'',type:'CARD_PAYMENT',amount:-7236.0,balance:22344.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46041','Тип':'CARD_PAYMENT','Описание':'Shopify* 476141905','Контрагент':'—','Сумма':'−€7236,00','Баланс':'€22344,00'},refs:[]},
+    'rev_026':{date:'46042',desc:'Shopify* 476323999',party:'',type:'CARD_PAYMENT',amount:-88.0,balance:21464.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46042','Тип':'CARD_PAYMENT','Описание':'Shopify* 476323999','Контрагент':'—','Сумма':'−€88,00','Баланс':'€21464,00'},refs:[]},
+    'rev_027':{date:'46043',desc:'Zadarma',party:'',type:'CARD_PAYMENT',amount:-12.0,balance:216013.0,docUrl:'',docLabel:'',fields:{'Дата':'46043','Тип':'CARD_PAYMENT','Описание':'Zadarma','Контрагент':'—','Сумма':'−€12,00','Баланс':'€216013,00'},refs:[]},
+    'rev_028':{date:'46043',desc:'Dnh*godaddy#3960691032',party:'',type:'CARD_PAYMENT',amount:-132.0,balance:217213.0,docUrl:'',docLabel:'',fields:{'Дата':'46043','Тип':'CARD_PAYMENT','Описание':'Dnh*godaddy#3960691032','Контрагент':'—','Сумма':'−€132,00','Баланс':'€217213,00'},refs:[]},
+    'rev_029':{date:'46043',desc:'Money added from STRIPE',party:'',type:'TOPUP',amount:3893.0,balance:218533.0,docUrl:'https://docs.google.com/spreadsheets/d/1Tmk1Q7wQsQTSCNeZI1Z0uuWnkCijrhtJRte8YvoQnqo/edit#gid=528300526&range=A2',docLabel:'',fields:{'Дата':'46043','Тип':'TOPUP','Описание':'Money added from STRIPE','Контрагент':'—','Сумма':'+€3893,00','Баланс':'€218533,00','Референс':'SHOPIFY'},refs:[]},
+    'rev_030':{date:'46045',desc:'Shopify* 478018357',party:'',type:'CARD_PAYMENT',amount:-864.0,balance:215149.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46045','Тип':'CARD_PAYMENT','Описание':'Shopify* 478018357','Контрагент':'—','Сумма':'−€864,00','Баланс':'€215149,00'},refs:[]},
+    'rev_031':{date:'46046',desc:'Claude.ai Subscription',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:201674.0,docUrl:'https://drive.google.com/file/d/1h027-FKV46UBqCNk6JQr4y46LbMAEp2_/view',docLabel:'',fields:{'Дата':'46046','Тип':'CARD_PAYMENT','Описание':'Claude.ai Subscription','Контрагент':'—','Сумма':'−€18,00','Баланс':'€201674,00'},refs:[]},
+    'rev_032':{date:'46046',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-3.0,balance:203474.0,docUrl:'',docLabel:'',fields:{'Дата':'46046','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€3,00','Баланс':'€203474,00'},refs:[]},
+    'rev_033':{date:'46046',desc:'Shopify* 478578721',party:'',type:'CARD_PAYMENT',amount:-1.0,balance:203774.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46046','Тип':'CARD_PAYMENT','Описание':'Shopify* 478578721','Контрагент':'—','Сумма':'−€1,00','Баланс':'€203774,00'},refs:[]},
+    'rev_034':{date:'46046',desc:'Shopify* 478375172',party:'',type:'CARD_PAYMENT',amount:-11275.0,balance:203874.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46046','Тип':'CARD_PAYMENT','Описание':'Shopify* 478375172','Контрагент':'—','Сумма':'−€11275,00','Баланс':'€203874,00'},refs:[]},
+    'rev_035':{date:'46047',desc:'Cloudflare',party:'',type:'CARD_PAYMENT',amount:-413.0,balance:198179.0,docUrl:'',docLabel:'',fields:{'Дата':'46047','Тип':'CARD_PAYMENT','Описание':'Cloudflare','Контрагент':'—','Сумма':'−€413,00','Баланс':'€198179,00'},refs:[]},
+    'rev_036':{date:'46047',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:198596.0,docUrl:'',docLabel:'',fields:{'Дата':'46047','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€198596,00'},refs:[]},
+    'rev_037':{date:'46047',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-338.0,balance:201333.0,docUrl:'',docLabel:'',fields:{'Дата':'46047','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€338,00','Баланс':'€201333,00'},refs:[]},
+    'rev_038':{date:'46048',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-3995.0,balance:194184.0,docUrl:'',docLabel:'',fields:{'Дата':'46048','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€3995,00','Баланс':'€194184,00'},refs:[]},
+    'rev_039':{date:'46050',desc:'Zoho-workplace',party:'',type:'CARD_PAYMENT',amount:-10282.0,balance:189166.0,docUrl:'https://drive.google.com/file/d/1jLvrBlQMOyudLyGkoGiJq0e8raIt2aGT/view',docLabel:'',fields:{'Дата':'46050','Тип':'CARD_PAYMENT','Описание':'Zoho-workplace','Контрагент':'—','Сумма':'−€10282,00','Баланс':'€189166,00'},refs:[]},
+    'rev_040':{date:'46050',desc:'Money added from STRIPE',party:'',type:'TOPUP',amount:5264.0,balance:199448.0,docUrl:'https://docs.google.com/spreadsheets/d/1Tmk1Q7wQsQTSCNeZI1Z0uuWnkCijrhtJRte8YvoQnqo/edit#gid=528300526&range=A4',docLabel:'',fields:{'Дата':'46050','Тип':'TOPUP','Описание':'Money added from STRIPE','Контрагент':'—','Сумма':'+€5264,00','Баланс':'€199448,00','Референс':'SHOPIFY'},refs:[]},
+    'rev_041':{date:'46052',desc:'Name-cheap.com* Jbdpzi',party:'',type:'CARD_PAYMENT',amount:-963.0,balance:185564.0,docUrl:'',docLabel:'',fields:{'Дата':'46052','Тип':'CARD_PAYMENT','Описание':'Name-cheap.com* Jbdpzi','Контрагент':'—','Сумма':'−€963,00','Баланс':'€185564,00'},refs:[]},
+    'rev_042':{date:'46052',desc:'Dnh*godaddy#3996645357',party:'',type:'CARD_PAYMENT',amount:-2639.0,balance:186527.0,docUrl:'',docLabel:'',fields:{'Дата':'46052','Тип':'CARD_PAYMENT','Описание':'Dnh*godaddy#3996645357','Контрагент':'—','Сумма':'−€2639,00','Баланс':'€186527,00'},refs:[]},
+    'rev_043':{date:'46055',desc:'Google Cloud Xzzs9p',party:'',type:'CARD_PAYMENT',amount:-3248.0,balance:175937.0,docUrl:'',docLabel:'',fields:{'Дата':'46055','Тип':'CARD_PAYMENT','Описание':'Google Cloud Xzzs9p','Контрагент':'—','Сумма':'−€3248,00','Баланс':'€175937,00'},refs:[]},
+    'rev_044':{date:'46055',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-4994.0,balance:179185.0,docUrl:'https://drive.google.com/file/d/1dmhcQuTFW0uEW6P3LU5uG-CGOjS7e2Ly/view',docLabel:'',fields:{'Дата':'46055','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€4994,00','Баланс':'€179185,00'},refs:[]},
+    'rev_045':{date:'46055',desc:'Google Ads4938084535',party:'',type:'CARD_PAYMENT',amount:-575.0,balance:184179.0,docUrl:'',docLabel:'',fields:{'Дата':'46055','Тип':'CARD_PAYMENT','Описание':'Google Ads4938084535','Контрагент':'—','Сумма':'−€575,00','Баланс':'€184179,00'},refs:[]},
+    'rev_046':{date:'46055',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:184754.0,docUrl:'',docLabel:'',fields:{'Дата':'46055','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€184754,00'},refs:[]},
+    'rev_047':{date:'46056',desc:'Paddle.net* N8n Cloud1',party:'',type:'CARD_PAYMENT',amount:-2856.0,balance:172981.0,docUrl:'',docLabel:'',fields:{'Дата':'46056','Тип':'CARD_PAYMENT','Описание':'Paddle.net* N8n Cloud1','Контрагент':'—','Сумма':'−€2856,00','Баланс':'€172981,00'},refs:[]},
+    'rev_048':{date:'46056',desc:'Shopify* 482953176',party:'',type:'CARD_PAYMENT',amount:-1.0,balance:175837.0,docUrl:'',docLabel:'Shopify пробный период',fields:{'Дата':'46056','Тип':'CARD_PAYMENT','Описание':'Shopify* 482953176','Контрагент':'—','Сумма':'−€1,00','Баланс':'€175837,00'},refs:[]},
+    'rev_049':{date:'46058',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:171435.0,docUrl:'',docLabel:'',fields:{'Дата':'46058','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€171435,00'},refs:[]},
+    'rev_050':{date:'46059',desc:'Slack T08anv20ve0',party:'',type:'CARD_PAYMENT',amount:-425.0,balance:17101.0,docUrl:'',docLabel:'',fields:{'Дата':'46059','Тип':'CARD_PAYMENT','Описание':'Slack T08anv20ve0','Контрагент':'—','Сумма':'−€425,00','Баланс':'€17101,00'},refs:[]},
+    'rev_051':{date:'46061',desc:'Shopify* 485029449',party:'',type:'CARD_PAYMENT',amount:-5256.0,balance:165754.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46061','Тип':'CARD_PAYMENT','Описание':'Shopify* 485029449','Контрагент':'—','Сумма':'−€5256,00','Баланс':'€165754,00'},refs:[]},
+    'rev_052':{date:'46063',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-5391.0,balance:160363.0,docUrl:'',docLabel:'',fields:{'Дата':'46063','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€5391,00','Баланс':'€160363,00'},refs:[]},
+    'rev_053':{date:'46064',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-336.0,balance:160027.0,docUrl:'https://drive.google.com/file/d/1Z5yLpjgYJ2IlmgCip9cnzxt5xNkcV0nd/view',docLabel:'',fields:{'Дата':'46064','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€336,00','Баланс':'€160027,00'},refs:[]},
+    'rev_054':{date:'46065',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-295.0,balance:159732.0,docUrl:'https://drive.google.com/file/d/1-vJf-chES87GTL_KYjRHISMPhx1rIias/view',docLabel:'',fields:{'Дата':'46065','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€295,00','Баланс':'€159732,00'},refs:[]},
+    'rev_055':{date:'46067',desc:'Google One',party:'',type:'CARD_PAYMENT',amount:-2199.0,balance:157533.0,docUrl:'',docLabel:'',fields:{'Дата':'46067','Тип':'CARD_PAYMENT','Описание':'Google One','Контрагент':'—','Сумма':'−€2199,00','Баланс':'€157533,00'},refs:[]},
+    'rev_056':{date:'46068',desc:'Shopify* 488762007',party:'',type:'CARD_PAYMENT',amount:-5129.0,balance:152404.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46068','Тип':'CARD_PAYMENT','Описание':'Shopify* 488762007','Контрагент':'—','Сумма':'−€5129,00','Баланс':'€152404,00'},refs:[]},
+    'rev_057':{date:'46070',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:54.0,balance:157804.0,docUrl:'https://docs.google.com/spreadsheets/d/1u33wtTs4K7e7vtlsdrT5ysHRD3LB4dCmdlI5__tLjPA/edit',docLabel:'',fields:{'Дата':'46070','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€54,00','Баланс':'€157804,00','Референс':'Shopify Q9D3K3'},refs:[]},
+    'rev_058':{date:'46071',desc:'Cursor, Ai Powered Ide',party:'',type:'CARD_PAYMENT',amount:-1691.0,balance:154313.0,docUrl:'https://drive.google.com/file/d/1ahlMUfmDTsJSZs-HplN5hRj4fpa6TREA/view',docLabel:'',fields:{'Дата':'46071','Тип':'CARD_PAYMENT','Описание':'Cursor, Ai Powered Ide','Контрагент':'—','Сумма':'−€1691,00','Баланс':'€154313,00'},refs:[]},
+    'rev_059':{date:'46071',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:156004.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46071','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€156004,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_060':{date:'46071',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:157004.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46071','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€157004,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_061':{date:'46072',desc:'Shopify* 490730527',party:'',type:'CARD_PAYMENT',amount:-88.0,balance:145513.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46072','Тип':'CARD_PAYMENT','Описание':'Shopify* 490730527','Контрагент':'—','Сумма':'−€88,00','Баланс':'€145513,00'},refs:[]},
+    'rev_062':{date:'46073',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-100.0,balance:135513.0,docUrl:'https://drive.google.com/file/d/1g_wv-B3VsLwb7JDOK8I6VlJJV4Sc2kkj/view',docLabel:'',fields:{'Дата':'46073','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€100,00','Баланс':'€135513,00'},refs:[]},
+    'rev_063':{date:'46075',desc:'Shopify* 492333270',party:'',type:'CARD_PAYMENT',amount:-5662.0,balance:128851.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46075','Тип':'CARD_PAYMENT','Описание':'Shopify* 492333270','Контрагент':'—','Сумма':'−€5662,00','Баланс':'€128851,00'},refs:[]},
+    'rev_064':{date:'46075',desc:'Google Ads4655419350',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:134513.0,docUrl:'',docLabel:'',fields:{'Дата':'46075','Тип':'CARD_PAYMENT','Описание':'Google Ads4655419350','Контрагент':'—','Сумма':'−€10,00','Баланс':'€134513,00'},refs:[]},
+    'rev_065':{date:'46076',desc:'Shopify* 492684283',party:'',type:'CARD_PAYMENT',amount:-3242.0,balance:125183.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46076','Тип':'CARD_PAYMENT','Описание':'Shopify* 492684283','Контрагент':'—','Сумма':'−€3242,00','Баланс':'€125183,00'},refs:[]},
+    'rev_066':{date:'46076',desc:'Shopify* 492781106',party:'',type:'CARD_PAYMENT',amount:-426.0,balance:128425.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46076','Тип':'CARD_PAYMENT','Описание':'Shopify* 492781106','Контрагент':'—','Сумма':'−€426,00','Баланс':'€128425,00'},refs:[]},
+    'rev_067':{date:'46077',desc:'Claude.ai Subscription',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:123085.0,docUrl:'https://drive.google.com/file/d/1g1kMgQB1t0Lc8LU3zbWVuPEAMEEOY_U0/view',docLabel:'',fields:{'Дата':'46077','Тип':'CARD_PAYMENT','Описание':'Claude.ai Subscription','Контрагент':'—','Сумма':'−€18,00','Баланс':'€123085,00'},refs:[]},
+    'rev_068':{date:'46077',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-298.0,balance:124885.0,docUrl:'',docLabel:'',fields:{'Дата':'46077','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€298,00','Баланс':'€124885,00'},refs:[]},
+    'rev_069':{date:'46078',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:125751.0,docUrl:'',docLabel:'',fields:{'Дата':'46078','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€125751,00'},refs:[]},
+    'rev_070':{date:'46078',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-339.0,balance:128488.0,docUrl:'',docLabel:'',fields:{'Дата':'46078','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€339,00','Баланс':'€128488,00'},refs:[]},
+    'rev_071':{date:'46078',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:5742.0,balance:128827.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46078','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€5742,00','Баланс':'€128827,00','Референс':'Shopify U4L5Q8'},refs:[]},
+    'rev_072':{date:'46081',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-133.0,balance:125618.0,docUrl:'',docLabel:'',fields:{'Дата':'46081','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€133,00','Баланс':'€125618,00'},refs:[]},
+    'rev_073':{date:'46083',desc:'Google*ads4655419350',party:'',type:'CARD_PAYMENT',amount:-3389.0,balance:111073.0,docUrl:'',docLabel:'',fields:{'Дата':'46083','Тип':'CARD_PAYMENT','Описание':'Google*ads4655419350','Контрагент':'—','Сумма':'−€3389,00','Баланс':'€111073,00'},refs:[]},
+    'rev_074':{date:'46083',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:114462.0,docUrl:'',docLabel:'',fields:{'Дата':'46083','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€114462,00'},refs:[]},
+    'rev_075':{date:'46083',desc:'Google Cloud Zv7zvw',party:'',type:'CARD_PAYMENT',amount:-5893.0,balance:115272.0,docUrl:'',docLabel:'',fields:{'Дата':'46083','Тип':'CARD_PAYMENT','Описание':'Google Cloud Zv7zvw','Контрагент':'—','Сумма':'−€5893,00','Баланс':'€115272,00'},refs:[]},
+    'rev_076':{date:'46083',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-4453.0,balance:121165.0,docUrl:'https://drive.google.com/file/d/1g_wv-B3VsLwb7JDOK8I6VlJJV4Sc2kkj/view',docLabel:'',fields:{'Дата':'46083','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€4453,00','Баланс':'€121165,00'},refs:[]},
+    'rev_077':{date:'46084',desc:'Paddle.net* N8n Cloud1',party:'',type:'CARD_PAYMENT',amount:-2856.0,balance:108217.0,docUrl:'',docLabel:'',fields:{'Дата':'46084','Тип':'CARD_PAYMENT','Описание':'Paddle.net* N8n Cloud1','Контрагент':'—','Сумма':'−€2856,00','Баланс':'€108217,00'},refs:[]},
+    'rev_078':{date:'46085',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-7485.0,balance:100732.0,docUrl:'',docLabel:'',fields:{'Дата':'46085','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€7485,00','Баланс':'€100732,00','Референс':'AAV90155 2026-02-24 - 03-04'},refs:[]},
+    'rev_079':{date:'46086',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:99186.0,docUrl:'',docLabel:'',fields:{'Дата':'46086','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€99186,00'},refs:[]},
+    'rev_080':{date:'46087',desc:'Slack T08anv20ve0',party:'',type:'CARD_PAYMENT',amount:-227.0,balance:96916.0,docUrl:'',docLabel:'',fields:{'Дата':'46087','Тип':'CARD_PAYMENT','Описание':'Slack T08anv20ve0','Контрагент':'—','Сумма':'−€227,00','Баланс':'€96916,00'},refs:[]},
+    'rev_081':{date:'46091',desc:'Shopify* 499305208',party:'',type:'CARD_PAYMENT',amount:-1.0,balance:103357.0,docUrl:'',docLabel:'Shopify пробный период',fields:{'Дата':'46091','Тип':'CARD_PAYMENT','Описание':'Shopify* 499305208','Контрагент':'—','Сумма':'−€1,00','Баланс':'€103357,00'},refs:[]},
+    'rev_082':{date:'46091',desc:'Shopify* 499107745',party:'',type:'CARD_PAYMENT',amount:-5222.0,balance:103457.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46091','Тип':'CARD_PAYMENT','Описание':'Shopify* 499107745','Контрагент':'—','Сумма':'−€5222,00','Баланс':'€103457,00'},refs:[]},
+    'rev_083':{date:'46091',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:11763.0,balance:108679.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit',docLabel:'',fields:{'Дата':'46091','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€11763,00','Баланс':'€108679,00','Референс':'Shopify P3G6P9'},refs:[]},
+    'rev_084':{date:'46092',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-687.0,balance:113109.0,docUrl:'https://drive.google.com/file/d/11lkfCegzxsB3gILT03rt33hNzWVhgtKa/view',docLabel:'',fields:{'Дата':'46092','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€687,00','Баланс':'€113109,00'},refs:[]},
+    'rev_085':{date:'46092',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:4649.0,balance:113796.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit',docLabel:'',fields:{'Дата':'46092','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€4649,00','Баланс':'€113796,00','Референс':'Shopify X0F5M4'},refs:[]},
+    'rev_086':{date:'46092',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:579.0,balance:109147.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46092','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€579,00','Баланс':'€109147,00','Референс':'Shopify Z4R3Q4'},refs:[]},
+    'rev_087':{date:'46093',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-303.0,balance:107806.0,docUrl:'',docLabel:'',fields:{'Дата':'46093','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€303,00','Баланс':'€107806,00'},refs:[]},
+    'rev_088':{date:'46093',desc:'Google*ads4655419350',party:'',type:'CARD_PAYMENT',amount:-50.0,balance:108109.0,docUrl:'',docLabel:'',fields:{'Дата':'46093','Тип':'CARD_PAYMENT','Описание':'Google*ads4655419350','Контрагент':'—','Сумма':'−€50,00','Баланс':'€108109,00'},refs:[]},
+    'rev_089':{date:'46094',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-217.0,balance:105636.0,docUrl:'',docLabel:'',fields:{'Дата':'46094','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€217,00','Баланс':'€105636,00','Референс':'AAV90155 2026-03-06'},refs:[]},
+    'rev_090':{date:'46095',desc:'Google One',party:'',type:'CARD_PAYMENT',amount:-2199.0,balance:103437.0,docUrl:'',docLabel:'',fields:{'Дата':'46095','Тип':'CARD_PAYMENT','Описание':'Google One','Контрагент':'—','Сумма':'−€2199,00','Баланс':'€103437,00'},refs:[]},
+    'rev_091':{date:'46098',desc:'Shopify* 502771018',party:'',type:'CARD_PAYMENT',amount:-5326.0,balance:98111.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46098','Тип':'CARD_PAYMENT','Описание':'Shopify* 502771018','Контрагент':'—','Сумма':'−€5326,00','Баланс':'€98111,00'},refs:[]},
+    'rev_092':{date:'46099',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-2125.0,balance:100528.0,docUrl:'',docLabel:'',fields:{'Дата':'46099','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€2125,00','Баланс':'€100528,00','Референс':'AAV90155 2026-03-17'},refs:[]},
+    'rev_093':{date:'46099',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:6342.0,balance:102653.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46099','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€6342,00','Баланс':'€102653,00','Референс':'Shopify B2S3K8'},refs:[]},
+    'rev_094':{date:'46099',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:96311.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46099','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€96311,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_095':{date:'46099',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:97311.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46099','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€97311,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_096':{date:'46102',desc:'Shopify* 504651289',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:99528.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46102','Тип':'CARD_PAYMENT','Описание':'Shopify* 504651289','Контрагент':'—','Сумма':'−€10,00','Баланс':'€99528,00'},refs:[]},
+    'rev_097':{date:'46105',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-3466.0,balance:8677.0,docUrl:'',docLabel:'',fields:{'Дата':'46105','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€3466,00','Баланс':'€8677,00','Референс':'AAV90155 2026-03-19,21'},refs:[]},
+    'rev_098':{date:'46105',desc:'Claude.ai Subscription',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:90236.0,docUrl:'https://drive.google.com/file/d/1VyVnNuELu7LVuiZPJcFOgOMRJvUwAfnX/view',docLabel:'',fields:{'Дата':'46105','Тип':'CARD_PAYMENT','Описание':'Claude.ai Subscription','Контрагент':'—','Сумма':'−€18,00','Баланс':'€90236,00'},refs:[]},
+    'rev_099':{date:'46105',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-306.0,balance:92036.0,docUrl:'',docLabel:'',fields:{'Дата':'46105','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€306,00','Баланс':'€92036,00'},refs:[]},
+    'rev_100':{date:'46105',desc:'Shopify* 506152487',party:'',type:'CARD_PAYMENT',amount:-7186.0,balance:92342.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46105','Тип':'CARD_PAYMENT','Описание':'Shopify* 506152487','Контрагент':'—','Сумма':'−€7186,00','Баланс':'€92342,00'},refs:[]},
+    'rev_101':{date:'46106',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:82247.0,docUrl:'',docLabel:'',fields:{'Дата':'46106','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€82247,00'},refs:[]},
+    'rev_102':{date:'46106',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-344.0,balance:84984.0,docUrl:'',docLabel:'',fields:{'Дата':'46106','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€344,00','Баланс':'€84984,00'},refs:[]},
+    'rev_103':{date:'46106',desc:'Shopify* 506565757',party:'',type:'CARD_PAYMENT',amount:-442.0,balance:85328.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46106','Тип':'CARD_PAYMENT','Описание':'Shopify* 506565757','Контрагент':'—','Сумма':'−€442,00','Баланс':'€85328,00'},refs:[]},
+    'rev_104':{date:'46106',desc:'Shopify* 506483280',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:8577.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46106','Тип':'CARD_PAYMENT','Описание':'Shopify* 506483280','Контрагент':'—','Сумма':'−€10,00','Баланс':'€8577,00'},refs:[]},
+    'rev_105':{date:'46108',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:7209.0,balance:89456.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit',docLabel:'',fields:{'Дата':'46108','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€7209,00','Баланс':'€89456,00','Референс':'Shopify P8T7K8'},refs:[]},
+    'rev_106':{date:'46111',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:573.0,balance:95186.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46111','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€573,00','Баланс':'€95186,00','Референс':'Shopify N3E1G0'},refs:[]},
+    'rev_107':{date:'46112',desc:'Google*ads4655419350',party:'',type:'CARD_PAYMENT',amount:-100.0,balance:85186.0,docUrl:'',docLabel:'',fields:{'Дата':'46112','Тип':'CARD_PAYMENT','Описание':'Google*ads4655419350','Контрагент':'—','Сумма':'−€100,00','Баланс':'€85186,00'},refs:[]},
+    'rev_108':{date:'46113',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:4141.0,balance:89327.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46113','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€4141,00','Баланс':'€89327,00','Референс':'Shopify T0D3J2'},refs:[]},
+    'rev_109':{date:'46114',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-2631.0,balance:6143.0,docUrl:'',docLabel:'',fields:{'Дата':'46114','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€2631,00','Баланс':'€6143,00','Референс':'AAV90155 2026-03-26,31'},refs:[]},
+    'rev_110':{date:'46114',desc:'Google*ads1118510856',party:'',type:'CARD_PAYMENT',amount:-15197.0,balance:64061.0,docUrl:'https://drive.google.com/file/d/1MYN4g-IgZQf8Ew1OYBaYBMRHfXGFgfIH/view',docLabel:'',fields:{'Дата':'46114','Тип':'CARD_PAYMENT','Описание':'Google*ads1118510856','Контрагент':'—','Сумма':'−€15197,00','Баланс':'€64061,00'},refs:[]},
+    'rev_111':{date:'46114',desc:'Google Cloud W2sflv',party:'',type:'CARD_PAYMENT',amount:-8755.0,balance:79258.0,docUrl:'',docLabel:'',fields:{'Дата':'46114','Тип':'CARD_PAYMENT','Описание':'Google Cloud W2sflv','Контрагент':'—','Сумма':'−€8755,00','Баланс':'€79258,00'},refs:[]},
+    'rev_112':{date:'46114',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:88013.0,docUrl:'',docLabel:'',fields:{'Дата':'46114','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€88013,00'},refs:[]},
+    'rev_113':{date:'46114',desc:'Google Ads4655419350',party:'',type:'CARD_PAYMENT',amount:-504.0,balance:88823.0,docUrl:'https://drive.google.com/file/d/1dCO2Kv3k7w42UVPssaHRwznr42g0b9Cz/view?usp=drivesdk',docLabel:'20260430 Google Ads Oliver Alder Statement 5-04.pdf',fields:{'Дата':'46114','Тип':'CARD_PAYMENT','Описание':'Google Ads4655419350','Контрагент':'—','Сумма':'−€504,00','Баланс':'€88823,00'},refs:[]},
+    'rev_114':{date:'46115',desc:'Paddle.net* N8n Cloud1',party:'',type:'CARD_PAYMENT',amount:-2856.0,balance:58574.0,docUrl:'https://drive.google.com/file/d/14hD4_GOpnKp9kdCEPMETqw9kAU4F1MzN/view?usp=drivesdk',docLabel:'20260403 Paddle N8n 28-56.pdf',fields:{'Дата':'46115','Тип':'CARD_PAYMENT','Описание':'Paddle.net* N8n Cloud1','Контрагент':'—','Сумма':'−€2856,00','Баланс':'€58574,00'},refs:[]},
+    'rev_115':{date:'46117',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:57028.0,docUrl:'https://drive.google.com/file/d/1_fAeXomdrTuMObIarilw2D3Ptbhm__sm/view?usp=drivesdk',docLabel:'20260404 NordVPN 15-46.pdf',fields:{'Дата':'46117','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€57028,00'},refs:[]},
+    'rev_116':{date:'46119',desc:'Openai',party:'',type:'CARD_PAYMENT',amount:-1032.0,balance:5958.0,docUrl:'https://drive.google.com/file/d/1gqcvHG7u9cUuIl7YZPDre6uIu27hcvNr/view?usp=drivesdk',docLabel:'20260407 OpenAI 11-90.pdf',fields:{'Дата':'46119','Тип':'CARD_PAYMENT','Описание':'Openai','Контрагент':'—','Сумма':'−€1032,00','Баланс':'€5958,00'},refs:[]},
+    'rev_117':{date:'46119',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:3584.0,balance:60612.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit',docLabel:'',fields:{'Дата':'46119','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€3584,00','Баланс':'€60612,00','Референс':'Shopify L9I9U5'},refs:[]},
+    'rev_118':{date:'46121',desc:'Shopify* 512987770',party:'',type:'CARD_PAYMENT',amount:-1.0,balance:61131.0,docUrl:'',docLabel:'Shopify €1 — верификация нового магазина (инвойс недоступен, магазин удалён)',fields:{'Дата':'46121','Тип':'CARD_PAYMENT','Описание':'Shopify* 512987770','Контрагент':'—','Сумма':'−€1,00','Баланс':'€61131,00'},refs:[]},
+    'rev_119':{date:'46121',desc:'Shopify* 512834286',party:'',type:'CARD_PAYMENT',amount:-4034.0,balance:61231.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46121','Тип':'CARD_PAYMENT','Описание':'Shopify* 512834286','Контрагент':'—','Сумма':'−€4034,00','Баланс':'€61231,00'},refs:[]},
+    'rev_120':{date:'46121',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:5685.0,balance:65265.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit#gid=2144005655&range=A8',docLabel:'',fields:{'Дата':'46121','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€5685,00','Баланс':'€65265,00','Референс':'Shopify Y8Q6R4'},refs:[]},
+    'rev_121':{date:'46122',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-7138.0,balance:53993.0,docUrl:'',docLabel:'',fields:{'Дата':'46122','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€7138,00','Баланс':'€53993,00','Референс':'AAV90155 2026-04-03,05'},refs:[]},
+    'rev_122':{date:'46123',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-683.0,balance:5331.0,docUrl:'https://drive.google.com/file/d/13nuKU3GPWKyeY8pQ0QE9m7VM0DZRc9zq/view',docLabel:'',fields:{'Дата':'46123','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€683,00','Баланс':'€5331,00'},refs:[]},
+    'rev_123':{date:'46124',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-3.0,balance:33007.0,docUrl:'https://drive.google.com/file/d/1EvF5FlR5OFcQ9GamvVNBJgpKdljcNdBi/view',docLabel:'',fields:{'Дата':'46124','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€3,00','Баланс':'€33007,00'},refs:[]},
+    'rev_124':{date:'46124',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-200.0,balance:3331.0,docUrl:'https://drive.google.com/file/d/10f4JvgqStadFHkvcxHPkVRRgxBrpy-wx/view',docLabel:'',fields:{'Дата':'46124','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€200,00','Баланс':'€3331,00'},refs:[]},
+    'rev_125':{date:'46126',desc:'Google One',party:'',type:'CARD_PAYMENT',amount:-2199.0,balance:36759.0,docUrl:'https://drive.google.com/file/d/1fiRNvyfWioXm7g6s0yfcK229N_7e5FBU/view?usp=drivesdk',docLabel:'20260414 Google One 21-99.pdf',fields:{'Дата':'46126','Тип':'CARD_PAYMENT','Описание':'Google One','Контрагент':'—','Сумма':'−€2199,00','Баланс':'€36759,00'},refs:[]},
+    'rev_126':{date:'46126',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:10831.0,balance:38958.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit#gid=2144005655&range=A9',docLabel:'',fields:{'Дата':'46126','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€10831,00','Баланс':'€38958,00','Референс':'Shopify D4Z6T5'},refs:[]},
+    'rev_127':{date:'46126',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-488.0,balance:28127.0,docUrl:'',docLabel:'',fields:{'Дата':'46126','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€488,00','Баланс':'€28127,00','Референс':'AAV90155 2026-04-10,11'},refs:[]},
+    'rev_128':{date:'46127',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:9459.0,balance:46218.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A6',docLabel:'',fields:{'Дата':'46127','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€9459,00','Баланс':'€46218,00','Референс':'Shopify E5Y7F8'},refs:[]},
+    'rev_129':{date:'46128',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-8613.0,balance:45786.0,docUrl:'',docLabel:'',fields:{'Дата':'46128','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€8613,00','Баланс':'€45786,00','Референс':'AAV90155 2026-04-14,15'},refs:[]},
+    'rev_130':{date:'46128',desc:'Shopify* 516391708',party:'',type:'CARD_PAYMENT',amount:-5161.0,balance:54399.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46128','Тип':'CARD_PAYMENT','Описание':'Shopify* 516391708','Контрагент':'—','Сумма':'−€5161,00','Баланс':'€54399,00'},refs:[]},
+    'rev_131':{date:'46128',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:13342.0,balance:5956.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit#gid=2144005655&range=A10',docLabel:'',fields:{'Дата':'46128','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€13342,00','Баланс':'€5956,00','Референс':'Shopify W2M9N5'},refs:[]},
+    'rev_132':{date:'46129',desc:'Cursor, Ai Powered Ide',party:'',type:'CARD_PAYMENT',amount:-1766.0,balance:50233.0,docUrl:'https://drive.google.com/file/d/1YZfoCbwZvpmNr4SITPxh6oNGVdHfcqQg/view',docLabel:'',fields:{'Дата':'46129','Тип':'CARD_PAYMENT','Описание':'Cursor, Ai Powered Ide','Контрагент':'—','Сумма':'−€1766,00','Баланс':'€50233,00'},refs:[]},
+    'rev_133':{date:'46129',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:6213.0,balance:51999.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46129','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€6213,00','Баланс':'€51999,00','Референс':'Shopify M9E2U8'},refs:[]},
+    'rev_134':{date:'46130',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-300.0,balance:18433.0,docUrl:'https://drive.google.com/file/d/10f4JvgqStadFHkvcxHPkVRRgxBrpy-wx/view',docLabel:'',fields:{'Дата':'46130','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€300,00','Баланс':'€18433,00'},refs:[]},
+    'rev_135':{date:'46130',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:48433.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46130','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€48433,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_136':{date:'46130',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:49433.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46130','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€49433,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_137':{date:'46132',desc:'Shopify* 518328545',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:1122.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46132','Тип':'CARD_PAYMENT','Описание':'Shopify* 518328545','Контрагент':'—','Сумма':'−€10,00','Баланс':'€1122,00'},refs:[]},
+    'rev_138':{date:'46132',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-6213.0,balance:1222.0,docUrl:'',docLabel:'',fields:{'Дата':'46132','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€6213,00','Баланс':'€1222,00','Референс':'AAV90155 2026-04-17,18'},refs:[]},
+    'rev_139':{date:'46133',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:13262.0,balance:29201.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46133','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€13262,00','Баланс':'€29201,00','Референс':'Shopify Q7W8X5'},refs:[]},
+    'rev_140':{date:'46133',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:4719.0,balance:15939.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A7',docLabel:'',fields:{'Дата':'46133','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€4719,00','Баланс':'€15939,00','Референс':'Shopify H4B3Z1'},refs:[]},
+    'rev_141':{date:'46134',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:119.0,balance:41101.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46134','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€119,00','Баланс':'€41101,00','Референс':'Shopify O5H9B9'},refs:[]},
+    'rev_142':{date:'46135',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-7567.0,balance:33485.0,docUrl:'',docLabel:'',fields:{'Дата':'46135','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€7567,00','Баланс':'€33485,00'},refs:[]},
+    'rev_143':{date:'46135',desc:'Shopify* 519907396',party:'',type:'CARD_PAYMENT',amount:-811.0,balance:41052.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46135','Тип':'CARD_PAYMENT','Описание':'Shopify* 519907396','Контрагент':'—','Сумма':'−€811,00','Баланс':'€41052,00'},refs:[]},
+    'rev_144':{date:'46135',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:8061.0,balance:49162.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46135','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€8061,00','Баланс':'€49162,00','Референс':'Shopify A6T4P8'},refs:[]},
+    'rev_145':{date:'46136',desc:'Claude.ai Subscription',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:22634.0,docUrl:'https://drive.google.com/file/d/1R36kcNuz-UWWBEjJ4_b0wzQ7WCA2uekg/view',docLabel:'',fields:{'Дата':'46136','Тип':'CARD_PAYMENT','Описание':'Claude.ai Subscription','Контрагент':'—','Сумма':'−€18,00','Баланс':'€22634,00'},refs:[]},
+    'rev_146':{date:'46136',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-301.0,balance:24434.0,docUrl:'',docLabel:'',fields:{'Дата':'46136','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€301,00','Баланс':'€24434,00'},refs:[]},
+    'rev_147':{date:'46136',desc:'Shopify* 520257146',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:24735.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46136','Тип':'CARD_PAYMENT','Описание':'Shopify* 520257146','Контрагент':'—','Сумма':'−€10,00','Баланс':'€24735,00'},refs:[]},
+    'rev_148':{date:'46136',desc:'Shopify* 520329829',party:'',type:'CARD_PAYMENT',amount:-775.0,balance:25735.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46136','Тип':'CARD_PAYMENT','Описание':'Shopify* 520329829','Контрагент':'—','Сумма':'−€775,00','Баланс':'€25735,00'},refs:[]},
+    'rev_149':{date:'46137',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:19553.0,docUrl:'https://drive.google.com/file/d/1c52PhfiHqnbTSdi8zHoavWRHZADJ_8mC/view?usp=drivesdk',docLabel:'20260424 Notion 27-37.pdf',fields:{'Дата':'46137','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€19553,00'},refs:[]},
+    'rev_150':{date:'46137',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-341.0,balance:2229.0,docUrl:'',docLabel:'Личные расходы учредителя',fields:{'Дата':'46137','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€341,00','Баланс':'€2229,00'},refs:[]},
+    'rev_151':{date:'46139',desc:'To HST Electronics technology Co., Limited',party:'HST Electronics technology Co., Limited',type:'TRANSFER',amount:-3966.0,balance:22253.0,docUrl:'',docLabel:'',fields:{'Дата':'46139','Тип':'TRANSFER','Описание':'To HST Electronics technology Co., Limited','Контрагент':'HST Electronics technology Co., Limited','Сумма':'−€3966,00','Баланс':'€22253,00','Референс':'AAV90155 2026-04-21'},refs:[]},
+    'rev_152':{date:'46139',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:6666.0,balance:26219.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46139','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€6666,00','Баланс':'€26219,00','Референс':'Shopify Z5E1M3'},refs:[]},
+    'rev_153':{date:'46143',desc:'From Ilja D',party:'',type:'TRANSFER',amount:1000.0,balance:122253.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46143','Тип':'TRANSFER','Описание':'From Ilja D','Контрагент':'—','Сумма':'+€1000,00','Баланс':'€122253,00','Референс':'Gesellschaftdarlehen, ohne USt '},refs:[]},
+    'rev_154':{date:'46144',desc:'Google Ads4655419350',party:'',type:'CARD_PAYMENT',amount:-15488.0,balance:59981.0,docUrl:'https://drive.google.com/file/d/1mJuC9v0qLjEErJZhJ16hBoTQDnxXXpLE/view?usp=drivesdk',docLabel:'20260430 Google Ads Oliver Alder 154-88.pdf',fields:{'Дата':'46144','Тип':'CARD_PAYMENT','Описание':'Google Ads4655419350','Контрагент':'—','Сумма':'−€15488,00','Баланс':'€59981,00'},refs:[]},
+    'rev_155':{date:'46144',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-3426.0,balance:75469.0,docUrl:'https://drive.google.com/file/d/10f4JvgqStadFHkvcxHPkVRRgxBrpy-wx/view',docLabel:'',fields:{'Дата':'46144','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€3426,00','Баланс':'€75469,00'},refs:[]},
+    'rev_156':{date:'46144',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:109729.0,docUrl:'https://drive.google.com/file/d/1tTH__wSXP05vg79lZ-ufmNNmW3VX2Pyf/view?usp=drivesdk',docLabel:'20260502 Google Workspace 8-10.pdf',fields:{'Дата':'46144','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€109729,00'},refs:[]},
+    'rev_157':{date:'46144',desc:'Google Cloud 3bgdf9',party:'',type:'CARD_PAYMENT',amount:-11714.0,balance:110539.0,docUrl:'https://drive.google.com/file/d/15b1Vd-rrJgp7s7l7HWpC4SD1X_RJ1Ued/view',docLabel:'',fields:{'Дата':'46144','Тип':'CARD_PAYMENT','Описание':'Google Cloud 3bgdf9','Контрагент':'—','Сумма':'−€11714,00','Баланс':'€110539,00'},refs:[]},
+    'rev_158':{date:'46146',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-5948.0,balance:54033.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46146','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€5948,00','Баланс':'€54033,00'},refs:[]},
+    'rev_159':{date:'46147',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:52487.0,docUrl:'https://drive.google.com/file/d/1DpjlNUjM_2hnNKUsGrK_3iLkqEd1D5UR/view?usp=drivesdk',docLabel:'20260504 NordVPN 15-46.pdf',fields:{'Дата':'46147','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€52487,00'},refs:[]},
+    'rev_160':{date:'46148',desc:'Slack T08anv20ve0',party:'',type:'CARD_PAYMENT',amount:-851.0,balance:50405.0,docUrl:'https://drive.google.com/file/d/1asXGJHcPuVJWcjb0RogHNtPqwMWKt3ch/view',docLabel:'',fields:{'Дата':'46148','Тип':'CARD_PAYMENT','Описание':'Slack T08anv20ve0','Контрагент':'—','Сумма':'−€851,00','Баланс':'€50405,00'},refs:[]},
+    'rev_161':{date:'46148',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-1231.0,balance:51256.0,docUrl:'https://drive.google.com/file/d/1f1XZpHj9ITiqQJTidgEnk2J3gftKRUiQ/view',docLabel:'',fields:{'Дата':'46148','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€1231,00','Баланс':'€51256,00','Референс':'20261013'},refs:[]},
+    'rev_162':{date:'46149',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:364.0,balance:54045.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A9',docLabel:'',fields:{'Дата':'46149','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€364,00','Баланс':'€54045,00','Референс':'Shopify M4C2D3'},refs:[]},
+    'rev_163':{date:'46150',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-13958.0,balance:40087.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46150','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€13958,00','Баланс':'€40087,00'},refs:[]},
+    'rev_164':{date:'46151',desc:'Shopify* 526787374',party:'',type:'CARD_PAYMENT',amount:-1.0,balance:3596.0,docUrl:'',docLabel:'Shopify €1 — верификация нового магазина (инвойс недоступен, магазин удалён)',fields:{'Дата':'46151','Тип':'CARD_PAYMENT','Описание':'Shopify* 526787374','Контрагент':'—','Сумма':'−€1,00','Баланс':'€3596,00'},refs:[]},
+    'rev_165':{date:'46151',desc:'Shopify* 526647542',party:'',type:'CARD_PAYMENT',amount:-4027.0,balance:3606.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46151','Тип':'CARD_PAYMENT','Описание':'Shopify* 526647542','Контрагент':'—','Сумма':'−€4027,00','Баланс':'€3606,00'},refs:[]},
+    'rev_166':{date:'46153',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-68.0,balance:33963.0,docUrl:'https://drive.google.com/file/d/12L9cdDdG1qT3E6Zs1ehApq0JENiGz5vE/view',docLabel:'',fields:{'Дата':'46153','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€68,00','Баланс':'€33963,00'},refs:[]},
+    'rev_167':{date:'46153',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-131.0,balance:3465.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46153','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€131,00','Баланс':'€3465,00'},refs:[]},
+    'rev_168':{date:'46154',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-299.0,balance:33664.0,docUrl:'https://drive.google.com/file/d/1yCV9IC4kcrNNvAKRhs2Ny7VCdNvw0u-F/view',docLabel:'',fields:{'Дата':'46154','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€299,00','Баланс':'€33664,00'},refs:[]},
+    'rev_169':{date:'46155',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-1981.0,balance:31683.0,docUrl:'https://drive.google.com/file/d/17mbaRkzuiMvRSmRbEGBRiALn177rOmO3/view',docLabel:'',fields:{'Дата':'46155','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€1981,00','Баланс':'€31683,00','Референс':'20260512031'},refs:[]},
+    'rev_170':{date:'46156',desc:'Google One',party:'',type:'CARD_PAYMENT',amount:-2199.0,balance:15269.0,docUrl:'https://drive.google.com/file/d/1Dfz6O0yDAIDhmV2f9185FUqcwNwBKBGI/view?usp=drivesdk',docLabel:'20260514 Google One 21-99.pdf',fields:{'Дата':'46156','Тип':'CARD_PAYMENT','Описание':'Google One','Контрагент':'—','Сумма':'−€2199,00','Баланс':'€15269,00'},refs:[]},
+    'rev_171':{date:'46156',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-14215.0,balance:17468.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46156','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€14215,00','Баланс':'€17468,00'},refs:[]},
+    'rev_172':{date:'46158',desc:'Shopify* 530323251',party:'',type:'CARD_PAYMENT',amount:-5222.0,balance:10047.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46158','Тип':'CARD_PAYMENT','Описание':'Shopify* 530323251','Контрагент':'—','Сумма':'−€5222,00','Баланс':'€10047,00'},refs:[]},
+    'rev_173':{date:'46160',desc:'Cursor, Ai Powered Ide',party:'',type:'CARD_PAYMENT',amount:-1766.0,balance:493.0,docUrl:'https://drive.google.com/file/d/1XtrHsaE1ST03gKe8eHZUGp5S4aNcb6ks/view',docLabel:'',fields:{'Дата':'46160','Тип':'CARD_PAYMENT','Описание':'Cursor, Ai Powered Ide','Контрагент':'—','Сумма':'−€1766,00','Баланс':'€493,00'},refs:[]},
+    'rev_174':{date:'46160',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-5988.0,balance:2259.0,docUrl:'https://drive.google.com/file/d/1S9JWMx-9PlLL7q6wQieywRpphoxC81Ed/view
+https://drive.google.com/file/d/1yFxWmc9eahn-Y2l9iWRRUCrBL0Y45fyv/view
+https://drive.google.com/file/d/1h_OKLp9B8cme_s4Mxt4vmKTEGFUG10Iv/view',docLabel:'',fields:{'Дата':'46160','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€5988,00','Баланс':'€2259,00','Референс':'20260516157, 20260519091, 20260519092'},refs:[]},
+    'rev_175':{date:'46160',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:8247.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46160','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€8247,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_176':{date:'46160',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:9247.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46160','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€9247,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_177':{date:'46161',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:4661.0,balance:5154.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A10',docLabel:'',fields:{'Дата':'46161','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€4661,00','Баланс':'€5154,00','Референс':'Shopify M6M9W9'},refs:[]},
+    'rev_178':{date:'46162',desc:'Shopify* 532273513',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:18182.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46162','Тип':'CARD_PAYMENT','Описание':'Shopify* 532273513','Контрагент':'—','Сумма':'−€10,00','Баланс':'€18182,00'},refs:[]},
+    'rev_179':{date:'46162',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:469.0,balance:19182.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46162','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€469,00','Баланс':'€19182,00','Референс':'Shopify P6O1Z6'},refs:[]},
+    'rev_180':{date:'46162',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:9338.0,balance:14492.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A11',docLabel:'',fields:{'Дата':'46162','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€9338,00','Баланс':'€14492,00','Референс':'Shopify A6X7S6'},refs:[]},
+    'rev_181':{date:'46165',desc:'Shopify* 533857170',party:'',type:'CARD_PAYMENT',amount:-8046.0,balance:60136.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46165','Тип':'CARD_PAYMENT','Описание':'Shopify* 533857170','Контрагент':'—','Сумма':'−€8046,00','Баланс':'€60136,00'},refs:[]},
+    'rev_182':{date:'46165',desc:'From Ilja D',party:'',type:'TRANSFER',amount:500.0,balance:68182.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46165','Тип':'TRANSFER','Описание':'From Ilja D','Контрагент':'—','Сумма':'+€500,00','Баланс':'€68182,00','Референс':'Gesellschaftdarlehen, ohne USt'},refs:[]},
+    'rev_183':{date:'46166',desc:'Claude.ai Subscription',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:5703.0,docUrl:'https://drive.google.com/file/d/1JozjbXThXrhl525IDXtqgN3diQBOB4jy/view',docLabel:'',fields:{'Дата':'46166','Тип':'CARD_PAYMENT','Описание':'Claude.ai Subscription','Контрагент':'—','Сумма':'−€18,00','Баланс':'€5703,00'},refs:[]},
+    'rev_184':{date:'46166',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-303.0,balance:5883.0,docUrl:'',docLabel:'',fields:{'Дата':'46166','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€303,00','Баланс':'€5883,00'},refs:[]},
+    'rev_185':{date:'46166',desc:'Shopify* 534230415',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:59136.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46166','Тип':'CARD_PAYMENT','Описание':'Shopify* 534230415','Контрагент':'—','Сумма':'−€10,00','Баланс':'€59136,00'},refs:[]},
+    'rev_186':{date:'46167',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:53946.0,docUrl:'https://drive.google.com/file/d/1XuQtGtDyo0dEq_SIfVB95TXfppCALBpI/view?usp=drivesdk',docLabel:'20260524 Notion 27-37.pdf',fields:{'Дата':'46167','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€53946,00'},refs:[]},
+    'rev_187':{date:'46167',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-344.0,balance:56683.0,docUrl:'',docLabel:'Личные расходы учредителя',fields:{'Дата':'46167','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€344,00','Баланс':'€56683,00'},refs:[]},
+    'rev_188':{date:'46168',desc:'Shopify* 534296012',party:'',type:'CARD_PAYMENT',amount:-9232.0,balance:44714.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46168','Тип':'CARD_PAYMENT','Описание':'Shopify* 534296012','Контрагент':'—','Сумма':'−€9232,00','Баланс':'€44714,00'},refs:[]},
+    'rev_189':{date:'46172',desc:'Godaddy#4099503766',party:'',type:'CARD_PAYMENT',amount:-4797.0,balance:39917.0,docUrl:'https://drive.google.com/file/d/1ok1SY8nUxWf21tmZof6FA4lj0oYDn-iD/view?usp=drivesdk',docLabel:'20260528 GoDaddy 4099503766 47-97.pdf',fields:{'Дата':'46172','Тип':'CARD_PAYMENT','Описание':'Godaddy#4099503766','Контрагент':'—','Сумма':'−€4797,00','Баланс':'€39917,00'},refs:[]},
+    'rev_190':{date:'46175',desc:'Google Workspace_propria.',party:'',type:'CARD_PAYMENT',amount:-81.0,balance:662.0,docUrl:'https://drive.google.com/file/d/1y39EQ8fQ-LZcvmymyKPhl0tBx-VLsEDK/view?usp=drivesdk',docLabel:'20260602 Google Workspace 8-10.pdf',fields:{'Дата':'46175','Тип':'CARD_PAYMENT','Описание':'Google Workspace_propria.','Контрагент':'—','Сумма':'−€81,00','Баланс':'€662,00'},refs:[]},
+    'rev_191':{date:'46175',desc:'Google Ads1118510856',party:'',type:'CARD_PAYMENT',amount:-15197.0,balance:1472.0,docUrl:'https://drive.google.com/file/d/1NmWxOXidG7QhkrjyaNcClhYCbhDvp-60/view',docLabel:'',fields:{'Дата':'46175','Тип':'CARD_PAYMENT','Описание':'Google Ads1118510856','Контрагент':'—','Сумма':'−€15197,00','Баланс':'€1472,00'},refs:[]},
+    'rev_192':{date:'46175',desc:'Google Cloud 7lwvn4',party:'',type:'CARD_PAYMENT',amount:-5683.0,balance:16669.0,docUrl:'https://drive.google.com/file/d/1QpQuslGxALIT9M-3vTLDBbYVv9J6zhN1/view',docLabel:'',fields:{'Дата':'46175','Тип':'CARD_PAYMENT','Описание':'Google Cloud 7lwvn4','Контрагент':'—','Сумма':'−€5683,00','Баланс':'€16669,00'},refs:[]},
+    'rev_193':{date:'46175',desc:'Google Ads4655419350',party:'',type:'CARD_PAYMENT',amount:-15501.0,balance:22352.0,docUrl:'https://drive.google.com/file/d/1T4TLy6_EWvOBW-frv3TAjJAKEFn-PxCD/view?usp=drivesdk',docLabel:'20260531 Google Ads Oliver Alder 155-01.pdf',fields:{'Дата':'46175','Тип':'CARD_PAYMENT','Описание':'Google Ads4655419350','Контрагент':'—','Сумма':'−€15501,00','Баланс':'€22352,00'},refs:[]},
+    'rev_194':{date:'46175',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-2064.0,balance:37853.0,docUrl:'https://drive.google.com/file/d/1U8cpn4gFD_EPMOfqBzXZ_-irRKxoaBj6/view',docLabel:'',fields:{'Дата':'46175','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€2064,00','Баланс':'€37853,00','Референс':'2026062029'},refs:[]},
+    'rev_195':{date:'46176',desc:'From Ilja D',party:'',type:'TRANSFER',amount:300.0,balance:30662.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46176','Тип':'TRANSFER','Описание':'From Ilja D','Контрагент':'—','Сумма':'+€300,00','Баланс':'€30662,00','Референс':'Gesellschaftdarlehen, ohne USt'},refs:[]},
+    'rev_196':{date:'46177',desc:'Openai',party:'',type:'CARD_PAYMENT',amount:-1025.0,balance:3427.0,docUrl:'https://drive.google.com/file/d/1LUq-X9gEq4RY3c0BQ3IegYDRTw6ERzIO/view?usp=drivesdk',docLabel:'20260603 OpenAI 11-90.pdf',fields:{'Дата':'46177','Тип':'CARD_PAYMENT','Описание':'Openai','Контрагент':'—','Сумма':'−€1025,00','Баланс':'€3427,00'},refs:[]},
+    'rev_197':{date:'46177',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-2044.0,balance:35295.0,docUrl:'https://drive.google.com/file/d/1bsrEwjQvmpfgRm2ns5v5HvDIKU7N_FFn/view',docLabel:'',fields:{'Дата':'46177','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€2044,00','Баланс':'€35295,00','Референс':'2026065441'},refs:[]},
+    'rev_198':{date:'46177',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:6677.0,balance:37339.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46177','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€6677,00','Баланс':'€37339,00','Референс':'Shopify K0E2B0'},refs:[]},
+    'rev_199':{date:'46178',desc:'Ckn.nord',party:'',type:'CARD_PAYMENT',amount:-1546.0,balance:32724.0,docUrl:'https://drive.google.com/file/d/1-8hLGEDKcomWRugE8WKiHmDSnNfYwsQ5/view?usp=drivesdk',docLabel:'20260604 NordVPN 15-46.pdf',fields:{'Дата':'46178','Тип':'CARD_PAYMENT','Описание':'Ckn.nord','Контрагент':'—','Сумма':'−€1546,00','Баланс':'€32724,00'},refs:[]},
+    'rev_200':{date:'46179',desc:'Slack T08anv20ve0',party:'',type:'CARD_PAYMENT',amount:-825.0,balance:31899.0,docUrl:'https://drive.google.com/file/d/1ProNq5KqkbWTcNr-tdy9y07J8Ct77Ew-/view',docLabel:'',fields:{'Дата':'46179','Тип':'CARD_PAYMENT','Описание':'Slack T08anv20ve0','Контрагент':'—','Сумма':'−€825,00','Баланс':'€31899,00'},refs:[]},
+    'rev_201':{date:'46181',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-3649.0,balance:32509.0,docUrl:'',docLabel:'',fields:{'Дата':'46181','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€3649,00','Баланс':'€32509,00','Референс':'2026069005'},refs:[]},
+    'rev_202':{date:'46181',desc:'Shopify* 540600864',party:'',type:'CARD_PAYMENT',amount:-1431.0,balance:36158.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46181','Тип':'CARD_PAYMENT','Описание':'Shopify* 540600864','Контрагент':'—','Сумма':'−€1431,00','Баланс':'€36158,00'},refs:[]},
+    'rev_203':{date:'46181',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:569.0,balance:37589.0,docUrl:'https://docs.google.com/spreadsheets/d/1u33wtTs4K7e7vtlsdrT5ysHRD3LB4dCmdlI5__tLjPA/edit#gid=799511803&range=A4',docLabel:'',fields:{'Дата':'46181','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€569,00','Баланс':'€37589,00','Референс':'Shopify X7Z0P7'},refs:[]},
+    'rev_204':{date:'46183',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-1267.0,balance:43643.0,docUrl:'',docLabel:'',fields:{'Дата':'46183','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€1267,00','Баланс':'€43643,00','Референс':'20260611851'},refs:[]},
+    'rev_205':{date:'46183',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:12401.0,balance:4491.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46183','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€12401,00','Баланс':'€4491,00','Референс':'Shopify H8D4Z1'},refs:[]},
+    'rev_206':{date:'46184',desc:'Github, Inc.',party:'',type:'CARD_PAYMENT',amount:-694.0,balance:42949.0,docUrl:'https://drive.google.com/file/d/1RoVTR2ZQrLpOT9Y3eJf8uL0lY8WtsIcO/view?usp=drivesdk',docLabel:'20260610 GitHub 6-94.pdf',fields:{'Дата':'46184','Тип':'CARD_PAYMENT','Описание':'Github, Inc.','Контрагент':'—','Сумма':'−€694,00','Баланс':'€42949,00'},refs:[]},
+    'rev_207':{date:'46185',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-305.0,balance:44523.0,docUrl:'https://drive.google.com/file/d/1wGc1kuSnWlNM-o_gKq0hXGempunEVaL5/view',docLabel:'',fields:{'Дата':'46185','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€305,00','Баланс':'€44523,00'},refs:[]},
+    'rev_208':{date:'46185',desc:'Hetzner Online Gmbh',party:'',type:'CARD_PAYMENT',amount:-1724.0,balance:44828.0,docUrl:'https://drive.google.com/file/d/1H44SIvpddCdyRrrhidbV_jIoWmo3PQvV/view?usp=drivesdk',docLabel:'20260626 Hetzner 17-24.pdf',fields:{'Дата':'46185','Тип':'CARD_PAYMENT','Описание':'Hetzner Online Gmbh','Контрагент':'—','Сумма':'−€1724,00','Баланс':'€44828,00'},refs:[]},
+    'rev_209':{date:'46185',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:3603.0,balance:46552.0,docUrl:'https://docs.google.com/spreadsheets/d/19ufKcu9bQ1wcMU04jYkIJypSFXZCGtJeIwONTSxgKXM/edit#gid=499631794&range=A12',docLabel:'',fields:{'Дата':'46185','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€3603,00','Баланс':'€46552,00','Референс':'Shopify S8L5H6'},refs:[]},
+    'rev_210':{date:'46186',desc:'Godaddy#4099514960',party:'',type:'CARD_PAYMENT',amount:-1116.0,balance:43407.0,docUrl:'https://drive.google.com/file/d/168c70CWEb__dKRmIFQBUcDUdLtgxJ7CC/view?usp=drivesdk',docLabel:'20260611 GoDaddy 4099514960 11-16.pdf',fields:{'Дата':'46186','Тип':'CARD_PAYMENT','Описание':'Godaddy#4099514960','Контрагент':'—','Сумма':'−€1116,00','Баланс':'€43407,00'},refs:[]},
+    'rev_211':{date:'46187',desc:'Google One',party:'',type:'CARD_PAYMENT',amount:-2199.0,balance:41208.0,docUrl:'https://drive.google.com/file/d/1iicxpBjazZy6d7QToNoN0aL9CyRFQ-1L/view?usp=drivesdk',docLabel:'20260614 Google One 21-99.pdf',fields:{'Дата':'46187','Тип':'CARD_PAYMENT','Описание':'Google One','Контрагент':'—','Сумма':'−€2199,00','Баланс':'€41208,00'},refs:[]},
+    'rev_212':{date:'46191',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-10.0,balance:39408.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46191','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€10,00','Баланс':'€39408,00','Референс':'Basic plan fee'},refs:[]},
+    'rev_213':{date:'46191',desc:'Revolut Business Fee',party:'',type:'FEE',amount:-8.0,balance:40408.0,docUrl:'',docLabel:'Kein Link',fields:{'Дата':'46191','Тип':'FEE','Описание':'Revolut Business Fee','Контрагент':'—','Сумма':'−€8,00','Баланс':'€40408,00','Референс':'Expenses app charges'},refs:[]},
+    'rev_214':{date:'46192',desc:'Shopify* 546252562',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:38408.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46192','Тип':'CARD_PAYMENT','Описание':'Shopify* 546252562','Контрагент':'—','Сумма':'−€10,00','Баланс':'€38408,00'},refs:[]},
+    'rev_215':{date:'46195',desc:'Shopify',party:'Shopify',type:'TRANSFER',amount:-495.0,balance:26191.0,docUrl:'',docLabel:'',fields:{'Дата':'46195','Тип':'TRANSFER','Описание':'Shopify','Контрагент':'Shopify','Сумма':'−€495,00','Баланс':'€26191,00'},refs:[]},
+    'rev_216':{date:'46195',desc:'Shopify* 547867122',party:'',type:'CARD_PAYMENT',amount:-8094.0,balance:26686.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46195','Тип':'CARD_PAYMENT','Описание':'Shopify* 547867122','Контрагент':'—','Сумма':'−€8094,00','Баланс':'€26686,00'},refs:[]},
+    'rev_217':{date:'46195',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-3628.0,balance:3478.0,docUrl:'',docLabel:'',fields:{'Дата':'46195','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€3628,00','Баланс':'€3478,00','Референс':'20260623022'},refs:[]},
+    'rev_218':{date:'46196',desc:'Shopify* 548289649',party:'',type:'CARD_PAYMENT',amount:-9238.0,balance:14445.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46196','Тип':'CARD_PAYMENT','Описание':'Shopify* 548289649','Контрагент':'—','Сумма':'−€9238,00','Баланс':'€14445,00'},refs:[]},
+    'rev_219':{date:'46196',desc:'Shopify* 548227382',party:'',type:'CARD_PAYMENT',amount:-10.0,balance:23683.0,docUrl:'',docLabel:'Shopify (внешний)',fields:{'Дата':'46196','Тип':'CARD_PAYMENT','Описание':'Shopify* 548227382','Контрагент':'—','Сумма':'−€10,00','Баланс':'€23683,00'},refs:[]},
+    'rev_220':{date:'46196',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-1508.0,balance:24683.0,docUrl:'',docLabel:'',fields:{'Дата':'46196','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€1508,00','Баланс':'€24683,00','Референс':'20260625988'},refs:[]},
+    'rev_221':{date:'46197',desc:'Anthropic* Claude Sub',party:'',type:'CARD_PAYMENT',amount:-18.0,balance:25564.0,docUrl:'https://drive.google.com/file/d/16q4vRWzXRrjhg83gmyRdFjIzgnehSJso/view',docLabel:'',fields:{'Дата':'46197','Тип':'CARD_PAYMENT','Описание':'Anthropic* Claude Sub','Контрагент':'—','Сумма':'−€18,00','Баланс':'€25564,00'},refs:[]},
+    'rev_222':{date:'46197',desc:'Paddle.net* Poky',party:'',type:'CARD_PAYMENT',amount:-308.0,balance:27364.0,docUrl:'',docLabel:'',fields:{'Дата':'46197','Тип':'CARD_PAYMENT','Описание':'Paddle.net* Poky','Контрагент':'—','Сумма':'−€308,00','Баланс':'€27364,00'},refs:[]},
+    'rev_223':{date:'46197',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:13227.0,balance:27672.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46197','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€13227,00','Баланс':'€27672,00','Референс':'Shopify S8Z1N3'},refs:[]},
+    'rev_224':{date:'46198',desc:'Singularityapp Llp',party:'',type:'CARD_PAYMENT',amount:-352.0,balance:24212.0,docUrl:'',docLabel:'Личные расходы учредителя',fields:{'Дата':'46198','Тип':'CARD_PAYMENT','Описание':'Singularityapp Llp','Контрагент':'—','Сумма':'−€352,00','Баланс':'€24212,00'},refs:[]},
+    'rev_225':{date:'46198',desc:'Notion Labs, Inc.',party:'',type:'CARD_PAYMENT',amount:-2737.0,balance:24564.0,docUrl:'https://drive.google.com/file/d/1o7qCQC13f9Lt4wXO_o2fAcX1MEpZcWtx/view?usp=drivesdk',docLabel:'20260624 Notion 27-37.pdf',fields:{'Дата':'46198','Тип':'CARD_PAYMENT','Описание':'Notion Labs, Inc.','Контрагент':'—','Сумма':'−€2737,00','Баланс':'€24564,00'},refs:[]},
+    'rev_226':{date:'46198',desc:'To EAST BAITE LIMITED',party:'EAST BAITE LIMITED',type:'TRANSFER',amount:-4862.0,balance:27301.0,docUrl:'',docLabel:'',fields:{'Дата':'46198','Тип':'TRANSFER','Описание':'To EAST BAITE LIMITED','Контрагент':'EAST BAITE LIMITED','Сумма':'−€4862,00','Баланс':'€27301,00','Референс':'20260628861'},refs:[]},
+    'rev_227':{date:'46198',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:6599.0,balance:32163.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46198','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€6599,00','Баланс':'€32163,00','Референс':'Shopify K4U2Q7'},refs:[]},
+    'rev_228':{date:'46202',desc:'Money added from STRIPE TECHNOLOGY EUROPE LTD',party:'',type:'TOPUP',amount:1596.0,balance:40172.0,docUrl:'https://docs.google.com/spreadsheets/d/1AKOKpDw3_nWTWZt4KBHLLHtoOJqyUAnxp3bpqj5nLp4/edit',docLabel:'',fields:{'Дата':'46202','Тип':'TOPUP','Описание':'Money added from STRIPE TECHNOLOGY EUROPE LTD','Контрагент':'—','Сумма':'+€1596,00','Баланс':'€40172,00','Референс':'Shopify J5E8I1'},refs:[]},
+    'rev_229':{date:'46204',desc:'Google Cloud Tnnwp9',party:'',type:'CARD_PAYMENT',amount:-56.0,balance:13789.0,docUrl:'',docLabel:'',fields:{'Дата':'46204','Тип':'CARD_PAYMENT','Описание':'Google Cloud Tnnwp9','Контрагент':'—','Сумма':'−€56,00','Баланс':'€13789,00'},refs:[]}
+  },
+  payouts: {
+    'pay_001':{payoutId:'Shopify H9G9S9',store:'',storeCode:'',date:'06.01.2026',status:'Deposited',amount:53.99,txns:[],refs:[{e:'revolut',id:'rev_012',label:'Revolut · 06.01.2026 · +€53,99'}],fields:{'Дата пейаута':'06.01.2026','Payout ID':'Shopify H9G9S9','Магазин':'—','Статус':'Deposited','Итого нетто':'+€53,99'}},
+    'pay_002':{payoutId:'Shopify C3N3Q8',store:'',storeCode:'',date:'13.01.2026',status:'Deposited',amount:144.53,txns:[],refs:[{e:'revolut',id:'rev_017',label:'Revolut · 13.01.2026 · +€144,53'}],fields:{'Дата пейаута':'13.01.2026','Payout ID':'Shopify C3N3Q8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€144,53'}},
+    'pay_003':{payoutId:'SHOPIFY',store:'',storeCode:'',date:'21.01.2026',status:'Deposited',amount:38.93,txns:[],refs:[{e:'revolut',id:'rev_029',label:'Revolut · 21.01.2026 · +€38,93'}],fields:{'Дата пейаута':'21.01.2026','Payout ID':'SHOPIFY','Магазин':'—','Статус':'Deposited','Итого нетто':'+€38,93'}},
+    'pay_004':{payoutId:'SHOPIFY',store:'',storeCode:'',date:'28.01.2026',status:'Deposited',amount:52.64,txns:[],refs:[{e:'revolut',id:'rev_040',label:'Revolut · 28.01.2026 · +€52,64'}],fields:{'Дата пейаута':'28.01.2026','Payout ID':'SHOPIFY','Магазин':'—','Статус':'Deposited','Итого нетто':'+€52,64'}},
+    'pay_005':{payoutId:'Shopify Q9D3K3',store:'',storeCode:'',date:'17.02.2026',status:'Deposited',amount:54.0,txns:[],refs:[{e:'revolut',id:'rev_057',label:'Revolut · 17.02.2026 · +€54,00'}],fields:{'Дата пейаута':'17.02.2026','Payout ID':'Shopify Q9D3K3','Магазин':'—','Статус':'Deposited','Итого нетто':'+€54,00'}},
+    'pay_006':{payoutId:'Shopify U4L5Q8',store:'',storeCode:'',date:'25.02.2026',status:'Deposited',amount:57.42,txns:[],refs:[{e:'revolut',id:'rev_071',label:'Revolut · 25.02.2026 · +€57,42'}],fields:{'Дата пейаута':'25.02.2026','Payout ID':'Shopify U4L5Q8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€57,42'}},
+    'pay_007':{payoutId:'Shopify P3G6P9',store:'',storeCode:'',date:'10.03.2026',status:'Deposited',amount:117.63,txns:[],refs:[{e:'revolut',id:'rev_083',label:'Revolut · 10.03.2026 · +€117,63'}],fields:{'Дата пейаута':'10.03.2026','Payout ID':'Shopify P3G6P9','Магазин':'—','Статус':'Deposited','Итого нетто':'+€117,63'}},
+    'pay_008':{payoutId:'Shopify X0F5M4',store:'',storeCode:'',date:'11.03.2026',status:'Deposited',amount:46.49,txns:[],refs:[{e:'revolut',id:'rev_085',label:'Revolut · 11.03.2026 · +€46,49'}],fields:{'Дата пейаута':'11.03.2026','Payout ID':'Shopify X0F5M4','Магазин':'—','Статус':'Deposited','Итого нетто':'+€46,49'}},
+    'pay_009':{payoutId:'Shopify Z4R3Q4',store:'',storeCode:'',date:'11.03.2026',status:'Deposited',amount:57.9,txns:[],refs:[{e:'revolut',id:'rev_086',label:'Revolut · 11.03.2026 · +€57,90'}],fields:{'Дата пейаута':'11.03.2026','Payout ID':'Shopify Z4R3Q4','Магазин':'—','Статус':'Deposited','Итого нетто':'+€57,90'}},
+    'pay_010':{payoutId:'Shopify B2S3K8',store:'',storeCode:'',date:'18.03.2026',status:'Deposited',amount:63.42,txns:[],refs:[{e:'revolut',id:'rev_093',label:'Revolut · 18.03.2026 · +€63,42'}],fields:{'Дата пейаута':'18.03.2026','Payout ID':'Shopify B2S3K8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€63,42'}},
+    'pay_011':{payoutId:'Shopify P8T7K8',store:'',storeCode:'',date:'27.03.2026',status:'Deposited',amount:72.09,txns:[],refs:[{e:'revolut',id:'rev_105',label:'Revolut · 27.03.2026 · +€72,09'}],fields:{'Дата пейаута':'27.03.2026','Payout ID':'Shopify P8T7K8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€72,09'}},
+    'pay_012':{payoutId:'Shopify N3E1G0',store:'',storeCode:'',date:'30.03.2026',status:'Deposited',amount:57.3,txns:[],refs:[{e:'revolut',id:'rev_106',label:'Revolut · 30.03.2026 · +€57,30'}],fields:{'Дата пейаута':'30.03.2026','Payout ID':'Shopify N3E1G0','Магазин':'—','Статус':'Deposited','Итого нетто':'+€57,30'}},
+    'pay_013':{payoutId:'Shopify T0D3J2',store:'',storeCode:'',date:'01.04.2026',status:'Deposited',amount:41.41,txns:[],refs:[{e:'revolut',id:'rev_108',label:'Revolut · 01.04.2026 · +€41,41'}],fields:{'Дата пейаута':'01.04.2026','Payout ID':'Shopify T0D3J2','Магазин':'—','Статус':'Deposited','Итого нетто':'+€41,41'}},
+    'pay_014':{payoutId:'Shopify L9I9U5',store:'',storeCode:'',date:'07.04.2026',status:'Deposited',amount:35.84,txns:[],refs:[{e:'revolut',id:'rev_117',label:'Revolut · 07.04.2026 · +€35,84'}],fields:{'Дата пейаута':'07.04.2026','Payout ID':'Shopify L9I9U5','Магазин':'—','Статус':'Deposited','Итого нетто':'+€35,84'}},
+    'pay_015':{payoutId:'Shopify Y8Q6R4',store:'',storeCode:'',date:'09.04.2026',status:'Deposited',amount:56.85,txns:[],refs:[{e:'revolut',id:'rev_120',label:'Revolut · 09.04.2026 · +€56,85'}],fields:{'Дата пейаута':'09.04.2026','Payout ID':'Shopify Y8Q6R4','Магазин':'—','Статус':'Deposited','Итого нетто':'+€56,85'}},
+    'pay_016':{payoutId:'Shopify D4Z6T5',store:'',storeCode:'',date:'14.04.2026',status:'Deposited',amount:108.31,txns:[],refs:[{e:'revolut',id:'rev_126',label:'Revolut · 14.04.2026 · +€108,31'}],fields:{'Дата пейаута':'14.04.2026','Payout ID':'Shopify D4Z6T5','Магазин':'—','Статус':'Deposited','Итого нетто':'+€108,31'}},
+    'pay_017':{payoutId:'Shopify E5Y7F8',store:'',storeCode:'',date:'15.04.2026',status:'Deposited',amount:94.59,txns:[],refs:[{e:'revolut',id:'rev_128',label:'Revolut · 15.04.2026 · +€94,59'}],fields:{'Дата пейаута':'15.04.2026','Payout ID':'Shopify E5Y7F8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€94,59'}},
+    'pay_018':{payoutId:'Shopify W2M9N5',store:'',storeCode:'',date:'16.04.2026',status:'Deposited',amount:133.42,txns:[],refs:[{e:'revolut',id:'rev_131',label:'Revolut · 16.04.2026 · +€133,42'}],fields:{'Дата пейаута':'16.04.2026','Payout ID':'Shopify W2M9N5','Магазин':'—','Статус':'Deposited','Итого нетто':'+€133,42'}},
+    'pay_019':{payoutId:'Shopify M9E2U8',store:'',storeCode:'',date:'17.04.2026',status:'Deposited',amount:62.13,txns:[],refs:[{e:'revolut',id:'rev_133',label:'Revolut · 17.04.2026 · +€62,13'}],fields:{'Дата пейаута':'17.04.2026','Payout ID':'Shopify M9E2U8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€62,13'}},
+    'pay_020':{payoutId:'Shopify Q7W8X5',store:'',storeCode:'',date:'21.04.2026',status:'Deposited',amount:132.62,txns:[],refs:[{e:'revolut',id:'rev_139',label:'Revolut · 21.04.2026 · +€132,62'}],fields:{'Дата пейаута':'21.04.2026','Payout ID':'Shopify Q7W8X5','Магазин':'—','Статус':'Deposited','Итого нетто':'+€132,62'}},
+    'pay_021':{payoutId:'Shopify H4B3Z1',store:'',storeCode:'',date:'21.04.2026',status:'Deposited',amount:47.19,txns:[],refs:[{e:'revolut',id:'rev_140',label:'Revolut · 21.04.2026 · +€47,19'}],fields:{'Дата пейаута':'21.04.2026','Payout ID':'Shopify H4B3Z1','Магазин':'—','Статус':'Deposited','Итого нетто':'+€47,19'}},
+    'pay_022':{payoutId:'Shopify O5H9B9',store:'',storeCode:'',date:'22.04.2026',status:'Deposited',amount:119.0,txns:[],refs:[{e:'revolut',id:'rev_141',label:'Revolut · 22.04.2026 · +€119,00'}],fields:{'Дата пейаута':'22.04.2026','Payout ID':'Shopify O5H9B9','Магазин':'—','Статус':'Deposited','Итого нетто':'+€119,00'}},
+    'pay_023':{payoutId:'Shopify A6T4P8',store:'',storeCode:'',date:'23.04.2026',status:'Deposited',amount:80.61,txns:[],refs:[{e:'revolut',id:'rev_144',label:'Revolut · 23.04.2026 · +€80,61'}],fields:{'Дата пейаута':'23.04.2026','Payout ID':'Shopify A6T4P8','Магазин':'—','Статус':'Deposited','Итого нетто':'+€80,61'}},
+    'pay_024':{payoutId:'Shopify Z5E1M3',store:'',storeCode:'',date:'27.04.2026',status:'Deposited',amount:66.66,txns:[],refs:[{e:'revolut',id:'rev_152',label:'Revolut · 27.04.2026 · +€66,66'}],fields:{'Дата пейаута':'27.04.2026','Payout ID':'Shopify Z5E1M3','Магазин':'—','Статус':'Deposited','Итого нетто':'+€66,66'}},
+    'pay_025':{payoutId:'Shopify M4C2D3',store:'',storeCode:'',date:'07.05.2026',status:'Deposited',amount:36.4,txns:[],refs:[{e:'revolut',id:'rev_162',label:'Revolut · 07.05.2026 · +€36,40'}],fields:{'Дата пейаута':'07.05.2026','Payout ID':'Shopify M4C2D3','Магазин':'—','Статус':'Deposited','Итого нетто':'+€36,40'}},
+    'pay_026':{payoutId:'Shopify M6M9W9',store:'',storeCode:'',date:'19.05.2026',status:'Deposited',amount:46.61,txns:[],refs:[{e:'revolut',id:'rev_177',label:'Revolut · 19.05.2026 · +€46,61'}],fields:{'Дата пейаута':'19.05.2026','Payout ID':'Shopify M6M9W9','Магазин':'—','Статус':'Deposited','Итого нетто':'+€46,61'}},
+    'pay_027':{payoutId:'Shopify P6O1Z6',store:'',storeCode:'',date:'20.05.2026',status:'Deposited',amount:46.9,txns:[],refs:[{e:'revolut',id:'rev_179',label:'Revolut · 20.05.2026 · +€46,90'}],fields:{'Дата пейаута':'20.05.2026','Payout ID':'Shopify P6O1Z6','Магазин':'—','Статус':'Deposited','Итого нетто':'+€46,90'}},
+    'pay_028':{payoutId:'Shopify A6X7S6',store:'',storeCode:'',date:'20.05.2026',status:'Deposited',amount:93.38,txns:[],refs:[{e:'revolut',id:'rev_180',label:'Revolut · 20.05.2026 · +€93,38'}],fields:{'Дата пейаута':'20.05.2026','Payout ID':'Shopify A6X7S6','Магазин':'—','Статус':'Deposited','Итого нетто':'+€93,38'}},
+    'pay_029':{payoutId:'Shopify K0E2B0',store:'',storeCode:'',date:'04.06.2026',status:'Deposited',amount:66.77,txns:[],refs:[{e:'revolut',id:'rev_198',label:'Revolut · 04.06.2026 · +€66,77'}],fields:{'Дата пейаута':'04.06.2026','Payout ID':'Shopify K0E2B0','Магазин':'—','Статус':'Deposited','Итого нетто':'+€66,77'}},
+    'pay_030':{payoutId:'Shopify X7Z0P7',store:'',storeCode:'',date:'08.06.2026',status:'Deposited',amount:56.9,txns:[],refs:[{e:'revolut',id:'rev_203',label:'Revolut · 08.06.2026 · +€56,90'}],fields:{'Дата пейаута':'08.06.2026','Payout ID':'Shopify X7Z0P7','Магазин':'—','Статус':'Deposited','Итого нетто':'+€56,90'}},
+    'pay_031':{payoutId:'Shopify H8D4Z1',store:'',storeCode:'',date:'10.06.2026',status:'Deposited',amount:124.01,txns:[],refs:[{e:'revolut',id:'rev_205',label:'Revolut · 10.06.2026 · +€124,01'}],fields:{'Дата пейаута':'10.06.2026','Payout ID':'Shopify H8D4Z1','Магазин':'—','Статус':'Deposited','Итого нетто':'+€124,01'}},
+    'pay_032':{payoutId:'Shopify S8L5H6',store:'',storeCode:'',date:'12.06.2026',status:'Deposited',amount:36.03,txns:[],refs:[{e:'revolut',id:'rev_209',label:'Revolut · 12.06.2026 · +€36,03'}],fields:{'Дата пейаута':'12.06.2026','Payout ID':'Shopify S8L5H6','Магазин':'—','Статус':'Deposited','Итого нетто':'+€36,03'}},
+    'pay_033':{payoutId:'Shopify S8Z1N3',store:'',storeCode:'',date:'24.06.2026',status:'Deposited',amount:132.27,txns:[],refs:[{e:'revolut',id:'rev_223',label:'Revolut · 24.06.2026 · +€132,27'}],fields:{'Дата пейаута':'24.06.2026','Payout ID':'Shopify S8Z1N3','Магазин':'—','Статус':'Deposited','Итого нетто':'+€132,27'}},
+    'pay_034':{payoutId:'Shopify K4U2Q7',store:'',storeCode:'',date:'25.06.2026',status:'Deposited',amount:65.99,txns:[],refs:[{e:'revolut',id:'rev_227',label:'Revolut · 25.06.2026 · +€65,99'}],fields:{'Дата пейаута':'25.06.2026','Payout ID':'Shopify K4U2Q7','Магазин':'—','Статус':'Deposited','Итого нетто':'+€65,99'}},
+    'pay_035':{payoutId:'Shopify J5E8I1',store:'',storeCode:'',date:'29.06.2026',status:'Deposited',amount:159.6,txns:[],refs:[{e:'revolut',id:'rev_228',label:'Revolut · 29.06.2026 · +€159,60'}],fields:{'Дата пейаута':'29.06.2026','Payout ID':'Shopify J5E8I1','Магазин':'—','Статус':'Deposited','Итого нетто':'+€159,60'}}
+  },
+  orders: {
+    us316:  { num:'#2098341316-US', store:'Charlie & Ted', date:'31.12.2025', type:'Sale',            buyer:'James Miller · 🇺🇸 US', item:'Linen Shirt · White · L', net:68.40,
+               fields:{'Дата':'31.12.2025','Ордер':'#2098341316-US','Магазин':'Charlie & Ted','Покупатель':'James Miller · 🇺🇸 US · Fulfilled','Товар':'Linen Shirt · White · L · ×1','Брутто (Shopify)':'+€72,39','Комиссия (Shopify)':'−€3,99','Нетто (в пейаут)':'+€68,40','Себестоимость':'€16,40 (из INV-2026-CT-001)'},
+               refs:[{e:'payouts',id:'p141503037779',label:'Пейаут 141503037779 · CT · 06.01.2026'},{e:'revolut',id:'K13',label:'Расчётный счёт K13 · 06.01.2026 · +€53,99'},{e:'invoices',id:'ctInv001',label:'Инвойс INV-2026-CT-001 · Linen Shirt White L · €16,40'}] },
+    au237:  { num:'#2098341237-AU', store:'Charlie & Ted', date:'01.01.2026', type:'Refund',          buyer:'Sophie B. · 🇦🇺 AU', item:'Linen Dress · Sage · M (возврат)', net:-11.90,
+               fields:{'Дата':'01.01.2026','Ордер':'#2098341237-AU','Магазин':'Charlie & Ted','Покупатель':'Sophie B. · 🇦🇺 AU','Товар':'Linen Dress · Sage · M (возврат)','Причина':'Customer request','Нетто (возврат)':'−€11,90'},
+               refs:[{e:'payouts',id:'p141503037779',label:'Пейаут 141503037779 · CT · 06.01.2026'},{e:'revolut',id:'K13',label:'Расчётный счёт K13'}] },
+    au233:  { num:'#2098341233-AU', store:'Charlie & Ted', date:'01.01.2026', type:'Refund',          buyer:'', item:'Частичный возврат (доставка)', net:-3.97,
+               fields:{'Дата':'01.01.2026','Ордер':'#2098341233-AU','Магазин':'Charlie & Ted','Тип':'Refund (частичный — доставка)','Нетто':'−€3,97'},
+               refs:[{e:'payouts',id:'p141503037779',label:'Пейаут 141503037779 · CT'},{e:'revolut',id:'K13',label:'Расчётный счёт K13'}] },
+    au162:  { num:'#2098341162-AU', store:'Charlie & Ted', date:'01.01.2026', type:'Dispute Reversal',buyer:'', item:'', net:1.46,
+               fields:{'Дата':'01.01.2026','Ордер':'#2098341162-AU','Магазин':'Charlie & Ted','Тип':'Dispute Reversal (Spor vygran — выиграли)','Нетто':'+€1,46'},
+               refs:[{e:'payouts',id:'p141503037779',label:'Пейаут 141503037779 · CT'},{e:'revolut',id:'K13',label:'Расчётный счёт K13'}] },
+    cg421:  { num:'#CG-10421',      store:'Casa Giannini', date:'22.01.2026', type:'Dispute',         buyer:'', item:'', net:-39.95,
+               fields:{'Дата':'22.01.2026','Ордер':'#CG-10421','Магазин':'Casa Giannini','Тип':'Dispute (проиграли)','Причина':'Not as described','Нетто':'−€39,95'},
+               refs:[{e:'payouts',id:'p141314490699',label:'Пейаут 141314490699 · CG · Withdrawn'},{e:'revolut',id:'K26',label:'Расчётный счёт K26 · −€39,95'}] },
+    mf812:  { num:'#MF-5812',       store:'Marc&François', date:'09.04.2026', type:'Sale',            buyer:'Anna K. · 🇩🇪 DE', item:'Linen Blazer · Ecru · S', net:47.93,
+               fields:{'Дата':'09.04.2026','Ордер':'#MF-5812','Магазин':'Marc&François','Покупатель':'Anna K. · 🇩🇪 DE · Fulfilled','Товар':'Linen Blazer · Ecru · S · ×1','Брутто (Shopify)':'+€49,90','Комиссия (Shopify)':'−€1,97','Нетто (в пейаут)':'+€47,93','Себестоимость':'€18,20 (из INV-2026-MF-003)'},
+               refs:[{e:'payouts',id:'p152899354956',label:'Пейаут 152899354956 · MF · 14.04.2026'},{e:'revolut',id:'K127',label:'Расчётный счёт K127 · +€108,31'},{e:'invoices',id:'mfInv003',label:'Инвойс INV-2026-MF-003 · Linen Blazer Ecru S · €18,20'}] },
+    mf814:  { num:'#MF-5814',       store:'Marc&François', date:'10.04.2026', type:'Sale',            buyer:'Marie P. · 🇫🇷 FR', item:'Linen Trousers · Navy · 36', net:77.00,
+               fields:{'Дата':'10.04.2026','Ордер':'#MF-5814','Магазин':'Marc&François','Покупатель':'Marie P. · 🇫🇷 FR · Fulfilled','Товар':'Linen Trousers · Navy · 36 · ×1','Брутто (Shopify)':'+€79,90','Комиссия (Shopify)':'−€2,90','Нетто (в пейаут)':'+€77,00','Себестоимость':'€19,50 (из INV-2026-MF-003)'},
+               refs:[{e:'payouts',id:'p152899354956',label:'Пейаут 152899354956 · MF'},{e:'revolut',id:'K127',label:'Расчётный счёт K127'},{e:'invoices',id:'mfInv003',label:'Инвойс INV-2026-MF-003 · Linen Trousers Navy 36 · €19,50'}] },
+    mf820:  { num:'#MF-5820',       store:'Marc&François', date:'11.04.2026', type:'Sale',            buyer:'Luisa M. · 🇮🇹 IT', item:'Linen Top · White · XS', net:33.38,
+               fields:{'Дата':'11.04.2026','Ордер':'#MF-5820','Магазин':'Marc&François','Покупатель':'Luisa M. · 🇮🇹 IT · Fulfilled','Товар':'Linen Top · White · XS · ×1','Брутто (Shopify)':'+€34,90','Комиссия (Shopify)':'−€1,52','Нетто (в пейаут)':'+€33,38','Себестоимость':'€7,93 (из INV-2026-MF-003)'},
+               refs:[{e:'payouts',id:'p152899354956',label:'Пейаут 152899354956 · MF'},{e:'revolut',id:'K127',label:'Расчётный счёт K127'},{e:'invoices',id:'mfInv003',label:'Инвойс INV-2026-MF-003 · Linen Top White XS · €7,93'}] },
+    mf819:  { num:'#MF-5819',       store:'Marc&François', date:'11.04.2026', type:'Refund',          buyer:'Luisa M. · 🇮🇹 IT', item:'Refund (size exchange)', net:-49.90,
+               fields:{'Дата':'11.04.2026','Ордер':'#MF-5819','Магазин':'Marc&François','Тип':'Refund','Причина':'Size exchange','Нетто (возврат)':'−€49,90'},
+               refs:[{e:'payouts',id:'p152899354956',label:'Пейаут 152899354956 · MF'},{e:'revolut',id:'K127',label:'Расчётный счёт K127'}] },
+  },
+  invoices: {
+    ctInv001: { invNum:'INV-2026-CT-001', supplier:'Hangzhou Linen Co., Ltd', store:'Charlie & Ted', invDate:'05.12.2025', payDate:'15.12.2025', amount:-142.60,
+      fields:{'Инвойс':'INV-2026-CT-001','Поставщик':'Hangzhou Linen Co., Ltd','Дата инвойса':'05.12.2025','Дата оплаты':'15.12.2025','Оплата через':'Revolut K8 (вне периода Q1+Q2)','Магазин':'Charlie & Ted','Итого':'−€142,60'},
+      items:[{name:'Linen Shirt · White · L',art:'HLC-SRT-WHT-L',qty:5,price:16.40},{name:'Linen Dress · Sage · M',art:'HLC-DRS-SGE-M',qty:4,price:15.15}],
+      refs:[{e:'orders',id:'us316',label:'#2098341316-US · Linen Shirt White L · Jan 2026'},{e:'orders',id:'au237',label:'#2098341237-AU · Linen Dress Sage M · Refund'},{e:'payouts',id:'p141503037779',label:'Пейаут CT · 06.01.2026 (выручка)'},{e:'revolut',id:'K13',label:'Расчётный счёт K13 · +€53,99 (выручка)'}] },
+    mfInv003: { invNum:'INV-2026-MF-003', supplier:'Hangzhou Linen Co., Ltd', store:'Marc&François', invDate:'10.03.2026', payDate:'15.03.2026', amount:-156.40,
+      fields:{'Инвойс':'INV-2026-MF-003','Поставщик':'Hangzhou Linen Co., Ltd','Дата инвойса':'10.03.2026','Дата оплаты':'15.03.2026','Магазин':'Marc&François','Итого':'−€156,40'},
+      items:[{name:'Linen Blazer · Ecru · S',art:'HLC-BLZ-ECR-S',qty:3,price:18.20},{name:'Linen Trousers · Navy · 36',art:'HLC-TRS-NVY-36',qty:4,price:19.50},{name:'Linen Top · White · XS',art:'HLC-TOP-WHT-XS',qty:3,price:7.93}],
+      refs:[{e:'revolut',id:'K95',label:'Расчётный счёт K95 · 15.03.2026 · −€156,40 (оплата)'},{e:'orders',id:'mf812',label:'#MF-5812 · Linen Blazer Ecru S · €18,20'},{e:'orders',id:'mf814',label:'#MF-5814 · Linen Trousers Navy 36 · €19,50'},{e:'orders',id:'mf820',label:'#MF-5820 · Linen Top White XS · €7,93'},{e:'payouts',id:'p152899354956',label:'Пейаут MF · 14.04.2026 · +€108,31 (выручка)'},{e:'revolut',id:'K127',label:'Расчётный счёт K127 · +€108,31 (выручка)'}] },
+  },
+};
+
+// ─── META ────────────────────────────────────────────────────────────────────
+
+const META = {
+  revolut:  { name:'Расчётный счёт', icon:'🏦', chip:'cr', hl:'hr' },
+  payouts:  { name:'Пейауты',        icon:'💳', chip:'cp', hl:'hp' },
+  orders:   { name:'Ордера',         icon:'📦', chip:'co', hl:'ho' },
+  invoices: { name:'Инвойсы',        icon:'🧾', chip:'ci', hl:'hi' },
+};
+
+function docLabel(entity, id) {
+  const d = DB[entity][id];
+  if (entity==='revolut')  return id;
+  if (entity==='payouts')  return d.payoutId;
+  if (entity==='orders')   return d.num;
+  if (entity==='invoices') return d.invNum;
+}
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+
+const S = { stack:[], filterMode:'all', filter:{from:0,to:99999999}, customFrom:'', customTo:'' };
+
+function push(item) { S.stack.push(item); render(); updateNav(); }
+
+function back() {
+  S.stack.pop();
+  if (!S.stack.length) S.stack.push({kind:'home'});
+  render(); updateNav();
+}
+
+function jumpTo(i) { S.stack = S.stack.slice(0,i+1); render(); updateNav(); }
+
+function navJournal(e) {
+  push({kind:'journal', entity:e});
+}
+
+function navDoc(e, id) { push({kind:'doc', entity:e, id}); }
+
+function goHome() { S.stack=[{kind:'home'}]; render(); updateNav(); }
+
+function updateNav() {
+  document.getElementById('bk').style.display = S.stack.length>1?'inline-block':'none';
+  const bc = document.getElementById('bc');
+  bc.innerHTML = S.stack.map((s,i) => {
+    const last = i===S.stack.length-1;
+    const lbl = s.kind==='home' ? 'Q1+Q2 2026'
+              : s.kind==='journal' ? META[s.entity].name
+              : docLabel(s.entity, s.id);
+    return last ? '<span>'+lbl+'</span>'
+                : '<span class="bc-a" onclick="jumpTo('+i+')">'+lbl+'</span>';
+  }).join('<span class="bc-sep"> › </span>');
+}
+
+// ─── UTILITIES ───────────────────────────────────────────────────────────────
+
+function M(n) {
+  const a = '€'+Math.abs(n).toFixed(2).replace('.',',');
+  return n>0?'<span class="pos">+'+a+'</span>':n<0?'<span class="neg">−'+a+'</span>':'<span>'+a+'</span>';
+}
+
+function chip(entity, id, label) {
+  const m=META[entity];
+  return '<span class="chip '+m.chip+'" onclick="navDoc(\''+entity+'\',\''+id+'\')">'+m.icon+' '+label+'</span>';
+}
+
+function tlink(entity, id, txt) {
+  const m=META[entity];
+  return '<span class="tl '+m.chip+'" onclick="event.stopPropagation();navDoc(\''+entity+'\',\''+id+'\')">'+m.icon+' '+txt+'</span>';
+}
+
+function badgeCls(t) {
+  if(t==='Sale') return 'bs';
+  if(t==='Refund') return 'br';
+  if(t==='Dispute') return 'bd';
+  if(t==='Spor vygran'||t==='Dispute Reversal') return 'bv';
+  if(t==='Withdrawn') return 'bw';
+  if(t==='Deposited') return 'bx';
+  return 'bs';
+}
+
+// ─── FILTER ──────────────────────────────────────────────────────────────────
+
+function dateInt(s) {
+  if(!s || !s.includes('.')) return 0;
+  const [d,m,y] = s.split('.');
+  return parseInt(y+m+d,10);
+}
+
+function inFilter(entity, d) {
+  const {from,to} = S.filter;
+  if(from===0 && to===99999999) return true;
+  const src = entity==='invoices' ? d.payDate : d.date;
+  const dt = dateInt(src);
+  return dt>=from && dt<=to;
+}
+
+function setFilter(mode, from, to) {
+  S.filterMode = mode;
+  if(mode==='all')    { S.filter={from:0,to:99999999}; }
+  else if(mode==='q1') { S.filter={from:20260101,to:20260331}; }
+  else if(mode==='q2') { S.filter={from:20260401,to:20260630}; }
+  else if(mode==='custom') {
+    const f = (from||'').replace(/-/g,''); const t = (to||'').replace(/-/g,'');
+    S.filter={from:f?parseInt(f,10):0, to:t?parseInt(t,10):99999999};
+    S.customFrom=from||''; S.customTo=to||'';
+  }
+  render();
+}
+
+function applyCustom() {
+  const f=document.getElementById('fdf').value, t=document.getElementById('fdt').value;
+  setFilter('custom', f||'', t||'');
+}
+
+function filterBar() {
+  const m=S.filterMode||'all';
+  const bs='padding:5px 12px;border-radius:5px;border:1px solid;font-size:12px;font-weight:600;cursor:pointer;transition:.15s;';
+  const act='background:#1e2d5a;color:#fff;border-color:#1e2d5a;';
+  const inact='background:#fff;color:#555;border-color:#d0d5e0;';
+  const btn=(mode,lbl)=>'<button onclick="setFilter(\''+mode+'\')" style="'+bs+(m===mode?act:inact)+'">'+lbl+'</button>';
+  const cb=m==='custom'?act:inact;
+  return '<div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:14px;padding:11px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.07)">'
+    +'<span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#bbb;margin-right:2px">Период:</span>'
+    +btn('all','Весь период')
+    +btn('q1','Q1 · янв–март')
+    +btn('q2','Q2 · апр–июн')
+    +'<span style="color:#ddd;margin:0 2px">│</span>'
+    +'<span style="font-size:12px;color:#999">с</span>'
+    +'<input type="date" id="fdf" value="'+(S.customFrom||'')+'" style="padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:12px">'
+    +'<span style="font-size:12px;color:#999">по</span>'
+    +'<input type="date" id="fdt" value="'+(S.customTo||'')+'" style="padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:12px">'
+    +'<button onclick="applyCustom()" style="'+bs+cb+'">Применить</button>'
+    +'</div>';
+}
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+
+function render() {
+  const cur = S.stack[S.stack.length-1];
+  const app = document.getElementById('app');
+  if(cur.kind==='home')    { app.innerHTML=renderHome(); return; }
+  if(cur.kind==='journal') { app.innerHTML=renderJournal(cur.entity); return; }
+  if(cur.kind==='doc')     { app.innerHTML=renderDoc(cur.entity,cur.id); return; }
+}
+
+function renderHome() {
+  return '<div class="h-intro">Выберите журнал</div><div class="h-grid">'
+    +htile('revolut','Расчётный счёт',229,'Revolut EUR · Q1+Q2 2026','tc-r')
+    +htile('payouts','Пейауты',3,'Shopify · все магазины','tc-p')
+    +htile('orders','Ордера',9,'все магазины · все типы','tc-o')
+    +htile('invoices','Инвойсы поставщиков',2,'Alibaba · Hangzhou Linen','tc-i')
+    +'</div>';
+}
+function htile(e,name,cnt,sub,cls) {
+  return '<div class="htile '+cls+'" onclick="navJournal(\''+e+'\')"><div class="ht-type">Журнал</div><div class="ht-name">'+name+'</div><div class="ht-cnt">'+cnt+'</div><div class="ht-sub">'+sub+'</div></div>';
+}
+
+function renderJournal(entity) {
+  const m=META[entity];
+  const allKeys=Object.keys(DB[entity]);
+  const entries=Object.entries(DB[entity]).filter(([id,d])=>inFilter(entity,d));
+  let tbl='';
+  if(entity==='revolut')  tbl=jRevolut(entries);
+  if(entity==='payouts')  tbl=jPayouts(entries);
+  if(entity==='orders')   tbl=jOrders(entries);
+  if(entity==='invoices') tbl=jInvoices(entries);
+  const filtNote = entries.length<allKeys.length
+    ? ' · <span style="color:#e07800">показано '+entries.length+' из '+allKeys.length+'</span>'
+    : '';
+  return '<div class="sec-hdr">'+m.name+'<span class="sec-cnt">'+allKeys.length+' записей'+filtNote+'</span></div>'
+    +filterBar()
+    +'<div class="tw">'+tbl+'</div>';
+}
+
+function jRevolut(entries) {
+  if(!entries.length) return '<div style="padding:24px;color:#bbb;text-align:center">Нет записей за выбранный период</div>';
+  const rows = entries.map(([id,d])=>{
+    const lnk = d.docUrl
+      ? '<a href="'+d.docUrl+'" target="_blank" class="tl cr" onclick="event.stopPropagation()" style="text-decoration:none">📄 '+d.docLabel+'</a>'
+      : (d.refs.length ? tlink(d.refs[0].e, d.refs[0].id, META[d.refs[0].e].name+' '+docLabel(d.refs[0].e,d.refs[0].id))
+      : '<span class="dim">—</span>');
+    return '<tr class="cl" onclick="navDoc(\'revolut\',\''+id+'\')">'
+      +'<td>'+d.date+'</td>'
+      +'<td class="mn" style="max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+d.desc+'</td>'
+      +'<td>'+d.party+'</td>'
+      +'<td class="mn" style="font-size:11px;color:#888">'+d.type+'</td>'
+      +'<td class="tr mn">'+M(d.amount)+'</td>'
+      +'<td class="tr mn">'+M(d.balance)+'</td>'
+      +'<td>'+lnk+'</td>'
+      +'</tr>';
+  }).join('');
+  const inflow  = entries.reduce((a,[,d])=>a+(d.amount>0?d.amount:0),0);
+  const outflow = entries.reduce((a,[,d])=>a+(d.amount<0?d.amount:0),0);
+  const net     = inflow+outflow;
+  const tf='<tfoot><tr class="tft"><td colspan="4">Итого за период · '+entries.length+' операций</td>'
+    +'<td class="tr mn"><span style="font-size:10px;color:#aaa;display:block">приход '+M(inflow)+'</span>'
+    +'<span style="font-size:10px;color:#aaa;display:block">расход '+M(outflow)+'</span>'
+    +M(net)+'</td>'
+    +'<td class="tr mn" style="font-size:11px;color:#aaa">баланс на конец: '+M(entries[entries.length-1][1].balance)+'</td>'
+    +'<td></td></tr></tfoot>';
+  return '<table><thead><tr><th>Дата</th><th>Описание / Reference</th><th>Контрагент</th><th>Тип</th><th class="tr">Сумма</th><th class="tr">Баланс</th><th>Документ</th></tr></thead><tbody>'+rows+'</tbody>'+tf+'</table>';
+}
+
+function jPayouts(entries) {
+  if(!entries.length) return '<div style="padding:24px;color:#bbb;text-align:center">Нет записей за выбранный период</div>';
+  const rows = entries.map(([id,d])=>{
+    const txnInfo = d.txns.length+' транз. · '+d.txns.map(t=>'<span class="bdg '+badgeCls(t.type)+'">'+t.type+'</span>').join(' ');
+    return '<tr class="cl" onclick="navDoc(\'payouts\',\''+id+'\')">'
+      +'<td>'+d.date+'</td>'
+      +'<td class="mn">'+d.payoutId+'</td>'
+      +'<td>'+d.store+'</td>'
+      +'<td><span class="bdg '+badgeCls(d.status)+'">'+d.status+'</span></td>'
+      +'<td class="tr mn">'+M(d.amount)+'</td>'
+      +'<td style="font-size:12px">'+txnInfo+'</td>'
+      +'</tr>';
+  }).join('');
+  const total=entries.reduce((a,[,d])=>a+d.amount,0);
+  const tf='<tfoot><tr class="tft"><td colspan="4">Итого за период · '+entries.length+' пейаутов</td>'
+    +'<td class="tr mn">'+M(total)+'</td><td></td></tr></tfoot>';
+  return '<table><thead><tr><th>Дата</th><th>Payout ID</th><th>Магазин</th><th>Статус</th><th class="tr">Сумма</th><th>Содержание</th></tr></thead><tbody>'+rows+'</tbody>'+tf+'</table>';
+}
+
+function jOrders(entries) {
+  if(!entries.length) return '<div style="padding:24px;color:#bbb;text-align:center">Нет записей за выбранный период</div>';
+  const rows = entries.map(([id,d])=>{
+    return '<tr class="cl" onclick="navDoc(\'orders\',\''+id+'\')">'
+      +'<td>'+d.date+'</td>'
+      +'<td class="mn"><strong>'+d.num+'</strong></td>'
+      +'<td>'+d.store+'</td>'
+      +'<td><span class="bdg '+badgeCls(d.type)+'">'+d.type+'</span></td>'
+      +'<td>'+(d.buyer||'<span class="dim">—</span>')+'</td>'
+      +'<td class="tr mn">'+M(d.net)+'</td>'
+      +'</tr>';
+  }).join('');
+  const sales   = entries.reduce((a,[,d])=>a+(d.type==='Sale'?d.net:0),0);
+  const refunds = entries.reduce((a,[,d])=>a+(d.type!=='Sale'?d.net:0),0);
+  const net     = entries.reduce((a,[,d])=>a+d.net,0);
+  const tf='<tfoot><tr class="tft"><td colspan="5">Итого за период · '+entries.length+' ордеров'
+    +' · <span style="font-size:10px;color:#aaa">продажи '+M(sales)+' / возвраты '+M(refunds)+'</span></td>'
+    +'<td class="tr mn">'+M(net)+'</td></tr></tfoot>';
+  return '<table><thead><tr><th>Дата</th><th>Ордер</th><th>Магазин</th><th>Тип</th><th>Покупатель</th><th class="tr">Нетто</th></tr></thead><tbody>'+rows+'</tbody>'+tf+'</table>';
+}
+
+function jInvoices(entries) {
+  if(!entries.length) return '<div style="padding:24px;color:#bbb;text-align:center">Нет записей за выбранный период</div>';
+  const rows = entries.map(([id,d])=>{
+    return '<tr class="cl" onclick="navDoc(\'invoices\',\''+id+'\')">'
+      +'<td>'+d.payDate+'</td>'
+      +'<td class="mn"><strong>'+d.invNum+'</strong></td>'
+      +'<td>'+d.supplier+'</td>'
+      +'<td>'+d.store+'</td>'
+      +'<td class="tr mn">'+M(d.amount)+'</td>'
+      +'</tr>';
+  }).join('');
+  const total=entries.reduce((a,[,d])=>a+d.amount,0);
+  const tf='<tfoot><tr class="tft"><td colspan="4">Итого за период · '+entries.length+' инвойсов</td>'
+    +'<td class="tr mn">'+M(total)+'</td></tr></tfoot>';
+  return '<table><thead><tr><th>Дата оплаты</th><th>Инвойс</th><th>Поставщик</th><th>Магазин</th><th class="tr">Сумма</th></tr></thead><tbody>'+rows+'</tbody>'+tf+'</table>';
+}
+
+// ─── DOCUMENT ────────────────────────────────────────────────────────────────
+
+function renderDoc(entity, id) {
+  const d=DB[entity][id], m=META[entity];
+  const toJournal = '<button onclick="navJournal(\''+entity+'\')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:#f4f5f0;border:1px solid #d8dce8;border-radius:5px;font-size:12px;font-weight:600;color:#555;cursor:pointer;margin-bottom:14px">← '+m.name+'</button>';
+  const title  = docLabel(entity,id);
+  const sub    = entity==='revolut'  ? d.date+' · '+d.type
+               : entity==='payouts'  ? d.date+' · '+d.store
+               : entity==='orders'   ? d.date+' · '+d.store
+               : d.payDate+' · '+d.store;
+  const amount = entity==='orders' ? d.net : d.amount;
+  const flds = Object.entries(d.fields).map(([k,v])=>'<div class="fl"><div class="lbl">'+k+'</div><div class="val">'+v+'</div></div>').join('');
+  const extra = entity==='payouts' ? docPayoutTxns(d) : entity==='invoices' ? docInvoiceItems(d) : '';
+  const driveBtn = (entity==='revolut' && d.docUrl)
+    ? '<div class="rels"><div class="rels-ttl">Документ</div><a href="'+d.docUrl+'" target="_blank" class="chip cr" style="text-decoration:none">📄 '+d.docLabel+'</a></div>'
+    : '';
+  const rels = d.refs.length ? '<div class="rels"><div class="rels-ttl">Связанные документы</div>'+d.refs.map(r=>chip(r.e,r.id,r.label)).join('')+'</div>' : '';
+  return '<div class="dw">'+toJournal+'<div class="dc">'
+    +'<div class="dh '+m.hl+'"><div><div class="de">'+m.name+'</div><div class="dt">'+title+'</div><div class="ds">'+sub+'</div></div>'
+    +'<div class="da">'+M(amount)+'</div></div>'
+    +'<div class="db"><div class="flds">'+flds+'</div>'+extra+driveBtn+rels+'</div></div></div>';
+}
+
+function docPayoutTxns(d) {
+  const sum = d.txns.reduce((a,t)=>a+t.net,0);
+  const rows = d.txns.map(t=>'<tr class="cl" onclick="navDoc(\'orders\',\''+t.oid+'\')"><td class="mn"><strong>'+t.num+'</strong></td><td><span class="bdg '+badgeCls(t.type)+'">'+t.type+'</span></td><td class="tr mn">'+M(t.net)+' <span style="color:#bbb;font-size:11px">→</span></td></tr>').join('');
+  return '<div class="sub-ttl">Транзакции в пейауте</div>'
+    +'<table><thead><tr><th>Ордер</th><th>Тип</th><th class="tr">Нетто</th></tr></thead><tbody>'+rows+'</tbody>'
+    +'<tfoot><tr class="tft"><td colspan="2">Итого</td><td class="tr mn">'+M(sum)+'</td></tr></tfoot></table>'
+    +'<div style="font-size:11px;color:#bbb;margin-top:5px">Клик на строку → открыть ордер</div>';
+}
+
+function docInvoiceItems(d) {
+  const rows = d.items.map(i=>'<tr><td>'+i.name+'</td><td class="mn dim" style="font-size:11px">'+i.art+'</td><td class="tr">'+i.qty+'</td><td class="tr mn">'+M(i.price)+'</td><td class="tr mn">'+M(i.qty*i.price)+'</td></tr>').join('');
+  const total = d.items.reduce((a,i)=>a+i.qty*i.price,0);
+  return '<div class="sub-ttl">Состав инвойса</div>'
+    +'<table><thead><tr><th>Наименование</th><th>Артикул</th><th class="tr">Кол-во</th><th class="tr">Цена/ед.</th><th class="tr">Итого</th></tr></thead><tbody>'+rows+'</tbody>'
+    +'<tfoot><tr class="tft"><td colspan="4">ИТОГО</td><td class="tr mn">'+M(total)+'</td></tr></tfoot></table>';
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+goHome();
+</script>
+</body>
+</html>
