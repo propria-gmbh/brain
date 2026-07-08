@@ -10925,24 +10925,24 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
+    "last_reset_date": "2026-07-08",
     "missed_count": 0,
     "order": 0.0,
-    "done_at": "2026-07-07"
+    "done_at": null
   },
   {
     "id": "daily-gorgias",
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
+    "last_reset_date": "2026-07-08",
     "missed_count": 0,
     "order": 0.0,
-    "done_at": "2026-07-07"
+    "done_at": null
   },
   {
     "id": "daily-gmc-gads",
@@ -10951,8 +10951,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 0,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 1,
     "order": 0.0,
     "done_at": null
   },
@@ -10963,8 +10963,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 0,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 1,
     "order": 0.0,
     "done_at": null
   },
@@ -10975,8 +10975,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 1,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 2,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10988,8 +10988,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 1,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 2,
     "order": 0.0,
     "done_at": null
   },
@@ -11000,8 +11000,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 0,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 1,
     "order": 0.0,
     "done_at": null
   },
@@ -11012,8 +11012,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 0,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 1,
     "order": 0.0,
     "done_at": null
   },
@@ -11024,8 +11024,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-07",
-    "missed_count": 0,
+    "last_reset_date": "2026-07-08",
+    "missed_count": 1,
     "order": 0.0,
     "done_at": null
   },

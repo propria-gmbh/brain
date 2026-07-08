@@ -10937,12 +10937,12 @@
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-08",
     "missed_count": 0,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-08"
   },
   {
     "id": "daily-gmc-gads",
