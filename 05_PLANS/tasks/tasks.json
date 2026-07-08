@@ -4535,7 +4535,7 @@
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": null,
+    "notes": "Реестр получателей для смены реквизитов: brain/07_OUTPUT/santander-bank-change-notify-registry.md (сгруппирован: A - прямые SEPA-мандаты, B - через PayPal, C - карточные платежи). Полный анализ регулярных списаний: brain/07_OUTPUT/santander-recurring-payments.md",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
