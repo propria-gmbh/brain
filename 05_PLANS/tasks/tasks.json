@@ -11080,5 +11080,25 @@
     "order": 0.0,
     "scheduled_date": "2026-07-07",
     "context": "afternoon"
+  },
+  {
+    "id": "personal-finance-выяснить-почему-ace-wirtschaftsdienst-списал-деньги",
+    "title": "Выяснить, почему ACE-Wirtschaftsdienst GmbH списал €82.00 02.01.2026 — договор должен был быть расторгнут",
+    "type": "task",
+    "project": "personal",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": "financial-min",
+    "tags": [],
+    "notes": "Найдено при анализе выписок Santander: списание MREF SEPA-W0016 77065 на €82.00 от 02.01.2026, годовой членский взнос (автоклуб). См. brain/07_OUTPUT/santander-bank-change-notify-registry.md",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-08",
+    "order": 2.0
   }
 ]
