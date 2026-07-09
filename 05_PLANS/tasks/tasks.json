@@ -11145,5 +11145,26 @@
     "created_at": "2026-07-09",
     "order": 0.0,
     "context": "deep"
+  },
+  {
+    "id": "personal-finance-разослать-новые-реквизиты-получателям",
+    "title": "Разослать новые реквизиты (Sparkasse) получателям по реестру",
+    "type": "task",
+    "project": "personal",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": "financial-min",
+    "tags": [],
+    "notes": "Реестр получателей и способ смены реквизитов для каждого: brain/07_OUTPUT/santander-bank-change-notify-registry.md (A - прямые SEPA-мандаты, отправить IBAN напрямую; B - через PayPal, обновить привязанный счёт один раз; C - карточные платежи, обновить в billing сервиса)",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-09",
+    "assignee": "claude",
+    "order": 3.0
   }
 ]
