@@ -11125,6 +11125,7 @@
     "context": "deep",
     "marker": "🟢",
     "priority": "green",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-09"
   }
 ]
