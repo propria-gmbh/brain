@@ -11127,5 +11127,13 @@
     "priority": "green",
     "order": 0.0,
     "scheduled_date": "2026-07-09"
+  },
+  {
+    "id": "inbox-сделать-для-мити-тз-по-саплайментсам",
+    "title": "Сделать для Мити ТЗ по саплайментсам",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-09"
   }
 ]
