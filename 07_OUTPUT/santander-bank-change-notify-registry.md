@@ -6,7 +6,7 @@
 
 | Получатель | Договор/референс | Сумма | Статус |
 |---|---|---|---|
-| Generali Krankenversicherung | Versicherungsnr. 0807402 04 | €73.11/мес | не начато |
+| Generali Krankenversicherung | Versicherungsnr. 0807402 04 | €73.11/мес | вручную через портал (GesundheitsApp/Web-Postfach, нужен логин Ильи) |
 | FitX Deutschland GmbH (мандат 1) | MLREF2906959 | €24.00/мес | не начато |
 | FitX Deutschland GmbH (мандат 2) | MLREF2906960 | €24.00/мес | не начато |
 | DB Vertrieb GmbH | Abo 6443 4752 3 | €63.00/мес | не начато |
