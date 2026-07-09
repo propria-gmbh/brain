@@ -12,3 +12,4 @@ __pycache__/
 .env.local
 tasks/sync-state.json
 tools/.cache/
+secrets.local.md

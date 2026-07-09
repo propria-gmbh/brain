@@ -4535,7 +4535,7 @@
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": null,
+    "notes": "Реестр получателей для смены реквизитов: brain/07_OUTPUT/santander-bank-change-notify-registry.md (сгруппирован: A - прямые SEPA-мандаты, B - через PayPal, C - карточные платежи). Полный анализ регулярных списаний: brain/07_OUTPUT/santander-recurring-payments.md",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
@@ -7710,7 +7710,7 @@
     "type": "task",
     "project": "personal",
     "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-06-14",
     "priority": null,
@@ -7720,7 +7720,7 @@
     "tags": [],
     "notes": "Перечень получателей: brain/07_OUTPUT/santander-recurring-payments.md. Связано: personal-finance-запросить-в-аок-возмещение-оплаты-фитнес-клуб",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-08",
     "created_at": "2026-06-01",
     "order": 1.0,
     "assignee": "claude"
@@ -10925,12 +10925,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-08",
     "missed_count": 0,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-08"
   },
   {
     "id": "daily-gorgias",
@@ -11080,5 +11080,25 @@
     "order": 0.0,
     "scheduled_date": "2026-07-07",
     "context": "afternoon"
+  },
+  {
+    "id": "personal-finance-выяснить-почему-ace-wirtschaftsdienst-списал-деньги",
+    "title": "Выяснить, почему ACE-Wirtschaftsdienst GmbH списал €82.00 02.01.2026 — договор должен был быть расторгнут",
+    "type": "task",
+    "project": "personal",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": "financial-min",
+    "tags": [],
+    "notes": "Найдено при анализе выписок Santander: списание MREF SEPA-W0016 77065 на €82.00 от 02.01.2026, годовой членский взнос (автоклуб). См. brain/07_OUTPUT/santander-bank-change-notify-registry.md",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-08",
+    "order": 2.0
   }
 ]
