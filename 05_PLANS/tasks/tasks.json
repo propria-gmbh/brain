@@ -11101,5 +11101,15 @@
     "done_at": null,
     "created_at": "2026-07-08",
     "order": 2.0
+  },
+  {
+    "id": "event-2026-07-09-biotonne-вывоз-bsr",
+    "title": "BioTonne вывоз (BSR)",
+    "type": "event",
+    "event_summary": "BioTonne вывоз (BSR)",
+    "event_date": "2026-07-09",
+    "status": "done",
+    "done_at": "2026-07-09",
+    "scheduled_date": "2026-07-09"
   }
 ]

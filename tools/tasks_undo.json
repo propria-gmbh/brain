@@ -11068,7 +11068,8 @@
     "order": 0.0,
     "marker": "🟢",
     "priority": "green",
-    "scheduled_date": "2026-07-07"
+    "scheduled_date": "2026-07-07",
+    "main_task_date": "2026-07-09"
   },
   {
     "id": "inbox-сделать-мсс-гуглоаккаунт-на-домене-propriagmbh",
