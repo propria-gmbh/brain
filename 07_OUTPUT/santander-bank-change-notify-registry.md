@@ -14,7 +14,7 @@
 | Dialog Versicherung AG | Vertrag 227403 2150 | €8.92/мес | не начато |
 | sim.de (Drillisch Online GmbH) ×2 | CRED DE40ZZZ0000020926 | €9.99 ×2/мес | не начато |
 | ACE-Wirtschaftsdienst GmbH | MREF SEPA-W0016 77065 | €82.00/год | не начато — см. отдельную задачу ниже (сначала выяснить статус договора) |
-| Rundfunkbeitrag (ARD, ZDF, DRadio) | Beitragsnr. 68673 7615 | €55.08/квартал | не начато |
+| Rundfunkbeitrag (ARD, ZDF, DRadio) | Beitragsnr. 68673 7615 | €55.08/квартал | сделано — форма отправлена 09.07.2026 через rundfunkbeitrag.de, изменение действует с 09.07.2026, PDF сохранён в Ausgehende Briefe |
 | Die Haftpflichtkasse VVaG | Vertrag/MREF HK-MN-60858591-02 | €68.31/год (?) | не начато — уточнить у Ильи, актуальный ли это страховщик (см. заметку про VOLKSWOHL BUND/Ammerländer) |
 
 ## B. Через PayPal — реквизиты менять не у получателя, а в PayPal (привязанный счёт)
