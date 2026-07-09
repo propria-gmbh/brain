@@ -304,6 +304,20 @@ bash tools/transcribe_andrey.sh
 
 ---
 
+## brain/tools/build_propria_report.py
+
+**Что делает:** строит самодостаточный HTML-отчёт `07_OUTPUT/q1q2-2026-propria-report-v5.html` для бухгалтерии Propria GmbH за Q1+Q2 2026. Читает Revolut JSON (`/private/tmp/revolut_clean.json`) и Shopify CSV-экспорты (Payouts, Transactions, Orders) для 4 магазинов (Marc&François, Oliver & Alder, Charlie & Ted, Casa Giannini). Вкладки: Revolut EUR, Payouts, Orders, Transactions, Lieferanten, P&L. Ссылки инвойс-ордер хранятся в `localStorage` браузера; East Baite (Kungfu Buy) линки заполняются автоматически из `kfb_auto_links` в Revolut JSON.
+
+**Запуск:**
+```bash
+cd ~/Projects/brain
+python3 tools/build_propria_report.py
+# Открыть: http://localhost:8868/q1q2-2026-propria-report-v5.html
+# Сервер: python3 -m http.server 8868 (из 07_OUTPUT/)
+```
+
+---
+
 ## Flow: обработка инвойсов
 
 ```
