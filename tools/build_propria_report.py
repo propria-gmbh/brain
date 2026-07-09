@@ -223,6 +223,8 @@ def build_data(revolut, store_data):
                 "kfb_bills": r.get("kfb_bills", []),
                 "kfb_bill_data": r.get("kfb_bill_data", []),
                 "kfb_auto_links": r.get("kfb_auto_links", {}),
+                "hst_bill_data": r.get("hst_bill_data", []),
+                "hst_auto_links": r.get("hst_auto_links", {}),
             })
 
     return {
@@ -1019,6 +1021,15 @@ function applyKfbAutoLinks(revId) {
   openInvCard(revId);
 }
 
+function applyHstAutoLinks(revId) {
+  const inv = D.invoices.find(i=>i.rev_id===revId);
+  if (!inv || !inv.hst_auto_links) return;
+  const links = loadLinks();
+  links[revId] = Object.assign({}, inv.hst_auto_links);
+  saveLinks(links);
+  openInvCard(revId);
+}
+
 function exportLinks() {
   const links = loadLinks();
   const blob = new Blob([JSON.stringify(links, null, 2)], {type:'application/json'});
@@ -1066,6 +1077,11 @@ function openInvCard(revId) {
   // Auto-populate from KFB data if no manual links exist yet
   if (!links[revId] && inv.kfb_auto_links && Object.keys(inv.kfb_auto_links).length > 0) {
     links[revId] = Object.assign({}, inv.kfb_auto_links);
+    saveLinks(links);
+  }
+  // Auto-populate from HST data if no manual links exist yet
+  if (!links[revId] && inv.hst_auto_links && Object.keys(inv.hst_auto_links).length > 0) {
+    links[revId] = Object.assign({}, inv.hst_auto_links);
     saveLinks(links);
   }
 
@@ -1116,6 +1132,28 @@ function openInvCard(revId) {
     if (!links[revId] || Object.keys(links[revId]).length === 0) {
       html += `<button onclick="applyKfbAutoLinks('${revId}')" style="margin-bottom:10px;background:#e8f4fd;color:#1565c0;border:1px solid #90caf9;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">&#128279; KFB-Zuordnung anwenden</button>`;
     }
+  }
+
+  // HST ERP order details
+  if (inv.hst_bill_data && inv.hst_bill_data.length > 0) {
+    const posOrders = inv.hst_bill_data.filter(b => b.amount_eur > 0);
+    const credits = inv.hst_bill_data.filter(b => b.amount_eur < 0);
+    html += `<div class="section-title">HST ERP Bestellungen (${posOrders.length}${credits.length > 0 ? ' + ' + credits.length + ' Gutschrift' : ''})</div>
+      <div style="font-size:12px">`;
+    for (const b of inv.hst_bill_data) {
+      const isCredit = b.amount_eur < 0;
+      const rowStyle = isCredit ? 'background:#fff8e1;border:1px solid #ffe082' : 'background:#f8f9fa;border:1px solid #e8ecf0';
+      html += `<div style="${rowStyle};border-radius:6px;padding:8px 10px;margin-bottom:6px">
+        <div style="font-weight:600;color:${isCredit?'#e65100':'#1e3a5f'}">
+          <strong>${b.shopify_name}</strong> &mdash; ${b.store} &mdash; ${b.date}
+          <span class="${isCredit?'':'neg'}" style="float:right">${b.amount_eur > 0 ? '-' : '+'}${Math.abs(b.amount_eur).toFixed(2)} EUR${isCredit?' (Gutschrift)':''}</span>
+        </div>
+        <div style="color:#555;margin-top:3px">${b.product} &mdash; ${b.buyer} (${b.country})</div>
+      </div>`;
+    }
+    html += `</div>`;
+    const hstLabel = links[revId] && Object.keys(links[revId]).length > 0 ? '&#128279; HST-Zuordnung überschreiben' : '&#128279; HST-Zuordnung anwenden';
+    html += `<button onclick="applyHstAutoLinks('${revId}')" style="margin-bottom:10px;background:#e8f4fd;color:#1565c0;border:1px solid #90caf9;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">${hstLabel}</button>`;
   }
 
   // Linked orders with editable amounts
