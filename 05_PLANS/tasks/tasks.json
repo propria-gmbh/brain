@@ -11081,8 +11081,8 @@
     "order": 0.0,
     "scheduled_date": "2026-07-07",
     "context": "afternoon",
-    "marker": "🔴",
-    "priority": "red"
+    "marker": "🟢",
+    "priority": "green"
   },
   {
     "id": "personal-finance-выяснить-почему-ace-wirtschaftsdienst-списал-деньги",
