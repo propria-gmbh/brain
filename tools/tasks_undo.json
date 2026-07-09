@@ -11110,6 +11110,18 @@
     "event_date": "2026-07-09",
     "status": "done",
     "done_at": "2026-07-09",
-    "scheduled_date": "2026-07-09"
+    "scheduled_date": "2026-07-09",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-проанализировать-статью-вадима",
+    "title": "Проанализировать статью Вадима",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-09",
+    "context": "deep",
+    "marker": "🟢",
+    "priority": "green"
   }
 ]
