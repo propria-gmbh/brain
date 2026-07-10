@@ -4560,7 +4560,8 @@
     "done_at": "2026-06-01",
     "created_at": "2026-05-25",
     "order": 1.0,
-    "done": "2026-06-05"
+    "done": "2026-06-05",
+    "assignee": "claude"
   },
   {
     "id": "personal-finance-запросить-возмещение-за-уборку",
@@ -4622,7 +4623,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-05-25",
-    "order": 5.0
+    "order": 5.0,
+    "assignee": "claude"
   },
   {
     "id": "personal-finance-отписаться-от-firefliesai",
@@ -8375,7 +8377,8 @@
     "done_at": "2026-06-07",
     "created_at": "2026-06-05",
     "order": 0.0,
-    "done": "2026-06-07"
+    "done": "2026-06-07",
+    "assignee": "claude"
   },
   {
     "id": "area-safe-min",
@@ -8555,7 +8558,10 @@
     "someday": false,
     "deadline": "2026-07-10",
     "notes": "Проверить что выплаты Kindergeld идут на новый IBAN DE32 1005 0000 1076 5441 81 (Berliner Sparkasse). Уведомление отправлено по почте 07.06.2026.",
-    "order": 6.0
+    "order": 6.0,
+    "assignee": "claude",
+    "status": "done",
+    "done_at": "2026-07-09"
   },
   {
     "id": "при-включении-фильтра-someday-разворачивать-все-area-с-somed",
@@ -11102,7 +11108,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-08",
-    "order": 2.0
+    "order": 2.0,
+    "assignee": "claude"
   },
   {
     "id": "event-2026-07-09-biotonne-вывоз-bsr",
@@ -11119,14 +11126,15 @@
     "id": "inbox-проанализировать-статью-вадима",
     "title": "Проанализировать статью Вадима",
     "parent_id": "inbox-personal",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-09",
     "context": "deep",
     "marker": "🟢",
     "priority": "green",
     "order": 0.0,
-    "scheduled_date": "2026-07-09"
+    "scheduled_date": "2026-07-09",
+    "done_at": "2026-07-09"
   },
   {
     "id": "inbox-сделать-для-мити-тз-по-саплайментсам",
@@ -11137,5 +11145,26 @@
     "created_at": "2026-07-09",
     "order": 0.0,
     "context": "deep"
+  },
+  {
+    "id": "personal-finance-разослать-новые-реквизиты-получателям",
+    "title": "Разослать новые реквизиты (Sparkasse) получателям по реестру",
+    "type": "task",
+    "project": "personal",
+    "parent_id": "personal-finance-перевести-все-счета-на-sparkasse",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": "financial-min",
+    "tags": [],
+    "notes": "Реестр получателей и способ смены реквизитов для каждого: brain/07_OUTPUT/santander-bank-change-notify-registry.md (A - прямые SEPA-мандаты, отправить IBAN напрямую; B - через PayPal, обновить привязанный счёт один раз; C - карточные платежи, обновить в billing сервиса)",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-09",
+    "assignee": "claude",
+    "order": 3.0
   }
 ]
