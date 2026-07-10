@@ -15,6 +15,11 @@
 - Kindergeldnummer: 001FK831792
 - Antragsteller: Ilja Disterheft
 
+## Сергей Исаак — страховой маклер (Taures)
+
+- Email: s_isaak@taures.de
+- Курирует: автостраховку (Kfz), Die Haftpflichtkasse (Versicherungsschein-Nr. 60858591), возможно ACE-Wirtschaftsdienst
+
 ## Dr. Yury Poryadochnov — налоговый консультант (Prokurist)
 
 - Компания: HECHT, von LUXBURG Steuerberatungsgesellschaft mbH
