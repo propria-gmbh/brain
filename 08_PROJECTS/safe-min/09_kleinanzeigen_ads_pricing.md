@@ -331,7 +331,31 @@ Ilja
 
 **Текущая оценка цены (до получения ответов на Ответ 3):** ~900-1.100€, без Wochenendzuschlag (бренд IKEA, ×1.0, демонтаж не нужен, встроенная Waschmaschine учтена в верхней части базовой сетки 900-1.300€, без отдельной надбавки за неё).
 
-**Следующий шаг:** после ответа Georgia на вопросы из "Ответ 3" — зафиксировать финальную цену и оформить Angebot.
+**Файл был неполон — далее восстановлено по факту переписки (WhatsApp).**
+
+**Финальный Angebot назван, дата не зафиксирована в файле.** Festpreis 892,50€, Anzahlung 20% = 178,50€.
+
+**20.06.2026, 22:43 — Georgia:** "Vielen Dank für Ihr Angebot. Ich melde mich wieder bei Ihnen, sobald die Küchenplanung geprüft ist und die Lieferzeiten final geklärt sind. Wäre der Zeitraum um den 17. Juli für die Montage für Sie möglich?"
+
+**21.06.2026, 08:57 — Propria:** подтверждён период около 17 июля, объяснены условия Anzahlung (178,50€, возврат при отмене >48ч до термина, приоритет на новый слот при переносе термина по нашей вине).
+
+**21.06.2026, 13:26 — Georgia:** "Nur eine Frage. Falls was schief geht, wie geht's weiter? Muss ich Teile selbst erneut bestellen und bezahlen?"
+
+**21.06.2026, 14:52-14:53 — Propria:** ошибки по нашей вине — расходы и пересборка деталей за наш счёт; таких случаев ранее не было.
+
+**Статус на 10.07.2026:** тишина с 21.06 (почти 3 недели), Anzahlung не внесена, термин не забронирован. Целевая дата, которую называла Georgia — 17.07, через неделю. Последний ответ с нашей стороны был по существу, не отказ.
+
+**Фолоуап подготовлен 10.07.2026** (текст утверждён, отправка вручную через WhatsApp — нет прямого доступа):
+```
+Hallo Georgia,
+
+ich wollte kurz nachfragen, wie der Stand bei Ihnen ist — sind die Lieferzeiten mittlerweile geklärt und passt der Zeitraum um den 17. Juli weiterhin?
+
+Falls sich etwas verschoben hat, sagen Sie mir gerne Bescheid, dann schauen wir nach einem passenden Termin.
+
+Viele Grüße
+Ilja
+```
 
 ---
 
@@ -386,4 +410,24 @@ Ilja
 https://www.kleinanzeigen.de/s-anzeige/kuechenmontage-berlin-ikea-nobilia-auch-am-wochenende/3439395287-239-3498
 Раздел "Rechtliche Angaben" в Business Portal Einstellungen — это форма загрузки именно этих документов, не отдельная скрытая admin-функция, как предполагалось ранее.
 
-**Финальный Angebot отправлен Tarik 23.06.2026, 21:03, через Kleinanzeigen-сообщение.** Festpreis 1.596€ (netto 1.341,18€ + 19% MwSt 254,82€), 3 Arbeitstage ab 08.07.2026, ссылка на Rechtliche Angaben вместо приложенных файлов. Статус: ожидание ответа клиента.
+**Финальный Angebot отправлен Tarik 23.06.2026, 21:03, через Kleinanzeigen-сообщение.** Festpreis 1.596€ (netto 1.341,18€ + 19% MwSt 254,82€), 3 Arbeitstage ab 08.07.2026, ссылка на Rechtliche Angaben вместо приложенных файлов.
+
+**23.06.2026 — Tarik ответил на Angebot:** "Da ich mich aktuell nicht in Deutschland befinde, brauche ich noch ein paar Tage für die Organisation. Ich werde mich innerhalb von einer Woche wieder bei Ihnen melden..."
+
+**30.06.2026 — фолоуап от Propria:** "ich wollte kurz nachfragen, ob Sie eine Entscheidung zu meinem Angebot getroffen haben..."
+
+Ответа на фолоуап нет. **Статус на 10.07.2026 (10 дней тишины после фолоуапа, 17 дней после обещанной "недели"): мёртвый лид.**
+
+---
+
+## Лид #3 — Daniel (Pankow, проблемная стена)
+
+**Запрос (28.06.2026):** IKEA-кухня частично смонтирована (Unterschränke и Arbeitsplatte готовы), но монтажники IKEA отказались вешать Oberschränke и Dunstabzugshaube — стена представляет собой "einfach verplankte Trockenbauwand" с полостью за ней, IKEA-монтажники сочли монтаж технически возможным, но не разрешённым их регламентом. Нужен монтаж 4 верхних шкафов + вытяжки, Pankow.
+
+**Ответ Propria (29.06.2026):** уточняющие вопросы про конструкцию стены (усиление/несущий каркас, материал стоек — металл/дерево, крепление к полу/потолку/стенам, наличие документации, возможность контрольного отверстия для осмотра), готовность корпусов шкафов, тип вытяжки (Abluft/Umluft).
+
+**Обозначенный подход:** если есть готовая подконструкция под шкафы — монтаж простой. Если нет — определение материала и способа крепления каркаса на выезде (Besichtigung 50€, засчитывается в заказ). Если и на месте нельзя однозначно определить конструкцию — рекомендован статик за счёт заказчика отдельно.
+
+**Ориентировочная цена:** от ~250€ (монтаж, вкл. Anfahrt и координацию термина), + 70-150€ если нужна сборка корпусов, + доп. стоимость, если вытяжке нужен вывод через стену/потолок.
+
+**Статус на 10.07.2026:** ответа от Daniel после 29.06.2026 не было — холодный лид.
