@@ -11303,5 +11303,24 @@
     "done_at": null,
     "created_at": "2026-07-10",
     "order": 0.0
+  },
+  {
+    "id": "написать-сергею-спросить-про-arag-ace-и-изменение-реквизитов",
+    "title": "Написать Сергею — спросить про ARAG, ACE и изменение реквизитов Sparkasse",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "ARAG: Schaden-Nr. 31 0158 1595 5546, Disterheft/Unfallgegner, просят сумму претензии, описание обстоятельств, полицейский протокол. ACE-Wirtschaftsdienst €82: статус договора неясен, Сергей может уточнить/расторгнуть. Sparkasse: обновить реквизиты для Die Haftpflichtkasse (обсуждали 10.07.2026).",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-10",
+    "order": 0.0
   }
 ]
