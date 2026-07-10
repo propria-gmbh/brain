@@ -11290,16 +11290,17 @@
     "parent_id": "area-safe-min",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-15",
+    "deadline": null,
     "priority": null,
     "stakes": null,
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": "Ждём ясности по перелёту после имплантов (приём 14.07), пишем 15.07",
+    "notes": "Текст готов в 09_kleinanzeigen_ads_pricing.md. Не связано с перелётом (это Berlin, не Италия) — отправляем сразу.",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-10"
   }
 ]
