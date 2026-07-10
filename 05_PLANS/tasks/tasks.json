@@ -11184,7 +11184,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-10"
   },
   {
     "id": "разобраться-с-входящими-письмами",
@@ -11203,7 +11204,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-10"
   },
   {
     "id": "определить-следующие-задачи-по-ecom",
@@ -11222,6 +11224,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-10"
   }
 ]
