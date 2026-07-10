@@ -11282,5 +11282,24 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-10"
+  },
+  {
+    "id": "написать-georgia-фолоуап-текст-готов-в-09_kleinanzeigen_ads_",
+    "title": "Написать Georgia фолоуап (текст готов в 09_kleinanzeigen_ads_pricing.md)",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-15",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Ждём ясности по перелёту после имплантов (приём 14.07), пишем 15.07",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-10",
+    "order": 0.0
   }
 ]
