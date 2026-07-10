@@ -11272,6 +11272,15 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": true,
+    "created_at": "2026-07-10",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-продумать-и-зафиксировать-базис-методики",
+    "title": "Продумать и зафиксировать базис методики",
+    "parent_id": "personal-finance-аудит-личных-активов",
+    "status": "todo",
+    "someday": true,
     "created_at": "2026-07-10"
   }
 ]
