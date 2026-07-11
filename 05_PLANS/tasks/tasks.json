@@ -11362,5 +11362,24 @@
     "done_at": null,
     "created_at": "2026-07-11",
     "order": 0.0
+  },
+  {
+    "id": "выгрузить-документы-для-бухгалтерии-из-google-ads-oliver-and",
+    "title": "Выгрузить документы для бухгалтерии из Google Ads Oliver and Alder (465-541-9350, hiute.hk@gmail.com)",
+    "type": "task",
+    "parent_id": "area-ecom-финансы-подписки",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-11",
+    "order": 0.0
   }
 ]
