@@ -11476,14 +11476,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Shopify Admin → Settings → Billing. Транзакции: rev_038 rev_048 rev_052 rev_081 rev_118 и ещё 7. Загрузить в Drive 2026 Propria, привязать doc_url в revolut_clean.json",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-google-cloud-3-шт-14741-q1-q2-2026",
@@ -11495,14 +11496,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Google Cloud Console → Billing → Documents. rev_043 (2026-02-02 -€32.48) rev_075 (2026-03-02 -€58.93) rev_229 (2026-07-01 -€56.00). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-google-ads-ct-legacy-4-шт-7075-q1-q2-2026",
@@ -11514,14 +11516,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Аккаунт 4938084535 закрыт фев 2026. Google Ads → Billing. rev_001 rev_003 rev_004 rev_016 rev_045. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-paddle-n8n-3-шт-8568-q1-q2-2026",
@@ -11533,14 +11536,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Paddle customer portal. rev_007 (€28.56) rev_047 (€28.56) rev_077 (€28.56). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-nordvpn-3-шт-4638-q1-q2-2026",
@@ -11552,14 +11556,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "NordVPN My Account → Billing. rev_008 rev_049 rev_079 по €15.46 каждая. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-notion-3-шт-8211-q1-q2-2026",
@@ -11571,14 +11576,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Notion Settings → Billing. rev_036 rev_069 rev_101 по €27.37. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-slack-3-шт-5170-q1-q2-2026",
@@ -11590,14 +11596,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Slack Settings → Billing. rev_010 (€24.75) rev_050 (€4.25) rev_080 (€22.70). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-paddle-poky-7-шт-2119-q1-q2-2026",
@@ -11609,14 +11616,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Paddle customer portal. rev_032 rev_068 и ещё 5. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-singularity-6-шт-2058-q1-q2-2026",
@@ -11628,14 +11636,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Уточнить нужны ли инвойсы. rev_037 rev_070 rev_102 rev_150 rev_187 и ещё 1 по ~€3.40. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-godaddy-2-шт-3959-q1-q2-2026",
@@ -11647,14 +11656,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "GoDaddy Order History. rev_028 (€13.20) rev_042 (€26.39). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойсы-google-workspace-4-шт-3240-q1-q2-2026",
@@ -11666,14 +11676,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Google Admin → Billing. rev_002 rev_046 rev_074 rev_112 по €8.10. Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойс-zadarma-1-шт-1200-q1-q2-2026",
@@ -11685,14 +11696,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Zadarma Billing. rev_027 (2026-01-21 -€12.00). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойс-namecheap-1-шт-963-q1-q2-2026",
@@ -11704,14 +11716,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Namecheap Orders & Invoices. rev_041 (2026-01-30 -€9.63). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойс-cloudflare-1-шт-413-q1-q2-2026",
@@ -11723,14 +11736,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "Cloudflare Billing. rev_035 (2026-01-25 -€4.13). Загрузить в Drive, привязать doc_url",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "уточнить-google-one-4398-личная-или-бизнес-подписка-q1-q2-20",
@@ -11742,14 +11756,15 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "rev_055 (2026-02-14 -€21.99) rev_090 (2026-03-14 -€21.99). Если бизнес — скачать инвойсы из Google Account → Subscriptions",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "скачать-инвойс-github-133-q1-q2-2026",
@@ -11761,13 +11776,14 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "afternoon",
     "goal": null,
     "tags": [],
     "notes": "GitHub Billing. rev_072 (2026-02-28 -€1.33). Уточнить нужен ли инвойс за такую сумму",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   }
 ]
