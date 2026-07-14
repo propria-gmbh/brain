@@ -11413,7 +11413,7 @@
     "title": "Оформить рефанд CHF 89.90 — Order #1027 Marc & François (Gülistan Karatas)",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-18",
     "priority": null,
@@ -11423,7 +11423,7 @@
     "tags": [],
     "notes": "X-DEFECT: платья не совпадают с фото на сайте (рукава, цвет, материал, разрез). Полный возврат без возврата товара. Клиентке обещано 'nächste Woche'. См. также задачу про делистинг товара и проверку у поставщика.",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-14",
     "created_at": "2026-07-11",
     "order": 0.0
   },
@@ -11786,5 +11786,24 @@
     "created_at": "2026-07-14",
     "order": 0.0,
     "assignee": "claude"
+  },
+  {
+    "id": "оплатить-berlin-recycling-rechnung-vr260188782-от-090726",
+    "title": "Оплатить Berlin Recycling — Rechnung VR260188782 от 09.07.26",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Rechnung VR260188782 vom 09.07.26",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
