@@ -9643,8 +9643,9 @@
     "order": 2.5,
     "recurring": "monthly",
     "id": "propria-разослать-зарплатные-листки-next",
-    "status": "todo",
-    "scheduled_date": "2026-07-13"
+    "status": "done",
+    "scheduled_date": "2026-07-13",
+    "done_at": "2026-07-13"
   },
   {
     "id": "shopify-limyko-de-termination-form",
@@ -10935,8 +10936,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 2,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 3,
     "order": 0.0,
     "done_at": null
   },
@@ -10947,8 +10948,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 2,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 3,
     "order": 0.0,
     "done_at": null
   },
@@ -10959,8 +10960,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 4,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 5,
     "order": 0.0,
     "done_at": null
   },
@@ -10971,8 +10972,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 4,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 5,
     "order": 0.0,
     "done_at": null
   },
@@ -10983,8 +10984,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 5,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 6,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10996,8 +10997,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 5,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 6,
     "order": 0.0,
     "done_at": null
   },
@@ -11008,8 +11009,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 4,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 5,
     "order": 0.0,
     "done_at": null
   },
@@ -11020,8 +11021,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 4,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 5,
     "order": 0.0,
     "done_at": null
   },
@@ -11032,8 +11033,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-11",
-    "missed_count": 4,
+    "last_reset_date": "2026-07-13",
+    "missed_count": 5,
     "order": 0.0,
     "done_at": null
   },
@@ -11258,7 +11259,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-13"
   },
   {
     "id": "inbox-продумать-и-зафиксировать-базис-методики",
@@ -11422,6 +11424,46 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-11",
+    "order": 0.0
+  },
+  {
+    "title": "Разослать зарплатные листки",
+    "type": "task",
+    "project": "propria",
+    "parent_id": "area-projects-tacura",
+    "someday": false,
+    "deadline": "2026-08-13",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "created_at": "2026-05-25",
+    "order": 2.5,
+    "recurring": "monthly",
+    "scheduled_date": "2026-07-13",
+    "id": "propria-разослать-зарплатные-листки-next-next",
+    "status": "todo"
+  },
+  {
+    "id": "составить-реестр-карт-revolut-и-commerzbank-visa-3848-чья",
+    "title": "Составить реестр карт Revolut и Commerzbank — Visa 3848 чья?",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Visa ••• 3848 использована для оплаты OA Google Ads Apr Statement €5.04 (не Revolut, не Commerzbank -5195). Нужна таблица: номер карты → банк → магазин/аккаунт. Commerzbank Mastercard 5355-5195 = Fireflies/основная.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
     "order": 0.0
   }
 ]
