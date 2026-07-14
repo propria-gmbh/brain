@@ -11484,5 +11484,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-google-cloud-3-шт-14741-q1-q2-2026",
+    "title": "Скачать инвойсы Google Cloud 3 шт €147.41 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Google Cloud Console → Billing → Documents. rev_043 (2026-02-02 -€32.48) rev_075 (2026-03-02 -€58.93) rev_229 (2026-07-01 -€56.00). Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
