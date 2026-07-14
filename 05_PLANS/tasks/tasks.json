@@ -11503,5 +11503,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-google-ads-ct-legacy-4-шт-7075-q1-q2-2026",
+    "title": "Скачать инвойсы Google Ads C&T Legacy 4 шт €70.75 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Аккаунт 4938084535 закрыт фев 2026. Google Ads → Billing. rev_001 rev_003 rev_004 rev_016 rev_045. Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
