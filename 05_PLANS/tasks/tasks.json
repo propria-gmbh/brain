@@ -11560,5 +11560,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-notion-3-шт-8211-q1-q2-2026",
+    "title": "Скачать инвойсы Notion 3 шт €82.11 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Notion Settings → Billing. rev_036 rev_069 rev_101 по €27.37. Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
