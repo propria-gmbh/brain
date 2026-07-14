@@ -11617,5 +11617,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-singularity-6-шт-2058-q1-q2-2026",
+    "title": "Скачать инвойсы Singularity 6 шт €20.58 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Уточнить нужны ли инвойсы. rev_037 rev_070 rev_102 rev_150 rev_187 и ещё 1 по ~€3.40. Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
