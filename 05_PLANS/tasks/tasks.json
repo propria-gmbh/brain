@@ -11655,5 +11655,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-google-workspace-4-шт-3240-q1-q2-2026",
+    "title": "Скачать инвойсы Google Workspace 4 шт €32.40 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Google Admin → Billing. rev_002 rev_046 rev_074 rev_112 по €8.10. Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
