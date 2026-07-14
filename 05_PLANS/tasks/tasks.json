@@ -11731,5 +11731,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "уточнить-google-one-4398-личная-или-бизнес-подписка-q1-q2-20",
+    "title": "Уточнить Google One €43.98 личная или бизнес-подписка Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "rev_055 (2026-02-14 -€21.99) rev_090 (2026-03-14 -€21.99). Если бизнес — скачать инвойсы из Google Account → Subscriptions",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
