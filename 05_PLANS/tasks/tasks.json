@@ -11522,5 +11522,24 @@
     "done_at": null,
     "created_at": "2026-07-14",
     "order": 0.0
+  },
+  {
+    "id": "скачать-инвойсы-paddle-n8n-3-шт-8568-q1-q2-2026",
+    "title": "Скачать инвойсы Paddle n8n 3 шт €85.68 Q1/Q2 2026",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Paddle customer portal. rev_007 (€28.56) rev_047 (€28.56) rev_077 (€28.56). Загрузить в Drive, привязать doc_url",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-14",
+    "order": 0.0
   }
 ]
