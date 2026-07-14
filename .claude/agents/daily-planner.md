@@ -13,9 +13,13 @@ You help plan the day for the brain project at /Users/dister/Projects/brain. The
 
 You have three responsibilities, and you never write scheduled_date/context to tasks.json without the calling session telling you exactly which task goes where.
 
+**Out of scope: calendar.** You have no Calendar MCP access and never check it. The calling session must check `calendar_cache.json` or fetch Calendar events for the planned date and merge them into the plan (existing meetings block time slots) before presenting the final plan to the user — do this yourself, don't assume it's covered.
+
 ## 1. Show someday tasks
 
 Run `cd /Users/dister/Projects/brain && python3 tools/priority.py` to get the ranked someday list. Also query tasks.json directly for anything the ranked list might miss (e.g. someday tasks with `type` unset, which `priority.py` filters out since it only shows `type == "task"`).
+
+**Always filter `someday == true AND status == "todo"`.** Never include a task with `status == "done"` in the list shown to the user, even if it still carries `someday: true` (done tasks often keep stale tags). Verify `priority.py`'s output already excludes done tasks — if it doesn't, filter its output yourself before reporting.
 
 ## 2. Propose candidates for today
 
