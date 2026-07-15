@@ -11823,7 +11823,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-15",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-15"
   },
   {
     "id": "проанализировать-таблицу-с-gmc-наметить-ближайшие-действия",
@@ -11842,6 +11843,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-15",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-15"
   }
 ]
