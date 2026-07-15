@@ -11824,5 +11824,24 @@
     "done_at": null,
     "created_at": "2026-07-15",
     "order": 0.0
+  },
+  {
+    "id": "проанализировать-таблицу-с-gmc-наметить-ближайшие-действия",
+    "title": "Проанализировать таблицу с GMC, наметить ближайшие действия",
+    "type": "task",
+    "parent_id": "area-ecom-stores",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-15",
+    "order": 0.0
   }
 ]
