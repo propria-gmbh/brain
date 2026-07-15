@@ -1481,7 +1481,6 @@
     "title": "Сделать список льняных изделий и запросить у KungFuBuy квоты",
     "type": "task",
     "project": "ecom",
-    "parent_id": "ecom-ниша-льняные-изделия",
     "status": "todo",
     "someday": true,
     "deadline": null,
@@ -1494,7 +1493,8 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 1.0,
-    "scheduled_date": "2026-07-07"
+    "scheduled_date": "2026-07-07",
+    "parent_id": "ecom-ниша-льняные-изделия"
   },
   {
     "id": "ecom-наити-поставщика-льняных-изделии",
@@ -8525,18 +8525,18 @@
   },
   {
     "id": "sailing-iyt-согласовать-с-хаусарцтом-форму-справки",
-    "title": "Позвонить хаусарцту — согласовать форму справки для IYT",
+    "title": "Позвонить хаусарцту — фолоуап справки для IYT",
     "type": "task",
     "parent_id": "area-personal-sailing-инструкторство",
     "someday": true,
     "done": false,
-    "deadline": "2026-06-16",
+    "deadline": null,
     "created_at": "2026-06-06",
     "order": 0.0,
     "context": "perekur",
     "status": "todo",
     "done_at": "2026-06-16",
-    "scheduled_date": "2026-07-14"
+    "scheduled_date": "2026-07-16"
   },
   {
     "id": "sailing-iyt-найти-офтальмолога-справка",
@@ -8974,14 +8974,14 @@
   {
     "id": "починить-большие-колонки",
     "title": "Починить большие колонки",
-    "type": "task",
+    "type": "area",
     "parent_id": "area-personal-home-house-физический-дом",
     "status": "todo",
     "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "perekur",
     "assignee": null,
     "tags": [],
     "notes": null,
@@ -10180,11 +10180,11 @@
   {
     "id": "inbox-во-вкладке-задачи-все-свернуто-по-умолчанию-и-на-к",
     "title": "Во вкладке задачи все свернуто по умолчанию и на каждом проекте кнопка свернуть/развернуть все",
-    "parent_id": "inbox-доделать-дашборд-health",
+    "parent_id": "area-brain-dashboard-доработки",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-22",
-    "order": 0.0,
+    "order": -7.0,
     "deadline": null,
     "assignee": null
   },
@@ -10424,8 +10424,8 @@
   },
   {
     "id": "inbox-2-илья-приглашает-юриста-на-демонстрацию-системы-р",
-    "title": "2. Илья приглашает юриста на демонстрацию системы распознавания документов",
-    "parent_id": "area-inbox",
+    "title": "Сделать реестр продуктов для демонстрации заинтересованным",
+    "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
     "someday": false,
     "created_at": "2026-06-23",
@@ -11016,18 +11016,6 @@
     "done_at": null
   },
   {
-    "id": "daily-ab-slack",
-    "title": "Ответить AB в Slack",
-    "type": "task",
-    "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
-    "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 7,
-    "order": 0.0,
-    "done_at": null
-  },
-  {
     "id": "daily-kleinanzeigen",
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
@@ -11256,7 +11244,7 @@
   {
     "id": "inbox-снять-деньги-на-импланты-в-сантандер",
     "title": "Снять деньги на импланты в Сантандер",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-finance",
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-10",
@@ -11330,7 +11318,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-10",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-15"
   },
   {
     "id": "выгрузить-документы-для-бухгалтерии-из-google-ads-havgaard-k",
@@ -11393,7 +11382,7 @@
     "id": "kendall-maxikleid-товар-отличается-от-фото-рукава-цвет-матер",
     "title": "Kendall Maxikleid: товар отличается от фото (рукава, цвет, материал, разрез) — закрыть/делистнуть на marcfrancois.ch, перепроверить оригинальный листинг у китайского поставщика",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-marc-francois",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -11452,7 +11441,7 @@
     "id": "составить-реестр-карт-revolut-и-commerzbank-visa-3848-чья",
     "title": "Составить реестр карт Revolut и Commerzbank — Visa 3848 чья?",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "inbox-продолжить-q1-q2-propria",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -11830,7 +11819,7 @@
     "id": "проанализировать-таблицу-с-gmc-наметить-ближайшие-действия",
     "title": "Проанализировать таблицу с GMC, наметить ближайшие действия",
     "type": "task",
-    "parent_id": "area-ecom-stores",
+    "parent_id": "area-ecom",
     "status": "todo",
     "someday": true,
     "deadline": null,
@@ -11845,5 +11834,75 @@
     "created_at": "2026-07-15",
     "order": 0.0,
     "scheduled_date": "2026-07-15"
+  },
+  {
+    "id": "inbox-сделать-выбор-ареа---сначала-ареа-верхнего-уровня-",
+    "title": "Сделать выбор Ареа - сначала ареа верхнего уровня, при выдоре ареа открываются суб ареа",
+    "parent_id": "area-brain-dashboard-доработки",
+    "status": "done",
+    "someday": true,
+    "created_at": "2026-07-15",
+    "order": -6.5,
+    "done_at": "2026-07-15"
+  },
+  {
+    "id": "inbox-купить-ножки-для-мониторов",
+    "title": "Купить ножки для мониторов",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-07-15",
+    "order": 0.0,
+    "context": "perekur"
+  },
+  {
+    "id": "event-2026-07-15-hausmüll-bsr-abholung",
+    "title": "Hausmüll (BSR) Abholung",
+    "type": "event",
+    "event_summary": "Hausmüll (BSR) Abholung",
+    "event_date": "2026-07-15",
+    "status": "done",
+    "done_at": "2026-07-15",
+    "scheduled_date": "2026-07-15",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-15-vaydy-meeting",
+    "title": "VAYDY meeting",
+    "type": "event",
+    "event_summary": "VAYDY meeting",
+    "event_date": "2026-07-15",
+    "status": "done",
+    "done_at": "2026-07-15",
+    "scheduled_date": "2026-07-15",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-httpslautsprecher-technikcomlautsprecher-ersatz---",
+    "title": "https://lautsprecher-technik.com/Lautsprecher-Ersatz----Reparaturteile/Lautsprecher-Schaumstoff-Sicken-Reparatur/Magnat-Lautsprecher-Sicken-Reparatur-Set/Magnat-Art--Nr--144008-Lautsprecher-Sicken-Reparatur-Set.html",
+    "parent_id": "починить-большие-колонки",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-15",
+    "order": 0.0
+  },
+  {
+    "id": "разобрать-корреспонденцию-generali",
+    "title": "Разобрать корреспонденцию Generali",
+    "type": "task",
+    "parent_id": "area-personal-finance-генерали-зубы",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-15",
+    "order": 0.0
   }
 ]
