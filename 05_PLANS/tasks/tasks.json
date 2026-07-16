@@ -6672,7 +6672,8 @@
     "priority": "orange",
     "context": "deep",
     "deadline": "2026-06-23",
-    "type": "area"
+    "type": "area",
+    "scheduled_date": "2026-07-16"
   },
   {
     "id": "sailing-oksana-instructor-followup",
@@ -12003,25 +12004,5 @@
     "someday": true,
     "created_at": "2026-07-16",
     "order": 0.0
-  },
-  {
-    "id": "методика-учёта-собственных-активов",
-    "title": "Методика учёта собственных активов",
-    "type": "task",
-    "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-07-16",
-    "order": 0.0,
-    "scheduled_date": "2026-07-16"
   }
 ]
