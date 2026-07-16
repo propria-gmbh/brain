@@ -7129,7 +7129,8 @@
     "created_at": "2026-05-28",
     "order": 0.0,
     "marker": "🔴",
-    "priority": "red"
+    "priority": "red",
+    "assignee": "claude"
   },
   {
     "id": "ai-systems-дашборд-фильтр-someday",
@@ -8911,7 +8912,8 @@
     "order": 0.0,
     "executor": "claude",
     "marker": "🔴",
-    "scheduled_date": "2026-07-16"
+    "scheduled_date": "2026-07-16",
+    "context": "perekur"
   },
   {
     "id": "сделать-подписи-к-фотографиям",
@@ -10592,7 +10594,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-06-26",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "inbox-написать-емейл-неврологу-попросить-рецепт-на-ascot",
@@ -11135,11 +11138,11 @@
     "title": "Сделать для Мити ТЗ по саплайментсам",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-09",
     "order": 0.0,
     "context": "deep",
-    "scheduled_date": "2026-07-16"
+    "scheduled_date": "2026-07-17"
   },
   {
     "id": "personal-finance-разослать-новые-реквизиты-получателям",
@@ -11976,6 +11979,45 @@
     "goal": null,
     "tags": [],
     "notes": "POKY: Propria-форвардинг 3553194@gmail.com, карта ...2847. Google AI Pro 5TB: личный аккаунт ilja.disterheft@gmail.com, карта Visa-1269. Найдены при разборе 3.Payments 2026-07-16.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-16",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-настроить-новый-протокол-питания-и-занести-аскотоп",
+    "title": "Настроить новый протокол питания и занести Аскотоп",
+    "parent_id": "area-health",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "order": 0.0,
+    "scheduled_date": "2026-07-16",
+    "context": "deep"
+  },
+  {
+    "id": "inbox-поговорить-с-аней-про-тестостерон",
+    "title": "Поговорить с Аней про тестостерон",
+    "parent_id": "health-начать-принимать-тестостерон",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "order": 0.0
+  },
+  {
+    "id": "методика-учёта-собственных-активов",
+    "title": "Методика учёта собственных активов",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-16",
