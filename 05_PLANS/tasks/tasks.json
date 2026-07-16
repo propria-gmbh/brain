@@ -6737,8 +6737,7 @@
     "someday": false,
     "created_at": "2026-05-26",
     "order": 1.0,
-    "deadline": "2026-07-13",
-    "scheduled_date": "2026-07-13"
+    "deadline": "2026-07-31"
   },
   {
     "id": "personal-health-mvz-kaleth-новый-термин",
@@ -8903,7 +8902,7 @@
     "deadline": null,
     "priority": "red",
     "stakes": null,
-    "assignee": null,
+    "assignee": "claude",
     "tags": [],
     "notes": null,
     "done": false,
@@ -8912,7 +8911,7 @@
     "order": 0.0,
     "executor": "claude",
     "marker": "🔴",
-    "scheduled_date": "2026-07-07"
+    "scheduled_date": "2026-07-16"
   },
   {
     "id": "сделать-подписи-к-фотографиям",
@@ -10214,8 +10213,8 @@
     "id": "фолоуап-miles-проверить-ответ-на-mahnung-1050-срок-07072026",
     "title": "Фолоуап MILES — проверить ответ на Mahnung (1050€, срок 07.07.2026)",
     "type": "task",
-    "parent_id": "area-ecom",
-    "status": "todo",
+    "parent_id": "area-personal-finance",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-07",
     "priority": null,
@@ -10225,7 +10224,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-16",
     "created_at": "2026-06-23",
     "order": 0.0
   },
@@ -10800,7 +10799,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-01",
-    "order": 0.0
+    "order": 0.0,
+    "assignee": "claude"
   },
   {
     "id": "фолоуап-шарите-augenambulanz-cvk",
@@ -10861,7 +10861,7 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-08",
+    "deadline": "2026-07-17",
     "priority": null,
     "stakes": null,
     "context": "perekur",
@@ -10909,8 +10909,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-05",
-    "order": 0.0,
-    "scheduled_date": "2026-07-07"
+    "order": 0.0
   },
   {
     "id": "inbox-косметические-процедуры",
@@ -10937,8 +10936,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 5,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 6,
     "order": 0.0,
     "done_at": null
   },
@@ -10949,8 +10948,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 5,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 6,
     "order": 0.0,
     "done_at": null
   },
@@ -10961,8 +10960,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 8,
     "order": 0.0,
     "done_at": null
   },
@@ -10973,8 +10972,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 8,
     "order": 0.0,
     "done_at": null
   },
@@ -10985,8 +10984,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 9,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10998,8 +10997,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 9,
     "order": 0.0,
     "done_at": null
   },
@@ -11010,8 +11009,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 8,
     "order": 0.0,
     "done_at": null
   },
@@ -11022,8 +11021,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-15",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-16",
+    "missed_count": 8,
     "order": 0.0,
     "done_at": null
   },
@@ -11050,11 +11049,12 @@
     "id": "inbox-поменять-деньги",
     "title": "Поменять деньги",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-06",
     "context": "perekur",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-07-16"
   },
   {
     "id": "inbox-провести-аудит-объявлений-решить-что-дальше",
@@ -11245,11 +11245,12 @@
     "id": "inbox-снять-деньги-на-импланты-в-сантандер",
     "title": "Снять деньги на импланты в Сантандер",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-10",
     "order": 0.0,
-    "scheduled_date": "2026-07-13"
+    "scheduled_date": "2026-07-13",
+    "done_at": "2026-07-16"
   },
   {
     "id": "inbox-продумать-и-зафиксировать-базис-методики",
@@ -11793,7 +11794,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-14",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-16"
   },
   {
     "id": "разобрать-бумаги-на-столе",
@@ -11882,7 +11884,7 @@
     "title": "https://lautsprecher-technik.com/Lautsprecher-Ersatz----Reparaturteile/Lautsprecher-Schaumstoff-Sicken-Reparatur/Magnat-Lautsprecher-Sicken-Reparatur-Set/Magnat-Art--Nr--144008-Lautsprecher-Sicken-Reparatur-Set.html",
     "parent_id": "починить-большие-колонки",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-15",
     "order": 0.0
   },
@@ -11903,6 +11905,79 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-15",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-16-abfuhr-der-papiertonne",
+    "title": "Abfuhr der Papiertonne",
+    "type": "event",
+    "event_summary": "Abfuhr der Papiertonne",
+    "event_date": "2026-07-16",
+    "status": "done",
+    "done_at": "2026-07-16",
+    "scheduled_date": "2026-07-16",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-16-papiertonne-berlin-recycling-abholung",
+    "title": "Papiertonne (Berlin Recycling) Abholung",
+    "type": "event",
+    "event_summary": "Papiertonne (Berlin Recycling) Abholung",
+    "event_date": "2026-07-16",
+    "status": "done",
+    "done_at": "2026-07-16",
+    "scheduled_date": "2026-07-16",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-позвонить-дяде-вове-уточнить-условия-сотрудничеств",
+    "title": "Позвонить дяде Вове, уточнить условия сотрудничества",
+    "parent_id": "area-personal-sailing-инструкторство",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "order": 0.0,
+    "context": "perekur",
+    "scheduled_date": "2026-07-16"
+  },
+  {
+    "id": "inbox-позвонить-саше-леше-и-тане",
+    "title": "Позвонить Саше, Леше и Тане",
+    "parent_id": "area-personal-sailing-поход-по-лазурке",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "order": 0.0,
+    "context": "perekur",
+    "scheduled_date": "2026-07-16"
+  },
+  {
+    "id": "inbox-постричь-газон-2ю-часть-вычесать-мох",
+    "title": "Постричь газон, 2ю часть вычесать мох",
+    "parent_id": "personal-home-восстановление-газона-газон-разделен-на-3-час",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "order": 0.0,
+    "scheduled_date": "2026-07-16"
+  },
+  {
+    "id": "проверить-подписки-paddle-poky-51-мес-shopify-product-import",
+    "title": "Проверить подписки Paddle/POKY (.51/мес, Shopify Product Importer) и Google AI Pro (21,99€/мес, Google One) — оставить или отменить",
+    "type": "task",
+    "parent_id": "area-personal-finance-счета-и-подписки",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "POKY: Propria-форвардинг 3553194@gmail.com, карта ...2847. Google AI Pro 5TB: личный аккаунт ilja.disterheft@gmail.com, карта Visa-1269. Найдены при разборе 3.Payments 2026-07-16.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-16",
     "order": 0.0
   }
 ]
