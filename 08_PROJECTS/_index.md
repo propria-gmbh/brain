@@ -58,6 +58,7 @@ brain/ — командный центр. Реальная разработка 
 | [jobcenter](jobcenter.md) | Jobcenter | active |
 | [mamas-book](mamas-book.md) | Мамина книга | active |
 | [music-system](music-system.md) | Музыкальная система | active |
+| [personal-finance-assets](personal-finance-assets.md) | Учёт ликвидных личных активов — ежемесячные снапшоты | active |
 
 ## Легенда статусов
 
