@@ -12012,12 +12012,13 @@
     "id": "inbox-позвонить-мите",
     "title": "Позвонить Мите",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-16",
     "context": "perekur",
     "order": 0.0,
-    "scheduled_date": "2026-07-16"
+    "scheduled_date": "2026-07-16",
+    "done_at": "2026-07-17"
   },
   {
     "id": "оплатить-hecht-luxburg-owu-gmbh-9981-сальдо-подтверждено-алл",
@@ -12066,5 +12067,24 @@
     "created_at": "2026-07-17",
     "order": 0.0,
     "scheduled_date": "2026-07-17"
+  },
+  {
+    "id": "фолоуап-клиент-küche-221м-angebot-510-ответил-ли-по-офферу",
+    "title": "Фолоуап клиент Küche 2,21м (Angebot 510€) — ответил ли по офферу",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-20",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "context: perekur. Оффер отправлен 17.07 в WhatsApp: Festpreis 510€ (620-110 за отсутствие мойки), Besichtigung/Wandcheck на месте, Aufwandspauschale 80€ если стена не подходит (Trockenbau/Hohlraum).",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-17",
+    "order": 0.0
   }
 ]
