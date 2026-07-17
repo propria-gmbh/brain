@@ -8535,8 +8535,8 @@
     "created_at": "2026-06-06",
     "order": 0.0,
     "context": "perekur",
-    "status": "todo",
-    "done_at": "2026-06-16",
+    "status": "done",
+    "done_at": "2026-07-16",
     "scheduled_date": "2026-07-16"
   },
   {
@@ -10863,7 +10863,7 @@
     "title": "Фолоуап Wolf — забрать медсправку IYT",
     "type": "task",
     "parent_id": "area-personal-sailing-инструкторство",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-17",
     "priority": null,
@@ -10873,7 +10873,7 @@
     "tags": [],
     "notes": "Обследование у Wolf пройдено 02.07, справка будет готова на следующей неделе.",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-17",
     "created_at": "2026-07-02",
     "order": 0.0
   },
@@ -10913,7 +10913,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-05",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-16"
   },
   {
     "id": "inbox-косметические-процедуры",
@@ -10940,8 +10941,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 6,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 7,
     "order": 0.0,
     "done_at": null
   },
@@ -10952,8 +10953,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 6,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 7,
     "order": 0.0,
     "done_at": null
   },
@@ -10964,8 +10965,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 9,
     "order": 0.0,
     "done_at": null
   },
@@ -10976,8 +10977,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 9,
     "order": 0.0,
     "done_at": null
   },
@@ -10988,8 +10989,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 10,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -11001,8 +11002,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 10,
     "order": 0.0,
     "done_at": null
   },
@@ -11013,8 +11014,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 9,
     "order": 0.0,
     "done_at": null
   },
@@ -11025,8 +11026,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-16",
-    "missed_count": 8,
+    "last_reset_date": "2026-07-17",
+    "missed_count": 9,
     "order": 0.0,
     "done_at": null
   },
@@ -11787,7 +11788,7 @@
     "title": "Оплатить Berlin Recycling — Rechnung VR260188782 от 09.07.26",
     "type": "task",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -11797,7 +11798,7 @@
     "tags": [],
     "notes": "Rechnung VR260188782 vom 09.07.26",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-16",
     "created_at": "2026-07-14",
     "order": 0.0,
     "scheduled_date": "2026-07-16"
@@ -12003,6 +12004,36 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-16",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-позвонить-мите",
+    "title": "Позвонить Мите",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-16",
+    "context": "perekur",
+    "order": 0.0,
+    "scheduled_date": "2026-07-16"
+  },
+  {
+    "id": "оплатить-hecht-luxburg-owu-gmbh-9981-сальдо-подтверждено-алл",
+    "title": "Оплатить Hecht-Luxburg OWU GmbH €99.81 (сальдо подтверждено Аллой Дудниченко 16.07)",
+    "type": "task",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-20",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Тред: Propria GmbH, 19f6b32d610d33fc. Уже ответил Алле 16.07: 'оплачу в ближайшее время'.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-17",
     "order": 0.0
   }
 ]
