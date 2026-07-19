@@ -15,6 +15,14 @@
 - Kindergeldnummer: 001FK831792
 - Antragsteller: Ilja Disterheft
 
+## Erhard Zimmermann — Segelakademie Wannsee Berlin (SBF See)
+
+- Email: erhard@segelakademie-wannsee.berlin
+- Web: segelakademie-wannsee.berlin (SSL не открывается напрямую, проще писать)
+- Подтвердил (18.03): готов дать только Prüfungsfahrt (практический экзамен) без полного курса, для внешних кандидатов
+- Точную цену за "только экзамен" не назвал — нужно уточнить отдельно
+- Termine для новой практики: примерно конец мая (сам до этого в море)
+
 ## Сергей Исаак — страховой маклер (Taures)
 
 - Email: s_isaak@taures.de
@@ -94,11 +102,13 @@
 - IBAN: DE74 1204 0000 0463 2238 00 · BIC: COBADEFFXXX · Commerzbank AG (основной, для приёма платежей от немецких клиентов)
 - IBAN: LT31 3250 0373 7693 6179 · BIC: REVOLT21 · Intermediary BIC: CHASDEFX · Revolut (мультивалютный)
 
-## Алла Дудниченко — бухгалтер (Propria / Tacura)
+## Алла Дудниченко — бухгалтер (Propria GmbH)
 
 - Компания: HECHT, von LUXBURG (та же фирма)
 - Email: a.dudnichenko@hecht-luxburg.de
 - Тел: +49 30 549082293
+
+## Светлана Неб — бухгалтер (Tacura GmbH)
 
 ## Gabriela Heymann — хозяйка дома (Vermieterin/Hausverwalterin)
 
