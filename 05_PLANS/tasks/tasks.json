@@ -1561,7 +1561,8 @@
     "done_at": null,
     "created_at": "2026-05-25",
     "order": 2.0,
-    "executor": "claude"
+    "executor": "claude",
+    "assignee": "claude"
   },
   {
     "id": "ecom-сделать-поиск-конкурентов-для-сша",
@@ -10941,7 +10942,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 7,
     "order": 0.0,
     "done_at": null
@@ -10953,7 +10954,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 7,
     "order": 0.0,
     "done_at": null
@@ -10965,7 +10966,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 9,
     "order": 0.0,
     "done_at": null
@@ -10977,7 +10978,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 9,
     "order": 0.0,
     "done_at": null
@@ -10989,8 +10990,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
-    "missed_count": 10,
+    "last_reset_date": "2026-07-18",
+    "missed_count": 11,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -11002,8 +11003,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
-    "missed_count": 10,
+    "last_reset_date": "2026-07-18",
+    "missed_count": 11,
     "order": 0.0,
     "done_at": null
   },
@@ -11014,7 +11015,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 9,
     "order": 0.0,
     "done_at": null
@@ -11026,7 +11027,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-17",
+    "last_reset_date": "2026-07-18",
     "missed_count": 9,
     "order": 0.0,
     "done_at": null
@@ -11857,11 +11858,12 @@
     "id": "inbox-купить-ножки-для-мониторов",
     "title": "Купить ножки для мониторов",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-07-15",
     "order": 0.0,
-    "context": "perekur"
+    "context": "perekur",
+    "done_at": "2026-07-17"
   },
   {
     "id": "event-2026-07-15-hausmüll-bsr-abholung",
@@ -12085,6 +12087,43 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-17",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-дашборд-сегодня-после-взаимодействия-с-пунктами-вс",
+    "title": "Дашборд \"Сегодня\", после взаимодействия с пунктами все сворачивается. А должно оставаться последнее состояние",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-17",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-удалить-подписку-сингулярити",
+    "title": "Удалить подписку Сингулярити",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-17",
+    "order": 0.0
+  },
+  {
+    "id": "получить-sbf-see",
+    "title": "Получить SBF See",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Теория самостоятельно, только практика+экзамен у школы. Бюджет и связка сертификатов (SBF See -> SKS -> SRC) см. переписку 2026-07-19",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-19",
     "order": 0.0
   }
 ]
