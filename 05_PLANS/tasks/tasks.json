@@ -10857,7 +10857,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": "2026-07-07"
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "фолоуап-wolf-забрать-справку-iyt",
@@ -10940,24 +10940,24 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 9,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-20"
   },
   {
     "id": "daily-gorgias",
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 7,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 9,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-20"
   },
   {
     "id": "daily-gmc-gads",
@@ -10966,8 +10966,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 11,
     "order": 0.0,
     "done_at": null
   },
@@ -10978,8 +10978,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 11,
     "order": 0.0,
     "done_at": null
   },
@@ -10990,8 +10990,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 13,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -11003,8 +11003,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 13,
     "order": 0.0,
     "done_at": null
   },
@@ -11013,24 +11013,24 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 11,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-20"
   },
   {
     "id": "daily-kleinanzeigen",
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-18",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-20",
+    "missed_count": 11,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-20"
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -11319,7 +11319,7 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "perekur",
     "goal": null,
     "tags": [],
     "notes": "ARAG: Schaden-Nr. 31 0158 1595 5546, Disterheft/Unfallgegner, просят сумму претензии, описание обстоятельств, полицейский протокол. ACE-Wirtschaftsdienst €82: статус договора неясен, Сергей может уточнить/расторгнуть. Sparkasse: обновить реквизиты для Die Haftpflichtkasse (обсуждали 10.07.2026).",
@@ -11327,7 +11327,7 @@
     "done_at": null,
     "created_at": "2026-07-10",
     "order": 0.0,
-    "scheduled_date": "2026-07-15"
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "выгрузить-документы-для-бухгалтерии-из-google-ads-havgaard-k",
@@ -11842,7 +11842,7 @@
     "done_at": null,
     "created_at": "2026-07-15",
     "order": 0.0,
-    "scheduled_date": "2026-07-15"
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "inbox-сделать-выбор-ареа---сначала-ареа-верхнего-уровня-",
@@ -12075,7 +12075,7 @@
     "title": "Фолоуап клиент Küche 2,21м (Angebot 510€) — ответил ли по офферу",
     "type": "task",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-20",
     "priority": null,
@@ -12085,7 +12085,7 @@
     "tags": [],
     "notes": "context: perekur. Оффер отправлен 17.07 в WhatsApp: Festpreis 510€ (620-110 за отсутствие мойки), Besichtigung/Wandcheck на месте, Aufwandspauschale 80€ если стена не подходит (Trockenbau/Hohlraum).",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-20",
     "created_at": "2026-07-17",
     "order": 0.0
   },
