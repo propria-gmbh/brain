@@ -82,11 +82,11 @@ Name в профиле: Ilja. Telefonnummer anzeigen: выключено (кон
 
 **Заголовок:** Küchenmontage Berlin – IKEA, Nobilia, auch am Wochenende
 **Категория:** Dienstleistungen → Haus & Garten
-**Цена:** Festpreis ab 900€ (изменено 20.07.2026, было 300€ VB — см. обоснование ниже)
+**Цена:** Festpreis ab 249€ pro laufendem Meter (изменено 20.07.2026, было 300€ VB, промежуточно Festpreis ab 900€ — см. обоснование ниже)
 
 **Текст:**
 ```
-Professionelle Küchenmontage in Berlin. Über 15 Jahre handwerkliche Erfahrung – präzise und mit Sorgfalt. Transparenter Festpreis von Anfang an, ab 900€ – keine bösen Überraschungen, keine Nachverhandlung.
+Professionelle Küchenmontage in Berlin. Über 15 Jahre handwerkliche Erfahrung – präzise und mit Sorgfalt. Transparenter Festpreis ab 249€ pro laufendem Meter (inkl. Standardmontage & Geräteanschluss, wie beim IKEA-Montageservice, aber günstiger) – keine bösen Überraschungen, keine Nachverhandlung.
 
 Pünktlich und zuverlässig: vereinbarte Termine werden eingehalten, nicht verschoben.
 
@@ -95,16 +95,20 @@ Pünktlich und zuverlässig: vereinbarte Termine werden eingehalten, nicht versc
 ✅ Geräte- und Wasseranschluss
 ✅ Termine auch am Wochenende
 
+Sonderleistungen (Wandpaneele, Unterschrankbeleuchtung, Sonderanschlüsse) nach Absprache extra.
+
 Anfahrt & unverbindliche Einschätzung vor Ort: 30€ – wird bei Auftragsvergabe auf den Endpreis angerechnet.
 
 Ich spreche Deutsch, Englisch und Russisch.
 
-Genauer Preis nach Absprache – schick mir Fotos und den gewünschten Termin per WhatsApp.
+Genauer Preis nach Absprache – schick mir Fotos, Maße und den gewünschten Termin per WhatsApp.
 
 WhatsApp: 0177 8192313
 ```
 
-**Обоснование смены "300€ VB" → "Festpreis ab 900€" (20.07.2026):** из 2 реальных лидов (Georgia, Tarik) оба замолчали после названия реального Festpreis (892,50€ и 1.596€) — разрыв между заявленной в объявлении ценой и реальной. 900€ выбрано как нижняя граница типового заказа (монтаж + подключение техники, сетка строк 158-163), не абсолютный минимум (600€ — только монтаж корпусов без техники, редкий случай на практике). VB (Verhandlungsbasis) убран — он предполагал переговоры вниз от 300€, что не соответствует Festpreis-позиционированию.
+**Обоснование смены "300€ VB" → "Festpreis ab 249€/м" (20.07.2026):** промежуточный вариант "ab 900€" отклонён пользователем — фиксированный порог не решает проблему, а переносит её (создаёт тот же разрыв ожиданий для маленьких кухонь, что 300€ VB создавал для больших). Цена за погонный метр естественно масштабируется под объём заказа — снимает конкретный риск "а вы правда за 300€ сделаете 9-метровую кухню?" — и совпадает с логикой самого пользователя (ценообразование от IKEA-модели, у которой тоже цена за метр). 249€/м выбрано по факту реальных Angebot: Georgia 892,50€/3,65м ≈ 244€/м; Tarik базовая часть 1.196€/4,87м ≈ 245€/м — совпадает и с ENHET-якорем IKEA (249€/м).
+
+**Важная оговорка (рыночный контекст, найдено 20.07.2026):** проверено 12 конкурентных объявлений на Kleinanzeigen (включая PRO-аккаунты) — 100% используют "VB" с символическим числом, реальная цена не публикуется нигде. Наш подход (прозрачная цена за метр) — осознанное отличие от рыночной конвенции, не следование ей. Эффект на конверсию не проверен, малая выборка (n=4 лида/месяц) не позволяет делать твёрдые выводы о причине молчания текущих лидов (Georgia/Tarik оба назвали другие явные причины задержки, не цену).
 
 ---
 
