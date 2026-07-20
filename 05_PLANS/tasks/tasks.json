@@ -12173,5 +12173,24 @@
     "done_at": null,
     "created_at": "2026-07-20",
     "order": 0.0
+  },
+  {
+    "id": "провести-исследование-товарных-групп-на-2-месяца-вперёд",
+    "title": "Провести исследование товарных групп на 2 месяца вперёд",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-20",
+    "order": 0.0
   }
 ]
