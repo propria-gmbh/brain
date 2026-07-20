@@ -12125,5 +12125,24 @@
     "done_at": null,
     "created_at": "2026-07-19",
     "order": 0.0
+  },
+  {
+    "id": "позвонить-в-сантандер-узнать-почему-карта-не-работает",
+    "title": "Позвонить в Сантандер, узнать, почему карта не работает",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-20",
+    "order": 0.0
   }
 ]
