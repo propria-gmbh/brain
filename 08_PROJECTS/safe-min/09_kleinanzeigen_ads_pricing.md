@@ -82,11 +82,11 @@ Name в профиле: Ilja. Telefonnummer anzeigen: выключено (кон
 
 **Заголовок:** Küchenmontage Berlin – IKEA, Nobilia, auch am Wochenende
 **Категория:** Dienstleistungen → Haus & Garten
-**Цена:** 300 € VB
+**Цена:** Festpreis ab 900€ (изменено 20.07.2026, было 300€ VB — см. обоснование ниже)
 
 **Текст:**
 ```
-Professionelle Küchenmontage in Berlin. Über 15 Jahre handwerkliche Erfahrung – präzise und mit Sorgfalt. Transparenter Festpreis von Anfang an – keine bösen Überraschungen, keine Nachverhandlung.
+Professionelle Küchenmontage in Berlin. Über 15 Jahre handwerkliche Erfahrung – präzise und mit Sorgfalt. Transparenter Festpreis von Anfang an, ab 900€ – keine bösen Überraschungen, keine Nachverhandlung.
 
 Pünktlich und zuverlässig: vereinbarte Termine werden eingehalten, nicht verschoben.
 
@@ -99,10 +99,12 @@ Anfahrt & unverbindliche Einschätzung vor Ort: 30€ – wird bei Auftragsverga
 
 Ich spreche Deutsch, Englisch und Russisch.
 
-Preis nach Absprache – schick mir Fotos und den gewünschten Termin per WhatsApp.
+Genauer Preis nach Absprache – schick mir Fotos und den gewünschten Termin per WhatsApp.
 
 WhatsApp: 0177 8192313
 ```
+
+**Обоснование смены "300€ VB" → "Festpreis ab 900€" (20.07.2026):** из 2 реальных лидов (Georgia, Tarik) оба замолчали после названия реального Festpreis (892,50€ и 1.596€) — разрыв между заявленной в объявлении ценой и реальной. 900€ выбрано как нижняя граница типового заказа (монтаж + подключение техники, сетка строк 158-163), не абсолютный минимум (600€ — только монтаж корпусов без техники, редкий случай на практике). VB (Verhandlungsbasis) убран — он предполагал переговоры вниз от 300€, что не соответствует Festpreis-позиционированию.
 
 ---
 
