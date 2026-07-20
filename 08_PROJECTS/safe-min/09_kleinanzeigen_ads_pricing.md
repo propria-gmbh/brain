@@ -12,6 +12,8 @@
 | 22.06.2026 (днём) | Küchenmontage Berlin | 38 | 3 | 1 |
 | 22.06.2026 (вечером, проверено через Playwright) | Komplette Wohnungseinrichtung & Möbelmontage | 84 | 3 | 0 |
 | 22.06.2026 (вечером, проверено через Playwright) | Küchenmontage Berlin | 44 | 4 | — |
+| 11.07.2026 (день+1 после публикации объединённого объявления) | Küchenmontage Berlin – IKEA, Nobilia, auch am Wochenende | 15 | 0 | — |
+| 20.07.2026 | Küchenmontage Berlin – IKEA, Nobilia, auch am Wochenende | 46 | 2 | — |
 
 Фото: у "Küchenmontage Berlin" загружено 3 фото (лимит 20). Stichwörter/тег-поля у этой категории (Dienstleistungen → Bau & Handwerk) в форме редактирования нет вообще — гипотеза про SEO-теги конкурентов снята, причина их разрыва в просмотрах не в этом.
 
@@ -459,6 +461,19 @@ https://www.kleinanzeigen.de/s-anzeige/kuechenmontage-berlin-ikea-nobilia-auch-a
 
 **Запрос:** увидела объявление на eBay (Kleinanzeigen), спрашивает стоимость монтажа U-Küche IKEA вкл. Elektrogeräte, не уверена, относится ли 300€ VB к полному монтажу или к мелким работам.
 
+**Текст письма:**
+```
+Hallo,
+
+ich habe Ihre Anzeige bei eBay gesehen und wollte nachfragen, was der Einbau einer U-Küche inklusive Elektrogeräte ungefähr kosten würde. Es ist eine IKEA Küche. In der Anzeige steht 300€ VB, deshalb bin ich mir nicht sicher, ob sich das auf den kompletten Kücheneinbau oder nur auf kleinere Arbeiten bezieht.
+
+Könnten Sie mir eine ungefähre Preiseinschätzung oder ein Angebot nennen? Vielen Dank im Voraus!
+
+Freundliche Grüße
+```
+
 **Ответ отправлен (WhatsApp, без называния цены до уточнения объёма):** объяснено, что 300€ VB — не цена за полный монтаж; запрошен план кухни из IKEA-планировщика (если есть) и стандартный чек-лист (метраж, техника, демонтаж, тип стены, наличие подключений, Festanschluss у Kochfeld, Abluft/Umluft, сроки).
 
-**Статус:** ожидание ответа клиента.
+**Angebot отправлен, ответа от клиента не последовало (тишина).**
+
+**Гипотеза (не подтверждена, требует наблюдения на других лидах):** формулировка "300€ VB" в объявлении сама по себе создаёт у части клиентов ложное ожидание, что это и есть примерная цена за полный монтаж кухни (а не порог/фильтр цены), и реальный Festpreis (900-1600€+) воспринимается как резкий скачок от заявленной, вызывая отказ без ответа вместо переговоров.
