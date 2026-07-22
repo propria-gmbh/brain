@@ -10902,7 +10902,7 @@
     "title": "Подать Abmahnung на MILES",
     "type": "task",
     "parent_id": "area-propria",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-17",
     "priority": null,
@@ -10912,7 +10912,7 @@
     "tags": [],
     "notes": "Переписка MILES VW Taigo BMS1706646, thread 199382d61ca64e9b",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-21",
     "created_at": "2026-07-05",
     "order": 0.0,
     "scheduled_date": "2026-07-17"
@@ -10942,10 +10942,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 9,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": "2026-07-21"
   },
   {
     "id": "daily-gorgias",
@@ -10954,34 +10954,34 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 9,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": "2026-07-21"
   },
   {
     "id": "daily-gmc-gads",
     "title": "Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": null
   },
   {
     "id": "daily-revolut",
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-21",
+    "missed_count": 12,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-21"
   },
   {
     "id": "daily-pnl",
@@ -10990,8 +10990,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
-    "missed_count": 13,
+    "last_reset_date": "2026-07-21",
+    "missed_count": 14,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -11001,12 +11001,12 @@
     "title": "PNL — заполнить (еженедельно)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 13,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": null
   },
   {
     "id": "daily-3pl-quotes",
@@ -11015,10 +11015,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": "2026-07-21"
   },
   {
     "id": "daily-kleinanzeigen",
@@ -11027,10 +11027,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-20",
+    "last_reset_date": "2026-07-21",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-20"
+    "done_at": "2026-07-21"
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -12023,25 +12023,6 @@
     "done_at": "2026-07-17"
   },
   {
-    "id": "оплатить-hecht-luxburg-owu-gmbh-9981-сальдо-подтверждено-алл",
-    "title": "Оплатить Hecht-Luxburg OWU GmbH €99.81 (сальдо подтверждено Аллой Дудниченко 16.07)",
-    "type": "task",
-    "parent_id": "area-propria",
-    "status": "todo",
-    "someday": false,
-    "deadline": "2026-07-20",
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": "Тред: Propria GmbH, 19f6b32d610d33fc. Уже ответил Алле 16.07: 'оплачу в ближайшее время'.",
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-07-17",
-    "order": 0.0
-  },
-  {
     "id": "фолоуап-дядя-вова-условия-сотрудничества",
     "title": "Фолоуап дядя Вова — условия сотрудничества",
     "type": "task",
@@ -12093,10 +12074,11 @@
     "id": "inbox-дашборд-сегодня-после-взаимодействия-с-пунктами-вс",
     "title": "Дашборд \"Сегодня\", после взаимодействия с пунктами все сворачивается. А должно оставаться последнее состояние",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-17",
-    "order": 0.0
+    "order": 0.0,
+    "done_at": "2026-07-21"
   },
   {
     "id": "inbox-удалить-подписку-сингулярити",
@@ -12113,7 +12095,7 @@
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12131,7 +12113,7 @@
     "title": "Позвонить в Сантандер, узнать, почему карта не работает",
     "type": "task",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -12141,9 +12123,10 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-21",
     "created_at": "2026-07-20",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "inbox-провести-исследование-товарных-групп-на-2-месяца-в",
@@ -12153,14 +12136,14 @@
     "someday": true,
     "created_at": "2026-07-20",
     "order": 0.0,
-    "scheduled_date": "2026-07-20"
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "оплатить-hecht-luxburg-owu-gmbh-9981-сальдо-подтверждено-алл-2",
     "title": "Оплатить Hecht-Luxburg OWU GmbH €99.81 (сальдо подтверждено Аллой Дудниченко 16.07)",
     "type": "task",
     "parent_id": "area-propria",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": "2026-07-20",
     "priority": null,
@@ -12170,9 +12153,10 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-21",
     "created_at": "2026-07-20",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-21"
   },
   {
     "id": "провести-исследование-товарных-групп-на-2-месяца-вперёд",
@@ -12229,6 +12213,99 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-20",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-сделать-файлы-для-аллы",
+    "title": "Сделать файлы для Аллы",
+    "parent_id": "area-propria",
+    "status": "done",
+    "someday": true,
+    "created_at": "2026-07-21",
+    "context": "deep",
+    "marker": "🔴",
+    "priority": "red",
+    "order": 0.0,
+    "scheduled_date": "2026-07-21",
+    "done_at": "2026-07-21"
+  },
+  {
+    "id": "inbox-добавить-деньги-на-бизнес-счет-револют",
+    "title": "Добавить деньги на бизнес-счет револют",
+    "parent_id": "area-ecom",
+    "status": "done",
+    "someday": false,
+    "created_at": "2026-07-21",
+    "marker": "🔴",
+    "priority": "red",
+    "order": 0.0,
+    "scheduled_date": "2026-07-21",
+    "done_at": "2026-07-21"
+  },
+  {
+    "id": "inbox-ответить-вадиму-по-стратегии-и-функционалу",
+    "title": "Ответить Вадиму по стратегии и функционалу",
+    "parent_id": "inbox-personal",
+    "status": "done",
+    "someday": true,
+    "created_at": "2026-07-21",
+    "order": 0.0,
+    "scheduled_date": "2026-07-21",
+    "done_at": "2026-07-21"
+  },
+  {
+    "id": "inbox-заехать-в-сантандер-предъявить-документы",
+    "title": "Заехать в Сантандер, предъявить документы",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-07-21",
+    "context": "perekur",
+    "marker": "🔴",
+    "priority": "red",
+    "order": 0.0,
+    "scheduled_date": "2026-07-21"
+  },
+  {
+    "id": "inbox-miles-kilometers-anpassen",
+    "title": "MILES Kilometers anpassen",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-21",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-провести-исследование-рынка-добавок",
+    "title": "Провести исследование рынка добавок",
+    "parent_id": "area-ecom",
+    "status": "done",
+    "someday": false,
+    "created_at": "2026-07-21",
+    "context": "deep",
+    "marker": "🟢",
+    "priority": "green",
+    "order": 0.0,
+    "scheduled_date": "2026-07-21",
+    "done_at": "2026-07-21"
+  },
+  {
+    "id": "написать-chancetobrandde-уточнить-дозировку-мелатонина-мг-ка",
+    "title": "Написать chancetobrand.de: уточнить дозировку мелатонина (мг/капсула) и кто является нотифицирующей стороной по странам продаж ЕС",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Критично для ниши 'Сон' — BfR/BVL относят мелатонин 0.5-5мг к лекарствам в Германии независимо от рекламной политики Google. См. supplements-strategy-final-2026-07-21.html",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-22",
     "order": 0.0
   }
 ]
