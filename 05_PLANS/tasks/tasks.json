@@ -10367,25 +10367,6 @@
     "order": 0.0
   },
   {
-    "id": "настроить-автоматическую-проверку-сохранённого-поиска-kleina",
-    "title": "Настроить автоматическую проверку сохранённого поиска Kleinanzeigen и уведомление о новых Gesuche (встроенные уведомления Kleinanzeigen не работают для gewerblich-аккаунта)",
-    "type": "task",
-    "parent_id": "inbox-möbelmontage",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": "Подтверждённый кейс: объявление Wohnung Tegel (21.06) подходило под фильтр сохранённого поиска от 20.06, но ни email, ни in-app уведомление не пришли. Чекбокс Mitteilungen aktivieren включён с момента создания. Решение: свой скрипт проверки вместо встроенного механизма Kleinanzeigen.",
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-06-23",
-    "order": 1.0
-  },
-  {
     "id": "inbox-full-cycle-md-for-mitya",
     "title": "Full Cycle md for Mitya",
     "parent_id": "inbox-prj-with-mitya",
@@ -12132,12 +12113,12 @@
     "id": "inbox-провести-исследование-товарных-групп-на-2-месяца-в",
     "title": "Провести исследование товарных групп на 2 месяца вперед!",
     "parent_id": "area-charlie-ted",
-    "status": "done",
+    "status": "todo",
     "someday": false,
     "created_at": "2026-07-20",
     "order": 0.0,
     "scheduled_date": "2026-07-22",
-    "done_at": "2026-07-22"
+    "done_at": null
   },
   {
     "id": "оплатить-hecht-luxburg-owu-gmbh-9981-сальдо-подтверждено-алл-2",
@@ -12164,7 +12145,7 @@
     "title": "Провести исследование товарных групп на 2 месяца вперёд",
     "type": "task",
     "parent_id": "area-ecom",
-    "status": "done",
+    "status": "todo",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -12174,7 +12155,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": "2026-07-22",
+    "done_at": null,
     "created_at": "2026-07-20",
     "order": 0.0
   },
