@@ -10857,7 +10857,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": "2026-07-21"
+    "scheduled_date": "2026-07-22"
   },
   {
     "id": "фолоуап-wolf-забрать-справку-iyt",
@@ -10940,12 +10940,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
+    "last_reset_date": "2026-07-22",
     "missed_count": 9,
     "order": 0.0,
-    "done_at": "2026-07-21"
+    "done_at": null
   },
   {
     "id": "daily-gorgias",
@@ -10954,10 +10954,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
+    "last_reset_date": "2026-07-22",
     "missed_count": 9,
     "order": 0.0,
-    "done_at": "2026-07-21"
+    "done_at": "2026-07-22"
   },
   {
     "id": "daily-gmc-gads",
@@ -10966,8 +10966,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-22",
+    "missed_count": 12,
     "order": 0.0,
     "done_at": null
   },
@@ -10976,12 +10976,12 @@
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
+    "last_reset_date": "2026-07-22",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": "2026-07-21"
+    "done_at": null
   },
   {
     "id": "daily-pnl",
@@ -10990,8 +10990,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
-    "missed_count": 14,
+    "last_reset_date": "2026-07-22",
+    "missed_count": 15,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -11003,8 +11003,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
-    "missed_count": 13,
+    "last_reset_date": "2026-07-22",
+    "missed_count": 14,
     "order": 0.0,
     "done_at": null
   },
@@ -11013,12 +11013,12 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
+    "last_reset_date": "2026-07-22",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-21"
+    "done_at": null
   },
   {
     "id": "daily-kleinanzeigen",
@@ -11027,10 +11027,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-21",
+    "last_reset_date": "2026-07-22",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-21"
+    "done_at": "2026-07-22"
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -11327,7 +11327,7 @@
     "done_at": null,
     "created_at": "2026-07-10",
     "order": 0.0,
-    "scheduled_date": "2026-07-21"
+    "scheduled_date": "2026-07-22"
   },
   {
     "id": "выгрузить-документы-для-бухгалтерии-из-google-ads-havgaard-k",
@@ -11842,7 +11842,7 @@
     "done_at": null,
     "created_at": "2026-07-15",
     "order": 0.0,
-    "scheduled_date": "2026-07-21"
+    "scheduled_date": "2026-07-22"
   },
   {
     "id": "inbox-сделать-выбор-ареа---сначала-ареа-верхнего-уровня-",
