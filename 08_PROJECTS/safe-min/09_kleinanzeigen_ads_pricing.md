@@ -600,11 +600,13 @@ Ilja
 
 **Оценка соответствия навыкам:** столярка/дерево, ближе всего к Möbelmontage — полностью в профиле, без плитки/малярки/гидроизоляции.
 
-**Черновик отклика (подготовлен 23.07.2026, ещё не отправлен, личный тон без упоминания Propria GmbH):**
+**Ориентировочная цена (WebSearch, 23.07.2026, до фото/уточнений):** ставка Tischler/Schreiner в Германии 45-80€/час netto. Люк в дне кровати: ~2-3ч → 120-240€ + материал 20-40€. Ремонт дивана: 100-300€ в зависимости от типа поломки (фурнитура vs замена механизма). Перенос перголы: 270-790€ (полдня-день) + материал под крепление 50-150€. Anfahrt (~60км от Берлина): отдельно, 60-100€. Итого вилка за все три задачи в один визит: ~550-1.450€ — решено не называть в первом сообщении (слишком широкий разброс без данных), дождаться ответов на уточняющие вопросы.
+
+**Отправленный отклик (23.07.2026, через Kleinanzeigen, финальная версия — убрано необязательство "gerne vor Ort ansehen" без компенсации, указана Propria GmbH вместо "selbstständiger Handwerker" по факту):**
 ```
 Hallo,
 
-mein Name ist Ilja, ich bin selbstständiger Handwerker mit über 15 Jahren Erfahrung in Holz- und Möbelarbeiten in Berlin. Ihre drei Aufgaben passen gut in mein Spektrum, gerne würde ich mir das vor Ort oder anhand von Fotos genauer ansehen.
+mein Name ist Ilja, ich habe eine Firma (Propria GmbH) und arbeite seit über 15 Jahren im Bereich Holz- und Möbelarbeiten in Berlin. Ihre drei Aufgaben passen gut in mein Spektrum.
 
 Ein paar Fragen dazu:
 - Für die Öffnung im Bettboden: gibt es Fotos vom Bett, damit ich Material und Konstruktion einschätzen kann?
@@ -612,14 +614,17 @@ Ein paar Fragen dazu:
 - Für die Pergola: wie groß ist sie ungefähr, und ist sie fest verankert oder freistehend? Das ist wichtig für den Aufwand beim Versetzen.
 - Werbellin liegt etwas außerhalb Berlins – wäre ein gemeinsamer Termin für alle drei Aufgaben an einem Tag möglich, oder sind das unterschiedliche Orte?
 
+Anhand von Fotos kann ich Ihnen eine erste Einschätzung geben, ein Vor-Ort-Termin lässt sich danach gerne vereinbaren.
+
 Ich freue mich auf Ihre Antwort!
 
 Viele Grüße
 Ilja Disterheft
+Propria GmbH
 WhatsApp: 0177 8192313
 ```
 
-**Статус:** черновик готов, не отправлен.
+**Статус:** ожидание ответа.
 
 ---
 
