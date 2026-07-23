@@ -2152,7 +2152,7 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-propria",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -2162,7 +2162,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-23",
     "created_at": "2026-05-25",
     "order": 7.0
   },
@@ -10838,7 +10838,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": "2026-07-22"
+    "scheduled_date": "2026-07-23"
   },
   {
     "id": "фолоуап-wolf-забрать-справку-iyt",
@@ -10923,8 +10923,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 9,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 10,
     "order": 0.0,
     "done_at": null
   },
@@ -10933,12 +10933,12 @@
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
+    "last_reset_date": "2026-07-23",
     "missed_count": 9,
     "order": 0.0,
-    "done_at": "2026-07-22"
+    "done_at": null
   },
   {
     "id": "daily-gmc-gads",
@@ -10947,8 +10947,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 12,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 13,
     "order": 0.0,
     "done_at": null
   },
@@ -10959,8 +10959,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 12,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 13,
     "order": 0.0,
     "done_at": null
   },
@@ -10971,8 +10971,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 15,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 16,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10984,8 +10984,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 14,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 15,
     "order": 0.0,
     "done_at": null
   },
@@ -10996,8 +10996,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-23",
+    "missed_count": 12,
     "order": 0.0,
     "done_at": null
   },
@@ -11006,12 +11006,12 @@
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-22",
+    "last_reset_date": "2026-07-23",
     "missed_count": 11,
     "order": 0.0,
-    "done_at": "2026-07-22"
+    "done_at": null
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -11308,7 +11308,7 @@
     "done_at": null,
     "created_at": "2026-07-10",
     "order": 0.0,
-    "scheduled_date": "2026-07-22"
+    "scheduled_date": "2026-07-23"
   },
   {
     "id": "выгрузить-документы-для-бухгалтерии-из-google-ads-havgaard-k",
@@ -11823,7 +11823,7 @@
     "done_at": null,
     "created_at": "2026-07-15",
     "order": 0.0,
-    "scheduled_date": "2026-07-22"
+    "scheduled_date": "2026-07-23"
   },
   {
     "id": "inbox-сделать-выбор-ареа---сначала-ареа-верхнего-уровня-",
@@ -12027,10 +12027,12 @@
     "title": "Сделать для Тани текст на русском",
     "parent_id": "area-personal-sailing-поход-по-лазурке",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-17",
     "order": 0.0,
-    "scheduled_date": "2026-07-17"
+    "scheduled_date": "2026-07-23",
+    "context": "perekur",
+    "assignee": "claude"
   },
   {
     "id": "фолоуап-клиент-küche-221м-angebot-510-ответил-ли-по-офферу",
@@ -12117,7 +12119,7 @@
     "someday": false,
     "created_at": "2026-07-20",
     "order": 0.0,
-    "scheduled_date": "2026-07-22",
+    "scheduled_date": "2026-07-23",
     "done_at": null
   },
   {
@@ -12246,7 +12248,7 @@
     "marker": "🔴",
     "priority": "red",
     "order": 0.0,
-    "scheduled_date": "2026-07-22"
+    "scheduled_date": "2026-07-23"
   },
   {
     "id": "inbox-miles-kilometers-anpassen",
@@ -12289,5 +12291,29 @@
     "done_at": null,
     "created_at": "2026-07-22",
     "order": 0.0
+  },
+  {
+    "id": "event-2026-07-23-biotonne-вывоз-bsr",
+    "title": "BioTonne вывоз (BSR)",
+    "type": "event",
+    "event_summary": "BioTonne вывоз (BSR)",
+    "event_date": "2026-07-23",
+    "status": "done",
+    "done_at": "2026-07-23",
+    "scheduled_date": "2026-07-23",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-настроить-ежедневный-отчет-pnl",
+    "title": "Настроить ежедневный отчет PNL",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-23",
+    "context": "deep",
+    "marker": "🟧",
+    "priority": "orange",
+    "order": 0.0,
+    "scheduled_date": "2026-07-23"
   }
 ]
