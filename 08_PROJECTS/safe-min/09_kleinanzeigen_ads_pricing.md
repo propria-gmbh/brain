@@ -566,6 +566,61 @@ WhatsApp: 0177 8192313
 
 **Статус:** ожидание ответа.
 
+### Gesuch — Fliesen- und Malerarbeiten, Frohnau (найдено 23.07.2026, срочно)
+
+**Запрос:** ~4 м² Spiegelwand (плиточный фартук) на кухне, покраска радиаторов и полок/подставок (Ablagen). Локация Berlin-Frohnau. Формулировка объявления — "sofort angefangen und erledigt werden" (начать и закончить немедленно). Бюджет не указан.
+
+**Оценка соответствия навыкам:** плитка — небольшой фартук на кухне, без влажного помещения и без нормативной гидроизоляции (в отличие от отклонённой вчера ванной в Prenzlauer Berg) — риск ниже. Покраска — подтверждённый навык.
+
+**Рыночное исследование цен (WebSearch, 23.07.2026):** Fliesenspiegel в кухне (маленькая площадь, много резов под розетки/выключатели/углы) — 60-90€/м² работа (до 120€/м² при большом числе резов), для 4 м² → 240-480€ работа + материал отдельно. Час плиточника в Германии — 45-75€ netto. Покраска радиатора: 40-60€/шт (панельный), 70-100€/шт (ребристый). Ablagen — по грубой оценке 20-30€/шт. Итого ориентировочно ~350-750€ за весь заказ без материала на плитку.
+
+**Отправленный отклик (23.07.2026, через Kleinanzeigen):**
+```
+Hallo,
+
+ich bin verfügbar und kann kurzfristig loslegen.
+
+Ein paar Fragen für eine genaue Einschätzung:
+- Ist die Wand für die Spiegelwand bereits frei, oder muss eine alte Fliese/ein alter Belag zuerst entfernt werden?
+- Gibt es Steckdosen oder Lichtschalter im Bereich der Spiegelwand, um die herum die Fliesen zugeschnitten werden müssen?
+- Sind die Fliesen für die Spiegelwand und die Farbe für Heizkörper/Ablagen bereits vorhanden, oder soll ich das mit einplanen?
+- Gibt es eine Preisvorstellung Ihrerseits?
+
+Am schnellsten erreichen Sie mich per WhatsApp: 0177 8192313
+
+Viele Grüße
+Ilja
+```
+
+**Статус:** ожидание ответа.
+
+### Gesuch — Holzarbeiten (Bett, Ausziehcouch, Pergola), Werbellin (найдено 23.07.2026)
+
+**Запрос:** три отдельные задачи — (1) выпилить отверстие в дне встроенной деревянной кровати, возможно с откидной крышкой, (2) починить раскладной диван (спальное место не держится), (3) перенести деревянную перголу/павильон в саду ближе к террасе. Локация — Werbellin (Бранденбург, ~60 км от Берлина). Просили не список вопросов, а короткое личное представление. Бюджет не указан.
+
+**Оценка соответствия навыкам:** столярка/дерево, ближе всего к Möbelmontage — полностью в профиле, без плитки/малярки/гидроизоляции.
+
+**Отправленный отклик (23.07.2026, через Kleinanzeigen, личный тон без упоминания Propria GmbH):**
+```
+Hallo,
+
+mein Name ist Ilja, ich bin selbstständiger Handwerker mit über 15 Jahren Erfahrung in Holz- und Möbelarbeiten in Berlin. Ihre drei Aufgaben passen gut in mein Spektrum, gerne würde ich mir das vor Ort oder anhand von Fotos genauer ansehen.
+
+Ein paar Fragen dazu:
+- Für die Öffnung im Bettboden: gibt es Fotos vom Bett, damit ich Material und Konstruktion einschätzen kann?
+- Für die Ausziehcouch: welches Modell/welche Marke, falls bekannt, und was genau hält nicht mehr (Mechanik, Beschlag, Rahmen)?
+- Für die Pergola: wie groß ist sie ungefähr, und ist sie fest verankert oder freistehend? Das ist wichtig für den Aufwand beim Versetzen.
+- Werbellin liegt etwas außerhalb Berlins – wäre ein gemeinsamer Termin für alle drei Aufgaben an einem Tag möglich, oder sind das unterschiedliche Orte?
+
+Ich freue mich auf Ihre Antwort!
+
+Viele Grüße
+Ilja Disterheft
+WhatsApp: 0177 8192313
+```
+
+**Статус:** ожидание ответа.
+
 ---
 
 ## Стратегическая рекомендация (Fable, 22.07.2026)
