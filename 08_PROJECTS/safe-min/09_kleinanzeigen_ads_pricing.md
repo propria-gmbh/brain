@@ -529,6 +529,43 @@ WhatsApp: 0177 8192313
 
 **Статус:** ожидание ответа.
 
+### Gesuch — Renovierung leerstehende Wohnung, Reinickendorf (найдено 23.07.2026)
+
+**Запрос:** шпаклёвка и покраска стен/потолков (Rohputz), укладка ламината с Trittschalldämmung, пустая квартира, Berlin-Reinickendorf. Просят Komplettangebot со сроками и указанием, включён ли материал.
+
+**Оценка соответствия навыкам:** смешанный скоуп — ламинат (Bodenverlegung, уже разрешённый навык), плюс Malerarbeiten/шпаклёвка (новая для проекта категория). Пользователь подтвердил: красить умеет точно, со шпаклёвкой разберётся.
+
+**Рыночное исследование цен (WebSearch, 23.07.2026):** шпаклёвка+покраска стен на голом растворе — 20-40€/м² суммарно (спачтель Q2-Q3 12-25€/м² + покраска 8-16€/м²). Ламинат под ключ — 27-70€/м² (работа 10-25€/м², Trittschalldämmung 2-8€/м², материал 5-40€/м², плинтусы 3-8€/пог.м).
+
+**Критерии подбора ламината (если клиент попросит подобрать самостоятельно, не для письма):** Nutzungsklasse (для аренды не ниже NK23, лучше NK31/32), толщина ~8мм, AC-Wert, Trittschallverbesserungsmaß (проверить Hausordnung дома), цена в среднем диапазоне 12-20€/м² (не самый дешёвый и не премиум для съёмной квартиры), Klicksystem, нейтральный декор для универсальности под разных жильцов.
+
+**Отправленный отклик (23.07.2026, через Kleinanzeigen):**
+```
+Hallo,
+
+ich habe langjährige handwerkliche Erfahrung und würde Ihnen gerne ein Komplettangebot für die Renovierung machen.
+
+Für eine genaue Kalkulation ein paar Fragen:
+
+- Wie groß ist die Wohnung (m² Wand-/Deckenfläche für Spachtel- und Malerarbeiten, m² Fußboden für Laminat)? Anzahl und Aufteilung der Räume?
+- Wie ist der aktuelle Zustand des Rohputzes – gibt es größere Unebenheiten, Risse, oder Reste von Tapete/altem Anstrich, die entfernt werden müssen?
+- Deckenhöhe der Räume?
+- Ist der aktuelle Bodenbelag bereits entfernt, oder muss ich das mit einplanen?
+- Sollen neue Sockelleisten verlegt werden, oder ist das nicht gewünscht?
+- Haben Sie bereits ein bestimmtes Laminat ausgesucht, oder soll ich Vorschläge mit einpreisen (Nutzungsklasse, AC-Wert)? Gibt es in der Hausordnung Vorgaben zum Trittschallschutz?
+- Wie viele Türen/Fenster gibt es, die beim Streichen abgeklebt werden müssen?
+- Wann wäre der gewünschte Starttermin, und gibt es einen Wunschtermin für die Fertigstellung?
+
+Ich melde mich nach Ihren Angaben mit einem konkreten Angebot inkl. Zeitrahmen zurück.
+
+Viele Grüße
+Ilja Disterheft
+Propria GmbH
+WhatsApp: 0177 8192313
+```
+
+**Статус:** ожидание ответа.
+
 ---
 
 ## Стратегическая рекомендация (Fable, 22.07.2026)
