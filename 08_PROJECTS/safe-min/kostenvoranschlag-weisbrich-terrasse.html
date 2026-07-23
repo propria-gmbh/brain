@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Kostenvoranschlag – WPC-Terrasse</title>
+<style>
+  @page { size: A4; margin: 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 170mm;
+    margin: 0 auto;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+  .company h1 {
+    font-size: 20pt;
+    margin: 0 0 4px 0;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+  }
+  .company p {
+    margin: 0;
+    font-size: 9.5pt;
+    color: #555;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 9.5pt;
+    color: #555;
+  }
+  .doc-meta .title {
+    font-size: 14pt;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .recipient {
+    margin: 20px 0 28px 0;
+    font-size: 10.5pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 10pt;
+  }
+  thead th {
+    background: #2c3e50;
+    color: #fff;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 600;
+  }
+  thead th.num { text-align: right; }
+  tbody td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  tbody td.num { text-align: right; white-space: nowrap; }
+  tbody tr:nth-child(even) { background: #f7f8f9; }
+  tfoot td {
+    padding: 8px 10px;
+    font-weight: 600;
+    border-top: 2px solid #2c3e50;
+  }
+  tfoot td.num { text-align: right; white-space: nowrap; }
+  tfoot tr.grand td {
+    font-size: 12pt;
+    color: #2c3e50;
+    border-top: 2px solid #2c3e50;
+  }
+  .note {
+    margin-top: 22px;
+    padding: 12px 14px;
+    background: #fdf6e3;
+    border-left: 4px solid #d9a520;
+    font-size: 9.5pt;
+    color: #6b5a1e;
+  }
+  .footer {
+    margin-top: 40px;
+    padding-top: 12px;
+    border-top: 1px solid #ccc;
+    font-size: 9pt;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media print {
+    body { margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="company">
+      <h1>Propria GmbH</h1>
+      <p>Potsdamer Straße 92, 10785 Berlin</p>
+      <p>Ilja Disterheft &middot; WhatsApp: 0177 8192313</p>
+      <p>info@propria.gmbh</p>
+    </div>
+    <div class="doc-meta">
+      <div class="title">Kostenvoranschlag</div>
+      <p>Datum: 23.07.2026</p>
+      <p>Projekt: WPC-Terrasse, ca. 33 m²</p>
+      <p>Vorläufig – vor Ort-Besichtigung</p>
+    </div>
+  </div>
+
+  <div class="recipient">
+    Herrn Weisbrich<br>
+    12355 Berlin-Rudow
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Pos.</th>
+        <th>Beschreibung</th>
+        <th class="num">Betrag (netto)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Aushub (Handarbeit)</td><td class="num">im Arbeitslohn enthalten</td></tr>
+      <tr><td>2</td><td>Verdichtung (Rüttelplattenmiete, 1 Tag)</td><td class="num">40–70 €</td></tr>
+      <tr><td>3</td><td>Schotter-Tragschicht (~5,5 t)</td><td class="num">150–300 €</td></tr>
+      <tr><td>4</td><td>Splitt-Ausgleichsschicht (~2 t)</td><td class="num">50–100 €</td></tr>
+      <tr><td>5</td><td>Unkrautvlies (~36 m²)</td><td class="num">27–40 €</td></tr>
+      <tr><td>6</td><td>Randsteine / Auflagepads</td><td class="num">100–200 €</td></tr>
+      <tr><td>7</td><td>Aluminium-Unterkonstruktion (~66 lfm)</td><td class="num">495–924 €</td></tr>
+      <tr><td>8</td><td>WPC-Dielen, massiv, hellgrau (33 m²)</td><td class="num">1.485–2.310 €</td></tr>
+      <tr><td>9</td><td>Arbeitslohn Verlegung (33 m²)</td><td class="num">1.100–1.650 €</td></tr>
+      <tr><td>10</td><td>Abschlussarbeiten (Profile, Dehnungsfuge, Kleinteile)</td><td class="num">50–100 €</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2">Zwischensumme (netto)</td><td class="num">3.497–5.694 €</td></tr>
+      <tr><td colspan="2">zzgl. 19% MwSt</td><td class="num">664–1.082 €</td></tr>
+      <tr class="grand"><td colspan="2">GESAMT (brutto)</td><td class="num">4.161–6.776 €</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="note">
+    Diese Aufstellung ist eine vorläufige Einschätzung auf Basis der Angaben aus der Anzeige (33 m², bestehende Überdachung) und allgemeiner Marktpreise. Nach der Vor-Ort-Besichtigung wird der Kostenvoranschlag präzisiert – insbesondere Position 2–6 hängen stark vom aktuellen Zustand der Fläche ab (bereits vorhandener fester Untergrund kann diese Positionen deutlich reduzieren).
+  </div>
+
+  <div class="footer">
+    <span>Propria GmbH &middot; Ilja Disterheft</span>
+    <span>Kostenvoranschlag vom 23.07.2026</span>
+  </div>
+
+</body>
+</html>

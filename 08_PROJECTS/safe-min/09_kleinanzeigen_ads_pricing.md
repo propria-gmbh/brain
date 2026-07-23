@@ -533,7 +533,7 @@ WhatsApp: 0177 8192313
 
 **Отправлено (23.07.2026):**
 ```
-Guten Tag Herr Weisbrich,
+Hallo Herr Weisbrich,
 
 vielen Dank für die Rückmeldung!
 
@@ -546,6 +546,25 @@ WhatsApp: 0177 8192313
 ```
 
 **Статус:** ожидание подтверждения времени осмотра. Дедлайн решения клиента — выходные (25-26.07.2026).
+
+**Предварительная смета (23.07.2026), отправлена клиенту заранее для экономии времени перед визитом:** файл [kostenvoranschlag-weisbrich-terrasse.html](kostenvoranschlag-weisbrich-terrasse.html). Поэтапный расчёт на 33 м² (допущение по форме площадки, ~66 погонных метров обрешётки при шаге 50см): трамбовка 40-70€, щебень 150-300€, отсев 50-100€, нетканка 27-40€, опорные плиты 100-200€, алюминиевая обрешётка 495-924€, WPC-доски massiv 1.485-2.310€, работа 1.100-1.650€ (правка пользователя, было 660-1.650€), финиш 50-100€. Итого netto 3.497-5.694€ + 19% MwSt = **брутто 4.161-6.776€**. Бюджет клиента в объявлении (2.000€) заметно ниже даже нижней границы.
+
+**Отправлено клиенту вместе со сметой:**
+```
+Hallo Herr Weisbrich,
+
+damit wir bei der Besichtigung keine Zeit verlieren, schicke ich Ihnen vorab eine grobe Kostenschätzung als Orientierung (siehe Anhang).
+
+Wichtig: Das ist eine vorläufige Einschätzung ohne Kenntnis des aktuellen Zustands der Fläche – die tatsächliche Spanne wird sich nach der Besichtigung stark eingrenzen, meist nach unten, falls der Untergrund schon teilweise vorbereitet ist. Die Zahlen sollen Ihnen vor allem die untere Grenze zeigen, damit Sie einschätzen können, ob das in Ihren Rahmen passt.
+
+Bis gleich/morgen!
+
+Viele Grüße
+Ilja Disterheft
+Propria GmbH
+```
+
+**Статус:** ждём реакции клиента на смету + подтверждения времени визита.
 
 ### Gesuch — Renovierung leerstehende Wohnung, Reinickendorf (найдено 23.07.2026)
 
