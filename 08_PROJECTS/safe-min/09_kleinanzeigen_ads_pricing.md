@@ -19,6 +19,7 @@
 | 26.07.2026, 22:37 | Küchenmontage Berlin, IKEA & Nobilia – ab 249€/lfm (adId=3469308153) | 10 | 2 | — |
 | 26.07.2026, 23:38 | Küchenmontage Berlin, IKEA & Nobilia – ab 249€/lfm (adId=3469308153) | 11 | 2 | — |
 | 27.07.2026, 00:39 | Küchenmontage Berlin, IKEA & Nobilia – ab 249€/lfm (adId=3469308153) | 12 | 2 | — |
+| 27.07.2026, 01:40 | Küchenmontage Berlin, IKEA & Nobilia – ab 249€/lfm (adId=3469308153) | 12 | 2 | — |
 
 Фото: у "Küchenmontage Berlin" загружено 3 фото (лимит 20). Stichwörter/тег-поля у этой категории (Dienstleistungen → Bau & Handwerk) в форме редактирования нет вообще — гипотеза про SEO-теги конкурентов снята, причина их разрыва в просмотрах не в этом.
 
