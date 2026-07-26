@@ -12415,5 +12415,24 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
+  },
+  {
+    "id": "найти-письмо-от-miles-по-поводу-исправления-инвойсов-на-prop",
+    "title": "Найти письмо от MILES по поводу исправления инвойсов на Propria",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Gmail поиск",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-26",
+    "order": 0.0
   }
 ]
