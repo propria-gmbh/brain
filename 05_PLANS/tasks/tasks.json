@@ -12434,5 +12434,24 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
+  },
+  {
+    "id": "оплатить-зарплату-и-налоги-propria",
+    "title": "Оплатить зарплату и налоги Propria",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-29",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-26",
+    "order": 0.0
   }
 ]
