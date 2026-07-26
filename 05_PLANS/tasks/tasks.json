@@ -12358,5 +12358,24 @@
     "done_at": null,
     "created_at": "2026-07-25",
     "order": 0.0
+  },
+  {
+    "id": "фолоуап-paul-neumann-küchenmontage-ikea-knoxhult",
+    "title": "Фолоуап Paul Neumann — Küchenmontage IKEA KNOXHULT",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-28",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "context: perekur",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-26",
+    "order": 0.0
   }
 ]
