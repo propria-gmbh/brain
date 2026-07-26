@@ -12377,5 +12377,24 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
+  },
+  {
+    "id": "забустить-объявление-küchenmontage-adid3469308153-top-anzeig",
+    "title": "Забустить объявление Küchenmontage (adId=3469308153) — Top-Anzeige/Galerie по результатам органики",
+    "type": "task",
+    "parent_id": "area-safe-min",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-28",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-26",
+    "order": 0.0
   }
 ]
