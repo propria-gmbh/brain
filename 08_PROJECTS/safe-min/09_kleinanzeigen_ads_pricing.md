@@ -80,8 +80,10 @@ Name в профиле: Ilja. Telefonnummer anzeigen: выключено (кон
 
 ## Объявление 1 — Küchenmontage
 
+**Обновление 26.07.2026:** старое объявление (adId=3455307451, живое с 10.07.2026, всё ещё показывало "300€ VB" — правка от 20.07 так и не была опубликована, только заполнена в форме) удалено через Playwright. Опубликовано новое бесплатное объявление (adId=3469308153, категория Dienstleistungen > Haus & Garten > Bau & Handwerk, тот же текст+фото, цена Festpreis 249€/лфм). План: через пару дней оценить органику и при необходимости подключить платный буст (Top-Anzeige/Galerie) — расчёт см. "Стратегическая рекомендация (Fable)" выше.
+
 **Заголовок:** Küchenmontage Berlin – IKEA, Nobilia, auch am Wochenende
-**Категория:** Dienstleistungen → Haus & Garten
+**Категория:** Dienstleistungen → Haus & Garten → Bau & Handwerk
 **Цена:** Festpreis ab 249€ pro laufendem Meter (изменено 20.07.2026, было 300€ VB, промежуточно Festpreis ab 900€ — см. обоснование ниже)
 
 **Текст:**
