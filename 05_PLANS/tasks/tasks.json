@@ -12396,5 +12396,24 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
+  },
+  {
+    "id": "ответить-хайманам",
+    "title": "Ответить Хайманам",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-27",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Тред 1. Attention — Heyman/Highgate, ремонт крыши, thread id 19ee42d65d54326e",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-26",
+    "order": 0.0
   }
 ]
