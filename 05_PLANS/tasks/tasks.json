@@ -10923,8 +10923,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 12,
     "order": 0.0,
     "done_at": null
   },
@@ -10935,8 +10935,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 10,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 11,
     "order": 0.0,
     "done_at": null
   },
@@ -10947,8 +10947,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 14,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 15,
     "order": 0.0,
     "done_at": null
   },
@@ -10959,8 +10959,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 14,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 15,
     "order": 0.0,
     "done_at": null
   },
@@ -10971,8 +10971,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 17,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 18,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10984,8 +10984,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 16,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 17,
     "order": 0.0,
     "done_at": null
   },
@@ -10996,8 +10996,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 13,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 14,
     "order": 0.0,
     "done_at": null
   },
@@ -11008,8 +11008,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-24",
-    "missed_count": 12,
+    "last_reset_date": "2026-07-27",
+    "missed_count": 13,
     "order": 0.0,
     "done_at": null
   },
@@ -12414,7 +12414,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-26",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-27"
   },
   {
     "id": "найти-письмо-от-miles-по-поводу-исправления-инвойсов-на-prop",
