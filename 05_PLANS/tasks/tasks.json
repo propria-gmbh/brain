@@ -12453,5 +12453,24 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
+  },
+  {
+    "id": "пересмотреть-видео-дашкиева-про-избегание-неприятного",
+    "title": "Пересмотреть видео Дашкиева про избегание неприятного",
+    "type": "task",
+    "parent_id": "area-personal-development-саморазвитие",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Сильно отзывается, важно для рефлексии",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-27",
+    "order": 0.0
   }
 ]
