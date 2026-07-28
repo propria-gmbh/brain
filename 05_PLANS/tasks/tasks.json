@@ -12544,5 +12544,24 @@
     "created_at": "2026-07-28",
     "order": 0.0,
     "scheduled_date": "2026-07-28"
+  },
+  {
+    "id": "подать-декларацию-за-2025-год",
+    "title": "Подать декларацию за 2025 год",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": "2026-07-30",
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-28",
+    "order": 0.0
   }
 ]
