@@ -10921,12 +10921,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
+    "last_reset_date": "2026-07-28",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": "2026-07-27"
+    "done_at": null
   },
   {
     "id": "daily-gorgias",
@@ -10935,10 +10935,11 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 11,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 12,
     "order": 0.0,
-    "done_at": null
+    "done_at": null,
+    "scheduled_date": "2026-07-28"
   },
   {
     "id": "daily-gmc-gads",
@@ -10947,8 +10948,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 15,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 16,
     "order": 0.0,
     "done_at": null
   },
@@ -10959,8 +10960,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 15,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 16,
     "order": 0.0,
     "done_at": null
   },
@@ -10971,8 +10972,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 18,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 19,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10984,8 +10985,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 17,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 18,
     "order": 0.0,
     "done_at": null
   },
@@ -10996,8 +10997,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
-    "missed_count": 14,
+    "last_reset_date": "2026-07-28",
+    "missed_count": 15,
     "order": 0.0,
     "done_at": null
   },
@@ -11008,7 +11009,7 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-27",
+    "last_reset_date": "2026-07-28",
     "missed_count": 13,
     "order": 0.0,
     "done_at": null
@@ -12319,7 +12320,7 @@
     "marker": "🟧",
     "priority": "orange",
     "order": 0.0,
-    "scheduled_date": "2026-07-23"
+    "scheduled_date": "2026-07-28"
   },
   {
     "id": "создать-github-репозиторий-и-подключить-его-к-claude-для-syn",
@@ -12404,7 +12405,7 @@
     "parent_id": "area-inbox",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-27",
+    "deadline": "2026-07-28",
     "priority": null,
     "stakes": null,
     "context": null,
@@ -12415,7 +12416,7 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0,
-    "scheduled_date": "2026-07-27"
+    "scheduled_date": "2026-07-28"
   },
   {
     "id": "найти-письмо-от-miles-по-поводу-исправления-инвойсов-на-prop",
@@ -12492,5 +12493,14 @@
     "done_at": null,
     "created_at": "2026-07-27",
     "order": 0.0
+  },
+  {
+    "id": "inbox-купить-feindrahtklammern-typ-53-8-mm",
+    "title": "Купить Feindrahtklammern Typ 53, 8 mm",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-28",
+    "context": "perekur"
   }
 ]
