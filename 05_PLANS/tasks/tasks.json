@@ -12535,13 +12535,14 @@
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": null,
+    "context": "deep",
     "goal": null,
     "tags": [],
     "notes": null,
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-28",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-28"
   }
 ]
