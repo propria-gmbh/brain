@@ -10921,12 +10921,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-28",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-28"
   },
   {
     "id": "daily-gorgias",
@@ -10995,12 +10995,12 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-28",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-28"
   },
   {
     "id": "daily-kleinanzeigen",
@@ -12550,9 +12550,9 @@
     "id": "подать-декларацию-за-2025-год",
     "title": "Подать декларацию за 2025 год",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-finance",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": "2026-07-30",
     "priority": "red",
     "stakes": null,
@@ -12646,6 +12646,25 @@
   {
     "id": "показывать-маркеры-в-разделе-сегодня-дашборда-и-дать-их-меня",
     "title": "Показывать маркеры (🔴/🟧/🟢) в разделе Сегодня дашборда и дать их менять там же",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-28",
+    "order": 0.0
+  },
+  {
+    "id": "карточка-задачи-должна-вести-себя-идентично-в-обоих-дашборда",
+    "title": "Карточка задачи должна вести себя идентично в обоих дашбордах (сейчас в разделе Сегодня нельзя выбрать area)",
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
