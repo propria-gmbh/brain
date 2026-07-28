@@ -12554,7 +12554,7 @@
     "status": "todo",
     "someday": true,
     "deadline": "2026-07-30",
-    "priority": null,
+    "priority": "red",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -12564,7 +12564,8 @@
     "done_at": null,
     "created_at": "2026-07-28",
     "order": 0.0,
-    "scheduled_date": "2026-07-28"
+    "scheduled_date": "2026-07-28",
+    "marker": "🔴"
   },
   {
     "id": "tacura-запросить-недостающие-документы-за-q2-amazon-paypal-g",
@@ -12607,6 +12608,25 @@
   {
     "id": "добавить-таймер-в-карточку-задачи-дашборда",
     "title": "Добавить таймер в карточку задачи дашборда",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-28",
+    "order": 0.0
+  },
+  {
+    "id": "починить-изменение-маркера-в-карточке-задачи-дашборда",
+    "title": "Починить изменение маркера (🔴/🟧/🟢) в карточке задачи дашборда",
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
