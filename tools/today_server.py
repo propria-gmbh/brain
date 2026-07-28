@@ -167,11 +167,18 @@ JS = """
   };
 })();
 
-document.querySelectorAll('details').forEach(function(d) {
-  var key = 'det:' + d.dataset.key;
-  if (localStorage.getItem(key) === '1') d.open = true;
-  d.addEventListener('toggle', function() { localStorage.setItem(key, d.open ? '1' : '0'); });
-});
+// details: состояние open/closed сохраняется в localStorage per data-key,
+// переживает location.reload() (например после toggle-task)
+(function() {
+  document.querySelectorAll('details[data-key]').forEach(function(det) {
+    var key = 'details-open-' + det.dataset.key;
+    var stored = localStorage.getItem(key);
+    if (stored !== null) det.open = stored === '1';
+    det.addEventListener('toggle', function() {
+      localStorage.setItem(key, det.open ? '1' : '0');
+    });
+  });
+})();
 
 function post(url, data, cb) {
   fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
@@ -256,6 +263,29 @@ if (inboxInp) inboxInp.addEventListener('keydown', function(e) {
     if (sdBtn && on) sdBtn.click && false;
   });
 })();
+
+// toggle-all: свернуть/развернуть все details на странице
+(function() {
+  var btn = document.getElementById('toggle-all');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var expand = btn.textContent.indexOf('Развернуть') === 0;
+    document.querySelectorAll('details').forEach(function(d) { d.open = expand; });
+    btn.textContent = expand ? 'Свернуть всё' : 'Развернуть всё';
+  });
+})();
+
+// per-project (top-level area) toggle: сворачивает/разворачивает только своё под-дерево
+document.querySelectorAll('.area-toggle-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var root = btn.closest('details');
+    if (!root) return;
+    var expand = !root.open;
+    root.open = expand;
+    root.querySelectorAll('details').forEach(function(d) { d.open = expand; });
+  });
+});
 
 // tasks.json: toggle done
 document.querySelectorAll('.task-chk[data-id]').forEach(function(el) {
@@ -658,26 +688,127 @@ function makeAreaSelect(label, taskId, currentParentId) {
   var lbl = document.createElement('div');
   lbl.className = 'modal-field-label';
   lbl.textContent = label;
-  var sel = document.createElement('select');
-  sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer';
-  var none = document.createElement('option');
-  none.value = '';
-  none.textContent = '— нет родителя —';
-  if (!currentParentId) none.selected = true;
-  sel.appendChild(none);
-  (window.AREAS || []).forEach(function(a) {
-    if (a.id === taskId) return;
-    var opt = document.createElement('option');
-    opt.value = a.id;
-    opt.textContent = a.title;
-    if (a.id === currentParentId) opt.selected = true;
-    sel.appendChild(opt);
+  wrap.appendChild(lbl);
+
+  var chain = document.createElement('div');
+  wrap.appendChild(chain);
+
+  var areas = window.AREAS || [];
+  var byId = {};
+  areas.forEach(function(a) { byId[a.id] = a; });
+  function childrenOf(parentId) {
+    return areas.filter(function(a) {
+      return (a.parent_id || null) === (parentId || null) && a.id !== taskId;
+    });
+  }
+  function ancestorChain(id) {
+    var ids = [];
+    var cur = id ? byId[id] : null;
+    while (cur) {
+      ids.unshift(cur.id);
+      cur = cur.parent_id ? byId[cur.parent_id] : null;
+    }
+    return ids;
+  }
+
+  function buildLevel(parentId, selectedId) {
+    var sel = document.createElement('select');
+    sel.style.cssText = 'background:var(--bg3);color:var(--text);border:none;font-size:.85rem;width:100%;padding:2px 0;cursor:pointer;margin-top:2px';
+    var none = document.createElement('option');
+    none.value = '';
+    none.textContent = parentId ? '— не уточнять —' : '— нет родителя —';
+    if (!selectedId) none.selected = true;
+    sel.appendChild(none);
+    childrenOf(parentId).forEach(function(a) {
+      var opt = document.createElement('option');
+      opt.value = a.id;
+      opt.textContent = a.title;
+      if (a.id === selectedId) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', function() {
+      var idx = Array.prototype.indexOf.call(chain.children, sel);
+      while (chain.children.length > idx + 1) chain.removeChild(chain.lastChild);
+      var newVal = sel.value || parentId || null;
+      post('/set-parent', {id: taskId, parent_id: newVal}, function() {});
+      if (sel.value && childrenOf(sel.value).length) {
+        chain.appendChild(buildLevel(sel.value, ''));
+      }
+    });
+    return sel;
+  }
+
+  var path = ancestorChain(currentParentId);
+  var parentAt = null;
+  for (var i = 0; i < path.length; i++) {
+    chain.appendChild(buildLevel(parentAt, path[i]));
+    parentAt = path[i];
+  }
+  if (!path.length || childrenOf(parentAt).length) {
+    chain.appendChild(buildLevel(parentAt, ''));
+  }
+
+  return wrap;
+}
+
+var MARKER_CYCLE = ['', '🔴', '🟢', '🟧'];
+
+function makeMarkerField(label, value, taskId) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  wrap.style.cursor = 'pointer';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var val = document.createElement('div');
+  val.className = 'modal-field-value';
+  val.textContent = value || '— (нажми, чтобы сменить)';
+  wrap.appendChild(lbl);
+  wrap.appendChild(val);
+  wrap.addEventListener('click', function() {
+    var idx = MARKER_CYCLE.indexOf(value || '');
+    value = MARKER_CYCLE[(idx + 1) % MARKER_CYCLE.length];
+    val.textContent = value || '— (нажми, чтобы сменить)';
+    post('/set-marker', {id: taskId}, function() {});
   });
-  sel.addEventListener('change', function() {
-    post('/set-parent', {id: taskId, parent_id: sel.value || null});
+  return wrap;
+}
+
+function formatTimerMinutes(min) {
+  if (!min) return '0 мин';
+  if (min < 60) return min + ' мин';
+  return Math.floor(min / 60) + 'ч ' + (min % 60) + 'м';
+}
+
+function makeTimerField(label, taskId, startedAt, spentMin) {
+  var wrap = document.createElement('div');
+  wrap.className = 'modal-field';
+  var lbl = document.createElement('div');
+  lbl.className = 'modal-field-label';
+  lbl.textContent = label;
+  var val = document.createElement('div');
+  val.className = 'modal-field-value';
+  var btn = document.createElement('button');
+  btn.className = 'btn';
+  btn.style.cssText = 'margin-top:4px;font-size:.78rem';
+  function render() {
+    val.textContent = startedAt ? ('Запущен ' + startedAt.slice(11, 16) + ' · ' + formatTimerMinutes(spentMin)) : formatTimerMinutes(spentMin);
+    btn.textContent = startedAt ? '⏸ Стоп' : '▶ Старт';
+  }
+  render();
+  btn.addEventListener('click', function() {
+    var endpoint = startedAt ? '/stop-timer' : '/start-timer';
+    post(endpoint, {id: taskId}, function() {
+      fetch('/api/task?id=' + encodeURIComponent(taskId)).then(function(r) { return r.json(); }).then(function(d) {
+        startedAt = d.timer_started_at || null;
+        spentMin = d.time_spent_min || 0;
+        render();
+      });
+    });
   });
   wrap.appendChild(lbl);
-  wrap.appendChild(sel);
+  wrap.appendChild(val);
+  wrap.appendChild(btn);
   return wrap;
 }
 
@@ -722,7 +853,8 @@ function openTaskModal(taskId) {
       grid.appendChild(makeToggleField('Клод', d.assignee === 'claude', function() {
         post('/set-assignee', {id: d.id}, function() {});
       }));
-      grid.appendChild(makeField('Маркер', d.marker || '—'));
+      grid.appendChild(makeMarkerField('Маркер', d.marker || '', d.id));
+      grid.appendChild(makeTimerField('Таймер', d.id, d.timer_started_at || null, d.time_spent_min || 0));
       var fieldsEl = document.getElementById('modal-fields');
       fieldsEl.innerHTML = '';
       fieldsEl.appendChild(grid);
@@ -907,6 +1039,7 @@ HTML = """<!DOCTYPE html>
   <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 
+<script>{globals_js}</script>
 {body}
 
 <div id="task-modal" class="modal-overlay" onclick="if(event.target===this)closeTaskModal()">
@@ -969,11 +1102,24 @@ def _render_scheduled_item(task):
     dl_html = f' <span class="deadline{" overdue" if deadline and (date.fromisoformat(deadline) - date.today()).days < 0 else ""}" style="font-size:.72rem;color:var(--text4)">{deadline}</span>' if (deadline and not done) else ""
     done_cls = " done-item" if done else ""
     chk_icon = "✓" if done else "·"
+
+    marker = task.get("marker", "")
+    marker_label = marker if marker else "M"
+    marker_style = ""
+    if marker == "🔴":
+        marker_style = " style=\"color:#e74c3c\""
+    elif marker == "🟢":
+        marker_style = " style=\"color:#2ecc71\""
+    elif marker == "🟧":
+        marker_style = " style=\"color:#f39c12\""
+    marker_html = f'<button class="btn m-btn" data-id="{task_id}"{marker_style}>{marker_label}</button>' if not done else ""
+
     return (
         f'<li class="item todo{done_cls}{extra}" data-task-id="{task_id}">'
         f'<span class="task-chk" data-id="{task_id}" style="flex-shrink:0;width:15px;height:15px;border-radius:3px;background:var(--chk);display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--text5);cursor:pointer">{chk_icon}</span>'
         f'<span class="item-text task-linked" style="flex:1">{linkify(title)}</span>'
         f'{dl_html}'
+        f'{marker_html}'
         f'</li>\n'
     )
 
@@ -1159,7 +1305,7 @@ def render_task_row(task, all_tasks, depth=0):
     return html
 
 
-def render_area(area, all_nodes):
+def render_area(area, all_nodes, is_top=False):
     area_id = area["id"]
     title = area.get("title", "")
     children = sorted(
@@ -1175,7 +1321,11 @@ def render_area(area, all_nodes):
             f'  <button class="btn del-btn" data-id="{area_id}">×</button>\n'
             f'</div>\n'
         )
-    b = f'<details data-key="{area_id}" data-id="{area_id}"><summary><span class="area-title" data-id="{area_id}">{title}</span><button class="btn type-btn" data-id="{area_id}" data-current="area" onclick="event.stopPropagation()">A</button><button class="btn sub-btn" data-id="{area_id}" title="Добавить задачу" onclick="event.stopPropagation()">+</button></summary>\n'
+    toggle_btn = (
+        f'<button class="btn area-toggle-btn" data-id="{area_id}" title="Свернуть/развернуть проект" onclick="event.stopPropagation()">⇅</button>'
+        if is_top else ""
+    )
+    b = f'<details data-key="{area_id}" data-id="{area_id}"><summary><span class="area-title" data-id="{area_id}">{title}</span>{toggle_btn}<button class="btn type-btn" data-id="{area_id}" data-current="area" onclick="event.stopPropagation()">A</button><button class="btn sub-btn" data-id="{area_id}" title="Добавить задачу" onclick="event.stopPropagation()">+</button></summary>\n'
     b += '<div class="section-tasks">\n'
     for child in children:
         if child.get("type") == "area":
@@ -1186,13 +1336,12 @@ def render_area(area, all_nodes):
     return b
 
 
-def build_area_options(nodes, all_nodes, prefix=""):
+def build_area_options(nodes, all_nodes):
     opts = []
     for a in sorted(nodes, key=lambda t: t.get("order", 0)):
-        path = prefix + a.get("title", "")
-        opts.append({"id": a["id"], "title": path})
-        sub = [t for t in all_nodes if t.get("parent_id") == a["id"]]
-        opts.extend(build_area_options(sub, all_nodes, path + " › "))
+        opts.append({"id": a["id"], "title": a.get("title", ""), "parent_id": a.get("parent_id")})
+        sub = [t for t in all_nodes if t.get("parent_id") == a["id"] and t.get("type") == "area"]
+        opts.extend(build_area_options(sub, all_nodes))
     return opts
 
 
@@ -1203,7 +1352,6 @@ def render_tasks():
         [t for t in active if t.get("type") == "area" and not t.get("parent_id")],
         key=lambda t: t.get("order", 0),
     )
-    areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
     someday_count = sum(1 for t in active if t.get("someday") and t.get("type") != "area")
     sd_limit = 20
     today_iso = date.today().isoformat()
@@ -1214,15 +1362,16 @@ def render_tasks():
     )
     sd_warn_style = ";color:#e74c3c;font-weight:600" if someday_count > sd_limit else ""
     overdue_warn_style = ";color:#e74c3c;font-weight:600" if overdue_count > 0 else ""
-    b = (f"<h1>Задачи</h1>\n<script>window.AREAS={areas_json};window.SOMEDAY_LIMIT={sd_limit};</script>\n"
+    b = (f"<h1>Задачи</h1>\n"
          f'<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">'
          f'<input id="task-search" type="text" placeholder="Поиск по задачам..." style="flex:1;max-width:500px;padding:8px 12px;border-radius:6px;border:none;background:var(--bg2);color:var(--text);font-size:.88rem;outline:1px solid var(--bdr)">'
          f'<button id="someday-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0" data-count="{someday_count}">Someday</button>'
          f'<button id="overdue-filter" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0{overdue_warn_style}" data-count="{overdue_count}">Просрочено ({overdue_count})</button>'
+         f'<button id="toggle-all" class="btn" style="padding:6px 12px;font-size:.82rem;border-radius:6px;flex-shrink:0">Развернуть всё</button>'
          f'</div>\n'
          f"<div id=\"top-areas\">\n")
     for area in top_areas:
-        b += render_area(area, active)
+        b += render_area(area, active, is_top=True)
     b += "</div>\n"
     return b
 
@@ -1387,6 +1536,29 @@ def set_task_marker(task_id):
             nxt = cycle[(idx + 1) % len(cycle)]
             t["marker"] = nxt
             t["priority"] = priority_map[nxt]
+            break
+    save_tasks(tasks)
+
+
+def start_timer(task_id):
+    tasks = load_tasks()
+    now = datetime.now().isoformat()
+    for t in tasks:
+        if t["id"] == task_id:
+            t["timer_started_at"] = now
+            break
+    save_tasks(tasks)
+
+
+def stop_timer(task_id):
+    tasks = load_tasks()
+    for t in tasks:
+        if t["id"] == task_id:
+            started = t.get("timer_started_at")
+            if started:
+                delta_min = int((datetime.now() - datetime.fromisoformat(started)).total_seconds() // 60)
+                t["time_spent_min"] = t.get("time_spent_min", 0) + max(delta_min, 0)
+                t["timer_started_at"] = None
             break
     save_tasks(tasks)
 
@@ -1745,11 +1917,20 @@ def render_sessions():
 _PAGE_TITLES = {"today": "Сегодня", "tasks": "Задачи", "sessions": "Сессии"}
 
 def make_page(body, page):
+    tasks = load_tasks()
+    active = [t for t in tasks if t.get("status") != "done"]
+    top_areas = sorted(
+        [t for t in active if t.get("type") == "area" and not t.get("parent_id")],
+        key=lambda t: t.get("order", 0),
+    )
+    areas_json = json.dumps(build_area_options(top_areas, active), ensure_ascii=False)
+    globals_js = f"window.AREAS={areas_json};window.SOMEDAY_LIMIT={SOMEDAY_LIMIT};"
     return HTML.format(
         title=_PAGE_TITLES.get(page, "Brain"),
         refresh='<script>(function(){var h=null;function poll(){fetch("/poll").then(function(r){return r.json()}).then(function(d){if(h===null){h=d.hash}else if(d.hash!==h){var a=document.activeElement,tag=a?a.tagName:"";if(!window.isDragging&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()}}).catch(function(){});setTimeout(poll,2000)}poll()})()</script>',
         css=CSS, js=JS, body=body,
         sortable_js=_SORTABLE_JS,
+        globals_js=globals_js,
         nav_today="active" if page == "today" else "",
         nav_tasks="active" if page == "tasks" else "",
         nav_sessions="active" if page == "sessions" else "",
@@ -1870,6 +2051,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             move_task(d["src_id"], d["target_id"], d["position"])
         elif self.path == "/set-marker":
             set_task_marker(d["id"])
+        elif self.path == "/start-timer":
+            start_timer(d["id"])
+        elif self.path == "/stop-timer":
+            stop_timer(d["id"])
         elif self.path == "/set-assignee":
             set_task_assignee(d["id"])
         elif self.path == "/undo":
