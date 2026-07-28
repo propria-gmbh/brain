@@ -1205,6 +1205,30 @@ def load_tasks():
 
 
 UNDO_FILE = BRAIN / "tools/tasks_undo.json"
+ACTIVITY_LOG_DIR = BRAIN / "04_THINKING/activity-log"
+
+
+def log_activity(action, payload, tasks=None):
+    """Append one JSONL line per mutating dashboard action — raw activity feed for later review."""
+    ACTIVITY_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    path = ACTIVITY_LOG_DIR / f"{today_str()}.jsonl"
+    task_id = payload.get("id") if isinstance(payload, dict) else None
+    title = None
+    if task_id:
+        if tasks is None:
+            tasks = load_tasks()
+        t = next((x for x in tasks if x["id"] == task_id), None)
+        if t:
+            title = t.get("title")
+    entry = {
+        "ts": datetime.now().isoformat(timespec="seconds"),
+        "action": action,
+        "id": task_id,
+        "title": title,
+        "payload": {k: v for k, v in (payload or {}).items() if k != "id"},
+    }
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 def save_tasks(tasks):
     # save undo backup before writing
@@ -1927,7 +1951,7 @@ def make_page(body, page):
     globals_js = f"window.AREAS={areas_json};window.SOMEDAY_LIMIT={SOMEDAY_LIMIT};"
     return HTML.format(
         title=_PAGE_TITLES.get(page, "Brain"),
-        refresh='<script>(function(){var h=null;function poll(){fetch("/poll").then(function(r){return r.json()}).then(function(d){if(h===null){h=d.hash}else if(d.hash!==h){var a=document.activeElement,tag=a?a.tagName:"";if(!window.isDragging&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()}}).catch(function(){});setTimeout(poll,2000)}poll()})()</script>',
+        refresh='<script>(function(){var h=null;function poll(){fetch("/poll").then(function(r){return r.json()}).then(function(d){if(h===null){h=d.hash}else if(d.hash!==h){var a=document.activeElement,tag=a?a.tagName:"";var modal=document.getElementById("task-modal");var modalOpen=modal&&modal.classList.contains("open");if(!window.isDragging&&!modalOpen&&tag!=="INPUT"&&tag!=="SELECT"&&tag!=="TEXTAREA"&&!a.isContentEditable)location.reload()}}).catch(function(){});setTimeout(poll,2000)}poll()})()</script>',
         css=CSS, js=JS, body=body,
         sortable_js=_SORTABLE_JS,
         globals_js=globals_js,
@@ -2070,6 +2094,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         else:
             self.send_error(404)
             return
+        log_activity(self.path.lstrip("/"), d)
         self.send_response(200)
         self.end_headers()
 
