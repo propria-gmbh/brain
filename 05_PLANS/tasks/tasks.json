@@ -12684,5 +12684,24 @@
     "done_at": null,
     "created_at": "2026-07-28",
     "order": 0.0
+  },
+  {
+    "id": "получить-leistungsmitteilung-anlage-r-av-bav-за-2025-и-внест",
+    "title": "Получить Leistungsmitteilung (Anlage R-AV/bAV) за 2025 и внести в декларацию, если по сумме будет смысл",
+    "type": "task",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Nummer 1/2/5/9a der Leistungsmitteilung, для Steuererklärung 2025 Ильи",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-28",
+    "order": 0.0
   }
 ]
