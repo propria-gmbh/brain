@@ -12551,7 +12551,7 @@
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": false,
+    "someday": true,
     "deadline": "2026-07-30",
     "priority": null,
     "stakes": null,
@@ -12562,6 +12562,7 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-28",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-28"
   }
 ]
