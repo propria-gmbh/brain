@@ -12365,7 +12365,7 @@
     "title": "Фолоуап Paul Neumann — Küchenmontage IKEA KNOXHULT",
     "type": "task",
     "parent_id": "area-safe-min",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-28",
     "priority": null,
@@ -12375,7 +12375,7 @@
     "tags": [],
     "notes": "context: perekur",
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-28",
     "created_at": "2026-07-26",
     "order": 0.0
   },
@@ -12501,6 +12501,47 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-28",
-    "context": "perekur"
+    "context": "perekur",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-28-wertstoffe-bsr-abholung",
+    "title": "Wertstoffe (BSR) Abholung",
+    "type": "event",
+    "event_summary": "Wertstoffe (BSR) Abholung",
+    "event_date": "2026-07-28",
+    "status": "done",
+    "done_at": "2026-07-28",
+    "scheduled_date": "2026-07-28",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-28-genius-bar-reservation---airpods",
+    "title": "Genius Bar Reservation - AirPods",
+    "type": "event",
+    "event_summary": "Genius Bar Reservation - AirPods",
+    "event_date": "2026-07-28",
+    "status": "done",
+    "done_at": "2026-07-28",
+    "scheduled_date": "2026-07-28"
+  },
+  {
+    "id": "составить-отчёт-tacura-за-q2-2026",
+    "title": "Составить отчёт Tacura за Q2 2026",
+    "type": "task",
+    "parent_id": "area-projects-tacura",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-28",
+    "order": 0.0
   }
 ]
