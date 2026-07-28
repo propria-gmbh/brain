@@ -10838,7 +10838,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": "2026-07-23"
+    "scheduled_date": "2026-07-28"
   },
   {
     "id": "фолоуап-wolf-забрать-справку-iyt",
@@ -10939,7 +10939,9 @@
     "missed_count": 12,
     "order": 0.0,
     "done_at": null,
-    "scheduled_date": "2026-07-28"
+    "scheduled_date": "2026-07-28",
+    "marker": "",
+    "priority": null
   },
   {
     "id": "daily-gmc-gads",
@@ -12347,7 +12349,7 @@
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12397,26 +12399,6 @@
     "done_at": null,
     "created_at": "2026-07-26",
     "order": 0.0
-  },
-  {
-    "id": "ответить-хайманам",
-    "title": "Ответить Хайманам",
-    "type": "task",
-    "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": false,
-    "deadline": "2026-07-28",
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": "Тред 1. Attention — Heyman/Highgate, ремонт крыши, thread id 19ee42d65d54326e",
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-07-26",
-    "order": 0.0,
-    "scheduled_date": "2026-07-28"
   },
   {
     "id": "найти-письмо-от-miles-по-поводу-исправления-инвойсов-на-prop",
@@ -12497,12 +12479,13 @@
   {
     "id": "inbox-купить-feindrahtklammern-typ-53-8-mm",
     "title": "Купить Feindrahtklammern Typ 53, 8 mm",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-purchases-нужные",
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-28",
     "context": "perekur",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-28"
   },
   {
     "id": "event-2026-07-28-wertstoffe-bsr-abholung",
@@ -12610,8 +12593,8 @@
     "title": "Добавить таймер в карточку задачи дашборда",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12620,7 +12603,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-28",
     "created_at": "2026-07-28",
     "order": 0.0
   },
@@ -12629,8 +12612,8 @@
     "title": "Починить изменение маркера (🔴/🟧/🟢) в карточке задачи дашборда",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12639,7 +12622,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-28",
     "created_at": "2026-07-28",
     "order": 0.0
   },
@@ -12648,8 +12631,8 @@
     "title": "Показывать маркеры (🔴/🟧/🟢) в разделе Сегодня дашборда и дать их менять там же",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12658,7 +12641,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-28",
     "created_at": "2026-07-28",
     "order": 0.0
   },
@@ -12667,8 +12650,8 @@
     "title": "Карточка задачи должна вести себя идентично в обоих дашбордах (сейчас в разделе Сегодня нельзя выбрать area)",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
-    "someday": true,
+    "status": "done",
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12677,7 +12660,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-28",
     "created_at": "2026-07-28",
     "order": 0.0
   }
