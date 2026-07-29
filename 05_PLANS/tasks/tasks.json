@@ -10961,12 +10961,12 @@
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-29",
     "missed_count": 17,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-29"
   },
   {
     "id": "daily-pnl",
@@ -12761,7 +12761,7 @@
     "title": "Разобрать проблемный тикет (customer support)",
     "type": "task",
     "parent_id": "area-ecom-customer-support",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -12771,7 +12771,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-07-29T10:33:38.375020",
     "created_at": "2026-07-29",
     "order": 0.0
   },
@@ -12826,7 +12826,7 @@
   },
   {
     "id": "marc-françois-обновить-адрес-склада-на-сайте-сейчас-указан-s",
-    "title": "Marc & François: обновить адрес склада на сайте (сейчас указан Shenzhen, по факту Dongguan/Guangdong)",
+    "title": "Marc & François: заменить ВСЕ упоминания адреса склада на сайте (HST/Shenzhen → правильный Dongguan)",
     "type": "task",
     "parent_id": "area-ecom",
     "status": "todo",
@@ -12837,7 +12837,7 @@
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": "Расхождение обнаружено в тикете Manuela Köpfli (order #1029). funnels/return-resolution.md хардкодит 'Shenzhen' в нескольких customer-facing строках (customer_support проект), а подтверждённый адрес склада в templates/RETURN_FORM_TEMPLATE.md — Dongguan, Guangdong. Нужно поправить и текст на сайте, и funnel-шаблон.",
+    "notes": "Обнаружено в тикете Manuela Köpfli (order #1029, customer_support проект). Правильный адрес склада (подтверждено пользователем) — Dongguan/Guangdong ('Warehouse Return Team', templates/RETURN_FORM_TEMPLATE.md). На живом сайте marcfrancois.ch сейчас указан НЕПРАВИЛЬНЫЙ адрес (HST / Shenzhen / Bao'an District) минимум в трёх местах:\n1. /policies/refund-policy — раздел 'Rücksendeadresse' + 'Kontakt: Lageradresse'\n2. /policies/terms-of-service (AGB) — раздел 'Kontakt: Lageradresse'\n3. /policies/shipping-policy — раздел 'Kontakt: Lageradresse'\nВезде заменить HST/Shenzhen/Bao'an-адрес на Dongguan-адрес из RETURN_FORM_TEMPLATE.md. Также поправить локальные копии в customer_support: reference/policies/marcfrancois/{refund-policy,terms-of-service,shipping-policy}.md, и funnels/return-resolution.md (хардкодит Shenzhen во всех F1/F2A/F3/Final шаблонах), stores/marcfrancois/RULES.md ('Return address: Shenzhen'). Проверить, есть ли та же проблема у Oliver and Alder (reference/policies/oliverandalder/refund-policy.md содержит идентичный HST/Shenzhen-адрес) — отдельно уточнить у пользователя.\nВременное решение до фикса сайта: клиентке (тикет #1029) отправлен PDF с адресом HST/Shenzhen (совпадает с текущим — пусть ошибочным — текстом сайта), чтобы не создавать ещё большего разнобоя, пока сайт не исправлен.",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-29",
