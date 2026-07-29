@@ -10838,7 +10838,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": "2026-07-28",
+    "scheduled_date": null,
     "marker": "🔴"
   },
   {
@@ -10922,12 +10922,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
+    "last_reset_date": "2026-07-29",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": "2026-07-28"
+    "done_at": null
   },
   {
     "id": "daily-gorgias",
@@ -10936,8 +10936,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
-    "missed_count": 12,
+    "last_reset_date": "2026-07-29",
+    "missed_count": 13,
     "order": 0.0,
     "done_at": null,
     "scheduled_date": "2026-07-28",
@@ -10951,8 +10951,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
-    "missed_count": 16,
+    "last_reset_date": "2026-07-29",
+    "missed_count": 17,
     "order": 0.0,
     "done_at": null
   },
@@ -10963,8 +10963,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
-    "missed_count": 16,
+    "last_reset_date": "2026-07-29",
+    "missed_count": 17,
     "order": 0.0,
     "done_at": null
   },
@@ -10975,8 +10975,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
-    "missed_count": 19,
+    "last_reset_date": "2026-07-29",
+    "missed_count": 20,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10988,8 +10988,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
-    "missed_count": 18,
+    "last_reset_date": "2026-07-29",
+    "missed_count": 19,
     "order": 0.0,
     "done_at": null
   },
@@ -10998,24 +10998,24 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
+    "last_reset_date": "2026-07-29",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": "2026-07-28"
+    "done_at": null
   },
   {
     "id": "daily-kleinanzeigen",
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-28",
+    "last_reset_date": "2026-07-29",
     "missed_count": 13,
     "order": 0.0,
-    "done_at": "2026-07-28"
+    "done_at": null
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -12323,7 +12323,7 @@
     "marker": "🟧",
     "priority": "orange",
     "order": 0.0,
-    "scheduled_date": "2026-07-28"
+    "scheduled_date": null
   },
   {
     "id": "создать-github-репозиторий-и-подключить-его-к-claude-для-syn",
@@ -12486,7 +12486,7 @@
     "created_at": "2026-07-28",
     "context": "perekur",
     "order": 0.0,
-    "scheduled_date": "2026-07-28"
+    "scheduled_date": null
   },
   {
     "id": "event-2026-07-28-wertstoffe-bsr-abholung",
@@ -12550,7 +12550,8 @@
     "order": 0.0,
     "scheduled_date": "2026-07-28",
     "marker": "🔴",
-    "timer_started_at": "2026-07-28T17:24:31.558047"
+    "timer_started_at": null,
+    "time_spent_min": 54
   },
   {
     "id": "tacura-запросить-недостающие-документы-за-q2-amazon-paypal-g",
