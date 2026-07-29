@@ -12016,7 +12016,7 @@
     "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-24",
+    "deadline": "2026-08-07",
     "priority": null,
     "stakes": null,
     "context": null,
@@ -12389,7 +12389,7 @@
     "parent_id": "area-safe-min",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-28",
+    "deadline": "2026-07-30",
     "priority": null,
     "stakes": null,
     "context": null,
@@ -12710,10 +12710,10 @@
     "title": "Убрать террасу",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-29",
     "order": 0.0,
-    "scheduled_date": "2026-07-29"
+    "scheduled_date": "2026-07-30"
   },
   {
     "id": "inbox-отправить-тостер-обратно",
@@ -12722,7 +12722,8 @@
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-29",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-30"
   },
   {
     "id": "inbox-разобрать-задачи",
@@ -12750,9 +12751,9 @@
   {
     "id": "inbox-разобраться-claude-code-vs-cowork",
     "title": "Разобраться Claude Code vs. Cowork",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ai-systems",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-29",
     "order": 0.0
   },
@@ -12883,7 +12884,7 @@
   },
   {
     "id": "ежедневный-отчёт-по-маржинальной-прибыли-ecom-shopify-adspen",
-    "title": "Ежедневный отчёт по маржинальной прибыли ecom (Shopify - adspend - COGS 30%)",
+    "title": "Модуль аналитики товаров ecom (Блок 1 из product-analytics-spec.html) — проект ecom-analytics",
     "type": "task",
     "parent_id": "area-ecom-обвязка-инфраструктура",
     "status": "todo",
@@ -12894,7 +12895,26 @@
     "context": null,
     "goal": null,
     "tags": [],
-    "notes": "Shopify Admin API (нужно создать custom app + токены по каждому магазину) + Google Ads API (креды в mitya-google-ads-vars.env). COGS = фикс 30% от цены продажи. Скоуп: все активные магазины, ежедневно.",
+    "notes": "Скоуп расширен 2026-07-29: не просто ежедневный скрипт, а отдельный новый проект ~/Projects/ecom-analytics (full-stack, Python/FastAPI/SQLAlchemy/SQLite→Postgres-ready + React/Vite/TanStack Table). Реализует Блок 1 спеки brain/07_OUTPUT/product-analytics-spec.html: таблица товаров/вариантов, метрики Shopify+Google Ads, один активный период (день/неделя/месяц) переключаемый кнопкой + сравнение с предыдущим (дельта %), COGS расчётная (30%) или фактическая. Рефанды/чарджбэки — отдельные таблицы, синк через Shopify updated_at_min (не фиксированное окно). Открытый вопрос: PSP магазинов (Shopify Payments vs внешний) — влияет на источник чарджбэков. Нужны: Shopify custom app токены по каждому магазину (ещё не созданы), Google Ads API креды уже есть (mitya-google-ads-vars.env). НЕ переиспользовать код/паттерны из /Users/dister/prj04-ecommerce — это не личный проект пользователя.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-29",
+    "order": 0.0
+  },
+  {
+    "id": "перевыпустить-google-ads-refresh-token-tools-google_ads_refr",
+    "title": "Перевыпустить Google Ads refresh token (tools/google_ads_refresh_token.py) — Testing-режим OAuth даёт 7 дней",
+    "type": "task",
+    "parent_id": "area-ecom-обвязка-инфраструктура",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Пока OAuth consent screen propria-ads-platform в статусе Testing (не Production), refresh token живёт 7 дней. Запустить python3 tools/google_ads_refresh_token.py, залогиниться под 3553194@gmail.com (или актуальным ads-аккаунтом), Allow. Актуально пока не пройдена верификация Google (privacy policy готова: propria.gmbh/datenschutz.html).",
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-29",
