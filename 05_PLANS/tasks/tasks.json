@@ -10922,12 +10922,12 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-29",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-29"
   },
   {
     "id": "daily-gorgias",
@@ -12703,6 +12703,76 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-28",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-убрать-террасу",
+    "title": "Убрать террасу",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-29",
+    "order": 0.0,
+    "scheduled_date": "2026-07-29"
+  },
+  {
+    "id": "inbox-отправить-тостер-обратно",
+    "title": "Отправить тостер обратно",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-29",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-разобрать-задачи",
+    "title": "Разобрать задачи!",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-29",
+    "context": "deep",
+    "marker": "🟢",
+    "priority": "green",
+    "order": 0.0,
+    "scheduled_date": "2026-07-29"
+  },
+  {
+    "id": "inbox-как-найти-ниши-с-высоким-спросом-и-низкой-конкурен",
+    "title": "Как найти ниши с высоким спросом и низкой конкуренцией?",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-29",
+    "context": "deep",
+    "order": 0.0
+  },
+  {
+    "id": "inbox-разобраться-claude-code-vs-cowork",
+    "title": "Разобраться Claude Code vs. Cowork",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-29",
+    "order": 0.0
+  },
+  {
+    "id": "разобрать-проблемный-тикет-customer-support",
+    "title": "Разобрать проблемный тикет (customer support)",
+    "type": "task",
+    "parent_id": "area-ecom-daily-checklist",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-29",
     "order": 0.0
   }
 ]
