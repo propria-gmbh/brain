@@ -12880,5 +12880,24 @@
     "done_at": null,
     "created_at": "2026-07-29",
     "order": 0.0
+  },
+  {
+    "id": "ежедневный-отчёт-по-маржинальной-прибыли-ecom-shopify-adspen",
+    "title": "Ежедневный отчёт по маржинальной прибыли ecom (Shopify - adspend - COGS 30%)",
+    "type": "task",
+    "parent_id": "area-ecom-обвязка-инфраструктура",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Shopify Admin API (нужно создать custom app + токены по каждому магазину) + Google Ads API (креды в mitya-google-ads-vars.env). COGS = фикс 30% от цены продажи. Скоуп: все активные магазины, ежедневно.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-29",
+    "order": 0.0
   }
 ]
