@@ -10949,12 +10949,12 @@
     "title": "Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-29",
     "missed_count": 17,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-29"
   },
   {
     "id": "daily-revolut",
@@ -10998,12 +10998,12 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-29",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-29"
   },
   {
     "id": "daily-kleinanzeigen",
@@ -12780,6 +12780,36 @@
     "title": "Настроить P&L для ecom",
     "type": "task",
     "parent_id": "area-ecom-аналитика-и-оптимизация",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-29",
+    "order": 0.0
+  },
+  {
+    "id": "event-2026-07-29-hausmüll-bsr-abholung",
+    "title": "Hausmüll (BSR) Abholung",
+    "type": "event",
+    "event_summary": "Hausmüll (BSR) Abholung",
+    "event_date": "2026-07-29",
+    "status": "done",
+    "done_at": "2026-07-29",
+    "scheduled_date": "2026-07-29",
+    "order": 0.0
+  },
+  {
+    "id": "записаться-к-неврологу-мигрени-11-мес-риск-медикаментозной-г",
+    "title": "Записаться к неврологу — мигрени 11×/мес (риск медикаментозной головной боли)",
+    "type": "task",
+    "parent_id": "area-health",
     "status": "todo",
     "someday": false,
     "deadline": null,
