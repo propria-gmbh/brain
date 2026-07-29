@@ -10838,7 +10838,7 @@
     "done_at": null,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "scheduled_date": null,
+    "scheduled_date": "2026-07-29",
     "marker": "🔴"
   },
   {
@@ -12323,7 +12323,7 @@
     "marker": "🟧",
     "priority": "orange",
     "order": 0.0,
-    "scheduled_date": null
+    "scheduled_date": "2026-07-29"
   },
   {
     "id": "создать-github-репозиторий-и-подключить-его-к-claude-для-syn",
@@ -12486,7 +12486,7 @@
     "created_at": "2026-07-28",
     "context": "perekur",
     "order": 0.0,
-    "scheduled_date": null
+    "scheduled_date": "2026-07-29"
   },
   {
     "id": "event-2026-07-28-wertstoffe-bsr-abholung",
