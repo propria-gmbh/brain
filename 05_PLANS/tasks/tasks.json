@@ -12842,5 +12842,24 @@
     "done_at": null,
     "created_at": "2026-07-29",
     "order": 0.0
+  },
+  {
+    "id": "marc-françois-закрыть-товар-romy-damen-spitzenkleid-a-linie-",
+    "title": "Marc & François: закрыть товар 'Romy | Damen Spitzenkleid A-Linie Midi' для продажи",
+    "type": "task",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "По решению пользователя после возврата в тикете Manuela Köpfli (order #1029, 2x Romy Blau L+M). Требует доступа к Shopify admin (marcfrancois.ch) — в сессии customer_support нет Shopify MCP/инструмента, действие нужно выполнить вручную или через отдельный доступ.",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-29",
+    "order": 0.0
   }
 ]
