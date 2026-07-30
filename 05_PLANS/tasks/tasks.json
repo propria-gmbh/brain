@@ -10922,24 +10922,24 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-30",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-30"
   },
   {
     "id": "daily-gorgias",
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-30",
     "missed_count": 14,
     "order": 0.0,
-    "done_at": null,
+    "done_at": "2026-07-30",
     "scheduled_date": "2026-07-28",
     "marker": "",
     "priority": null
@@ -10949,12 +10949,12 @@
     "title": "Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-30",
     "missed_count": 17,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-30"
   },
   {
     "id": "daily-revolut",
@@ -10998,24 +10998,24 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-30",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-30"
   },
   {
     "id": "daily-kleinanzeigen",
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
     "last_reset_date": "2026-07-30",
     "missed_count": 13,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-07-30"
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -12437,7 +12437,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-26",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-07-30"
   },
   {
     "id": "пересмотреть-видео-дашкиева-про-избегание-неприятного",
