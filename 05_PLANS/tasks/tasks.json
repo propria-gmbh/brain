@@ -12942,5 +12942,42 @@
     "done_at": null,
     "created_at": "2026-07-30",
     "order": 0.0
+  },
+  {
+    "id": "inbox-написать-тз-андрею",
+    "title": "Написать ТЗ Андрею",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-07-30",
+    "context": "perekur"
+  },
+  {
+    "id": "area-lesha",
+    "title": "Лёша",
+    "type": "area",
+    "parent_id": null,
+    "status": "active",
+    "order": 13.0,
+    "created_at": "2026-07-31"
+  },
+  {
+    "id": "av-структура-данных-для-штойербератора",
+    "title": "AV — структура данных для штойербератора",
+    "type": "task",
+    "parent_id": "area-lesha",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-07-31",
+    "order": 0.0
   }
 ]
