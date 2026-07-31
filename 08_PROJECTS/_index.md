@@ -16,6 +16,7 @@ brain/ — командный центр. Реальная разработка 
 |---|---|---|
 | [ecom](ecom/) | Магазины DK / CH / US / UK / IT — операционный хаб | active |
 | [ecom/supplier-kungfubuy](ecom/supplier-kungfubuy/) | Новый поставщик KungFuBuy | active |
+| [ecom/supplier-chancetobrand](ecom/supplier-chancetobrand.md) | Добавки, White Label дропшиппинг chancetobrand.de — стратегия готова, ждёт запуска | active |
 
 ## Внешние проекты
 
@@ -35,12 +36,14 @@ brain/ — командный центр. Реальная разработка 
 | [accounting-process](accounting-process.md) | Порядок закрытия квартала: банк → инвойсы → таблица (Propria + ecom) | active |
 | [q1-2026-closing-log](q1-2026-closing-log.md) | Лог закрытия Q1 2026 (НДС, Propria) | active |
 | [q2-2026-closing-checklist](q2-2026-closing-checklist.md) | Чеклист закрытия Q2 2026 | active |
+| [lesha](lesha.md) | Автоматизация учёта, Lex Office → Lex Ware, тестовый месяц | active |
 
 ## Споры / Претензии
 
 | Slug | Назначение | Статус |
 |---|---|---|
 | [miles-dispute](miles-dispute/context.md) | Спор с MILES: инвойсы на Propria GmbH + авария €1050 | active |
+| [heyman-dispute](heyman-dispute.md) | Спор с арендодателями Хайман (Götzestraße 18A) — протечка, скидка по аренде, тон переписки | active |
 
 ## Безопасный минимум
 
@@ -54,6 +57,7 @@ brain/ — командный центр. Реальная разработка 
 |---|---|---|
 | [health](health.md) | Здоровье — мигрени, железо, тестостерон | active |
 | [sailing-catamaran-2026](sailing-catamaran-2026.md) | Катамаранный поход 2026 | active |
+| [cruise-sales-business](cruise-sales-business.md) | Продажа круизов — масштабирование бизнес-модели флотилий | exploring |
 | [mitya](mitya.md) | Митя — ecom задачи | active |
 | [jobcenter](jobcenter.md) | Jobcenter | active |
 | [mamas-book](mamas-book.md) | Мамина книга | active |
