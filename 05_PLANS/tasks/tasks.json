@@ -13097,5 +13097,24 @@
     "created_at": "2026-08-03",
     "order": 0.0,
     "scheduled_date": "2026-08-03"
+  },
+  {
+    "id": "протестировать-еком-систему-от-мити-storus",
+    "title": "Протестировать еком систему от Мити (Storus)",
+    "type": "task",
+    "parent_id": "inbox-prj-with-mitya",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-08-03",
+    "order": 0.0
   }
 ]
