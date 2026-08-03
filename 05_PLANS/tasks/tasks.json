@@ -366,7 +366,7 @@
   },
   {
     "id": "area-personal-sailing-инструкторство",
-    "title": "Инструкторство",
+    "title": "Инструкторство и шкиперство",
     "type": "area",
     "parent_id": "area-personal-sailing",
     "status": "active",
@@ -1482,7 +1482,7 @@
     "type": "task",
     "project": "ecom",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -2496,7 +2496,7 @@
     "type": "task",
     "project": "propria",
     "parent_id": "area-projects-tacura",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -2506,7 +2506,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-05-25",
     "order": 3.0,
     "scheduled_date": "2026-07-01"
@@ -4082,7 +4082,7 @@
     "type": "task",
     "project": "personal/finance",
     "parent_id": "area-personal-finance",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": "2026-07-31",
     "priority": "red",
@@ -4092,7 +4092,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-05-25",
     "order": 2.0
   },
@@ -5419,7 +5419,7 @@
     "type": "task",
     "project": "personal/home",
     "parent_id": "area-personal-home-house-физический-дом",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "deadline": null,
     "priority": null,
@@ -5429,7 +5429,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-05-25",
     "order": -1.0
   },
@@ -6199,7 +6199,7 @@
     "title": "Принять решение, нужны ли Немецкие яхтенные права (уточнить дату экзамена)",
     "type": "task",
     "project": "personal/sailing",
-    "parent_id": "inbox-personal",
+    "parent_id": "area-personal-sailing",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -6739,7 +6739,7 @@
     "someday": false,
     "created_at": "2026-05-26",
     "order": 1.0,
-    "deadline": "2026-07-31"
+    "deadline": "2026-08-07"
   },
   {
     "id": "personal-health-mvz-kaleth-новый-термин",
@@ -8572,7 +8572,7 @@
     "title": "При включении фильтра Someday разворачивать все area с someday-задачами",
     "type": "task",
     "parent_id": "area-ai-systems",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -8582,7 +8582,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-06-07",
     "order": 0.0
   },
@@ -9017,7 +9017,7 @@
     "id": "купить-ремкомплект-для-колонок-magnat",
     "title": "Купить ремкомплект для колонок Magnat",
     "type": "task",
-    "parent_id": "area-personal-home-house-физический-дом",
+    "parent_id": "починить-большие-колонки",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -9030,7 +9030,7 @@
     "done": false,
     "done_date": null,
     "created": "2026-06-10",
-    "order": 0.0
+    "order": -1.0
   },
   {
     "id": "проверить-работоспособность-колонок-с-усилителем",
@@ -10783,10 +10783,11 @@
     "title": "Составить список контрагентов, с которыми работала Такура",
     "parent_id": "inbox-аудит-регистрационных-документов-контрагентов",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-01",
     "order": 0.0,
-    "assignee": "claude"
+    "assignee": "claude",
+    "scheduled_date": "2026-08-04"
   },
   {
     "id": "фолоуап-шарите-augenambulanz-cvk",
@@ -10924,10 +10925,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
+    "last_reset_date": "2026-08-03",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": "2026-07-30"
+    "done_at": "2026-08-03"
   },
   {
     "id": "daily-gorgias",
@@ -10936,10 +10937,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
+    "last_reset_date": "2026-08-03",
     "missed_count": 14,
     "order": 0.0,
-    "done_at": "2026-07-30",
+    "done_at": "2026-08-03",
     "scheduled_date": "2026-07-28",
     "marker": "",
     "priority": null
@@ -10951,22 +10952,22 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
+    "last_reset_date": "2026-08-03",
     "missed_count": 17,
     "order": 0.0,
-    "done_at": "2026-07-30"
+    "done_at": "2026-08-03"
   },
   {
     "id": "daily-revolut",
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "todo",
+    "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
-    "missed_count": 17,
+    "last_reset_date": "2026-08-03",
+    "missed_count": 18,
     "order": 0.0,
-    "done_at": null
+    "done_at": "2026-08-03"
   },
   {
     "id": "daily-pnl",
@@ -10975,8 +10976,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
-    "missed_count": 21,
+    "last_reset_date": "2026-08-03",
+    "missed_count": 22,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10988,8 +10989,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
-    "missed_count": 20,
+    "last_reset_date": "2026-08-03",
+    "missed_count": 21,
     "order": 0.0,
     "done_at": null
   },
@@ -11000,10 +11001,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
+    "last_reset_date": "2026-08-03",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": "2026-07-30"
+    "done_at": "2026-08-03"
   },
   {
     "id": "daily-kleinanzeigen",
@@ -11012,10 +11013,10 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "done",
     "recurring": "daily",
-    "last_reset_date": "2026-07-30",
+    "last_reset_date": "2026-08-03",
     "missed_count": 13,
     "order": 0.0,
-    "done_at": "2026-07-30"
+    "done_at": "2026-08-03"
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -11125,12 +11126,13 @@
     "id": "inbox-сделать-для-мити-тз-по-саплайментсам",
     "title": "Сделать для Мити ТЗ по саплайментсам",
     "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-07-09",
     "order": 0.0,
     "context": "deep",
-    "scheduled_date": "2026-07-17"
+    "scheduled_date": "2026-07-17",
+    "done_at": "2026-08-03"
   },
   {
     "id": "personal-finance-разослать-новые-реквизиты-получателям",
@@ -11218,7 +11220,7 @@
     "title": "Назначить термин на аэротрубу",
     "type": "task",
     "parent_id": "area-personal-development-спорт",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -11228,7 +11230,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-07-10",
     "order": 0.0,
     "scheduled_date": "2026-07-10"
@@ -11282,7 +11284,7 @@
     "parent_id": "area-personal-family",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-09-07",
+    "deadline": "2026-08-17",
     "priority": null,
     "stakes": null,
     "context": null,
@@ -11426,7 +11428,7 @@
     "created_at": "2026-05-25",
     "order": 2.5,
     "recurring": "monthly",
-    "scheduled_date": "2026-07-13",
+    "scheduled_date": "2026-08-04",
     "id": "propria-разослать-зарплатные-листки-next-next",
     "status": "todo"
   },
@@ -12175,7 +12177,7 @@
     "type": "task",
     "parent_id": "area-inbox",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -12192,11 +12194,11 @@
     "id": "придумать-механизм-обеспечения-решения-минимум-1-зелёной-зад",
     "title": "Придумать механизм обеспечения решения минимум 1 зелёной задачи",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-development",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
-    "priority": null,
+    "priority": "green",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -12205,7 +12207,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-20",
-    "order": 0.0
+    "order": 0.0,
+    "marker": "🟢"
   },
   {
     "id": "inbox-сделать-файлы-для-аллы",
@@ -12261,12 +12264,13 @@
   },
   {
     "id": "inbox-miles-kilometers-anpassen",
-    "title": "MILES Kilometers anpassen",
-    "parent_id": "area-inbox",
+    "title": "MILES Kilometers anpassen 2500 km",
+    "parent_id": "area-personal-finance",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-21",
-    "order": 0.0
+    "order": 0.0,
+    "scheduled_date": "2026-08-03"
   },
   {
     "id": "inbox-провести-исследование-рынка-добавок",
@@ -12389,7 +12393,7 @@
     "parent_id": "area-safe-min",
     "status": "todo",
     "someday": false,
-    "deadline": "2026-07-30",
+    "deadline": null,
     "priority": null,
     "stakes": null,
     "context": null,
@@ -12465,7 +12469,7 @@
     "id": "выбрать-и-забронировать-ресторан-для-приветственного-ужина-1",
     "title": "Выбрать и забронировать ресторан для приветственного ужина 17 октября (марина Коголен)",
     "type": "task",
-    "parent_id": "area-personal-sailing",
+    "parent_id": "area-personal-sailing-поход-по-лазурке",
     "status": "todo",
     "someday": false,
     "deadline": "2026-09-17",
@@ -12484,12 +12488,13 @@
     "id": "inbox-купить-feindrahtklammern-typ-53-8-mm",
     "title": "Купить Feindrahtklammern Typ 53, 8 mm",
     "parent_id": "area-personal-purchases-нужные",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-28",
     "context": "perekur",
     "order": 0.0,
-    "scheduled_date": "2026-07-29"
+    "scheduled_date": "2026-07-29",
+    "done_at": "2026-08-03"
   },
   {
     "id": "event-2026-07-28-wertstoffe-bsr-abholung",
@@ -12678,7 +12683,7 @@
     "status": "todo",
     "someday": false,
     "deadline": null,
-    "priority": null,
+    "priority": "red",
     "stakes": null,
     "context": null,
     "goal": null,
@@ -12687,7 +12692,8 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-28",
-    "order": 0.0
+    "order": 0.0,
+    "marker": "🔴"
   },
   {
     "id": "получить-leistungsmitteilung-anlage-r-av-bav-за-2025-и-внест",
@@ -12712,39 +12718,41 @@
     "id": "inbox-убрать-террасу",
     "title": "Убрать террасу",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "created_at": "2026-07-29",
     "order": 0.0,
-    "scheduled_date": "2026-07-30"
+    "scheduled_date": "2026-07-30",
+    "done_at": "2026-08-03"
   },
   {
     "id": "inbox-отправить-тостер-обратно",
     "title": "Отправить тостер обратно",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-29",
     "order": 0.0,
-    "scheduled_date": "2026-07-30"
+    "scheduled_date": "2026-07-30",
+    "done_at": "2026-08-03"
   },
   {
     "id": "inbox-разобрать-задачи",
     "title": "Разобрать задачи!",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-development-система-и-фокус",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "created_at": "2026-07-29",
     "context": "deep",
-    "marker": "🟢",
-    "priority": "green",
+    "marker": "",
+    "priority": null,
     "order": 0.0,
-    "scheduled_date": "2026-07-29"
+    "scheduled_date": "2026-08-03"
   },
   {
     "id": "inbox-как-найти-ниши-с-высоким-спросом-и-низкой-конкурен",
     "title": "Как найти ниши с высоким спросом и низкой конкуренцией?",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ecom",
     "status": "todo",
     "someday": true,
     "created_at": "2026-07-29",
@@ -12870,7 +12878,7 @@
     "id": "контроль-проблемных-тикетов-аудит-флоу-кс",
     "title": "Контроль проблемных тикетов, аудит флоу КС",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-ecom-customer-support",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -12947,25 +12955,18 @@
     "id": "inbox-написать-тз-андрею",
     "title": "Написать ТЗ Андрею",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": true,
     "created_at": "2026-07-30",
-    "context": "perekur"
-  },
-  {
-    "id": "area-lesha",
-    "title": "Лёша",
-    "type": "area",
-    "parent_id": null,
-    "status": "active",
-    "order": 13.0,
-    "created_at": "2026-07-31"
+    "context": "perekur",
+    "order": 0.0,
+    "done_at": "2026-08-03"
   },
   {
     "id": "av-структура-данных-для-штойербератора",
     "title": "AV — структура данных для штойербератора",
     "type": "task",
-    "parent_id": "area-lesha",
+    "parent_id": "inbox-леша",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -12984,7 +12985,7 @@
     "id": "id-согласовать-встречу-с-аней-установить-claude-code-начать-",
     "title": "ID — согласовать встречу с Аней, установить Claude Code, начать разбирать документы",
     "type": "task",
-    "parent_id": "area-lesha",
+    "parent_id": "inbox-леша",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -13003,7 +13004,7 @@
     "id": "av-список-вопросов-по-итогам-claude",
     "title": "AV — список вопросов по итогам Claude",
     "type": "task",
-    "parent_id": "area-lesha",
+    "parent_id": "inbox-леша",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -13016,14 +13017,15 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-07-31",
-    "order": 0.0
+    "order": 0.0,
+    "marker": ""
   },
   {
     "id": "фолоуап-андрей",
     "title": "Фолоуап Андрей",
     "type": "task",
-    "parent_id": "area-inbox",
-    "status": "todo",
+    "parent_id": "inbox-андрей",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -13033,16 +13035,16 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-08-03",
-    "order": 0.0,
+    "order": 1.0,
     "scheduled_date": "2026-08-04"
   },
   {
     "id": "фолоуап-татьяна",
     "title": "Фолоуап Татьяна",
     "type": "task",
-    "parent_id": "area-inbox",
+    "parent_id": "area-personal-sailing-инструкторство",
     "status": "todo",
     "someday": false,
     "deadline": null,
@@ -13063,27 +13065,29 @@
     "title": "Разобрать бумаги на столе",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
-    "context": "afternoon",
+    "context": "deep",
     "goal": null,
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-08-03",
     "order": 0.0,
-    "scheduled_date": "2026-08-03"
+    "scheduled_date": "2026-08-03",
+    "timer_started_at": null,
+    "time_spent_min": 63
   },
   {
     "id": "созвониться-с-сергеем-исааком",
     "title": "Созвониться с Сергеем Исааком",
     "type": "task",
     "parent_id": "area-inbox",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -13093,7 +13097,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-08-03",
     "order": 0.0,
     "scheduled_date": "2026-08-03"
@@ -13104,7 +13108,7 @@
     "type": "task",
     "parent_id": "inbox-prj-with-mitya",
     "status": "todo",
-    "someday": true,
+    "someday": false,
     "deadline": null,
     "priority": null,
     "stakes": null,
@@ -13115,6 +13119,67 @@
     "waiting_for": null,
     "done_at": null,
     "created_at": "2026-08-03",
+    "order": 0.0,
+    "scheduled_date": "2026-08-03"
+  },
+  {
+    "id": "inbox-воркшопы-и-консультации",
+    "title": "Воркшопы и консультации",
+    "parent_id": "area-ai-systems",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-08-03",
+    "order": 0.0,
+    "type": "area"
+  },
+  {
+    "id": "inbox-леша",
+    "title": "Леша",
+    "parent_id": "inbox-воркшопы-и-консультации",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-08-03",
+    "order": 0.0,
+    "type": "area"
+  },
+  {
+    "id": "inbox-андрей",
+    "title": "Андрей",
+    "parent_id": "inbox-воркшопы-и-консультации",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-08-03",
+    "order": 0.0,
+    "type": "area"
+  },
+  {
+    "id": "inbox-оплатить-arag",
+    "title": "Оплатить ARAG",
+    "parent_id": "area-personal-finance-счета-и-подписки",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-08-03",
+    "order": 0.0,
+    "deadline": "2026-09-15"
+  },
+  {
+    "id": "inbox-подать-заявку-в-jobcenter-с-июля",
+    "title": "Подать заявку в Jobcenter с июля",
+    "parent_id": "area-personal-finance",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-08-03",
     "order": 0.0
+  },
+  {
+    "id": "inbox-написать-емейл-алле-с-просьбой-сдать-пустые-отчеты",
+    "title": "Написать емейл Алле с просьбой сдать пустые отчеты",
+    "parent_id": "area-propria",
+    "status": "todo",
+    "someday": false,
+    "created_at": "2026-08-03",
+    "order": 0.0,
+    "scheduled_date": "2026-08-03",
+    "assignee": "claude"
   }
 ]
