@@ -12963,25 +12963,6 @@
     "done_at": "2026-08-03"
   },
   {
-    "id": "av-структура-данных-для-штойербератора",
-    "title": "AV — структура данных для штойербератора",
-    "type": "task",
-    "parent_id": "inbox-леша",
-    "status": "todo",
-    "someday": false,
-    "deadline": null,
-    "priority": null,
-    "stakes": null,
-    "context": null,
-    "goal": null,
-    "tags": [],
-    "notes": null,
-    "waiting_for": null,
-    "done_at": null,
-    "created_at": "2026-07-31",
-    "order": 0.0
-  },
-  {
     "id": "id-согласовать-встречу-с-аней-установить-claude-code-начать-",
     "title": "ID — встретиться с Аней, начать разбирать документы за июль",
     "type": "task",
