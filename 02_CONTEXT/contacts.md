@@ -15,6 +15,23 @@
 - Kindergeldnummer: 001FK831792
 - Antragsteller: Ilja Disterheft
 
+## Дети — Steuer-ID (Identifikationsnummer)
+
+- Maria Disterheft: 11032798464
+- Michael Disterheft: 31120958466
+
+## Андрей
+
+- Email: 9230230@gmail.com
+
+## Алексей Варивода (Лёша, AV)
+
+- Клиент проекта "Лёша" — автоматизация учёта, Lex Office → Lex Ware
+
+## Аня
+
+- Бухгалтер Алексея Вариводы (Лёши)
+
 ## Erhard Zimmermann — Segelakademie Wannsee Berlin (SBF See)
 
 - Email: erhard@segelakademie-wannsee.berlin
@@ -111,6 +128,12 @@
 ## Светлана Неб — бухгалтер (Tacura GmbH)
 
 ## Gabriela Heymann — хозяйка дома (Vermieterin/Hausverwalterin)
+
+## Лёша — потенциальный шкипер (поход по Лазурке 2026)
+
+- Бизнесмен, хорошие знакомства
+- Через него куплена каюта на 2 650€ (друг Лёши — владелец ресторана в Берлине)
+- Проект: sailing-catamaran-2026
 
 ## Sergei Tcherniak — Immobilienmakler (Berolinum Immobilien)
 
