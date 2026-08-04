@@ -13210,5 +13210,24 @@
     "done_at": null,
     "created_at": "2026-08-04",
     "order": 0.0
+  },
+  {
+    "id": "av-настроить-сбор-почты-на-alexeyvarivodagmailcom-со-счётной",
+    "title": "AV — настроить сбор почты на alexey.varivoda@gmail.com со счётной почты",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": false,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": null,
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-08-04",
+    "order": 0.0
   }
 ]
