@@ -10923,24 +10923,24 @@
     "title": "KungFuBuy — отгрузки, фото, оплатить и скачать инвойсы (https://www.kungfubuy.com/index/member/order.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 12,
     "order": 0.0,
-    "done_at": "2026-08-03"
+    "done_at": null
   },
   {
     "id": "daily-gorgias",
     "title": "Проверить тикеты службы поддержки (Gorgias) (https://havgaard-kobenhavn.gorgias.com/app/views/44819)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 14,
     "order": 0.0,
-    "done_at": "2026-08-03",
+    "done_at": null,
     "scheduled_date": "2026-07-28",
     "marker": "",
     "priority": null
@@ -10950,24 +10950,24 @@
     "title": "Проверить GMC & GAds (https://merchants.google.com/mc/overview?a=5694372236&authuser=1)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 17,
     "order": 0.0,
-    "done_at": "2026-08-03"
+    "done_at": null
   },
   {
     "id": "daily-revolut",
     "title": "Проверить бизнес-счёт Revolut",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 18,
     "order": 0.0,
-    "done_at": "2026-08-03"
+    "done_at": null
   },
   {
     "id": "daily-pnl",
@@ -10976,8 +10976,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
-    "missed_count": 22,
+    "last_reset_date": "2026-08-04",
+    "missed_count": 23,
     "order": 0.0,
     "assignee": null,
     "done_at": null
@@ -10989,8 +10989,8 @@
     "parent_id": "area-ecom-daily-checklist",
     "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
-    "missed_count": 21,
+    "last_reset_date": "2026-08-04",
+    "missed_count": 22,
     "order": 0.0,
     "done_at": null
   },
@@ -10999,24 +10999,24 @@
     "title": "Запросить квоты на новые товары у 3PL",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 15,
     "order": 0.0,
-    "done_at": "2026-08-03"
+    "done_at": null
   },
   {
     "id": "daily-kleinanzeigen",
     "title": "Kleinanzeigen — проверить новые сообщения (https://www.kleinanzeigen.de/m-nachrichten.html)",
     "type": "task",
     "parent_id": "area-ecom-daily-checklist",
-    "status": "done",
+    "status": "todo",
     "recurring": "daily",
-    "last_reset_date": "2026-08-03",
+    "last_reset_date": "2026-08-04",
     "missed_count": 13,
     "order": 0.0,
-    "done_at": "2026-08-03"
+    "done_at": null
   },
   {
     "id": "починить-telegram_botpy-команды-today-add-done-читают-пишут-",
@@ -13045,7 +13045,7 @@
     "title": "Фолоуап Татьяна",
     "type": "task",
     "parent_id": "area-personal-sailing-инструкторство",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -13055,7 +13055,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-08-03",
     "order": 0.0,
     "scheduled_date": "2026-08-03"
@@ -13107,7 +13107,7 @@
     "title": "Протестировать еком систему от Мити (Storus)",
     "type": "task",
     "parent_id": "inbox-prj-with-mitya",
-    "status": "todo",
+    "status": "done",
     "someday": false,
     "deadline": null,
     "priority": null,
@@ -13117,7 +13117,7 @@
     "tags": [],
     "notes": null,
     "waiting_for": null,
-    "done_at": null,
+    "done_at": "2026-08-03",
     "created_at": "2026-08-03",
     "order": 0.0,
     "scheduled_date": "2026-08-03"
@@ -13181,5 +13181,34 @@
     "order": 0.0,
     "scheduled_date": "2026-08-03",
     "assignee": "claude"
+  },
+  {
+    "id": "inbox-изучить-магазин-который-показал-андрей",
+    "title": "Изучить магазин, который показал Андрей",
+    "parent_id": "area-ecom",
+    "status": "todo",
+    "someday": true,
+    "created_at": "2026-08-04",
+    "order": 0.0,
+    "scheduled_date": "2026-08-04"
+  },
+  {
+    "id": "уточнить-у-андрея-владельца-админа-claudeai-воркспейса-appro",
+    "title": "Уточнить у Андрея владельца/админа claude.ai воркспейса — approve MCP Gmail/Drive/Calendar коннекторов",
+    "type": "task",
+    "parent_id": "area-inbox",
+    "status": "todo",
+    "someday": true,
+    "deadline": null,
+    "priority": null,
+    "stakes": null,
+    "context": null,
+    "goal": null,
+    "tags": [],
+    "notes": "Занятие 1 (2026-08-04): аккаунт Андрея оказался Team/Enterprise workspace, коннекторы требуют owner approval, запрос на Gmail висит. См. 08_PROJECTS/training/andrey.md",
+    "waiting_for": null,
+    "done_at": null,
+    "created_at": "2026-08-04",
+    "order": 0.0
   }
 ]
