@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Итоги сессии 1 — автоматизация учёта</title>
+<style>
+  @page { size: A4; margin: 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 170mm;
+    margin: 0 auto;
+    font-size: 11pt;
+    line-height: 1.5;
+    padding: 20mm 12mm;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+  .company h1 { font-size: 20pt; margin: 0 0 4px 0; color: #2c3e50; letter-spacing: 0.5px; }
+  .company p { margin: 0; font-size: 9.5pt; color: #555; }
+  .doc-meta { text-align: right; font-size: 9.5pt; color: #555; }
+  .doc-meta .title { font-size: 14pt; color: #2c3e50; font-weight: bold; margin-bottom: 6px; }
+  .recipient { margin: 20px 0 28px 0; font-size: 10.5pt; }
+  h2.section { font-size: 12.5pt; color: #2c3e50; border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-top: 28px; }
+  h3.sub { font-size: 10pt; color: #2c3e50; margin: 16px 0 6px; font-weight: 600; }
+  ul { margin: 6px 0 0 0; padding-left: 20px; font-size: 10.5pt; }
+  ul li { margin-bottom: 5px; }
+  ol.steps { margin: 6px 0 0 0; padding-left: 0; list-style: none; counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 10px 0 10px 34px;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 10.5pt;
+  }
+  ol.steps li:last-child { border-bottom: none; }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 9.5pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .status {
+    display: inline-block;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1f7a3f;
+    background: #e5f5ea;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+  }
+  .note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #fdf6e3;
+    border-left: 4px solid #d9a520;
+    font-size: 9.5pt;
+    color: #6b5a1e;
+  }
+  .note.blue { background: #eaf2fd; border-left-color: #2c6fbb; color: #1a3c5e; }
+  .footer {
+    margin-top: 40px;
+    padding-top: 12px;
+    border-top: 1px solid #ccc;
+    font-size: 9pt;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media print { body { margin: 0; padding: 0; } }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="company">
+      <h1>Илья Дистерхефт</h1>
+      <p>Автоматизация учёта на Claude Code</p>
+    </div>
+    <div class="doc-meta">
+      <div class="title">Итоги сессии 1</div>
+      <p>Дата: 04.08.2026</p>
+      <p>Проект: Алексей, автоматизация учёта</p>
+    </div>
+  </div>
+
+  <div class="recipient">
+    Алексею
+  </div>
+
+  <h2 class="section">Итоги первой сессии (2 часа)</h2>
+  <ul>
+    <li>Выбрали компьютер на Windows</li>
+    <li>Установили все необходимые программы для работы Claude</li>
+    <li>Скачали Claude, прописали пути, всё вызывается корректно</li>
+    <li>Скачали и запустили VS Code, Claude запущен внутри VS Code</li>
+    <li>Зарегистрировали аккаунт Claude Pro, залогинились, всё работает</li>
+    <li>Подключили MCP: Google Drive, Google Calendar, Google Mail. Проверка показала: Claude Code подключается к почте и календарю</li>
+    <li>Голосовой ввод на английском в VS Code работает, русский просто не успели настроить</li>
+  </ul>
+
+  <h2 class="section">Договорённости</h2>
+
+  <h3 class="sub">1. Почта <span class="status">ГОТОВО</span></h3>
+  <p style="font-size:10.5pt; margin-top:4px;">AV настроил на аккаунте alexey.varivoda@gmail.com сбор почты с почтового ящика, куда приходят счета</p>
+
+  <h3 class="sub">2. Документы за июль к следующей сессии</h3>
+  <ul>
+    <li>2.1 Выписки из банков</li>
+    <li>2.2 CSV/XLS файл с банковскими транзакциями</li>
+    <li>2.3 Входящие счета <span class="status">ГОТОВО</span></li>
+    <li>2.4 Реестр исходящих счетов <span class="status">ГОТОВО</span></li>
+    <li>2.5 Описание формата документа для штойербератора</li>
+  </ul>
+
+  <div class="note blue">Идея (не согласовано): сразу подготовить и исходящие счета, а не только реестр</div>
+
+  <h2 class="section">План следующей сессии</h2>
+
+  <h3 class="sub">Цель разбора документов</h3>
+  <ul>
+    <li>Полностью сопоставить все транзакции и первичные документы</li>
+    <li>На основании этого впоследствии сгенерировать документ для штойербератора по образцу, представленному AV</li>
+  </ul>
+
+  <h3 class="sub">На сессии</h3>
+  <ol class="steps">
+    <li>Установить набор правил для Claude Code</li>
+    <li>Начать разбирать документы за июль</li>
+    <li>Дополнять правила при необходимости</li>
+    <li>Зафиксировать флоу составления отчёта</li>
+  </ol>
+
+  <h3 class="sub">Технические задачи</h3>
+  <ol class="steps">
+    <li>Разобраться с голосовым вводом на русском в VS Code</li>
+    <li>Установить браузер Playwright</li>
+    <li>Установить плагин для Chrome</li>
+    <li>Научить ИИ-агента скачивать документы из почты и с сервисов</li>
+  </ol>
+
+  <div class="footer">
+    <span>Илья Дистерхефт</span>
+    <span>Итоги сессии от 04.08.2026</span>
+  </div>
+
+</body>
+</html>
