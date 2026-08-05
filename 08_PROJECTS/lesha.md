@@ -49,6 +49,7 @@
 - Переустановили: Node.js (через установщик с nodejs.org, попутно подтянулись Python 3.14 и Visual Studio Build Tools через опцию "Tools for Native Modules", не обязательно для Claude Code но решили оставить Python, VS Build Tools можно удалить)
 - Исправили PowerShell Execution Policy (`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`), без этого не запускался npm
 - Claude Code CLI переустановлен и работает
+- Расширение Claude Code для VS Code переустановлено
 - Договорённость на будущее: попросить Аню исключить папки Node.js/npm/VS Code из очистки Wise Care или не запускать его на этом компьютере, либо завести отдельную учётку без прав администратора
 
 ## Договорённости по итогам встречи (2026-08-04)
